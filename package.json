@@ -34,7 +34,12 @@
     "uppercase",
     "header-case",
     "param-case",
-    "javascript"
+    "javascript",
+    "change",
+    "case",
+    "convert",
+    "transform"
+
   ],
   "author": "DS",
   "license": "MIT",
