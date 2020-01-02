@@ -1,23 +1,11 @@
 {
   "name": "text-case",
-  "version": "1.0.2",
-  "description": "",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json --fix",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/idimetrix/text-case.git"
+  "description": "Convert strings between camelCase, PascalCase, Capital Case, kebab-case and more",
+  "version": "1.0.3",
+  "author": {
+    "name": "Dmitry Selikhov",
+    "email": "selikhov.dmitrey@gmail.com",
+    "url": "https://www.linkedin.com/in/dimetrix"
   },
   "keywords": [
     "camel-case",
@@ -41,10 +29,28 @@
     "transform"
 
   ],
-  "author": "DS",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json --fix",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idimetrix/text-case"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/idimetrix/text-case/issues"
+    "url": "https://github.com/idimetrix/text-case/issues",
+    "email": "selikhov.dmitrey@gmail.com"
   },
   "homepage": "https://github.com/idimetrix/text-case#readme",
   "devDependencies": {
