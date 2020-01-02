@@ -1,6 +1,6 @@
 {
   "name": "text-case",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -20,8 +20,21 @@
     "url": "git+https://github.com/idimetrix/text-case.git"
   },
   "keywords": [
-    "Hello",
-    "Greeter"
+    "camel-case",
+    "constant-case",
+    "pascal-case",
+    "change-case",
+    "snake-case",
+    "capital-case",
+    "dot-case",
+    "sentence-case",
+    "path-case",
+    "no-case",
+    "lowercase",
+    "uppercase",
+    "header-case",
+    "param-case",
+    "javascript"
   ],
   "author": "DS",
   "license": "MIT",
