@@ -14,11 +14,16 @@
 > [`snake_case`](https://github.com/idimetrix/text-case/tree/master/packages/snake-case),
 > [`param-case`](https://github.com/idimetrix/text-case/tree/master/packages/param-case),
 > [`dot.case`](https://github.com/idimetrix/text-case/tree/master/packages/dot-case),
+> [`no case`](https://github.com/idimetrix/text-case/tree/master/packages/no-case),
 > [`CONSTANT_CASE`](https://github.com/idimetrix/text-case/tree/master/packages/constant-case),
 > [`lower case`](https://github.com/idimetrix/text-case/tree/master/packages/lower-case),
 > [`lOWER CASE FIRST`](https://github.com/idimetrix/text-case/tree/master/packages/lower-case-first),
 > [`UPPER CASE`](https://github.com/idimetrix/text-case/tree/master/packages/upper-case),
 > [`Upper case first`](https://github.com/idimetrix/text-case/tree/master/packages/upper-case-first),
+> [`sWaP cAsE` -> `SwAp CaSe`](https://github.com/idimetrix/text-case/tree/master/packages/swap-case),
+> [`Sentence Case`](https://github.com/idimetrix/text-case/tree/master/packages/sentence-case),
+> [`isLowerCase`](https://github.com/idimetrix/text-case/tree/master/packages/is-lower-case),
+> [`isUpperCase`](https://github.com/idimetrix/text-case/tree/master/packages/is-upper-case),
 > and other
 
 ## Installation
@@ -40,11 +45,13 @@ import {
   snakeCase, // `snake_case`
   paramCase, // `param-case`
   dotCase, // `dot.case`
+  noCase, // `no case`
   constantCase, // `CONSTANT_CASE`
   lowerCase, // `lower case`
   lowerCaseFirst, // `lOWER CASE FIRST`
   upperCase, // `UPPER CASE`
   upperCaseFirst, // `Upper case first`
+  swapCase, // `sWaP cAsE` -> `SwAp CaSe`
   sentenceCase,
   isLowerCase,
   isUpperCase
