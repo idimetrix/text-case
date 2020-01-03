@@ -53,6 +53,29 @@ import {
 
 Methods can also be installed [independently](https://github.com/idimetrix/text-case). All functions also accept [`options`](https://github.com/idimetrix/text-case#options) as the second argument.
 
+### Options
+
+- **`splitRegexp`** RegExp used to split into word segments (see [example](#split-example)).
+- **`stripRegexp`** RegExp used to remove extraneous characters (default: `/[^A-Z0-9]/gi`).
+- **`delimiter`** Value used between words (e.g. `" "`).
+- **`transform`** Used to transform each word segment (e.g. `lowerCase`).
+
+#### Split Example
+
+If you find the default split hard to use, you can provide a different one. The example below will change the behavior to `expo2020 -> expo 2019` and `WorldExpo -> world expo`:
+
+```js
+const options = {
+  splitRegexp: /([a-z])([A-Z0-9])/g
+};
+```
+
+## Related
+
+- [Meteor](https://github.com/Konecty/change-case)
+- [Atom](https://github.com/robhurring/atom-change-case)
+- [VSCode](https://github.com/wmaurer/vscode-change-case)
+
 ## License
 
 MIT
