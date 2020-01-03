@@ -62,7 +62,7 @@ Methods can also be installed [independently](https://github.com/idimetrix/text-
 
 #### Split Example
 
-If you find the default split hard to use, you can provide a different one. The example below will change the behavior to `expo2020 -> expo 2019` and `WorldExpo -> world expo`:
+If you find the default split hard to use, you can provide a different one. The example below will change the behavior to `expo2020 -> expo 2020` and `WorldExpo -> world expo`:
 
 ```js
 const options = {
