@@ -4,7 +4,22 @@
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
 
-> Convert text between `camelCase`, `PascalCase`, `Capital Case`, `Header-Case`, `Title Case`, `path/case`, `snake-case`, `param-case`, `dot.case`, `CONSTANT_CASE`, `lower case`, `lOWER CASE FIRST`, `UPPER CASE`, `Upper case first` and other
+> Convert text between
+> [`camelCase`](https://github.com/idimetrix/text-case/tree/master/packages/camel-case),
+> [`PascalCase`](https://github.com/idimetrix/text-case/tree/master/packages/pascal-case),
+> [`Capital Case`](https://github.com/idimetrix/text-case/tree/master/packages/capital-case),
+> [`Header-Case`](https://github.com/idimetrix/text-case/tree/master/packages/header-case),
+> [`Title Case`](https://github.com/idimetrix/text-case/tree/master/packages/title-case),
+> [`path/case`](https://github.com/idimetrix/text-case/tree/master/packages/path-case),
+> [`snake_case`](https://github.com/idimetrix/text-case/tree/master/packages/snake-case),
+> [`param-case`](https://github.com/idimetrix/text-case/tree/master/packages/param-case),
+> [`dot.case`](https://github.com/idimetrix/text-case/tree/master/packages/dot-case),
+> [`CONSTANT_CASE`](https://github.com/idimetrix/text-case/tree/master/packages/constant-case),
+> [`lower case`](https://github.com/idimetrix/text-case/tree/master/packages/lower-case),
+> [`lOWER CASE FIRST`](https://github.com/idimetrix/text-case/tree/master/packages/lower-case-first),
+> [`UPPER CASE`](https://github.com/idimetrix/text-case/tree/master/packages/upper-case),
+> [`Upper case first`](https://github.com/idimetrix/text-case/tree/master/packages/upper-case-first),
+> and other
 
 ## Installation
 
@@ -22,7 +37,7 @@ import {
   headerCase, // `Header-Case`
   titleCase, // `Title Case`
   pathCase, // `path/case`
-  snakeCase, // `snake-case`
+  snakeCase, // `snake_case`
   paramCase, // `param-case`
   dotCase, // `dot.case`
   constantCase, // `CONSTANT_CASE`

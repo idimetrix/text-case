@@ -1,6 +1,6 @@
 {
   "name": "text-case",
-  "description": "Convert text between `camelCase`, `PascalCase`, `Capital Case`, `Header-Case`, `Title Case`, `path/case`, `snake-case`, `param-case`, `dot.case`, `CONSTANT_CASE`, `lower case`, `lOWER CASE FIRST`, `UPPER CASE`, `Upper case first` and other",
+  "description": "Convert text between `camelCase`, `PascalCase`, `Capital Case`, `Header-Case`, `Title Case`, `path/case`, `snake_case`, `param-case`, `dot.case`, `CONSTANT_CASE`, `lower case`, `lOWER CASE FIRST`, `UPPER CASE`, `Upper case first` and other",
   "version": "1.0.4",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
