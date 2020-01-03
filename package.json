@@ -1,7 +1,7 @@
 {
   "name": "text-case",
   "description": "Convert strings between camelCase, PascalCase, Capital Case, kebab-case and more",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "author": {
     "name": "Dmitry Selikhov",
     "email": "selikhov.dmitrey@gmail.com",
@@ -27,22 +27,16 @@
     "case",
     "convert",
     "transform"
-
   ],
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json --fix",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
-  },
-
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist.es2015/index.js",
+  "sideEffects": false,
+  "jsnext:main": "dist.es2015/index.js",
+  "files": [
+    "dist/",
+    "dist.es2015/"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/idimetrix/text-case"
@@ -53,17 +47,30 @@
     "email": "selikhov.dmitrey@gmail.com"
   },
   "homepage": "https://github.com/idimetrix/text-case#readme",
-  "devDependencies": {
-    "@types/jest": "^24.0.25",
-    "codecov": "^3.6.1",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1",
-    "ts-jest": "^24.2.0",
-    "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.7.4"
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "prettier": "prettier --write",
+    "build": "lerna run build",
+    "format": "npm run prettier -- \"{./,packages/**/}*.{js,jsx,ts,tsx,json,md,yml,yaml}\" --ignore-path .gitignore",
+    "test": "lerna run test",
+    "prepare": "npm run bootstrap"
   },
-  "files": [
-    "lib/**/*"
-  ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,yml,yaml}": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "lerna": "^3.20.2",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
+  }
 }

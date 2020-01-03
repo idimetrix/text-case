@@ -1,0 +1,117 @@
+{
+  "name": "text-case",
+  "description": "Convert text between `camelCase`, `PascalCase`, `Capital Case`, `Header-Case`, `Title Case`, `path/case`, `snake-case`, `param-case`, `dot.case`, `CONSTANT_CASE`, `lower case`, `lOWER CASE FIRST`, `UPPER CASE`, `Upper case first` and other",
+  "version": "1.0.4",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist.es2015/index.js",
+  "sideEffects": false,
+  "jsnext:main": "dist.es2015/index.js",
+  "files": [
+    "dist/",
+    "dist.es2015/"
+  ],
+  "scripts": {
+    "lint": "tslint \"src/**/*\" --project tsconfig.json",
+    "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
+    "specs": "jest --coverage",
+    "test": "npm run build && npm run lint && npm run specs",
+    "size": "size-limit",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idimetrix/text-case"
+  },
+  "keywords": [
+    "camel-case",
+    "constant-case",
+    "pascal-case",
+    "change-case",
+    "snake-case",
+    "capital-case",
+    "dot-case",
+    "sentence-case",
+    "path-case",
+    "no-case",
+    "lowercase",
+    "uppercase",
+    "header-case",
+    "param-case",
+    "javascript",
+    "change",
+    "case",
+    "convert",
+    "transform"
+  ],
+  "author": {
+    "name": "Dmitry Selikhov",
+    "email": "selikhov.dmitrey@gmail.com",
+    "url": "https://www.linkedin.com/in/dimetrix"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idimetrix/text-case/issues",
+    "email": "selikhov.dmitrey@gmail.com"
+  },
+  "homepage": "https://github.com/idimetrix/text-case#readme",
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "limit": "750 B"
+    }
+  ],
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      "\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "text-camel-case": "^1.0.0",
+    "text-capital-case": "^1.0.0",
+    "text-constant-case": "^1.0.0",
+    "text-dot-case": "^1.0.0",
+    "text-header-case": "^1.0.0",
+    "text-is-lower-case": "^1.0.0",
+    "text-is-upper-case": "^1.0.0",
+    "text-lower-case": "^1.0.2",
+    "text-lower-case-first": "^1.0.0",
+    "text-no-case": "^1.0.0",
+    "text-param-case": "^1.0.0",
+    "text-pascal-case": "^1.0.1",
+    "text-path-case": "^1.0.0",
+    "text-sentence-case": "^1.0.0",
+    "text-snake-case": "^1.0.0",
+    "text-swap-case": "^1.0.0",
+    "text-title-case": "^1.0.0",
+    "text-upper-case": "^1.0.0",
+    "text-upper-case-first": "^1.0.0"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^2.2.4",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.2",
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^9.0.0",
+    "typescript": "^3.7.4"
+  }
+}
