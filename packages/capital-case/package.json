@@ -1,6 +1,6 @@
 {
   "name": "text-capital-case",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert into a space separated text with each word capitalized",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -71,8 +71,8 @@
     "access": "public"
   },
   "dependencies": {
-    "text-no-case": "^1.0.1",
-    "text-upper-case-first": "^1.0.1"
+    "text-no-case": "^1.0.2",
+    "text-upper-case-first": "^1.0.2"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",

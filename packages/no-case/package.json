@@ -1,6 +1,6 @@
 {
   "name": "text-no-case",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert text to all lowercase letters with spaces between words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -70,7 +70,7 @@
     "access": "public"
   },
   "dependencies": {
-    "text-lower-case": "^1.0.3"
+    "text-lower-case": "^1.0.4"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",

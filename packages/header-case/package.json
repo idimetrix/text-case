@@ -1,6 +1,6 @@
 {
   "name": "text-header-case",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Convert into a dash separated text of capitalized words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -72,7 +72,7 @@
     "access": "public"
   },
   "dependencies": {
-    "text-capital-case": "^1.0.1"
+    "text-capital-case": "^1.0.2"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
