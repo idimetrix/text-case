@@ -54,7 +54,7 @@ import {
   swapCase, // `sWaP cAsE` -> `SwAp CaSe`
   sentenceCase,
   isLowerCase,
-  isUpperCase
+  isUpperCase,
 } from "text-case";
 ```
 
