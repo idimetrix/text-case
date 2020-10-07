@@ -1,6 +1,6 @@
 {
   "name": "text-param-case",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Convert into a lower cased text with dashes between words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -76,7 +76,7 @@
     "access": "public"
   },
   "dependencies": {
-    "text-dot-case": "^1.0.0"
+    "text-dot-case": "^1.0.1"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^4.6.0",
