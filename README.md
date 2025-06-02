@@ -54,7 +54,7 @@ import {
   swapCase, // `sWaP cAsE` -> `SwAp CaSe`
   sentenceCase,
   isLowerCase,
-  isUpperCase
+  isUpperCase,
 } from "text-case";
 ```
 
@@ -73,13 +73,67 @@ If you find the default split hard to use, you can provide a different one. The 
 
 ```js
 const options = {
-  splitRegexp: /([a-z])([A-Z0-9])/g
+  splitRegexp: /([a-z])([A-Z0-9])/g,
 };
 ```
 
 ## License
 
 MIT
+
+## Development
+
+This project uses [pnpm workspaces](https://pnpm.io/workspaces) for managing dependencies and [Lerna](https://lerna.js.org/) for versioning and publishing.
+
+### Setup
+
+```bash
+# Install dependencies for all packages
+pnpm install
+```
+
+### Building
+
+```bash
+# Build all packages
+ppnpm run build
+
+# Build a specific package
+pnpm --filter text-camel-case run build
+```
+
+### Testing
+
+```bash
+# Test all packages
+ppnpm run test
+
+# Test a specific package
+pnpm --filter text-camel-case run test
+```
+
+### Adding Dependencies
+
+```bash
+# Add a dependency to a specific package
+pnpm add lodash --filter text-camel-case
+
+# Add a dev dependency to a specific package
+pnpm add -D @types/lodash --filter text-camel-case
+
+# Add a dependency to the root workspace
+pnpm add -w prettier
+```
+
+### Versioning and Publishing
+
+```bash
+# Version packages (interactive)
+ppnpm run version
+
+# Publish packages
+ppnpm run publish
+```
 
 [npm-image]: https://img.shields.io/npm/v/text-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-case

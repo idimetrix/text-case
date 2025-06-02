@@ -50,12 +50,13 @@
   },
   "homepage": "https://github.com/idimetrix/text-case#readme",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "prettier": "prettier --write",
-    "build": "lerna run build",
-    "format": "npm run prettier -- \"{./,packages/**/}*.{js,jsx,ts,tsx,json,md,yml,yaml}\" --ignore-path .gitignore",
-    "test": "lerna run test",
-    "prepare": "npm run bootstrap"
+    "build": "pnpm -r run build",
+    "format": "pnpm run prettier -- \"{./,packages/**/}*.{js,jsx,ts,tsx,json,md,yml,yaml}\" --ignore-path .gitignore",
+    "test": "pnpm -r run test",
+    "version": "lerna version",
+    "publish": "lerna publish",
+    "postinstall": "echo 'Packages installed and linked via pnpm workspaces'"
   },
   "husky": {
     "hooks": {
@@ -65,14 +66,14 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md,yml,yaml}": [
-      "npm run prettier",
+      "pnpm run prettier",
       "git add"
     ]
   },
   "devDependencies": {
-    "husky": "^4.3.0",
-    "lerna": "^3.22.1",
-    "lint-staged": "^10.4.0",
-    "prettier": "^2.1.2"
+    "husky": "^9.1.7",
+    "lerna": "^8.2.2",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3"
   }
 }

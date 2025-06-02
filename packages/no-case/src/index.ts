@@ -27,7 +27,7 @@ export function noCase(input: string, options: Options = {}) {
   let result = replace(
     replace(input, splitRegexp, "$1\0$2"),
     stripRegexp,
-    "\0"
+    "\0",
   );
   let start = 0;
   let end = result.length;

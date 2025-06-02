@@ -1,5 +1,7 @@
 {
   "packages": ["packages/*"],
   "version": "independent",
-  "ignoreChanges": ["*.spec.*", "*.md"]
+  "ignoreChanges": ["*.spec.*", "*.md"],
+  "npmClient": "pnpm",
+  "useWorkspaces": true
 }
