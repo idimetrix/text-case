@@ -1,6 +1,6 @@
 {
   "name": "text-path-case",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Convert into a lower case text with slashes between words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
