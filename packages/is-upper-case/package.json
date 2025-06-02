@@ -1,6 +1,6 @@
 {
   "name": "text-is-upper-case",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Returns `true` if text is upper case only.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
