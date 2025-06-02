@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text into **path/case** format where words are lowercase and separated by forward slashes.
+> Transform text to **path/case** format - lowercase words separated by forward slashes.
 
 ## 🚀 Features
 
@@ -16,7 +16,7 @@
 - **Tree-shakeable** - ES modules support
 - **Universal** - Works in browsers, Node.js, and serverless environments
 - **Well-tested** - Comprehensive test suite with edge cases
-- **Customizable** - Flexible options for advanced use cases
+- **Customizable** - Support for custom transform functions and options
 
 ## 📦 Installation
 
@@ -40,8 +40,8 @@ bun add text-path-case
 import { pathCase } from "text-path-case";
 
 console.log(pathCase("hello world")); // "hello/world"
-console.log(pathCase("userProfileData")); // "user/profile/data"
-console.log(pathCase("backgroundColor")); // "background/color"
+console.log(pathCase("camelCase")); // "camel/case"
+console.log(pathCase("kebab-case")); // "kebab/case"
 ```
 
 ## 📖 Usage
@@ -65,7 +65,7 @@ console.log(pathCase("hello world")); // "hello/world"
 ### TypeScript
 
 ```typescript
-import { pathCase, Options } from "text-path-case";
+import { pathCase } from "text-path-case";
 
 const result: string = pathCase("hello world");
 console.log(result); // "hello/world"
@@ -78,10 +78,12 @@ console.log(result); // "hello/world"
 ```javascript
 import { pathCase } from "text-path-case";
 
-// From different cases
+// Simple cases
 pathCase("hello world");         // "hello/world"
 pathCase("Hello World");         // "hello/world"
 pathCase("HELLO WORLD");         // "hello/world"
+
+// From other cases
 pathCase("camelCase");           // "camel/case"
 pathCase("PascalCase");          // "pascal/case"
 pathCase("snake_case");          // "snake/case"
@@ -92,202 +94,361 @@ pathCase("dot.case");            // "dot/case"
 pathCase("XMLHttpRequest");      // "xml/http/request"
 pathCase("iPhone");              // "i/phone"
 pathCase("version 1.2.3");      // "version/1/2/3"
-pathCase("userProfileData");     // "user/profile/data"
 ```
 
-### Advanced Options
+### Advanced Usage with Options
 
 ```javascript
 import { pathCase } from "text-path-case";
 
-// Custom word splitting
-pathCase("XMLHttpRequest", {
-  splitRegexp: /([a-z])([A-Z])/g,
-}); // "xml/http/request"
-
-// Custom character stripping
-pathCase("hello@world.com", {
-  stripRegexp: /[@.]/g,
-}); // "hello/world/com"
-
-// Custom transformation function
-pathCase("api-v2-endpoint", {
-  transform: (word, index) => {
-    if (word === "api") return "api";
-    if (word === "v2") return "v2";
+// Custom transform function
+pathCase("hello world", {
+  transform: (word, index, words) => {
+    // Custom transformation logic
     return word.toLowerCase();
-  },
-}); // "api/v2/endpoint"
+  }
+}); // "hello/world"
+
+// Custom split regex
+pathCase("hello-world_test", {
+  splitRegexp: /[-_\s]+/
+}); // "hello/world/test"
+
+// Strip specific characters
+pathCase("hello@world#test", {
+  stripRegexp: /[@#]/g
+}); // "hello/world/test"
 ```
 
 ## 🌍 Real-World Examples
 
-### File Paths
+### URL Path Generation
 
 ```javascript
 import { pathCase } from "text-path-case";
 
-// Generate file paths
-pathCase("userComponents");      // "user/components"
-pathCase("apiHelpers");          // "api/helpers"
-pathCase("utilityFunctions");    // "utility/functions"
-pathCase("testFixtures");        // "test/fixtures"
-pathCase("configFiles");         // "config/files"
+// Generate URL paths from titles
+pathCase("User Profile Settings"); // "user/profile/settings"
+pathCase("API Documentation");     // "api/documentation"
+pathCase("Getting Started Guide"); // "getting/started/guide"
+pathCase("FAQ Section");           // "faq/section"
 ```
 
-### URL Paths
+### File Path Construction
 
 ```javascript
 import { pathCase } from "text-path-case";
 
-// URL path generation
-pathCase("userProfile");         // "user/profile"
-pathCase("adminDashboard");      // "admin/dashboard"
-pathCase("productCatalog");      // "product/catalog"
-pathCase("orderHistory");        // "order/history"
-pathCase("accountSettings");     // "account/settings"
+function createFilePath(category, subcategory, filename) {
+  const categoryPath = pathCase(category);
+  const subcategoryPath = pathCase(subcategory);
+  const filePath = pathCase(filename);
+
+  return `${categoryPath}/${subcategoryPath}/${filePath}`;
+}
+
+console.log(createFilePath("User Data", "Profile Images", "Avatar Photo"));
+// "user/data/profile/images/avatar/photo"
+
+console.log(createFilePath("API Docs", "Authentication", "OAuth Setup"));
+// "api/docs/authentication/o/auth/setup"
 ```
 
-### Module Paths
+### Navigation Menu Structure
 
 ```javascript
 import { pathCase } from "text-path-case";
 
-// Module import paths
-pathCase("userManagement");      // "user/management"
-pathCase("dataVisualization");   // "data/visualization"
-pathCase("errorHandling");       // "error/handling"
-pathCase("performanceMonitoring"); // "performance/monitoring"
-pathCase("securityValidation");  // "security/validation"
-```
+function createMenuStructure(menuItems) {
+  return menuItems.map(item => ({
+    ...item,
+    path: pathCase(item.title),
+    children: item.children ? createMenuStructure(item.children) : undefined
+  }));
+}
 
-### Directory Structure
-
-```javascript
-import { pathCase } from "text-path-case";
-
-// Create directory structure
-const modules = [
-  "userAuthentication",
-  "dataProcessing",
-  "fileManagement",
-  "apiIntegration",
-  "errorLogging"
+const menuItems = [
+  {
+    title: "User Management",
+    children: [
+      { title: "User Profiles" },
+      { title: "Account Settings" },
+      { title: "Security Options" }
+    ]
+  },
+  {
+    title: "Content Management",
+    children: [
+      { title: "Blog Posts" },
+      { title: "Media Library" },
+      { title: "SEO Settings" }
+    ]
+  }
 ];
 
-const directories = modules.map(pathCase);
-console.log(directories);
+console.log(createMenuStructure(menuItems));
 // [
-//   "user/authentication",
-//   "data/processing",
-//   "file/management",
-//   "api/integration",
-//   "error/logging"
+//   {
+//     title: "User Management",
+//     path: "user/management",
+//     children: [
+//       { title: "User Profiles", path: "user/profiles" },
+//       { title: "Account Settings", path: "account/settings" },
+//       { title: "Security Options", path: "security/options" }
+//     ]
+//   },
+//   {
+//     title: "Content Management",
+//     path: "content/management",
+//     children: [
+//       { title: "Blog Posts", path: "blog/posts" },
+//       { title: "Media Library", path: "media/library" },
+//       { title: "SEO Settings", path: "seo/settings" }
+//     ]
+//   }
 // ]
 ```
 
-### Route Generation
+### API Endpoint Generation
 
 ```javascript
 import { pathCase } from "text-path-case";
 
-function generateRoute(controllerAction) {
-  return `/${pathCase(controllerAction)}`;
+class ApiEndpointBuilder {
+  constructor(baseUrl = '/api') {
+    this.baseUrl = baseUrl;
+  }
+
+  buildEndpoint(resource, action = null, id = null) {
+    const resourcePath = pathCase(resource);
+    let endpoint = `${this.baseUrl}/${resourcePath}`;
+
+    if (id) {
+      endpoint += `/${id}`;
+    }
+
+    if (action) {
+      const actionPath = pathCase(action);
+      endpoint += `/${actionPath}`;
+    }
+
+    return endpoint;
+  }
+
+  buildNestedEndpoint(parentResource, parentId, childResource, childId = null) {
+    const parentPath = pathCase(parentResource);
+    const childPath = pathCase(childResource);
+
+    let endpoint = `${this.baseUrl}/${parentPath}/${parentId}/${childPath}`;
+
+    if (childId) {
+      endpoint += `/${childId}`;
+    }
+
+    return endpoint;
+  }
 }
 
-console.log(generateRoute("getUserProfile")); // "/get/user/profile"
-console.log(generateRoute("createNewOrder")); // "/create/new/order"
-console.log(generateRoute("updateUserData")); // "/update/user/data"
+const api = new ApiEndpointBuilder();
+
+console.log(api.buildEndpoint("User Profiles"));
+// "/api/user/profiles"
+
+console.log(api.buildEndpoint("Blog Posts", "Published Articles"));
+// "/api/blog/posts/published/articles"
+
+console.log(api.buildNestedEndpoint("User Accounts", 123, "Profile Settings"));
+// "/api/user/accounts/123/profile/settings"
+```
+
+### Breadcrumb Generation
+
+```javascript
+import { pathCase } from "text-path-case";
+
+function generateBreadcrumbs(pathSegments) {
+  const breadcrumbs = [];
+  let currentPath = '';
+
+  pathSegments.forEach((segment, index) => {
+    const pathSegment = pathCase(segment);
+    currentPath += (index === 0 ? '' : '/') + pathSegment;
+
+    breadcrumbs.push({
+      label: segment,
+      path: currentPath,
+      isLast: index === pathSegments.length - 1
+    });
+  });
+
+  return breadcrumbs;
+}
+
+const pathSegments = ["Home", "User Management", "Profile Settings", "Security Options"];
+console.log(generateBreadcrumbs(pathSegments));
+// [
+//   { label: "Home", path: "home", isLast: false },
+//   { label: "User Management", path: "home/user/management", isLast: false },
+//   { label: "Profile Settings", path: "home/user/management/profile/settings", isLast: false },
+//   { label: "Security Options", path: "home/user/management/profile/settings/security/options", isLast: true }
+// ]
+```
+
+### Static Site Generator
+
+```javascript
+import { pathCase } from "text-path-case";
+
+class StaticSiteGenerator {
+  constructor() {
+    this.pages = [];
+  }
+
+  addPage(title, content, category = null) {
+    const slug = pathCase(title);
+    const categoryPath = category ? pathCase(category) : null;
+    const fullPath = categoryPath ? `${categoryPath}/${slug}` : slug;
+
+    this.pages.push({
+      title,
+      slug,
+      category,
+      categoryPath,
+      fullPath,
+      content,
+      url: `/${fullPath}`
+    });
+  }
+
+  generateSitemap() {
+    return this.pages.map(page => ({
+      url: page.url,
+      title: page.title,
+      category: page.category
+    }));
+  }
+}
+
+const ssg = new StaticSiteGenerator();
+
+ssg.addPage("Getting Started Guide", "Content here", "Documentation");
+ssg.addPage("API Reference", "API content", "Documentation");
+ssg.addPage("User Authentication", "Auth content", "Tutorials");
+ssg.addPage("About Us", "About content");
+
+console.log(ssg.generateSitemap());
+// [
+//   { url: "/documentation/getting/started/guide", title: "Getting Started Guide", category: "Documentation" },
+//   { url: "/documentation/api/reference", title: "API Reference", category: "Documentation" },
+//   { url: "/tutorials/user/authentication", title: "User Authentication", category: "Tutorials" },
+//   { url: "/about/us", title: "About Us", category: null }
+// ]
+```
+
+### Content Management System
+
+```javascript
+import { pathCase } from "text-path-case";
+
+class ContentManager {
+  constructor() {
+    this.content = new Map();
+  }
+
+  createContent(title, type, parentPath = null) {
+    const slug = pathCase(title);
+    const fullPath = parentPath ? `${parentPath}/${slug}` : slug;
+
+    const content = {
+      id: Date.now(),
+      title,
+      slug,
+      type,
+      path: fullPath,
+      createdAt: new Date(),
+      children: []
+    };
+
+    this.content.set(fullPath, content);
+    return content;
+  }
+
+  createHierarchy(structure, parentPath = null) {
+    const result = [];
+
+    structure.forEach(item => {
+      const content = this.createContent(item.title, item.type, parentPath);
+
+      if (item.children) {
+        content.children = this.createHierarchy(item.children, content.path);
+      }
+
+      result.push(content);
+    });
+
+    return result;
+  }
+}
+
+const cms = new ContentManager();
+
+const siteStructure = [
+  {
+    title: "Blog Section",
+    type: "category",
+    children: [
+      { title: "Technology Posts", type: "category" },
+      { title: "Design Articles", type: "category" },
+      { title: "Tutorial Content", type: "category" }
+    ]
+  },
+  {
+    title: "Documentation",
+    type: "category",
+    children: [
+      { title: "Getting Started", type: "page" },
+      { title: "API Reference", type: "page" },
+      { title: "Best Practices", type: "page" }
+    ]
+  }
+];
+
+console.log(cms.createHierarchy(siteStructure));
+// Creates a hierarchical structure with paths like:
+// - "blog/section"
+// - "blog/section/technology/posts"
+// - "blog/section/design/articles"
+// - "documentation"
+// - "documentation/getting/started"
+// etc.
 ```
 
 ## 📖 API Reference
 
 ### `pathCase(input, options?)`
 
-Converts a string to path/case.
+Transforms text to path/case format.
 
 #### Parameters
 
-- **`input`** (`string`): The string to convert
-- **`options`** (`Options`, optional): Configuration options
+- **`input`** (`string`): The string to transform
+- **`options`** (`object`, optional): Configuration options
+  - **`transform`** (`function`): Custom transform function for each word
+  - **`splitRegexp`** (`RegExp`): Custom regex for splitting words
+  - **`stripRegexp`** (`RegExp`): Custom regex for stripping characters
 
 #### Returns
 
 - **`string`**: The path/case formatted string
 
-#### Options
+#### Options Interface
 
 ```typescript
 interface Options {
-  // Custom transform function for word processing
   transform?: (word: string, index: number, words: string[]) => string;
-
-  // Regex to strip characters before processing
+  splitRegexp?: RegExp;
   stripRegexp?: RegExp;
-
-  // Custom split function
-  split?: (value: string) => string[];
 }
-```
-
-## 🔧 Advanced Configuration
-
-### Custom Word Splitting
-
-```javascript
-import { pathCase } from "text-path-case";
-
-// Split on specific patterns
-pathCase("XMLHttpRequest", {
-  splitRegexp: /([a-z])([A-Z])/g,
-}); // "xml/http/request"
-
-// Split on numbers
-pathCase("user123data", {
-  splitRegexp: /([a-zA-Z])(\d)/g,
-}); // "user/123/data"
-```
-
-### Custom Character Stripping
-
-```javascript
-import { pathCase } from "text-path-case";
-
-// Strip specific characters
-pathCase("hello@world.com", {
-  stripRegexp: /[@.]/g,
-}); // "hello/world/com"
-
-// Strip all non-alphanumeric
-pathCase("hello!@#world", {
-  stripRegexp: /[^a-zA-Z0-9]/g,
-}); // "hello/world"
-```
-
-### Custom Transform Functions
-
-```javascript
-import { pathCase } from "text-path-case";
-
-// Preserve specific formatting
-pathCase("xml-http-request", {
-  transform: (word, index) => {
-    const acronyms = ["xml", "http", "api", "url"];
-    if (acronyms.includes(word.toLowerCase())) {
-      return word.toLowerCase();
-    }
-    return word.toLowerCase();
-  },
-}); // "xml/http/request"
-
-// Custom business logic
-pathCase("userV2API", {
-  transform: (word, index) => {
-    if (word === "V2") return "v2";
-    if (word === "API") return "api";
-    return word.toLowerCase();
-  },
-}); // "user/v2/api"
 ```
 
 ## 📊 Bundle Size
@@ -295,7 +456,7 @@ pathCase("userV2API", {
 This package is optimized for minimal bundle size:
 
 - **Minified**: ~450B
-- **Gzipped**: ~250B
+- **Gzipped**: ~300B
 - **Tree-shakeable**: Yes
 - **Side effects**: None
 
@@ -328,8 +489,8 @@ pnpm lint
 ## 🔗 Related Packages
 
 - [`text-kebab-case`](../kebab-case) - Convert to kebab-case
-- [`text-snake-case`](../snake-case) - Convert to snake_case
 - [`text-dot-case`](../dot-case) - Convert to dot.case
+- [`text-snake-case`](../snake-case) - Convert to snake_case
 - [`text-case`](../text-case) - All case transformations in one package
 
 ## 📜 License
