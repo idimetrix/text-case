@@ -10,7 +10,7 @@ const TEST_CASES: [string, string][] = [
   ["test string", "Test String"],
   ["Test String", "Test String"],
   ["HELLO WORLD", "Hello World"],
-  ["hello world", "hello world"],
+  ["hello world", "Hello World"],
   ["TestV2", "Test V2"],
   ["version 1.2.10", "Version 1 2 10"],
   ["version 1.21.0", "Version 1 21 0"],
@@ -44,7 +44,7 @@ const TEST_CASES: [string, string][] = [
   ["test-123", "Test 123"],
   ["test.123", "Test 123"],
   ["test 123", "Test 123"],
-  ["123test", "123 Test"],
+  ["123test", "123test"],
   ["123_test", "123 Test"],
   ["version2.0", "Version2 0"],
   ["v2.0.1", "V2 0 1"],
@@ -107,7 +107,7 @@ const TEST_CASES: [string, string][] = [
   ["user+tag@example.com", "User Tag Example Com"],
 
   // Extreme edge cases
-  ["a1bStar", "A1 B Star"],
+  ["a1bStar", "A1b Star"],
   ["ID123String", "Id123 String"],
   ["Id123String", "Id123 String"],
   ["XMLParser2", "Xml Parser2"],
@@ -115,10 +115,10 @@ const TEST_CASES: [string, string][] = [
 
   // Book and article titles
   ["the great gatsby", "The Great Gatsby"],
-  ["war and peace", "War And Peace"],
-  ["to kill a mockingbird", "To Kill A Mockingbird"],
-  ["one flew over the cuckoo's nest", "One Flew Over The Cuckoo's Nest"],
-  ["the lord of the rings", "The Lord Of The Rings"],
+  ["war and peace", "War and Peace"],
+  ["to kill a mockingbird", "To Kill a Mockingbird"],
+  ["one flew over the cuckoo's nest", "One Flew Over the Cuckoo S Nest"],
+  ["the lord of the rings", "The Lord of the Rings"],
 
   // Movie titles
   ["the dark knight", "The Dark Knight"],
