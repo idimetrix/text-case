@@ -59,20 +59,20 @@ console.log(result); // "hello world"
 import { lowerCase } from "text-lower-case";
 
 // Simple transformations
-lowerCase("Hello World");             // "hello world"
-lowerCase("HELLO WORLD");             // "hello world"
-lowerCase("hello world");             // "hello world"
+lowerCase("Hello World"); // "hello world"
+lowerCase("HELLO WORLD"); // "hello world"
+lowerCase("hello world"); // "hello world"
 
 // From other cases
-lowerCase("CamelCase");               // "camelcase"
-lowerCase("PascalCase");              // "pascalcase"
-lowerCase("SNAKE_CASE");              // "snake_case"
-lowerCase("KEBAB-CASE");              // "kebab-case"
+lowerCase("CamelCase"); // "camelcase"
+lowerCase("PascalCase"); // "pascalcase"
+lowerCase("SNAKE_CASE"); // "snake_case"
+lowerCase("KEBAB-CASE"); // "kebab-case"
 
 // Complex examples
-lowerCase("XMLHttpRequest");          // "xmlhttprequest"
-lowerCase("iPhone");                  // "iphone"
-lowerCase("VERSION 1.2.3");          // "version 1.2.3"
+lowerCase("XMLHttpRequest"); // "xmlhttprequest"
+lowerCase("iPhone"); // "iphone"
+lowerCase("VERSION 1.2.3"); // "version 1.2.3"
 ```
 
 ### Real-world Examples
@@ -81,22 +81,22 @@ lowerCase("VERSION 1.2.3");          // "version 1.2.3"
 import { lowerCase } from "text-lower-case";
 
 // Email normalization
-lowerCase("John.Doe@EXAMPLE.COM");    // "john.doe@example.com"
-lowerCase("USER@DOMAIN.ORG");         // "user@domain.org"
+lowerCase("John.Doe@EXAMPLE.COM"); // "john.doe@example.com"
+lowerCase("USER@DOMAIN.ORG"); // "user@domain.org"
 
 // URL normalization
-lowerCase("HTTP://EXAMPLE.COM");      // "http://example.com"
+lowerCase("HTTP://EXAMPLE.COM"); // "http://example.com"
 lowerCase("HTTPS://API.SERVICE.COM"); // "https://api.service.com"
 
 // File names
-lowerCase("MyDocument.PDF");          // "mydocument.pdf"
-lowerCase("IMAGE.JPG");               // "image.jpg"
-lowerCase("SCRIPT.JS");               // "script.js"
+lowerCase("MyDocument.PDF"); // "mydocument.pdf"
+lowerCase("IMAGE.JPG"); // "image.jpg"
+lowerCase("SCRIPT.JS"); // "script.js"
 
 // CSS classes and IDs
-lowerCase("MAIN-HEADER");             // "main-header"
-lowerCase("SIDEBAR-CONTENT");         // "sidebar-content"
-lowerCase("FOOTER-LINKS");            // "footer-links"
+lowerCase("MAIN-HEADER"); // "main-header"
+lowerCase("SIDEBAR-CONTENT"); // "sidebar-content"
+lowerCase("FOOTER-LINKS"); // "footer-links"
 ```
 
 ### Programming Examples
@@ -105,23 +105,23 @@ lowerCase("FOOTER-LINKS");            // "footer-links"
 import { lowerCase } from "text-lower-case";
 
 // Package names
-lowerCase("TEXT-CASE-LIBRARY");       // "text-case-library"
-lowerCase("MY-AWESOME-PACKAGE");      // "my-awesome-package"
+lowerCase("TEXT-CASE-LIBRARY"); // "text-case-library"
+lowerCase("MY-AWESOME-PACKAGE"); // "my-awesome-package"
 
 // Database table names
-lowerCase("USER_PROFILES");           // "user_profiles"
-lowerCase("ORDER_ITEMS");             // "order_items"
-lowerCase("CUSTOMER_ADDRESSES");      // "customer_addresses"
+lowerCase("USER_PROFILES"); // "user_profiles"
+lowerCase("ORDER_ITEMS"); // "order_items"
+lowerCase("CUSTOMER_ADDRESSES"); // "customer_addresses"
 
 // Command line arguments
-lowerCase("--VERBOSE");               // "--verbose"
-lowerCase("--DEBUG-MODE");            // "--debug-mode"
-lowerCase("--OUTPUT-FILE");           // "--output-file"
+lowerCase("--VERBOSE"); // "--verbose"
+lowerCase("--DEBUG-MODE"); // "--debug-mode"
+lowerCase("--OUTPUT-FILE"); // "--output-file"
 
 // Configuration keys
-lowerCase("SERVER_PORT");             // "server_port"
-lowerCase("DATABASE_URL");            // "database_url"
-lowerCase("API_SECRET_KEY");          // "api_secret_key"
+lowerCase("SERVER_PORT"); // "server_port"
+lowerCase("DATABASE_URL"); // "database_url"
+lowerCase("API_SECRET_KEY"); // "api_secret_key"
 ```
 
 ### Text Processing Examples
@@ -130,24 +130,24 @@ lowerCase("API_SECRET_KEY");          // "api_secret_key"
 import { lowerCase } from "text-lower-case";
 
 // Search normalization
-lowerCase("SEARCH QUERY");            // "search query"
-lowerCase("Product Name");            // "product name"
-lowerCase("Category Filter");         // "category filter"
+lowerCase("SEARCH QUERY"); // "search query"
+lowerCase("Product Name"); // "product name"
+lowerCase("Category Filter"); // "category filter"
 
 // User input normalization
-lowerCase("USERNAME");                // "username"
-lowerCase("PASSWORD");                // "password"
-lowerCase("FULL NAME");               // "full name"
+lowerCase("USERNAME"); // "username"
+lowerCase("PASSWORD"); // "password"
+lowerCase("FULL NAME"); // "full name"
 
 // Tag normalization
-lowerCase("JAVASCRIPT");              // "javascript"
-lowerCase("REACT.JS");                // "react.js"
-lowerCase("NODE.JS");                 // "node.js"
+lowerCase("JAVASCRIPT"); // "javascript"
+lowerCase("REACT.JS"); // "react.js"
+lowerCase("NODE.JS"); // "node.js"
 
 // Language codes
-lowerCase("EN-US");                   // "en-us"
-lowerCase("FR-CA");                   // "fr-ca"
-lowerCase("ZH-CN");                   // "zh-cn"
+lowerCase("EN-US"); // "en-us"
+lowerCase("FR-CA"); // "fr-ca"
+lowerCase("ZH-CN"); // "zh-cn"
 ```
 
 ## API

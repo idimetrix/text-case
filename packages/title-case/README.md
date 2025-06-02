@@ -59,20 +59,20 @@ console.log(result); // "Hello World"
 import { titleCase } from "text-title-case";
 
 // Simple transformations
-titleCase("hello world");           // "Hello World"
-titleCase("Hello World");           // "Hello World"
-titleCase("HELLO WORLD");           // "Hello World"
+titleCase("hello world"); // "Hello World"
+titleCase("Hello World"); // "Hello World"
+titleCase("HELLO WORLD"); // "Hello World"
 
 // From other cases
-titleCase("camelCase");             // "Camel Case"
-titleCase("PascalCase");            // "Pascal Case"
-titleCase("snake_case");            // "Snake Case"
-titleCase("kebab-case");            // "Kebab Case"
+titleCase("camelCase"); // "Camel Case"
+titleCase("PascalCase"); // "Pascal Case"
+titleCase("snake_case"); // "Snake Case"
+titleCase("kebab-case"); // "Kebab Case"
 
 // Complex examples
-titleCase("XMLHttpRequest");        // "Xml Http Request"
-titleCase("iPhone");                // "I Phone"
-titleCase("version 1.2.3");        // "Version 1 2 3"
+titleCase("XMLHttpRequest"); // "Xml Http Request"
+titleCase("iPhone"); // "I Phone"
+titleCase("version 1.2.3"); // "Version 1 2 3"
 ```
 
 ### Advanced Usage
@@ -81,18 +81,18 @@ titleCase("version 1.2.3");        // "Version 1 2 3"
 import { titleCase } from "text-title-case";
 
 // Proper nouns and names
-titleCase("john doe");              // "John Doe"
-titleCase("new york city");         // "New York City"
-titleCase("united states");         // "United States"
+titleCase("john doe"); // "John Doe"
+titleCase("new york city"); // "New York City"
+titleCase("united states"); // "United States"
 
 // Article and book titles
-titleCase("the great gatsby");      // "The Great Gatsby"
+titleCase("the great gatsby"); // "The Great Gatsby"
 titleCase("to kill a mockingbird"); // "To Kill A Mockingbird"
-titleCase("war and peace");         // "War And Peace"
+titleCase("war and peace"); // "War And Peace"
 
 // Technical documentation
 titleCase("getting started guide"); // "Getting Started Guide"
-titleCase("api reference");         // "Api Reference"
+titleCase("api reference"); // "Api Reference"
 titleCase("installation instructions"); // "Installation Instructions"
 ```
 
@@ -103,23 +103,23 @@ import { titleCase } from "text-title-case";
 
 // Headers and titles
 titleCase("user profile settings"); // "User Profile Settings"
-titleCase("account management");    // "Account Management"
-titleCase("privacy policy");        // "Privacy Policy"
+titleCase("account management"); // "Account Management"
+titleCase("privacy policy"); // "Privacy Policy"
 
 // Menu items
-titleCase("home page");             // "Home Page"
-titleCase("about us");              // "About Us"
-titleCase("contact information");   // "Contact Information"
+titleCase("home page"); // "Home Page"
+titleCase("about us"); // "About Us"
+titleCase("contact information"); // "Contact Information"
 
 // Form labels
-titleCase("first name");            // "First Name"
-titleCase("email address");         // "Email Address"
-titleCase("phone number");          // "Phone Number"
+titleCase("first name"); // "First Name"
+titleCase("email address"); // "Email Address"
+titleCase("phone number"); // "Phone Number"
 
 // Business terms
-titleCase("project management");    // "Project Management"
-titleCase("customer service");      // "Customer Service"
-titleCase("quality assurance");     // "Quality Assurance"
+titleCase("project management"); // "Project Management"
+titleCase("customer service"); // "Customer Service"
+titleCase("quality assurance"); // "Quality Assurance"
 ```
 
 ## API

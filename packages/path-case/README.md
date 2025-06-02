@@ -59,12 +59,12 @@ console.log(result); // "hello/world"
 import { pathCase } from "text-path-case";
 
 // From different cases
-pathCase("Hello World");              // "hello/world"
-pathCase("helloWorld");               // "hello/world"
-pathCase("HelloWorld");               // "hello/world"
-pathCase("hello_world");              // "hello/world"
-pathCase("hello-world");              // "hello/world"
-pathCase("HELLO_WORLD");              // "hello/world"
+pathCase("Hello World"); // "hello/world"
+pathCase("helloWorld"); // "hello/world"
+pathCase("HelloWorld"); // "hello/world"
+pathCase("hello_world"); // "hello/world"
+pathCase("hello-world"); // "hello/world"
+pathCase("HELLO_WORLD"); // "hello/world"
 ```
 
 ### Complex Examples
@@ -73,16 +73,16 @@ pathCase("HELLO_WORLD");              // "hello/world"
 import { pathCase } from "text-path-case";
 
 // Mixed cases and numbers
-pathCase("XMLParser");                // "xml/parser"
-pathCase("iPhone6Plus");              // "i/phone6/plus"
-pathCase("HTML5Canvas");              // "html5/canvas"
-pathCase("getUserID");                // "get/user/id"
+pathCase("XMLParser"); // "xml/parser"
+pathCase("iPhone6Plus"); // "i/phone6/plus"
+pathCase("HTML5Canvas"); // "html5/canvas"
+pathCase("getUserID"); // "get/user/id"
 
 // With symbols and spaces
-pathCase("hello, world!");            // "hello/world"
-pathCase("Hello & World");            // "hello/world"
-pathCase("test@example.com");         // "test/example/com"
-pathCase("user-name_123");            // "user/name/123"
+pathCase("hello, world!"); // "hello/world"
+pathCase("Hello & World"); // "hello/world"
+pathCase("test@example.com"); // "test/example/com"
+pathCase("user-name_123"); // "user/name/123"
 ```
 
 ### Real-world Applications
@@ -91,20 +91,20 @@ pathCase("user-name_123");            // "user/name/123"
 import { pathCase } from "text-path-case";
 
 // URL path generation
-pathCase("User Profile");             // "user/profile"
-pathCase("Shopping Cart");            // "shopping/cart"
-pathCase("Payment Gateway");          // "payment/gateway"
-pathCase("Admin Dashboard");          // "admin/dashboard"
+pathCase("User Profile"); // "user/profile"
+pathCase("Shopping Cart"); // "shopping/cart"
+pathCase("Payment Gateway"); // "payment/gateway"
+pathCase("Admin Dashboard"); // "admin/dashboard"
 
 // File system paths
-pathCase("Component Library");        // "component/library"
-pathCase("Shared Utils");             // "shared/utils"
-pathCase("Test Fixtures");            // "test/fixtures"
+pathCase("Component Library"); // "component/library"
+pathCase("Shared Utils"); // "shared/utils"
+pathCase("Test Fixtures"); // "test/fixtures"
 
 // Route generation
-pathCase("API Version 2");            // "api/version/2"
-pathCase("User Settings");            // "user/settings"
-pathCase("Order History");            // "order/history"
+pathCase("API Version 2"); // "api/version/2"
+pathCase("User Settings"); // "user/settings"
+pathCase("Order History"); // "order/history"
 ```
 
 ### Advanced Options
@@ -114,13 +114,13 @@ import { pathCase } from "text-path-case";
 
 // Custom separators
 pathCase("hello@world#test", {
-  separateNumbers: false
-});                                   // "hello/world/test"
+  separateNumbers: false,
+}); // "hello/world/test"
 
 // Preserve certain patterns
 pathCase("API_VERSION_2_1", {
-  splitRegexp: /([a-z])([A-Z])/g
-});                                   // "api/version/2/1"
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "api/version/2/1"
 ```
 
 ### Web Development Examples
@@ -130,7 +130,7 @@ import { pathCase } from "text-path-case";
 
 // React Router paths
 const routes = ["User Profile", "Shopping Cart", "Order History"];
-const routePaths = routes.map(route => `/${pathCase(route)}`);
+const routePaths = routes.map((route) => `/${pathCase(route)}`);
 // ["/user/profile", "/shopping/cart", "/order/history"]
 
 // API endpoint generation
@@ -145,9 +145,9 @@ createEndpoint("updateProfile", "User Settings");
 // "/api/user/settings/update/profile"
 
 // File path generation
-pathCase("Component Tests");          // "component/tests"
-pathCase("Utility Functions");        // "utility/functions"
-pathCase("Style Sheets");             // "style/sheets"
+pathCase("Component Tests"); // "component/tests"
+pathCase("Utility Functions"); // "utility/functions"
+pathCase("Style Sheets"); // "style/sheets"
 ```
 
 ### Framework Integration
@@ -157,7 +157,7 @@ import { pathCase } from "text-path-case";
 
 // Next.js page routes
 const pageNames = ["About Us", "Contact Form", "Privacy Policy"];
-const pageRoutes = pageNames.map(name => `/${pathCase(name)}`);
+const pageRoutes = pageNames.map((name) => `/${pathCase(name)}`);
 // ["/about/us", "/contact/form", "/privacy/policy"]
 
 // Express.js route definitions
@@ -165,14 +165,14 @@ function defineRoute(name) {
   return `/${pathCase(name)}`;
 }
 
-defineRoute("User Dashboard");        // "/user/dashboard"
-defineRoute("Admin Panel");           // "/admin/panel"
-defineRoute("Settings Page");         // "/settings/page"
+defineRoute("User Dashboard"); // "/user/dashboard"
+defineRoute("Admin Panel"); // "/admin/panel"
+defineRoute("Settings Page"); // "/settings/page"
 
 // Vue.js component paths
-pathCase("Navigation Bar");           // "navigation/bar"
-pathCase("Modal Dialog");             // "modal/dialog"
-pathCase("Data Table");               // "data/table"
+pathCase("Navigation Bar"); // "navigation/bar"
+pathCase("Modal Dialog"); // "modal/dialog"
+pathCase("Data Table"); // "data/table"
 ```
 
 ### Directory Structure Generation
@@ -182,7 +182,7 @@ import { pathCase } from "text-path-case";
 
 // Create directory paths
 function createDirectoryPath(...segments) {
-  return segments.map(pathCase).join('/');
+  return segments.map(pathCase).join("/");
 }
 
 createDirectoryPath("src", "Components", "UserInterface");
@@ -196,7 +196,7 @@ const projectStructure = [
   "Source Code",
   "Test Files",
   "Documentation",
-  "Build Scripts"
+  "Build Scripts",
 ];
 
 projectStructure.map(pathCase);
@@ -209,9 +209,9 @@ projectStructure.map(pathCase);
 import { pathCase } from "text-path-case";
 
 // Image paths
-pathCase("User Avatar");              // "user/avatar"
-pathCase("Product Images");           // "product/images"
-pathCase("Icon Set");                 // "icon/set"
+pathCase("User Avatar"); // "user/avatar"
+pathCase("Product Images"); // "product/images"
+pathCase("Icon Set"); // "icon/set"
 
 // Static asset organization
 function getAssetPath(category, name) {
@@ -243,10 +243,10 @@ const configKeys = [
   "Database Connection",
   "Email Settings",
   "Cache Configuration",
-  "Security Options"
+  "Security Options",
 ];
 
-const configPaths = configKeys.map(key => `config/${pathCase(key)}`);
+const configPaths = configKeys.map((key) => `config/${pathCase(key)}`);
 // [
 //   "config/database/connection",
 //   "config/email/settings",
@@ -265,9 +265,9 @@ function organizeMetadata(items) {
 }
 
 // Internationalization paths
-pathCase("User Interface");           // "user/interface"
-pathCase("Error Messages");           // "error/messages"
-pathCase("Button Labels");            // "button/labels"
+pathCase("User Interface"); // "user/interface"
+pathCase("Error Messages"); // "error/messages"
+pathCase("Button Labels"); // "button/labels"
 ```
 
 ### Build and Deployment Paths
@@ -276,19 +276,19 @@ pathCase("Button Labels");            // "button/labels"
 import { pathCase } from "text-path-case";
 
 // Build output paths
-pathCase("Distribution Files");       // "distribution/files"
-pathCase("Minified Assets");          // "minified/assets"
-pathCase("Source Maps");              // "source/maps"
+pathCase("Distribution Files"); // "distribution/files"
+pathCase("Minified Assets"); // "minified/assets"
+pathCase("Source Maps"); // "source/maps"
 
 // Deployment environments
 const environments = ["Development", "Staging", "Production"];
-const deployPaths = environments.map(env => `deploy/${pathCase(env)}`);
+const deployPaths = environments.map((env) => `deploy/${pathCase(env)}`);
 // ["deploy/development", "deploy/staging", "deploy/production"]
 
 // Docker container paths
-pathCase("Application Code");         // "application/code"
-pathCase("Configuration Files");      // "configuration/files"
-pathCase("Log Directory");            // "log/directory"
+pathCase("Application Code"); // "application/code"
+pathCase("Configuration Files"); // "configuration/files"
+pathCase("Log Directory"); // "log/directory"
 
 // CI/CD pipeline paths
 function createPipelinePath(stage, environment) {
@@ -305,28 +305,28 @@ createPipelinePath("Build Process", "Development");
 import { pathCase } from "text-path-case";
 
 // Empty and special inputs
-pathCase("");                         // ""
-pathCase(" ");                        // ""
-pathCase("   ");                      // ""
+pathCase(""); // ""
+pathCase(" "); // ""
+pathCase("   "); // ""
 
 // Numbers and symbols only
-pathCase("123");                      // "123"
-pathCase("@#$");                      // ""
-pathCase("123abc");                   // "123/abc"
+pathCase("123"); // "123"
+pathCase("@#$"); // ""
+pathCase("123abc"); // "123/abc"
 
 // Single words
-pathCase("hello");                    // "hello"
-pathCase("HELLO");                    // "hello"
-pathCase("Hello");                    // "hello"
+pathCase("hello"); // "hello"
+pathCase("HELLO"); // "hello"
+pathCase("Hello"); // "hello"
 
 // Already path case
-pathCase("hello/world");              // "hello/world"
-pathCase("user/profile/settings");    // "user/profile/settings"
+pathCase("hello/world"); // "hello/world"
+pathCase("user/profile/settings"); // "user/profile/settings"
 
 // Special characters
-pathCase("hello.world");              // "hello/world"
-pathCase("user@domain.com");          // "user/domain/com"
-pathCase("version-2.1.0");           // "version/2/1/0"
+pathCase("hello.world"); // "hello/world"
+pathCase("user@domain.com"); // "user/domain/com"
+pathCase("version-2.1.0"); // "version/2/1/0"
 ```
 
 ### Utility Functions
@@ -337,9 +337,9 @@ import { pathCase } from "text-path-case";
 // Path manipulation
 function joinPaths(...segments) {
   return segments
-    .map(segment => pathCase(segment))
+    .map((segment) => pathCase(segment))
     .filter(Boolean)
-    .join('/');
+    .join("/");
 }
 
 joinPaths("User", "Profile", "Settings");
@@ -348,19 +348,17 @@ joinPaths("User", "Profile", "Settings");
 // Path validation
 function isValidPath(path) {
   const converted = pathCase(path);
-  return converted.length > 0 && !converted.includes('//');
+  return converted.length > 0 && !converted.includes("//");
 }
 
-isValidPath("User Settings");         // true
-isValidPath("");                      // false
-isValidPath("Valid Path");            // true
+isValidPath("User Settings"); // true
+isValidPath(""); // false
+isValidPath("Valid Path"); // true
 
 // Create breadcrumb paths
 function createBreadcrumbs(path) {
-  const segments = path.split('/').filter(Boolean);
-  return segments.map((_, index) =>
-    segments.slice(0, index + 1).join('/')
-  );
+  const segments = path.split("/").filter(Boolean);
+  return segments.map((_, index) => segments.slice(0, index + 1).join("/"));
 }
 
 const pathString = pathCase("Admin User Management Settings");
@@ -389,9 +387,9 @@ Transforms a string into path/case format.
 #### Examples
 
 ```javascript
-pathCase("HelloWorld");               // "hello/world"
-pathCase("hello_world");              // "hello/world"
-pathCase("HELLO-WORLD");              // "hello/world"
+pathCase("HelloWorld"); // "hello/world"
+pathCase("hello_world"); // "hello/world"
+pathCase("HELLO-WORLD"); // "hello/world"
 ```
 
 ## Development

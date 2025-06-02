@@ -59,17 +59,17 @@ console.log(result); // true
 import { isLowerCase } from "text-is-lower-case";
 
 // True cases
-isLowerCase("hello");                 // true
-isLowerCase("world");                 // true
-isLowerCase("hello world");           // true
-isLowerCase("test123");               // true
-isLowerCase("api");                   // true
+isLowerCase("hello"); // true
+isLowerCase("world"); // true
+isLowerCase("hello world"); // true
+isLowerCase("test123"); // true
+isLowerCase("api"); // true
 
 // False cases
-isLowerCase("Hello");                 // false
-isLowerCase("HELLO");                 // false
-isLowerCase("hello World");           // false
-isLowerCase("Test");                  // false
+isLowerCase("Hello"); // false
+isLowerCase("HELLO"); // false
+isLowerCase("hello World"); // false
+isLowerCase("Test"); // false
 ```
 
 ### Validation Examples
@@ -78,19 +78,19 @@ isLowerCase("Test");                  // false
 import { isLowerCase } from "text-is-lower-case";
 
 // URL validation
-isLowerCase("example.com");           // true
-isLowerCase("api.service.com");       // true
-isLowerCase("My-Website.COM");        // false
+isLowerCase("example.com"); // true
+isLowerCase("api.service.com"); // true
+isLowerCase("My-Website.COM"); // false
 
 // Email validation (partial)
-isLowerCase("user@example.com");      // true
-isLowerCase("User@Example.com");      // false
-isLowerCase("admin@service.org");     // true
+isLowerCase("user@example.com"); // true
+isLowerCase("User@Example.com"); // false
+isLowerCase("admin@service.org"); // true
 
 // CSS class names
-isLowerCase("container");             // true
-isLowerCase("nav-item");              // true
-isLowerCase("Button");                // false
+isLowerCase("container"); // true
+isLowerCase("nav-item"); // true
+isLowerCase("Button"); // false
 ```
 
 ### Form Validation Examples
@@ -106,17 +106,17 @@ function validateUsername(username) {
   return null;
 }
 
-validateUsername("john123");          // null (valid)
-validateUsername("John123");          // "Username must be lowercase"
+validateUsername("john123"); // null (valid)
+validateUsername("John123"); // "Username must be lowercase"
 
 // Domain validation
 function validateDomain(domain) {
   return isLowerCase(domain) && domain.includes(".");
 }
 
-validateDomain("example.com");        // true
-validateDomain("Example.COM");        // false
-validateDomain("api.service.org");    // true
+validateDomain("example.com"); // true
+validateDomain("Example.COM"); // false
+validateDomain("api.service.org"); // true
 ```
 
 ### Programming Examples
@@ -134,18 +134,18 @@ function isValidCSSProperty(property) {
   return isLowerCase(property) && property.includes("-");
 }
 
-isValidCSSProperty("font-size");      // true
+isValidCSSProperty("font-size"); // true
 isValidCSSProperty("background-color"); // true
-isValidCSSProperty("FontSize");       // false
+isValidCSSProperty("FontSize"); // false
 
 // Check if string follows snake_case
 function isSnakeCase(str) {
   return isLowerCase(str) && /^[a-z_]+$/.test(str);
 }
 
-isSnakeCase("user_name");             // true
-isSnakeCase("api_key");               // true
-isSnakeCase("UserName");              // false
+isSnakeCase("user_name"); // true
+isSnakeCase("api_key"); // true
+isSnakeCase("UserName"); // false
 ```
 
 ### Special Cases
@@ -154,21 +154,21 @@ isSnakeCase("UserName");              // false
 import { isLowerCase } from "text-is-lower-case";
 
 // Numbers and symbols
-isLowerCase("123");                   // true (no letters to check)
-isLowerCase("!!!@@@");                // true (no letters to check)
-isLowerCase("test123");               // true
-isLowerCase("123test");               // true
+isLowerCase("123"); // true (no letters to check)
+isLowerCase("!!!@@@"); // true (no letters to check)
+isLowerCase("test123"); // true
+isLowerCase("123test"); // true
 
 // Empty and whitespace
-isLowerCase("");                      // true (no letters to check)
-isLowerCase(" ");                     // true (no letters to check)
-isLowerCase("   ");                   // true (no letters to check)
+isLowerCase(""); // true (no letters to check)
+isLowerCase(" "); // true (no letters to check)
+isLowerCase("   "); // true (no letters to check)
 
 // Mixed with symbols
-isLowerCase("user_name");             // true
-isLowerCase("test-123");              // true
-isLowerCase("hello.world");           // true
-isLowerCase("user@domain.com");       // true
+isLowerCase("user_name"); // true
+isLowerCase("test-123"); // true
+isLowerCase("hello.world"); // true
+isLowerCase("user@domain.com"); // true
 ```
 
 ### Real-world Applications
@@ -181,28 +181,28 @@ function validatePackageName(name) {
   return isLowerCase(name) && /^[a-z0-9-]+$/.test(name);
 }
 
-validatePackageName("my-package");    // true
-validatePackageName("text-case");     // true
-validatePackageName("MyPackage");     // false
+validatePackageName("my-package"); // true
+validatePackageName("text-case"); // true
+validatePackageName("MyPackage"); // false
 
 // File name validation (for certain naming conventions)
 function validateFileName(filename) {
-  const nameWithoutExt = filename.split('.')[0];
+  const nameWithoutExt = filename.split(".")[0];
   return isLowerCase(nameWithoutExt);
 }
 
-validateFileName("config.json");      // true
-validateFileName("package.json");     // true
-validateFileName("Config.JSON");      // false
+validateFileName("config.json"); // true
+validateFileName("package.json"); // true
+validateFileName("Config.JSON"); // false
 
 // URL slug validation
 function validateSlug(slug) {
   return isLowerCase(slug) && /^[a-z0-9-]+$/.test(slug);
 }
 
-validateSlug("my-blog-post");         // true
-validateSlug("hello-world");          // true
-validateSlug("Hello-World");          // false
+validateSlug("my-blog-post"); // true
+validateSlug("hello-world"); // true
+validateSlug("Hello-World"); // false
 ```
 
 ### Input Sanitization
@@ -212,12 +212,12 @@ import { isLowerCase } from "text-is-lower-case";
 
 // Sanitize input for lowercase-only fields
 function sanitizeLowerCaseInput(input) {
-  if (typeof input !== 'string') {
-    throw new Error('Input must be a string');
+  if (typeof input !== "string") {
+    throw new Error("Input must be a string");
   }
 
   if (!isLowerCase(input)) {
-    throw new Error('Input must be in lowercase');
+    throw new Error("Input must be in lowercase");
   }
 
   return input;
@@ -225,7 +225,7 @@ function sanitizeLowerCaseInput(input) {
 
 // Email domain validation
 function validateEmailDomain(email) {
-  const domain = email.split('@')[1];
+  const domain = email.split("@")[1];
   return domain && isLowerCase(domain);
 }
 
@@ -235,15 +235,15 @@ validateEmailDomain("user@Example.COM"); // false
 // CSS selector validation
 function isValidCSSSelector(selector) {
   // Basic validation for class selectors
-  if (selector.startsWith('.')) {
+  if (selector.startsWith(".")) {
     const className = selector.slice(1);
     return isLowerCase(className) && /^[a-z0-9-_]+$/.test(className);
   }
   return false;
 }
 
-isValidCSSSelector(".nav-item");      // true
-isValidCSSSelector(".NavItem");       // false
+isValidCSSSelector(".nav-item"); // true
+isValidCSSSelector(".NavItem"); // false
 ```
 
 ### Batch Validation
@@ -261,7 +261,7 @@ validateLowerCaseArray(["api", "URL", "json"]); // false
 
 // Find non-lowercase strings
 function findNonLowerCase(strings) {
-  return strings.filter(str => !isLowerCase(str));
+  return strings.filter((str) => !isLowerCase(str));
 }
 
 const mixed = ["api", "URL", "json", "HTML"];
@@ -269,9 +269,9 @@ findNonLowerCase(mixed); // ["URL", "HTML"]
 
 // Clean data for lowercase requirements
 function cleanLowerCaseData(data) {
-  return data.map(item => ({
+  return data.map((item) => ({
     ...item,
-    slug: isLowerCase(item.slug) ? item.slug : item.slug.toLowerCase()
+    slug: isLowerCase(item.slug) ? item.slug : item.slug.toLowerCase(),
   }));
 }
 ```
@@ -302,7 +302,7 @@ function validateRoute(req, res, next) {
 
   if (!isLowerCase(slug)) {
     return res.status(400).json({
-      error: "URL slug must be lowercase"
+      error: "URL slug must be lowercase",
     });
   }
 
@@ -311,7 +311,7 @@ function validateRoute(req, res, next) {
 
 // Database field validation
 function validateDbField(fieldName, value) {
-  const lowerCaseFields = ['email', 'username', 'slug'];
+  const lowerCaseFields = ["email", "username", "slug"];
 
   if (lowerCaseFields.includes(fieldName) && !isLowerCase(value)) {
     throw new Error(`${fieldName} must be lowercase`);

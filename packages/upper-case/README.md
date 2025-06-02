@@ -59,20 +59,20 @@ console.log(result); // "HELLO WORLD"
 import { upperCase } from "text-upper-case";
 
 // Simple transformations
-upperCase("hello world");             // "HELLO WORLD"
-upperCase("Hello World");             // "HELLO WORLD"
-upperCase("HELLO WORLD");             // "HELLO WORLD"
+upperCase("hello world"); // "HELLO WORLD"
+upperCase("Hello World"); // "HELLO WORLD"
+upperCase("HELLO WORLD"); // "HELLO WORLD"
 
 // From other cases
-upperCase("camelCase");               // "CAMELCASE"
-upperCase("PascalCase");              // "PASCALCASE"
-upperCase("snake_case");              // "SNAKE_CASE"
-upperCase("kebab-case");              // "KEBAB-CASE"
+upperCase("camelCase"); // "CAMELCASE"
+upperCase("PascalCase"); // "PASCALCASE"
+upperCase("snake_case"); // "SNAKE_CASE"
+upperCase("kebab-case"); // "KEBAB-CASE"
 
 // Complex examples
-upperCase("XMLHttpRequest");          // "XMLHTTPREQUEST"
-upperCase("iPhone");                  // "IPHONE"
-upperCase("version 1.2.3");          // "VERSION 1.2.3"
+upperCase("XMLHttpRequest"); // "XMLHTTPREQUEST"
+upperCase("iPhone"); // "IPHONE"
+upperCase("version 1.2.3"); // "VERSION 1.2.3"
 ```
 
 ### Real-world Examples
@@ -81,26 +81,26 @@ upperCase("version 1.2.3");          // "VERSION 1.2.3"
 import { upperCase } from "text-upper-case";
 
 // Environment variables
-upperCase("database_url");            // "DATABASE_URL"
-upperCase("api_secret_key");          // "API_SECRET_KEY"
-upperCase("max_file_size");           // "MAX_FILE_SIZE"
+upperCase("database_url"); // "DATABASE_URL"
+upperCase("api_secret_key"); // "API_SECRET_KEY"
+upperCase("max_file_size"); // "MAX_FILE_SIZE"
 
 // Constants
-upperCase("http_status_ok");          // "HTTP_STATUS_OK"
-upperCase("error_codes");             // "ERROR_CODES"
-upperCase("default_timeout");         // "DEFAULT_TIMEOUT"
+upperCase("http_status_ok"); // "HTTP_STATUS_OK"
+upperCase("error_codes"); // "ERROR_CODES"
+upperCase("default_timeout"); // "DEFAULT_TIMEOUT"
 
 // Acronyms and abbreviations
-upperCase("html");                    // "HTML"
-upperCase("css");                     // "CSS"
-upperCase("json");                    // "JSON"
-upperCase("xml");                     // "XML"
+upperCase("html"); // "HTML"
+upperCase("css"); // "CSS"
+upperCase("json"); // "JSON"
+upperCase("xml"); // "XML"
 
 // Status messages
-upperCase("success");                 // "SUCCESS"
-upperCase("error");                   // "ERROR"
-upperCase("warning");                 // "WARNING"
-upperCase("info");                    // "INFO"
+upperCase("success"); // "SUCCESS"
+upperCase("error"); // "ERROR"
+upperCase("warning"); // "WARNING"
+upperCase("info"); // "INFO"
 ```
 
 ### Configuration Examples
@@ -109,21 +109,21 @@ upperCase("info");                    // "INFO"
 import { upperCase } from "text-upper-case";
 
 // Configuration keys
-upperCase("server_port");             // "SERVER_PORT"
-upperCase("database_host");           // "DATABASE_HOST"
-upperCase("redis_url");               // "REDIS_URL"
+upperCase("server_port"); // "SERVER_PORT"
+upperCase("database_host"); // "DATABASE_HOST"
+upperCase("redis_url"); // "REDIS_URL"
 
 // Log levels
-upperCase("debug");                   // "DEBUG"
-upperCase("verbose");                 // "VERBOSE"
-upperCase("warn");                    // "WARN"
-upperCase("fatal");                   // "FATAL"
+upperCase("debug"); // "DEBUG"
+upperCase("verbose"); // "VERBOSE"
+upperCase("warn"); // "WARN"
+upperCase("fatal"); // "FATAL"
 
 // HTTP methods
-upperCase("get");                     // "GET"
-upperCase("post");                    // "POST"
-upperCase("put");                     // "PUT"
-upperCase("delete");                  // "DELETE"
+upperCase("get"); // "GET"
+upperCase("post"); // "POST"
+upperCase("put"); // "PUT"
+upperCase("delete"); // "DELETE"
 ```
 
 ### Programming Examples
@@ -132,21 +132,21 @@ upperCase("delete");                  // "DELETE"
 import { upperCase } from "text-upper-case";
 
 // File extensions
-upperCase(".js");                     // ".JS"
-upperCase(".ts");                     // ".TS"
-upperCase(".json");                   // ".JSON"
+upperCase(".js"); // ".JS"
+upperCase(".ts"); // ".TS"
+upperCase(".json"); // ".JSON"
 
 // Protocol names
-upperCase("http");                    // "HTTP"
-upperCase("https");                   // "HTTPS"
-upperCase("ftp");                     // "FTP"
-upperCase("ssh");                     // "SSH"
+upperCase("http"); // "HTTP"
+upperCase("https"); // "HTTPS"
+upperCase("ftp"); // "FTP"
+upperCase("ssh"); // "SSH"
 
 // Programming languages
-upperCase("javascript");              // "JAVASCRIPT"
-upperCase("typescript");              // "TYPESCRIPT"
-upperCase("python");                  // "PYTHON"
-upperCase("rust");                    // "RUST"
+upperCase("javascript"); // "JAVASCRIPT"
+upperCase("typescript"); // "TYPESCRIPT"
+upperCase("python"); // "PYTHON"
+upperCase("rust"); // "RUST"
 ```
 
 ## API

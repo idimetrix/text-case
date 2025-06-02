@@ -76,7 +76,10 @@ const TEST_CASES: [string, string][] = [
 
   // Mixed delimiters
   ["mixed_case-string.example", "Mixed case string example"],
-  ["test_string-with.multiple/delimiters", "Test string with multiple delimiters"],
+  [
+    "test_string-with.multiple/delimiters",
+    "Test string with multiple delimiters",
+  ],
 
   // Unicode and international characters
   ["café", "Café"],
@@ -116,7 +119,10 @@ const TEST_CASES: [string, string][] = [
 
   // Error messages and notifications
   ["invalid email address", "Invalid email address"],
-  ["password must be at least 8 characters", "Password must be at least 8 characters"],
+  [
+    "password must be at least 8 characters",
+    "Password must be at least 8 characters",
+  ],
   ["file uploaded successfully", "File uploaded successfully"],
   ["connection failed", "Connection failed"],
   ["operation completed", "Operation completed"],

@@ -59,20 +59,20 @@ console.log(result); // "Hello-World"
 import { headerCase } from "text-header-case";
 
 // Simple transformations
-headerCase("hello world");            // "Hello-World"
-headerCase("Hello World");            // "Hello-World"
-headerCase("HELLO WORLD");            // "Hello-World"
+headerCase("hello world"); // "Hello-World"
+headerCase("Hello World"); // "Hello-World"
+headerCase("HELLO WORLD"); // "Hello-World"
 
 // From other cases
-headerCase("camelCase");              // "Camel-Case"
-headerCase("PascalCase");             // "Pascal-Case"
-headerCase("snake_case");             // "Snake-Case"
-headerCase("kebab-case");             // "Kebab-Case"
+headerCase("camelCase"); // "Camel-Case"
+headerCase("PascalCase"); // "Pascal-Case"
+headerCase("snake_case"); // "Snake-Case"
+headerCase("kebab-case"); // "Kebab-Case"
 
 // Complex examples
-headerCase("XMLHttpRequest");         // "Xml-Http-Request"
-headerCase("iPhone");                 // "I-Phone"
-headerCase("version 1.2.3");         // "Version-1-2-3"
+headerCase("XMLHttpRequest"); // "Xml-Http-Request"
+headerCase("iPhone"); // "I-Phone"
+headerCase("version 1.2.3"); // "Version-1-2-3"
 ```
 
 ### Advanced Usage
@@ -81,20 +81,20 @@ headerCase("version 1.2.3");         // "Version-1-2-3"
 import { headerCase } from "text-header-case";
 
 // HTTP headers
-headerCase("content-type");           // "Content-Type"
-headerCase("authorization");          // "Authorization"
-headerCase("user-agent");             // "User-Agent"
-headerCase("accept-language");        // "Accept-Language"
+headerCase("content-type"); // "Content-Type"
+headerCase("authorization"); // "Authorization"
+headerCase("user-agent"); // "User-Agent"
+headerCase("accept-language"); // "Accept-Language"
 
 // Custom headers
-headerCase("x-api-key");              // "X-Api-Key"
-headerCase("x-request-id");           // "X-Request-Id"
-headerCase("x-forwarded-for");        // "X-Forwarded-For"
+headerCase("x-api-key"); // "X-Api-Key"
+headerCase("x-request-id"); // "X-Request-Id"
+headerCase("x-forwarded-for"); // "X-Forwarded-For"
 
 // CORS headers
-headerCase("access-control-allow-origin");      // "Access-Control-Allow-Origin"
-headerCase("access-control-allow-methods");     // "Access-Control-Allow-Methods"
-headerCase("access-control-allow-headers");     // "Access-Control-Allow-Headers"
+headerCase("access-control-allow-origin"); // "Access-Control-Allow-Origin"
+headerCase("access-control-allow-methods"); // "Access-Control-Allow-Methods"
+headerCase("access-control-allow-headers"); // "Access-Control-Allow-Headers"
 ```
 
 ### Real-world Examples
@@ -103,26 +103,26 @@ headerCase("access-control-allow-headers");     // "Access-Control-Allow-Headers
 import { headerCase } from "text-header-case";
 
 // HTTP request headers
-headerCase("cache-control");          // "Cache-Control"
-headerCase("last-modified");          // "Last-Modified"
-headerCase("if-none-match");          // "If-None-Match"
-headerCase("accept-encoding");        // "Accept-Encoding"
+headerCase("cache-control"); // "Cache-Control"
+headerCase("last-modified"); // "Last-Modified"
+headerCase("if-none-match"); // "If-None-Match"
+headerCase("accept-encoding"); // "Accept-Encoding"
 
 // Response headers
-headerCase("content-length");         // "Content-Length"
-headerCase("content-encoding");       // "Content-Encoding"
-headerCase("transfer-encoding");      // "Transfer-Encoding"
+headerCase("content-length"); // "Content-Length"
+headerCase("content-encoding"); // "Content-Encoding"
+headerCase("transfer-encoding"); // "Transfer-Encoding"
 headerCase("strict-transport-security"); // "Strict-Transport-Security"
 
 // Authentication headers
-headerCase("www-authenticate");       // "Www-Authenticate"
-headerCase("proxy-authenticate");     // "Proxy-Authenticate"
-headerCase("proxy-authorization");    // "Proxy-Authorization"
+headerCase("www-authenticate"); // "Www-Authenticate"
+headerCase("proxy-authenticate"); // "Proxy-Authenticate"
+headerCase("proxy-authorization"); // "Proxy-Authorization"
 
 // Custom application headers
-headerCase("api-version");            // "Api-Version"
-headerCase("request-timeout");        // "Request-Timeout"
-headerCase("rate-limit-remaining");   // "Rate-Limit-Remaining"
+headerCase("api-version"); // "Api-Version"
+headerCase("request-timeout"); // "Request-Timeout"
+headerCase("rate-limit-remaining"); // "Rate-Limit-Remaining"
 ```
 
 ### With Custom Options
@@ -138,12 +138,12 @@ const customHeader = headerCase("hello_world", {
     if (word === "http") return "HTTP";
     if (word === "www") return "WWW";
     return word;
-  }
+  },
 });
 
 // Using custom split function
 const customSplit = headerCase("my-custom-string", {
-  split: (value) => value.split(/[-_]/g)
+  split: (value) => value.split(/[-_]/g),
 });
 ```
 

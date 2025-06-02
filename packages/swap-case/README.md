@@ -59,21 +59,21 @@ console.log(result); // "hELLO wORLD"
 import { swapCase } from "text-swap-case";
 
 // Simple transformations
-swapCase("Hello");                    // "hELLO"
-swapCase("WORLD");                    // "world"
-swapCase("Hello World");              // "hELLO wORLD"
+swapCase("Hello"); // "hELLO"
+swapCase("WORLD"); // "world"
+swapCase("Hello World"); // "hELLO wORLD"
 
 // Mixed case
-swapCase("HeLLo WoRLd");              // "hEllO wOrlD"
-swapCase("tEsT");                     // "TeSt"
+swapCase("HeLLo WoRLd"); // "hEllO wOrlD"
+swapCase("tEsT"); // "TeSt"
 
 // Single characters
-swapCase("a");                        // "A"
-swapCase("A");                        // "a"
+swapCase("a"); // "A"
+swapCase("A"); // "a"
 
 // Numbers and symbols (unchanged)
-swapCase("Hello123");                 // "hELLO123"
-swapCase("Test!@#");                  // "tEST!@#"
+swapCase("Hello123"); // "hELLO123"
+swapCase("Test!@#"); // "tEST!@#"
 ```
 
 ### Text Processing Examples
@@ -82,17 +82,17 @@ swapCase("Test!@#");                  // "tEST!@#"
 import { swapCase } from "text-swap-case";
 
 // Creating emphasis or artistic text
-swapCase("JavaScript");               // "jAVAsCRIPT"
-swapCase("TypeScript");               // "tYPEsCRIPT"
-swapCase("Programming");              // "pROGRAMMING"
+swapCase("JavaScript"); // "jAVAsCRIPT"
+swapCase("TypeScript"); // "tYPEsCRIPT"
+swapCase("Programming"); // "pROGRAMMING"
 
 // Text obfuscation
-swapCase("SecretPassword");           // "sECRETpASSWORD"
-swapCase("HiddenMessage");            // "hIDDENmESSAGE"
+swapCase("SecretPassword"); // "sECRETpASSWORD"
+swapCase("HiddenMessage"); // "hIDDENmESSAGE"
 
 // Creating alternating patterns
-swapCase("AlTeRnAtInG");              // "aLtErNaTiNg"
-swapCase("PaTtErN");                  // "pAtTeRn"
+swapCase("AlTeRnAtInG"); // "aLtErNaTiNg"
+swapCase("PaTtErN"); // "pAtTeRn"
 ```
 
 ### Real-world Examples
@@ -101,21 +101,21 @@ swapCase("PaTtErN");                  // "pAtTeRn"
 import { swapCase } from "text-swap-case";
 
 // Logo or brand styling
-swapCase("MyCompany");                // "mYcOMPANY"
-swapCase("BrandName");                // "bRANDnAME"
+swapCase("MyCompany"); // "mYcOMPANY"
+swapCase("BrandName"); // "bRANDnAME"
 
 // Game text effects
-swapCase("GameOver");                 // "gAMEoVER"
-swapCase("LevelUp");                  // "lEVELuP"
-swapCase("PowerUp");                  // "pOWERuP"
+swapCase("GameOver"); // "gAMEoVER"
+swapCase("LevelUp"); // "lEVELuP"
+swapCase("PowerUp"); // "pOWERuP"
 
 // Creative usernames
-swapCase("CoolUser");                 // "cOOLuSER"
-swapCase("ProGamer");                 // "pROgAMER"
+swapCase("CoolUser"); // "cOOLuSER"
+swapCase("ProGamer"); // "pROgAMER"
 
 // Artistic text display
-swapCase("WelcomeToOurSite");         // "wELCOMEtOoURsITE"
-swapCase("SpecialOffer");             // "sPECIALoFFER"
+swapCase("WelcomeToOurSite"); // "wELCOMEtOoURsITE"
+swapCase("SpecialOffer"); // "sPECIALoFFER"
 ```
 
 ### Programming Examples
@@ -124,24 +124,24 @@ swapCase("SpecialOffer");             // "sPECIALoFFER"
 import { swapCase } from "text-swap-case";
 
 // Variable names
-swapCase("firstName");                // "FIRSTnAME"
-swapCase("lastName");                 // "LASTnAME"
-swapCase("emailAddress");             // "EMAILaDDRESS"
+swapCase("firstName"); // "FIRSTnAME"
+swapCase("lastName"); // "LASTnAME"
+swapCase("emailAddress"); // "EMAILaDDRESS"
 
 // Function names
-swapCase("getUserData");              // "GETuSERdATA"
-swapCase("validateInput");            // "VALIDATEiNPUT"
-swapCase("processPayment");           // "PROCESSPAYMENt"
+swapCase("getUserData"); // "GETuSERdATA"
+swapCase("validateInput"); // "VALIDATEiNPUT"
+swapCase("processPayment"); // "PROCESSPAYMENt"
 
 // Class names
-swapCase("UserService");              // "uSERsERVICE"
-swapCase("PaymentGateway");           // "pAYMENTgATEWAY"
-swapCase("DatabaseManager");          // "dATABASEmANAGER"
+swapCase("UserService"); // "uSERsERVICE"
+swapCase("PaymentGateway"); // "pAYMENTgATEWAY"
+swapCase("DatabaseManager"); // "dATABASEmANAGER"
 
 // Constants
-swapCase("API_KEY");                  // "api_key"
-swapCase("BASE_URL");                 // "base_url"
-swapCase("MAX_RETRIES");              // "max_retries"
+swapCase("API_KEY"); // "api_key"
+swapCase("BASE_URL"); // "base_url"
+swapCase("MAX_RETRIES"); // "max_retries"
 ```
 
 ### Special Characters and Unicode
@@ -150,18 +150,18 @@ swapCase("MAX_RETRIES");              // "max_retries"
 import { swapCase } from "text-swap-case";
 
 // Unicode characters
-swapCase("Café");                     // "cAFÉ"
-swapCase("Naïve");                    // "nAÏVE"
-swapCase("Résumé");                   // "rÉSUMÉ"
+swapCase("Café"); // "cAFÉ"
+swapCase("Naïve"); // "nAÏVE"
+swapCase("Résumé"); // "rÉSUMÉ"
 
 // Mixed content
-swapCase("Hello123World");            // "hELLO123wORLD"
-swapCase("Test@Email.com");           // "tEST@eMAIL.COM"
-swapCase("File_Name.txt");            // "fILE_nAME.TXT"
+swapCase("Hello123World"); // "hELLO123wORLD"
+swapCase("Test@Email.com"); // "tEST@eMAIL.COM"
+swapCase("File_Name.txt"); // "fILE_nAME.TXT"
 
 // Punctuation (unchanged)
-swapCase("Hello, World!");            // "hELLO, wORLD!"
-swapCase("Yes? No!");                 // "yES? nO!"
+swapCase("Hello, World!"); // "hELLO, wORLD!"
+swapCase("Yes? No!"); // "yES? nO!"
 ```
 
 ### Edge Cases
@@ -170,20 +170,20 @@ swapCase("Yes? No!");                 // "yES? nO!"
 import { swapCase } from "text-swap-case";
 
 // Empty and whitespace
-swapCase("");                         // ""
-swapCase(" ");                        // " "
-swapCase("   ");                      // "   "
+swapCase(""); // ""
+swapCase(" "); // " "
+swapCase("   "); // "   "
 
 // Only numbers
-swapCase("123456");                   // "123456"
-swapCase("3.14159");                  // "3.14159"
+swapCase("123456"); // "123456"
+swapCase("3.14159"); // "3.14159"
 
 // Only symbols
-swapCase("!@#$%");                    // "!@#$%"
-swapCase("()[]{}");                   // "()[]{})"
+swapCase("!@#$%"); // "!@#$%"
+swapCase("()[]{}"); // "()[]{})"
 
 // Mixed symbols and letters
-swapCase("A!b@C#");                   // "a!B@c#"
+swapCase("A!b@C#"); // "a!B@c#"
 ```
 
 ### Creative Applications
@@ -192,20 +192,20 @@ swapCase("A!b@C#");                   // "a!B@c#"
 import { swapCase } from "text-swap-case";
 
 // Alternating headers
-swapCase("ChApTeR oNe");              // "cHaPtEr OnE"
-swapCase("SeCtIoN tWo");              // "sEcTiOn TwO"
+swapCase("ChApTeR oNe"); // "cHaPtEr OnE"
+swapCase("SeCtIoN tWo"); // "sEcTiOn TwO"
 
 // Stylized buttons
-swapCase("CliCk HeRe");               // "cLIcK hErE"
-swapCase("DoWnLoAd NoW");             // "dOwNlOaD nOw"
+swapCase("CliCk HeRe"); // "cLIcK hErE"
+swapCase("DoWnLoAd NoW"); // "dOwNlOaD nOw"
 
 // Gaming elements
-swapCase("EnTeR nAmE");               // "eNtEr NaMe"
-swapCase("PlAyEr OnE");               // "pLaYeR oNe"
+swapCase("EnTeR nAmE"); // "eNtEr NaMe"
+swapCase("PlAyEr OnE"); // "pLaYeR oNe"
 
 // Social media style
-swapCase("fOlLoW mE");                // "FoLlOw Me"
-swapCase("lIkE aNd ShArE");           // "LiKe AnD sHaRe"
+swapCase("fOlLoW mE"); // "FoLlOw Me"
+swapCase("lIkE aNd ShArE"); // "LiKe AnD sHaRe"
 ```
 
 ## API

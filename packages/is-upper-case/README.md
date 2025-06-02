@@ -59,17 +59,17 @@ console.log(result); // true
 import { isUpperCase } from "text-is-upper-case";
 
 // True cases
-isUpperCase("HELLO");                 // true
-isUpperCase("WORLD");                 // true
-isUpperCase("HELLO WORLD");           // true
-isUpperCase("TEST123");               // true
-isUpperCase("API");                   // true
+isUpperCase("HELLO"); // true
+isUpperCase("WORLD"); // true
+isUpperCase("HELLO WORLD"); // true
+isUpperCase("TEST123"); // true
+isUpperCase("API"); // true
 
 // False cases
-isUpperCase("hello");                 // false
-isUpperCase("Hello");                 // false
-isUpperCase("HELLO world");           // false
-isUpperCase("Test");                  // false
+isUpperCase("hello"); // false
+isUpperCase("Hello"); // false
+isUpperCase("HELLO world"); // false
+isUpperCase("Test"); // false
 ```
 
 ### Validation Examples
@@ -78,20 +78,20 @@ isUpperCase("Test");                  // false
 import { isUpperCase } from "text-is-upper-case";
 
 // Environment variables validation
-isUpperCase("DATABASE_URL");          // true
-isUpperCase("API_SECRET_KEY");        // true
-isUpperCase("MAX_FILE_SIZE");         // true
+isUpperCase("DATABASE_URL"); // true
+isUpperCase("API_SECRET_KEY"); // true
+isUpperCase("MAX_FILE_SIZE"); // true
 
 // Constants validation
-isUpperCase("HTTP_STATUS_OK");        // true
-isUpperCase("ERROR_CODES");           // true
-isUpperCase("DEFAULT_TIMEOUT");       // true
+isUpperCase("HTTP_STATUS_OK"); // true
+isUpperCase("ERROR_CODES"); // true
+isUpperCase("DEFAULT_TIMEOUT"); // true
 
 // Acronyms validation
-isUpperCase("HTML");                  // true
-isUpperCase("CSS");                   // true
-isUpperCase("JSON");                  // true
-isUpperCase("XML");                   // true
+isUpperCase("HTML"); // true
+isUpperCase("CSS"); // true
+isUpperCase("JSON"); // true
+isUpperCase("XML"); // true
 ```
 
 ### Form Validation Examples
@@ -107,17 +107,17 @@ function validateCode(code) {
   return null;
 }
 
-validateCode("ABC123");               // null (valid)
-validateCode("abc123");               // "Code must be in uppercase"
+validateCode("ABC123"); // null (valid)
+validateCode("abc123"); // "Code must be in uppercase"
 
 // Currency code validation
 function validateCurrencyCode(code) {
   return isUpperCase(code) && code.length === 3;
 }
 
-validateCurrencyCode("USD");          // true
-validateCurrencyCode("usd");          // false
-validateCurrencyCode("EUR");          // true
+validateCurrencyCode("USD"); // true
+validateCurrencyCode("usd"); // false
+validateCurrencyCode("EUR"); // true
 ```
 
 ### Programming Examples
@@ -135,18 +135,18 @@ function isValidConfigKey(key) {
   return isUpperCase(key) && key.includes("_");
 }
 
-isValidConfigKey("SERVER_PORT");      // true
-isValidConfigKey("DATABASE_HOST");    // true
-isValidConfigKey("serverPort");       // false
+isValidConfigKey("SERVER_PORT"); // true
+isValidConfigKey("DATABASE_HOST"); // true
+isValidConfigKey("serverPort"); // false
 
 // Check if string follows CONSTANT_CASE
 function isConstantCase(str) {
   return isUpperCase(str) && /^[A-Z_]+$/.test(str);
 }
 
-isConstantCase("API_KEY");            // true
-isConstantCase("BASE_URL");           // true
-isConstantCase("API-KEY");            // false (contains hyphen)
+isConstantCase("API_KEY"); // true
+isConstantCase("BASE_URL"); // true
+isConstantCase("API-KEY"); // false (contains hyphen)
 ```
 
 ### Special Cases
@@ -155,21 +155,21 @@ isConstantCase("API-KEY");            // false (contains hyphen)
 import { isUpperCase } from "text-is-upper-case";
 
 // Numbers and symbols
-isUpperCase("123");                   // true (no letters to check)
-isUpperCase("!!!@@@");                // true (no letters to check)
-isUpperCase("TEST123");               // true
-isUpperCase("123TEST");               // true
+isUpperCase("123"); // true (no letters to check)
+isUpperCase("!!!@@@"); // true (no letters to check)
+isUpperCase("TEST123"); // true
+isUpperCase("123TEST"); // true
 
 // Empty and whitespace
-isUpperCase("");                      // true (no letters to check)
-isUpperCase(" ");                     // true (no letters to check)
-isUpperCase("   ");                   // true (no letters to check)
+isUpperCase(""); // true (no letters to check)
+isUpperCase(" "); // true (no letters to check)
+isUpperCase("   "); // true (no letters to check)
 
 // Mixed with symbols
-isUpperCase("API_KEY");               // true
-isUpperCase("TEST-123");              // true
-isUpperCase("HELLO.WORLD");           // true
-isUpperCase("HELLO@WORLD.COM");       // true
+isUpperCase("API_KEY"); // true
+isUpperCase("TEST-123"); // true
+isUpperCase("HELLO.WORLD"); // true
+isUpperCase("HELLO@WORLD.COM"); // true
 ```
 
 ### Real-world Applications
@@ -182,27 +182,27 @@ function validateCountryCode(code) {
   return isUpperCase(code) && code.length === 2;
 }
 
-validateCountryCode("US");            // true
-validateCountryCode("GB");            // true
-validateCountryCode("us");            // false
+validateCountryCode("US"); // true
+validateCountryCode("GB"); // true
+validateCountryCode("us"); // false
 
 // Language code validation
 function validateLanguageCode(code) {
   return isUpperCase(code) && /^[A-Z]{2}(-[A-Z]{2})?$/.test(code);
 }
 
-validateLanguageCode("EN");           // true
-validateLanguageCode("EN-US");        // true
-validateLanguageCode("en-us");        // false
+validateLanguageCode("EN"); // true
+validateLanguageCode("EN-US"); // true
+validateLanguageCode("en-us"); // false
 
 // File extension validation (for specific formats)
 function isUpperCaseExtension(ext) {
-  return ext.startsWith('.') && isUpperCase(ext.slice(1));
+  return ext.startsWith(".") && isUpperCase(ext.slice(1));
 }
 
-isUpperCaseExtension(".PDF");         // true
-isUpperCaseExtension(".JPG");         // true
-isUpperCaseExtension(".pdf");         // false
+isUpperCaseExtension(".PDF"); // true
+isUpperCaseExtension(".JPG"); // true
+isUpperCaseExtension(".pdf"); // false
 ```
 
 ### Input Sanitization
@@ -212,12 +212,12 @@ import { isUpperCase } from "text-is-upper-case";
 
 // Sanitize input for uppercase-only fields
 function sanitizeUpperCaseInput(input) {
-  if (typeof input !== 'string') {
-    throw new Error('Input must be a string');
+  if (typeof input !== "string") {
+    throw new Error("Input must be a string");
   }
 
   if (!isUpperCase(input)) {
-    throw new Error('Input must be in uppercase');
+    throw new Error("Input must be in uppercase");
   }
 
   return input;
@@ -226,14 +226,12 @@ function sanitizeUpperCaseInput(input) {
 // User input validation
 function validatePostalCode(code) {
   // Some postal codes must be uppercase
-  return typeof code === 'string' &&
-         code.length >= 3 &&
-         isUpperCase(code);
+  return typeof code === "string" && code.length >= 3 && isUpperCase(code);
 }
 
-validatePostalCode("SW1A 1AA");       // true (UK postal code)
-validatePostalCode("sw1a 1aa");       // false
-validatePostalCode("10001");          // true (US ZIP code)
+validatePostalCode("SW1A 1AA"); // true (UK postal code)
+validatePostalCode("sw1a 1aa"); // false
+validatePostalCode("10001"); // true (US ZIP code)
 ```
 
 ### Batch Validation
@@ -251,7 +249,7 @@ validateUpperCaseArray(["API", "url", "JSON"]); // false
 
 // Find non-uppercase strings
 function findNonUpperCase(strings) {
-  return strings.filter(str => !isUpperCase(str));
+  return strings.filter((str) => !isUpperCase(str));
 }
 
 const mixed = ["API", "url", "JSON", "html"];

@@ -59,21 +59,21 @@ console.log(result); // "hello world"
 import { noCase } from "text-no-case";
 
 // Simple transformations
-noCase("hello world");                // "hello world"
-noCase("Hello World");                // "hello world"
-noCase("HELLO WORLD");                // "hello world"
+noCase("hello world"); // "hello world"
+noCase("Hello World"); // "hello world"
+noCase("HELLO WORLD"); // "hello world"
 
 // From other cases
-noCase("camelCase");                  // "camel case"
-noCase("PascalCase");                 // "pascal case"
-noCase("snake_case");                 // "snake case"
-noCase("kebab-case");                 // "kebab case"
-noCase("CONSTANT_CASE");              // "constant case"
+noCase("camelCase"); // "camel case"
+noCase("PascalCase"); // "pascal case"
+noCase("snake_case"); // "snake case"
+noCase("kebab-case"); // "kebab case"
+noCase("CONSTANT_CASE"); // "constant case"
 
 // Complex examples
-noCase("XMLHttpRequest");             // "xml http request"
-noCase("iPhone");                     // "i phone"
-noCase("version 1.2.3");             // "version 1 2 3"
+noCase("XMLHttpRequest"); // "xml http request"
+noCase("iPhone"); // "i phone"
+noCase("version 1.2.3"); // "version 1 2 3"
 ```
 
 ### Advanced Usage
@@ -82,18 +82,18 @@ noCase("version 1.2.3");             // "version 1 2 3"
 import { noCase } from "text-no-case";
 
 // Technical terms
-noCase("API_KEY");                    // "api key"
-noCase("HTTPSConnection");            // "https connection"
-noCase("JSONResponse");               // "json response"
+noCase("API_KEY"); // "api key"
+noCase("HTTPSConnection"); // "https connection"
+noCase("JSONResponse"); // "json response"
 
 // Mixed separators
-noCase("some-mixed_caseExample");     // "some mixed case example"
-noCase("kebab-snake_camelCase");      // "kebab snake camel case"
+noCase("some-mixed_caseExample"); // "some mixed case example"
+noCase("kebab-snake_camelCase"); // "kebab snake camel case"
 
 // Numbers and special characters
-noCase("version1.2.3");               // "version 1 2 3"
-noCase("HTML5Parser");                // "html 5 parser"
-noCase("CSS3Animation");              // "css 3 animation"
+noCase("version1.2.3"); // "version 1 2 3"
+noCase("HTML5Parser"); // "html 5 parser"
+noCase("CSS3Animation"); // "css 3 animation"
 ```
 
 ### Real-world Examples
@@ -102,24 +102,24 @@ noCase("CSS3Animation");              // "css 3 animation"
 import { noCase } from "text-no-case";
 
 // Configuration keys
-noCase("DATABASE_URL");               // "database url"
-noCase("API_SECRET_KEY");             // "api secret key"
-noCase("MAX_FILE_SIZE");              // "max file size"
+noCase("DATABASE_URL"); // "database url"
+noCase("API_SECRET_KEY"); // "api secret key"
+noCase("MAX_FILE_SIZE"); // "max file size"
 
 // Class names to readable text
-noCase("UserProfileComponent");       // "user profile component"
-noCase("PaymentGatewayService");      // "payment gateway service"
-noCase("DatabaseConnectionPool");     // "database connection pool"
+noCase("UserProfileComponent"); // "user profile component"
+noCase("PaymentGatewayService"); // "payment gateway service"
+noCase("DatabaseConnectionPool"); // "database connection pool"
 
 // Method names to descriptions
-noCase("getUserById");                // "get user by id"
-noCase("validateEmailAddress");       // "validate email address"
-noCase("generatePasswordHash");       // "generate password hash"
+noCase("getUserById"); // "get user by id"
+noCase("validateEmailAddress"); // "validate email address"
+noCase("generatePasswordHash"); // "generate password hash"
 
 // Error codes to messages
-noCase("INVALID_CREDENTIALS");        // "invalid credentials"
-noCase("CONNECTION_TIMEOUT");         // "connection timeout"
-noCase("RESOURCE_NOT_FOUND");         // "resource not found"
+noCase("INVALID_CREDENTIALS"); // "invalid credentials"
+noCase("CONNECTION_TIMEOUT"); // "connection timeout"
+noCase("RESOURCE_NOT_FOUND"); // "resource not found"
 ```
 
 ### With Custom Options
@@ -134,17 +134,17 @@ const customNoCase = noCase("hello_world", {
     if (word === "api") return "API";
     if (word === "id") return "ID";
     return word;
-  }
+  },
 });
 
 // Using custom split function
 const customSplit = noCase("my-custom-string", {
-  split: (value) => value.split(/[-_]/g)
+  split: (value) => value.split(/[-_]/g),
 });
 
 // Using strip regex
 const customStrip = noCase("test@example.com", {
-  stripRegexp: /[@.]/g
+  stripRegexp: /[@.]/g,
 });
 ```
 

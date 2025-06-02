@@ -76,7 +76,10 @@ const TEST_CASES: [string, string][] = [
 
   // Mixed delimiters
   ["mixed_case-string.example", "MIXED_CASE_STRING_EXAMPLE"],
-  ["test_string-with.multiple/delimiters", "TEST_STRING_WITH_MULTIPLE_DELIMITERS"],
+  [
+    "test_string-with.multiple/delimiters",
+    "TEST_STRING_WITH_MULTIPLE_DELIMITERS",
+  ],
 
   // Unicode and international characters
   ["café", "CAFÉ"],

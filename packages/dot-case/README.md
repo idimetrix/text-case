@@ -59,12 +59,12 @@ console.log(result); // "hello.world"
 import { dotCase } from "text-dot-case";
 
 // From different cases
-dotCase("Hello World");               // "hello.world"
-dotCase("helloWorld");                // "hello.world"
-dotCase("HelloWorld");                // "hello.world"
-dotCase("hello_world");               // "hello.world"
-dotCase("hello-world");               // "hello.world"
-dotCase("HELLO_WORLD");               // "hello.world"
+dotCase("Hello World"); // "hello.world"
+dotCase("helloWorld"); // "hello.world"
+dotCase("HelloWorld"); // "hello.world"
+dotCase("hello_world"); // "hello.world"
+dotCase("hello-world"); // "hello.world"
+dotCase("HELLO_WORLD"); // "hello.world"
 ```
 
 ### Complex Examples
@@ -73,16 +73,16 @@ dotCase("HELLO_WORLD");               // "hello.world"
 import { dotCase } from "text-dot-case";
 
 // Mixed cases and numbers
-dotCase("XMLParser");                 // "xml.parser"
-dotCase("iPhone6Plus");               // "i.phone6.plus"
-dotCase("HTML5Canvas");               // "html5.canvas"
-dotCase("getUserID");                 // "get.user.id"
+dotCase("XMLParser"); // "xml.parser"
+dotCase("iPhone6Plus"); // "i.phone6.plus"
+dotCase("HTML5Canvas"); // "html5.canvas"
+dotCase("getUserID"); // "get.user.id"
 
 // With symbols and spaces
-dotCase("hello, world!");             // "hello.world"
-dotCase("Hello & World");             // "hello.world"
-dotCase("test@example.com");          // "test.example.com"
-dotCase("user-name_123");             // "user.name.123"
+dotCase("hello, world!"); // "hello.world"
+dotCase("Hello & World"); // "hello.world"
+dotCase("test@example.com"); // "test.example.com"
+dotCase("user-name_123"); // "user.name.123"
 ```
 
 ### Real-world Applications
@@ -93,8 +93,8 @@ import { dotCase } from "text-dot-case";
 // Object property names
 const apiResponse = {
   "First Name": "John",
-  "Last_Name": "Doe",
-  "emailAddress": "john@example.com"
+  Last_Name: "Doe",
+  emailAddress: "john@example.com",
 };
 
 const normalized = Object.keys(apiResponse).reduce((acc, key) => {
@@ -104,14 +104,14 @@ const normalized = Object.keys(apiResponse).reduce((acc, key) => {
 // { "first.name": "John", "last.name": "Doe", "email.address": "john@example.com" }
 
 // Configuration keys
-dotCase("DATABASE_HOST");             // "database.host"
-dotCase("apiSecretKey");              // "api.secret.key"
-dotCase("maxRetryAttempts");          // "max.retry.attempts"
+dotCase("DATABASE_HOST"); // "database.host"
+dotCase("apiSecretKey"); // "api.secret.key"
+dotCase("maxRetryAttempts"); // "max.retry.attempts"
 
 // File naming
-dotCase("UserProfile");               // "user.profile"
-dotCase("ShoppingCart");              // "shopping.cart"
-dotCase("PaymentGateway");            // "payment.gateway"
+dotCase("UserProfile"); // "user.profile"
+dotCase("ShoppingCart"); // "shopping.cart"
+dotCase("PaymentGateway"); // "payment.gateway"
 ```
 
 ### Advanced Options
@@ -121,13 +121,13 @@ import { dotCase } from "text-dot-case";
 
 // Custom separators
 dotCase("hello@world#test", {
-  separateNumbers: false
-});                                   // "hello.world.test"
+  separateNumbers: false,
+}); // "hello.world.test"
 
 // Preserve certain patterns
 dotCase("API_VERSION_2_1", {
-  splitRegexp: /([a-z])([A-Z])/g
-});                                   // "api.version.2.1"
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "api.version.2.1"
 ```
 
 ### Programming Examples
@@ -141,14 +141,14 @@ const dotNotation = classNames.map(dotCase);
 // ["user.service", "payment.processor", "email.validator"]
 
 // Method names
-dotCase("getUserById");               // "get.user.by.id"
-dotCase("calculateTotalPrice");       // "calculate.total.price"
-dotCase("validateEmailAddress");      // "validate.email.address"
+dotCase("getUserById"); // "get.user.by.id"
+dotCase("calculateTotalPrice"); // "calculate.total.price"
+dotCase("validateEmailAddress"); // "validate.email.address"
 
 // Constants
-dotCase("MAX_FILE_SIZE");             // "max.file.size"
-dotCase("DEFAULT_TIMEOUT");           // "default.timeout"
-dotCase("ERROR_MESSAGES");            // "error.messages"
+dotCase("MAX_FILE_SIZE"); // "max.file.size"
+dotCase("DEFAULT_TIMEOUT"); // "default.timeout"
+dotCase("ERROR_MESSAGES"); // "error.messages"
 ```
 
 ### Data Processing
@@ -168,10 +168,10 @@ function normalizeFormData(formData) {
 }
 
 const form = {
-  "firstName": "John",
-  "lastName": "Doe",
-  "emailAddress": "john@example.com",
-  "phoneNumber": "+1234567890"
+  firstName: "John",
+  lastName: "Doe",
+  emailAddress: "john@example.com",
+  phoneNumber: "+1234567890",
 };
 
 normalizeFormData(form);
@@ -184,9 +184,9 @@ normalizeFormData(form);
 
 // Database column mapping
 function createColumnMapping(schema) {
-  return schema.map(column => ({
+  return schema.map((column) => ({
     original: column,
-    dotCase: dotCase(column)
+    dotCase: dotCase(column),
   }));
 }
 
@@ -207,7 +207,7 @@ import { dotCase } from "text-dot-case";
 function transformProps(props) {
   const transformed = {};
 
-  Object.keys(props).forEach(key => {
+  Object.keys(props).forEach((key) => {
     transformed[dotCase(key)] = props[key];
   });
 
@@ -218,7 +218,7 @@ function transformProps(props) {
 const vueData = {
   userName: "john",
   isLoggedIn: true,
-  shoppingCartItems: []
+  shoppingCartItems: [],
 };
 
 const normalized = Object.keys(vueData).reduce((acc, key) => {
@@ -228,9 +228,9 @@ const normalized = Object.keys(vueData).reduce((acc, key) => {
 // { "user.name": "john", "is.logged.in": true, "shopping.cart.items": [] }
 
 // Angular service names
-dotCase("UserAuthService");           // "user.auth.service"
-dotCase("HttpInterceptor");           // "http.interceptor"
-dotCase("RouteGuard");                // "route.guard"
+dotCase("UserAuthService"); // "user.auth.service"
+dotCase("HttpInterceptor"); // "http.interceptor"
+dotCase("RouteGuard"); // "route.guard"
 ```
 
 ### Utility Functions
@@ -241,13 +241,13 @@ import { dotCase } from "text-dot-case";
 // Batch transformation
 function transformKeys(obj, transformer = dotCase) {
   if (Array.isArray(obj)) {
-    return obj.map(item => transformKeys(item, transformer));
+    return obj.map((item) => transformKeys(item, transformer));
   }
 
-  if (obj !== null && typeof obj === 'object') {
+  if (obj !== null && typeof obj === "object") {
     const transformed = {};
 
-    Object.keys(obj).forEach(key => {
+    Object.keys(obj).forEach((key) => {
       transformed[transformer(key)] = transformKeys(obj[key], transformer);
     });
 
@@ -260,12 +260,12 @@ function transformKeys(obj, transformer = dotCase) {
 const nestedData = {
   userInfo: {
     firstName: "John",
-    lastLoginDate: "2023-01-01"
+    lastLoginDate: "2023-01-01",
   },
   accountSettings: {
     emailNotifications: true,
-    twoFactorAuth: false
-  }
+    twoFactorAuth: false,
+  },
 };
 
 transformKeys(nestedData);
@@ -282,11 +282,11 @@ transformKeys(nestedData);
 
 // Path generation
 function generatePath(...segments) {
-  return segments.map(dotCase).join('.');
+  return segments.map(dotCase).join(".");
 }
 
 generatePath("user", "profile", "settings"); // "user.profile.settings"
-generatePath("API", "version", "2.0");       // "api.version.2.0"
+generatePath("API", "version", "2.0"); // "api.version.2.0"
 ```
 
 ### Edge Cases
@@ -295,23 +295,23 @@ generatePath("API", "version", "2.0");       // "api.version.2.0"
 import { dotCase } from "text-dot-case";
 
 // Empty and special inputs
-dotCase("");                          // ""
-dotCase(" ");                         // ""
-dotCase("   ");                       // ""
+dotCase(""); // ""
+dotCase(" "); // ""
+dotCase("   "); // ""
 
 // Numbers and symbols only
-dotCase("123");                       // "123"
-dotCase("@#$");                       // ""
-dotCase("123abc");                    // "123.abc"
+dotCase("123"); // "123"
+dotCase("@#$"); // ""
+dotCase("123abc"); // "123.abc"
 
 // Single words
-dotCase("hello");                     // "hello"
-dotCase("HELLO");                     // "hello"
-dotCase("Hello");                     // "hello"
+dotCase("hello"); // "hello"
+dotCase("HELLO"); // "hello"
+dotCase("Hello"); // "hello"
 
 // Already dot case
-dotCase("hello.world");               // "hello.world"
-dotCase("user.name.here");            // "user.name.here"
+dotCase("hello.world"); // "hello.world"
+dotCase("user.name.here"); // "user.name.here"
 ```
 
 ## API
@@ -335,9 +335,9 @@ Transforms a string into dot.case format.
 #### Examples
 
 ```javascript
-dotCase("HelloWorld");                // "hello.world"
-dotCase("hello_world");               // "hello.world"
-dotCase("HELLO-WORLD");               // "hello.world"
+dotCase("HelloWorld"); // "hello.world"
+dotCase("hello_world"); // "hello.world"
+dotCase("HELLO-WORLD"); // "hello.world"
 ```
 
 ## Development

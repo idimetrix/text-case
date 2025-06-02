@@ -411,9 +411,18 @@ const TEST_CASES: [string, string][] = [
   ["mixed_case-string.example", "mixed case string example"],
   ["MIXED_CASE-STRING.EXAMPLE", "mixed case string example"],
   ["Mixed_Case-String.Example", "mixed case string example"],
-  ["test_string-with.multiple/delimiters", "test string with multiple delimiters"],
-  ["TEST_STRING-WITH.MULTIPLE/DELIMITERS", "test string with multiple delimiters"],
-  ["Test_String-With.Multiple/Delimiters", "test string with multiple delimiters"],
+  [
+    "test_string-with.multiple/delimiters",
+    "test string with multiple delimiters",
+  ],
+  [
+    "TEST_STRING-WITH.MULTIPLE/DELIMITERS",
+    "test string with multiple delimiters",
+  ],
+  [
+    "Test_String-With.Multiple/Delimiters",
+    "test string with multiple delimiters",
+  ],
 
   // Extreme edge cases
   ["", ""],

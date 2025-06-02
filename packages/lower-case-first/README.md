@@ -59,21 +59,21 @@ console.log(result); // "hello World"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Simple transformations
-lowerCaseFirst("Hello");              // "hello"
-lowerCaseFirst("World");              // "world"
-lowerCaseFirst("Hello World");        // "hello World"
+lowerCaseFirst("Hello"); // "hello"
+lowerCaseFirst("World"); // "world"
+lowerCaseFirst("Hello World"); // "hello World"
 
 // Already lowercase
-lowerCaseFirst("hello");              // "hello"
-lowerCaseFirst("hello world");        // "hello world"
+lowerCaseFirst("hello"); // "hello"
+lowerCaseFirst("hello world"); // "hello world"
 
 // Mixed case
-lowerCaseFirst("HELLo WoRLD");        // "hELLo WoRLD"
-lowerCaseFirst("TEST");               // "tEST"
+lowerCaseFirst("HELLo WoRLD"); // "hELLo WoRLD"
+lowerCaseFirst("TEST"); // "tEST"
 
 // Single character
-lowerCaseFirst("A");                  // "a"
-lowerCaseFirst("a");                  // "a"
+lowerCaseFirst("A"); // "a"
+lowerCaseFirst("a"); // "a"
 ```
 
 ### Real-world Examples
@@ -82,24 +82,24 @@ lowerCaseFirst("a");                  // "a"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Variable naming (camelCase style)
-lowerCaseFirst("FirstName");          // "firstName"
-lowerCaseFirst("LastName");           // "lastName"
-lowerCaseFirst("EmailAddress");       // "emailAddress"
+lowerCaseFirst("FirstName"); // "firstName"
+lowerCaseFirst("LastName"); // "lastName"
+lowerCaseFirst("EmailAddress"); // "emailAddress"
 
 // JSON property names
-lowerCaseFirst("UserProfile");        // "userProfile"
-lowerCaseFirst("ApiResponse");        // "apiResponse"
+lowerCaseFirst("UserProfile"); // "userProfile"
+lowerCaseFirst("ApiResponse"); // "apiResponse"
 lowerCaseFirst("DatabaseConnection"); // "databaseConnection"
 
 // CSS property names
-lowerCaseFirst("BackgroundColor");    // "backgroundColor"
-lowerCaseFirst("FontSize");           // "fontSize"
-lowerCaseFirst("MarginTop");          // "marginTop"
+lowerCaseFirst("BackgroundColor"); // "backgroundColor"
+lowerCaseFirst("FontSize"); // "fontSize"
+lowerCaseFirst("MarginTop"); // "marginTop"
 
 // Function names
-lowerCaseFirst("GetUserData");        // "getUserData"
-lowerCaseFirst("ValidateInput");      // "validateInput"
-lowerCaseFirst("ProcessPayment");     // "processPayment"
+lowerCaseFirst("GetUserData"); // "getUserData"
+lowerCaseFirst("ValidateInput"); // "validateInput"
+lowerCaseFirst("ProcessPayment"); // "processPayment"
 ```
 
 ### Programming Examples
@@ -108,24 +108,24 @@ lowerCaseFirst("ProcessPayment");     // "processPayment"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Class names to instance names
-lowerCaseFirst("UserService");        // "userService"
-lowerCaseFirst("PaymentGateway");     // "paymentGateway"
-lowerCaseFirst("DatabaseManager");    // "databaseManager"
+lowerCaseFirst("UserService"); // "userService"
+lowerCaseFirst("PaymentGateway"); // "paymentGateway"
+lowerCaseFirst("DatabaseManager"); // "databaseManager"
 
 // Method names
-lowerCaseFirst("Initialize");         // "initialize"
-lowerCaseFirst("Execute");            // "execute"
-lowerCaseFirst("Terminate");          // "terminate"
+lowerCaseFirst("Initialize"); // "initialize"
+lowerCaseFirst("Execute"); // "execute"
+lowerCaseFirst("Terminate"); // "terminate"
 
 // Property names
-lowerCaseFirst("IsActive");           // "isActive"
-lowerCaseFirst("HasPermission");      // "hasPermission"
-lowerCaseFirst("CanEdit");            // "canEdit"
+lowerCaseFirst("IsActive"); // "isActive"
+lowerCaseFirst("HasPermission"); // "hasPermission"
+lowerCaseFirst("CanEdit"); // "canEdit"
 
 // Event names
-lowerCaseFirst("OnClick");            // "onClick"
-lowerCaseFirst("OnSubmit");           // "onSubmit"
-lowerCaseFirst("OnLoad");             // "onLoad"
+lowerCaseFirst("OnClick"); // "onClick"
+lowerCaseFirst("OnSubmit"); // "onSubmit"
+lowerCaseFirst("OnLoad"); // "onLoad"
 ```
 
 ### API and Configuration Examples
@@ -134,25 +134,25 @@ lowerCaseFirst("OnLoad");             // "onLoad"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // API endpoint names
-lowerCaseFirst("GetUsers");           // "getUsers"
-lowerCaseFirst("CreateUser");         // "createUser"
-lowerCaseFirst("UpdateProfile");      // "updateProfile"
-lowerCaseFirst("DeleteAccount");      // "deleteAccount"
+lowerCaseFirst("GetUsers"); // "getUsers"
+lowerCaseFirst("CreateUser"); // "createUser"
+lowerCaseFirst("UpdateProfile"); // "updateProfile"
+lowerCaseFirst("DeleteAccount"); // "deleteAccount"
 
 // Configuration keys
-lowerCaseFirst("ServerPort");         // "serverPort"
-lowerCaseFirst("DatabaseUrl");        // "databaseUrl"
-lowerCaseFirst("ApiSecretKey");       // "apiSecretKey"
+lowerCaseFirst("ServerPort"); // "serverPort"
+lowerCaseFirst("DatabaseUrl"); // "databaseUrl"
+lowerCaseFirst("ApiSecretKey"); // "apiSecretKey"
 
 // Component props
-lowerCaseFirst("ShowHeader");         // "showHeader"
-lowerCaseFirst("AllowEdit");          // "allowEdit"
-lowerCaseFirst("AutoSave");           // "autoSave"
+lowerCaseFirst("ShowHeader"); // "showHeader"
+lowerCaseFirst("AllowEdit"); // "allowEdit"
+lowerCaseFirst("AutoSave"); // "autoSave"
 
 // State variables
-lowerCaseFirst("IsLoading");          // "isLoading"
-lowerCaseFirst("HasError");           // "hasError"
-lowerCaseFirst("UserData");           // "userData"
+lowerCaseFirst("IsLoading"); // "isLoading"
+lowerCaseFirst("HasError"); // "hasError"
+lowerCaseFirst("UserData"); // "userData"
 ```
 
 ### Edge Cases
@@ -161,24 +161,24 @@ lowerCaseFirst("UserData");           // "userData"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Empty and whitespace
-lowerCaseFirst("");                   // ""
-lowerCaseFirst(" ");                  // " "
-lowerCaseFirst("  Hello");            // "  Hello"
+lowerCaseFirst(""); // ""
+lowerCaseFirst(" "); // " "
+lowerCaseFirst("  Hello"); // "  Hello"
 
 // Numbers and symbols
-lowerCaseFirst("123ABC");             // "123ABC"
-lowerCaseFirst("!Important");         // "!Important"
-lowerCaseFirst("@Username");          // "@Username"
+lowerCaseFirst("123ABC"); // "123ABC"
+lowerCaseFirst("!Important"); // "!Important"
+lowerCaseFirst("@Username"); // "@Username"
 
 // Unicode characters
-lowerCaseFirst("Élégant");            // "élégant"
-lowerCaseFirst("Naïve");              // "naïve"
-lowerCaseFirst("Résumé");             // "résumé"
+lowerCaseFirst("Élégant"); // "élégant"
+lowerCaseFirst("Naïve"); // "naïve"
+lowerCaseFirst("Résumé"); // "résumé"
 
 // Acronyms
-lowerCaseFirst("API");                // "aPI"
-lowerCaseFirst("URL");                // "uRL"
-lowerCaseFirst("JSON");               // "jSON"
+lowerCaseFirst("API"); // "aPI"
+lowerCaseFirst("URL"); // "uRL"
+lowerCaseFirst("JSON"); // "jSON"
 ```
 
 ### Framework Integration Examples
@@ -187,19 +187,19 @@ lowerCaseFirst("JSON");               // "jSON"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // React component props
-lowerCaseFirst("ClassName");          // "className"
-lowerCaseFirst("OnClick");            // "onClick"
-lowerCaseFirst("DefaultValue");       // "defaultValue"
+lowerCaseFirst("ClassName"); // "className"
+lowerCaseFirst("OnClick"); // "onClick"
+lowerCaseFirst("DefaultValue"); // "defaultValue"
 
 // Vue.js properties
-lowerCaseFirst("VModel");             // "vModel"
-lowerCaseFirst("VShow");              // "vShow"
-lowerCaseFirst("VIf");                // "vIf"
+lowerCaseFirst("VModel"); // "vModel"
+lowerCaseFirst("VShow"); // "vShow"
+lowerCaseFirst("VIf"); // "vIf"
 
 // Angular directives
-lowerCaseFirst("NgIf");               // "ngIf"
-lowerCaseFirst("NgFor");              // "ngFor"
-lowerCaseFirst("NgModel");            // "ngModel"
+lowerCaseFirst("NgIf"); // "ngIf"
+lowerCaseFirst("NgFor"); // "ngFor"
+lowerCaseFirst("NgModel"); // "ngModel"
 ```
 
 ## API

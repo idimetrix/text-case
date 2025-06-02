@@ -59,20 +59,20 @@ console.log(result); // "hello-world"
 import { kebabCase } from "text-kebab-case";
 
 // Simple transformations
-kebabCase("hello world");          // "hello-world"
-kebabCase("Hello World");          // "hello-world"
-kebabCase("HELLO WORLD");          // "hello-world"
+kebabCase("hello world"); // "hello-world"
+kebabCase("Hello World"); // "hello-world"
+kebabCase("HELLO WORLD"); // "hello-world"
 
 // From other cases
-kebabCase("camelCase");            // "camel-case"
-kebabCase("PascalCase");           // "pascal-case"
-kebabCase("snake_case");           // "snake-case"
-kebabCase("dot.case");             // "dot-case"
+kebabCase("camelCase"); // "camel-case"
+kebabCase("PascalCase"); // "pascal-case"
+kebabCase("snake_case"); // "snake-case"
+kebabCase("dot.case"); // "dot-case"
 
 // Complex examples
-kebabCase("XMLHttpRequest");       // "xml-http-request"
-kebabCase("iPhone");               // "i-phone"
-kebabCase("version 1.2.3");       // "version-1-2-3"
+kebabCase("XMLHttpRequest"); // "xml-http-request"
+kebabCase("iPhone"); // "i-phone"
+kebabCase("version 1.2.3"); // "version-1-2-3"
 ```
 
 ### Advanced Options
@@ -82,12 +82,12 @@ import { kebabCase, kebabCaseTransformMerge } from "text-kebab-case";
 
 // Custom transform to merge numbers without separator
 kebabCase("version 1.2.3", {
-  transform: kebabCaseTransformMerge
+  transform: kebabCaseTransformMerge,
 }); // "version-123"
 
 // With custom separator handling
 kebabCase("hello_world.test", {
-  stripRegexp: /[_.]/g
+  stripRegexp: /[_.]/g,
 }); // "hello-world-test"
 ```
 
@@ -97,24 +97,24 @@ kebabCase("hello_world.test", {
 import { kebabCase } from "text-kebab-case";
 
 // CSS class names
-kebabCase("primaryButton");         // "primary-button"
-kebabCase("navigation_bar");        // "navigation-bar"
-kebabCase("form-input");            // "form-input"
+kebabCase("primaryButton"); // "primary-button"
+kebabCase("navigation_bar"); // "navigation-bar"
+kebabCase("form-input"); // "form-input"
 
 // HTML attributes
-kebabCase("dataToggle");            // "data-toggle"
-kebabCase("ariaLabel");             // "aria-label"
-kebabCase("tabIndex");              // "tab-index"
+kebabCase("dataToggle"); // "data-toggle"
+kebabCase("ariaLabel"); // "aria-label"
+kebabCase("tabIndex"); // "tab-index"
 
 // URL slugs
-kebabCase("My Blog Post Title");    // "my-blog-post-title"
+kebabCase("My Blog Post Title"); // "my-blog-post-title"
 kebabCase("Product Category Name"); // "product-category-name"
-kebabCase("Special Characters!");   // "special-characters"
+kebabCase("Special Characters!"); // "special-characters"
 
 // File names
 kebabCase("userProfile.component"); // "user-profile-component"
-kebabCase("api_service");           // "api-service"
-kebabCase("configUtils");           // "config-utils"
+kebabCase("api_service"); // "api-service"
+kebabCase("configUtils"); // "config-utils"
 ```
 
 ## API

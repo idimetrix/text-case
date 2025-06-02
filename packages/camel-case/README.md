@@ -59,20 +59,20 @@ console.log(result); // "helloWorld"
 import { camelCase } from "text-camel-case";
 
 // Simple transformations
-camelCase("hello world");          // "helloWorld"
-camelCase("Hello World");          // "helloWorld"
-camelCase("HELLO WORLD");          // "helloWorld"
+camelCase("hello world"); // "helloWorld"
+camelCase("Hello World"); // "helloWorld"
+camelCase("HELLO WORLD"); // "helloWorld"
 
 // From other cases
-camelCase("snake_case");           // "snakeCase"
-camelCase("kebab-case");           // "kebabCase"
-camelCase("dot.case");             // "dotCase"
-camelCase("PascalCase");           // "pascalCase"
+camelCase("snake_case"); // "snakeCase"
+camelCase("kebab-case"); // "kebabCase"
+camelCase("dot.case"); // "dotCase"
+camelCase("PascalCase"); // "pascalCase"
 
 // Complex examples
-camelCase("XMLHttpRequest");       // "xmlHttpRequest"
-camelCase("iPhone");               // "iPhone"
-camelCase("version 1.2.3");       // "version123"
+camelCase("XMLHttpRequest"); // "xmlHttpRequest"
+camelCase("iPhone"); // "iPhone"
+camelCase("version 1.2.3"); // "version123"
 ```
 
 ### Advanced Options
@@ -82,12 +82,12 @@ import { camelCase, camelCaseTransformMerge } from "text-camel-case";
 
 // Custom transform to merge numbers without separator
 camelCase("version 1.2.3", {
-  transform: camelCaseTransformMerge
+  transform: camelCaseTransformMerge,
 }); // "version123"
 
 // With custom separator handling
 camelCase("hello_world-test", {
-  stripRegexp: /[_-]/g
+  stripRegexp: /[_-]/g,
 }); // "helloWorldTest"
 ```
 
@@ -97,19 +97,19 @@ camelCase("hello_world-test", {
 import { camelCase } from "text-camel-case";
 
 // API field names
-camelCase("first_name");           // "firstName"
-camelCase("email_address");        // "emailAddress"
-camelCase("created_at");           // "createdAt"
+camelCase("first_name"); // "firstName"
+camelCase("email_address"); // "emailAddress"
+camelCase("created_at"); // "createdAt"
 
 // CSS properties to JavaScript
-camelCase("background-color");     // "backgroundColor"
-camelCase("font-family");          // "fontFamily"
-camelCase("border-radius");        // "borderRadius"
+camelCase("background-color"); // "backgroundColor"
+camelCase("font-family"); // "fontFamily"
+camelCase("border-radius"); // "borderRadius"
 
 // Database columns to object properties
-camelCase("user_id");              // "userId"
-camelCase("last_login_date");      // "lastLoginDate"
-camelCase("is_active");            // "isActive"
+camelCase("user_id"); // "userId"
+camelCase("last_login_date"); // "lastLoginDate"
+camelCase("is_active"); // "isActive"
 ```
 
 ## API

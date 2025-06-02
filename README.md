@@ -22,6 +22,7 @@
 ## 📦 Installation
 
 ### All packages (recommended)
+
 ```bash
 # npm
 npm install text-case
@@ -37,6 +38,7 @@ bun add text-case
 ```
 
 ### Individual packages
+
 ```bash
 # Install only what you need
 npm install text-camel-case text-kebab-case text-snake-case
@@ -46,76 +48,76 @@ npm install text-camel-case text-kebab-case text-snake-case
 
 ```javascript
 import {
-  camelCase,      // userProfileData
-  pascalCase,     // UserProfileData
-  kebabCase,      // user-profile-data
-  snakeCase,      // user_profile_data
-  titleCase,      // User Profile Data
-  sentenceCase,   // User profile data
-  constantCase,   // USER_PROFILE_DATA
-  dotCase,        // user.profile.data
-  pathCase,       // user/profile/data
-  headerCase,     // User-Profile-Data
-  capitalCase,    // User Profile Data
-  noCase,         // user profile data
-  upperCase,      // USER PROFILE DATA
-  lowerCase,      // user profile data
+  camelCase, // userProfileData
+  pascalCase, // UserProfileData
+  kebabCase, // user-profile-data
+  snakeCase, // user_profile_data
+  titleCase, // User Profile Data
+  sentenceCase, // User profile data
+  constantCase, // USER_PROFILE_DATA
+  dotCase, // user.profile.data
+  pathCase, // user/profile/data
+  headerCase, // User-Profile-Data
+  capitalCase, // User Profile Data
+  noCase, // user profile data
+  upperCase, // USER PROFILE DATA
+  lowerCase, // user profile data
   upperCaseFirst, // User profile data
   lowerCaseFirst, // user Profile Data
-  swapCase,       // uSER pROFILE dATA
-  isUpperCase,    // Boolean check
-  isLowerCase,    // Boolean check
+  swapCase, // uSER pROFILE dATA
+  isUpperCase, // Boolean check
+  isLowerCase, // Boolean check
 } from "text-case";
 
 // Transform any text format
 const input = "user_profile_data";
 
-console.log(camelCase(input));      // "userProfileData"
-console.log(pascalCase(input));     // "UserProfileData"
-console.log(kebabCase(input));      // "user-profile-data"
-console.log(titleCase(input));      // "User Profile Data"
+console.log(camelCase(input)); // "userProfileData"
+console.log(pascalCase(input)); // "UserProfileData"
+console.log(kebabCase(input)); // "user-profile-data"
+console.log(titleCase(input)); // "User Profile Data"
 ```
 
 ## 📚 Available Packages
 
 ### Core Transformations
 
-| Package | Output Example | Use Cases | Size |
-|---------|----------------|-----------|------|
-| [`text-camel-case`](./packages/camel-case) | `userProfileData` | JavaScript variables, object properties | ~450B |
-| [`text-pascal-case`](./packages/pascal-case) | `UserProfileData` | Class names, components, types | ~400B |
-| [`text-snake-case`](./packages/snake-case) | `user_profile_data` | Database columns, Python variables | ~300B |
-| [`text-kebab-case`](./packages/kebab-case) | `user-profile-data` | CSS classes, URLs, HTML attributes | ~350B |
-| [`text-title-case`](./packages/title-case) | `User Profile Data` | Headers, titles, proper nouns | ~350B |
-| [`text-sentence-case`](./packages/sentence-case) | `User profile data` | Sentences, descriptions | ~320B |
+| Package                                          | Output Example      | Use Cases                               | Size  |
+| ------------------------------------------------ | ------------------- | --------------------------------------- | ----- |
+| [`text-camel-case`](./packages/camel-case)       | `userProfileData`   | JavaScript variables, object properties | ~450B |
+| [`text-pascal-case`](./packages/pascal-case)     | `UserProfileData`   | Class names, components, types          | ~400B |
+| [`text-snake-case`](./packages/snake-case)       | `user_profile_data` | Database columns, Python variables      | ~300B |
+| [`text-kebab-case`](./packages/kebab-case)       | `user-profile-data` | CSS classes, URLs, HTML attributes      | ~350B |
+| [`text-title-case`](./packages/title-case)       | `User Profile Data` | Headers, titles, proper nouns           | ~350B |
+| [`text-sentence-case`](./packages/sentence-case) | `User profile data` | Sentences, descriptions                 | ~320B |
 
 ### Specialized Formats
 
-| Package | Output Example | Use Cases | Size |
-|---------|----------------|-----------|------|
+| Package                                          | Output Example      | Use Cases                        | Size  |
+| ------------------------------------------------ | ------------------- | -------------------------------- | ----- |
 | [`text-constant-case`](./packages/constant-case) | `USER_PROFILE_DATA` | Environment variables, constants | ~380B |
-| [`text-dot-case`](./packages/dot-case) | `user.profile.data` | Object paths, file names | ~280B |
-| [`text-path-case`](./packages/path-case) | `user/profile/data` | File paths, URLs | ~300B |
-| [`text-header-case`](./packages/header-case) | `User-Profile-Data` | HTTP headers, train-case | ~340B |
-| [`text-capital-case`](./packages/capital-case) | `User Profile Data` | Business titles, formal text | ~330B |
-| [`text-no-case`](./packages/no-case) | `user profile data` | Search queries, plain text | ~280B |
+| [`text-dot-case`](./packages/dot-case)           | `user.profile.data` | Object paths, file names         | ~280B |
+| [`text-path-case`](./packages/path-case)         | `user/profile/data` | File paths, URLs                 | ~300B |
+| [`text-header-case`](./packages/header-case)     | `User-Profile-Data` | HTTP headers, train-case         | ~340B |
+| [`text-capital-case`](./packages/capital-case)   | `User Profile Data` | Business titles, formal text     | ~330B |
+| [`text-no-case`](./packages/no-case)             | `user profile data` | Search queries, plain text       | ~280B |
 
 ### Character Transformations
 
-| Package | Output Example | Use Cases | Size |
-|---------|----------------|-----------|------|
-| [`text-upper-case`](./packages/upper-case) | `USER PROFILE DATA` | Constants, emphasis | ~120B |
-| [`text-lower-case`](./packages/lower-case) | `user profile data` | Normalization, search | ~120B |
+| Package                                                | Output Example      | Use Cases                    | Size  |
+| ------------------------------------------------------ | ------------------- | ---------------------------- | ----- |
+| [`text-upper-case`](./packages/upper-case)             | `USER PROFILE DATA` | Constants, emphasis          | ~120B |
+| [`text-lower-case`](./packages/lower-case)             | `user profile data` | Normalization, search        | ~120B |
 | [`text-upper-case-first`](./packages/upper-case-first) | `User profile data` | Sentences, proper formatting | ~130B |
-| [`text-lower-case-first`](./packages/lower-case-first) | `user Profile Data` | camelCase conversion | ~130B |
-| [`text-swap-case`](./packages/swap-case) | `uSER pROFILE dATA` | Creative text, obfuscation | ~140B |
+| [`text-lower-case-first`](./packages/lower-case-first) | `user Profile Data` | camelCase conversion         | ~130B |
+| [`text-swap-case`](./packages/swap-case)               | `uSER pROFILE dATA` | Creative text, obfuscation   | ~140B |
 
 ### Validation Utilities
 
-| Package | Output Example | Use Cases | Size |
-|---------|----------------|-----------|------|
-| [`text-is-upper-case`](./packages/is-upper-case) | `true/false` | Input validation, conditionals | ~100B |
-| [`text-is-lower-case`](./packages/is-lower-case) | `true/false` | Input validation, conditionals | ~100B |
+| Package                                          | Output Example | Use Cases                      | Size  |
+| ------------------------------------------------ | -------------- | ------------------------------ | ----- |
+| [`text-is-upper-case`](./packages/is-upper-case) | `true/false`   | Input validation, conditionals | ~100B |
+| [`text-is-lower-case`](./packages/is-lower-case) | `true/false`   | Input validation, conditionals | ~100B |
 
 ## 🛠️ Advanced Usage
 
@@ -128,12 +130,12 @@ import { camelCase, snakeCase } from "text-case";
 
 // Custom word splitting
 camelCase("XMLHttpRequest", {
-  splitRegexp: /([a-z])([A-Z])/g
+  splitRegexp: /([a-z])([A-Z])/g,
 }); // "xmlHttpRequest"
 
 // Custom character stripping
 snakeCase("hello@world.com", {
-  stripRegexp: /[@.]/g
+  stripRegexp: /[@.]/g,
 }); // "hello_world_com"
 
 // Custom transformations
@@ -142,7 +144,7 @@ camelCase("api-v2-endpoint", {
     if (word === "api") return "API";
     if (word === "v2") return "V2";
     return word;
-  }
+  },
 }); // "APIV2Endpoint"
 ```
 
@@ -157,7 +159,8 @@ import { camelCase, PascalCase, Options } from "text-case";
 const options: Options = {
   splitRegexp: /([a-z])([A-Z])/g,
   stripRegexp: /[^a-zA-Z0-9]/g,
-  transform: (word: string, index: number, words: string[]) => word.toLowerCase()
+  transform: (word: string, index: number, words: string[]) =>
+    word.toLowerCase(),
 };
 
 // Type inference
@@ -166,10 +169,10 @@ const result: string = camelCase("hello-world", options);
 // Generic type support for consistent transformations
 function transformKeys<T extends Record<string, any>>(
   obj: T,
-  transformer: (key: string) => string
+  transformer: (key: string) => string,
 ): Record<string, T[keyof T]> {
   return Object.fromEntries(
-    Object.entries(obj).map(([key, value]) => [transformer(key), value])
+    Object.entries(obj).map(([key, value]) => [transformer(key), value]),
   );
 }
 
@@ -181,13 +184,18 @@ const camelData = transformKeys(data, camelCase);
 ### Real-World Examples
 
 #### API Development
+
 ```javascript
 import { camelCase, snakeCase, kebabCase } from "text-case";
 
 // Convert database columns to JavaScript
-const dbUser = { first_name: "John", last_name: "Doe", email_address: "john@example.com" };
+const dbUser = {
+  first_name: "John",
+  last_name: "Doe",
+  email_address: "john@example.com",
+};
 const jsUser = Object.fromEntries(
-  Object.entries(dbUser).map(([key, value]) => [camelCase(key), value])
+  Object.entries(dbUser).map(([key, value]) => [camelCase(key), value]),
 );
 // { firstName: "John", lastName: "Doe", emailAddress: "john@example.com" }
 
@@ -199,6 +207,7 @@ createEndpoint("UserProfile", "GetById"); // "/api/user-profile/get-by-id"
 ```
 
 #### React Development
+
 ```javascript
 import { pascalCase, camelCase } from "text-case";
 
@@ -219,24 +228,27 @@ console.log(createComponent("user_profile_card"));
 ```
 
 #### CSS-in-JS
+
 ```javascript
 import { camelCase } from "text-case";
 
 // Convert CSS properties
 const cssToJS = (cssText) => {
-  return cssText.replace(/([a-z])-([a-z])/g, (match, p1, p2) =>
-    p1 + p2.toUpperCase()
+  return cssText.replace(
+    /([a-z])-([a-z])/g,
+    (match, p1, p2) => p1 + p2.toUpperCase(),
   );
 };
 
 const styles = {
-  backgroundColor: "#fff",    // from background-color
-  fontSize: "16px",          // from font-size
-  marginTop: "10px"          // from margin-top
+  backgroundColor: "#fff", // from background-color
+  fontSize: "16px", // from font-size
+  marginTop: "10px", // from margin-top
 };
 ```
 
 #### Configuration Management
+
 ```javascript
 import { constantCase, camelCase } from "text-case";
 
@@ -244,18 +256,15 @@ import { constantCase, camelCase } from "text-case";
 const envToConfig = (envVars) => {
   return Object.fromEntries(
     Object.entries(envVars)
-      .filter(([key]) => key.startsWith('APP_'))
-      .map(([key, value]) => [
-        camelCase(key.replace('APP_', '')),
-        value
-      ])
+      .filter(([key]) => key.startsWith("APP_"))
+      .map(([key, value]) => [camelCase(key.replace("APP_", "")), value]),
   );
 };
 
 const env = {
   APP_DATABASE_URL: "postgres://...",
   APP_API_SECRET_KEY: "secret123",
-  APP_MAX_FILE_SIZE: "10MB"
+  APP_MAX_FILE_SIZE: "10MB",
 };
 
 const config = envToConfig(env);
@@ -265,9 +274,10 @@ const config = envToConfig(env);
 ## 🏗️ Framework Integration
 
 ### Express.js
+
 ```javascript
-import express from 'express';
-import { kebabCase } from 'text-case';
+import express from "express";
+import { kebabCase } from "text-case";
 
 const app = express();
 
@@ -281,30 +291,32 @@ createRoute("getUserProfile", (req, res) => res.json({ profile: {} }));
 ```
 
 ### Next.js
+
 ```javascript
 // pages/[...slug].js
-import { pathCase } from 'text-case';
+import { pathCase } from "text-case";
 
 export async function getStaticPaths() {
   const pages = ["About Us", "Contact Form", "Privacy Policy"];
 
   return {
-    paths: pages.map(page => ({
-      params: { slug: pathCase(page).split('/') }
+    paths: pages.map((page) => ({
+      params: { slug: pathCase(page).split("/") },
     })),
-    fallback: false
+    fallback: false,
   };
 }
 ```
 
 ### Vue.js
+
 ```javascript
-import { pascalCase } from 'text-case';
+import { pascalCase } from "text-case";
 
 // Dynamic component registration
 const components = ["UserCard", "ProductList", "CheckoutForm"];
 
-components.forEach(name => {
+components.forEach((name) => {
   app.component(pascalCase(name), () => import(`./components/${name}.vue`));
 });
 ```
@@ -338,10 +350,10 @@ pnpm test --watch
 
 ## 📊 Bundle Size Comparison
 
-| Package | Minified | Gzipped | Tree-shakeable |
-|---------|----------|---------|----------------|
-| `text-case` (all) | ~8KB | ~3KB | ✅ |
-| Individual packages | 100B-450B | 50B-250B | ✅ |
+| Package             | Minified  | Gzipped  | Tree-shakeable |
+| ------------------- | --------- | -------- | -------------- |
+| `text-case` (all)   | ~8KB      | ~3KB     | ✅             |
+| Individual packages | 100B-450B | 50B-250B | ✅             |
 
 Import only what you need for optimal bundle size:
 
@@ -400,7 +412,7 @@ const acronymTransform = {
   transform: (word) => {
     const acronyms = ["API", "URL", "HTTP", "JSON", "XML"];
     return acronyms.includes(word.toUpperCase()) ? word.toUpperCase() : word;
-  }
+  },
 };
 ```
 

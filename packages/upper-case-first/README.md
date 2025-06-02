@@ -59,21 +59,21 @@ console.log(result); // "Hello world"
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Simple transformations
-upperCaseFirst("hello");              // "Hello"
-upperCaseFirst("world");              // "World"
-upperCaseFirst("hello world");        // "Hello world"
+upperCaseFirst("hello"); // "Hello"
+upperCaseFirst("world"); // "World"
+upperCaseFirst("hello world"); // "Hello world"
 
 // Already capitalized
-upperCaseFirst("Hello");              // "Hello"
-upperCaseFirst("Hello World");        // "Hello World"
+upperCaseFirst("Hello"); // "Hello"
+upperCaseFirst("Hello World"); // "Hello World"
 
 // Mixed case
-upperCaseFirst("hELLo WoRLD");        // "HELLo WoRLD"
-upperCaseFirst("tEST");               // "TEST"
+upperCaseFirst("hELLo WoRLD"); // "HELLo WoRLD"
+upperCaseFirst("tEST"); // "TEST"
 
 // Single character
-upperCaseFirst("a");                  // "A"
-upperCaseFirst("A");                  // "A"
+upperCaseFirst("a"); // "A"
+upperCaseFirst("A"); // "A"
 ```
 
 ### Real-world Examples
@@ -83,19 +83,19 @@ import { upperCaseFirst } from "text-upper-case-first";
 
 // Sentence formation
 upperCaseFirst("the quick brown fox"); // "The quick brown fox"
-upperCaseFirst("lorem ipsum dolor");   // "Lorem ipsum dolor"
+upperCaseFirst("lorem ipsum dolor"); // "Lorem ipsum dolor"
 
 // Names and titles
-upperCaseFirst("john doe");           // "John doe"
-upperCaseFirst("mary jane watson");   // "Mary jane watson"
+upperCaseFirst("john doe"); // "John doe"
+upperCaseFirst("mary jane watson"); // "Mary jane watson"
 
 // Error messages
-upperCaseFirst("invalid input");      // "Invalid input"
-upperCaseFirst("connection failed");  // "Connection failed"
-upperCaseFirst("access denied");      // "Access denied"
+upperCaseFirst("invalid input"); // "Invalid input"
+upperCaseFirst("connection failed"); // "Connection failed"
+upperCaseFirst("access denied"); // "Access denied"
 
 // Descriptions
-upperCaseFirst("user interface");     // "User interface"
+upperCaseFirst("user interface"); // "User interface"
 upperCaseFirst("application server"); // "Application server"
 upperCaseFirst("database connection"); // "Database connection"
 ```
@@ -106,23 +106,23 @@ upperCaseFirst("database connection"); // "Database connection"
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Variable names to readable text
-upperCaseFirst("firstName");          // "FirstName"
-upperCaseFirst("lastName");           // "LastName"
-upperCaseFirst("emailAddress");       // "EmailAddress"
+upperCaseFirst("firstName"); // "FirstName"
+upperCaseFirst("lastName"); // "LastName"
+upperCaseFirst("emailAddress"); // "EmailAddress"
 
 // Function names
-upperCaseFirst("getUserData");        // "GetUserData"
-upperCaseFirst("validateInput");      // "ValidateInput"
-upperCaseFirst("processPayment");     // "ProcessPayment"
+upperCaseFirst("getUserData"); // "GetUserData"
+upperCaseFirst("validateInput"); // "ValidateInput"
+upperCaseFirst("processPayment"); // "ProcessPayment"
 
 // Comments and documentation
 upperCaseFirst("this function validates user input"); // "This function validates user input"
-upperCaseFirst("returns the user profile data");      // "Returns the user profile data"
+upperCaseFirst("returns the user profile data"); // "Returns the user profile data"
 
 // Log messages
-upperCaseFirst("starting application");               // "Starting application"
-upperCaseFirst("database connected successfully");    // "Database connected successfully"
-upperCaseFirst("user authentication completed");      // "User authentication completed"
+upperCaseFirst("starting application"); // "Starting application"
+upperCaseFirst("database connected successfully"); // "Database connected successfully"
+upperCaseFirst("user authentication completed"); // "User authentication completed"
 ```
 
 ### Form and UI Examples
@@ -131,25 +131,25 @@ upperCaseFirst("user authentication completed");      // "User authentication co
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Form labels
-upperCaseFirst("first name");         // "First name"
-upperCaseFirst("last name");          // "Last name"
-upperCaseFirst("email address");      // "Email address"
-upperCaseFirst("phone number");       // "Phone number"
+upperCaseFirst("first name"); // "First name"
+upperCaseFirst("last name"); // "Last name"
+upperCaseFirst("email address"); // "Email address"
+upperCaseFirst("phone number"); // "Phone number"
 
 // Button labels
-upperCaseFirst("save changes");       // "Save changes"
-upperCaseFirst("cancel operation");   // "Cancel operation"
-upperCaseFirst("submit form");        // "Submit form"
+upperCaseFirst("save changes"); // "Save changes"
+upperCaseFirst("cancel operation"); // "Cancel operation"
+upperCaseFirst("submit form"); // "Submit form"
 
 // Status messages
 upperCaseFirst("operation successful"); // "Operation successful"
-upperCaseFirst("please wait");         // "Please wait"
-upperCaseFirst("loading data");        // "Loading data"
+upperCaseFirst("please wait"); // "Please wait"
+upperCaseFirst("loading data"); // "Loading data"
 
 // Validation messages
-upperCaseFirst("field is required");   // "Field is required"
+upperCaseFirst("field is required"); // "Field is required"
 upperCaseFirst("invalid email format"); // "Invalid email format"
-upperCaseFirst("password too short");  // "Password too short"
+upperCaseFirst("password too short"); // "Password too short"
 ```
 
 ### Edge Cases
@@ -158,19 +158,19 @@ upperCaseFirst("password too short");  // "Password too short"
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Empty and whitespace
-upperCaseFirst("");                   // ""
-upperCaseFirst(" ");                  // " "
-upperCaseFirst("  hello");            // "  hello"
+upperCaseFirst(""); // ""
+upperCaseFirst(" "); // " "
+upperCaseFirst("  hello"); // "  hello"
 
 // Numbers and symbols
-upperCaseFirst("123abc");             // "123abc"
-upperCaseFirst("!important");         // "!important"
-upperCaseFirst("@username");          // "@username"
+upperCaseFirst("123abc"); // "123abc"
+upperCaseFirst("!important"); // "!important"
+upperCaseFirst("@username"); // "@username"
 
 // Unicode characters
-upperCaseFirst("élégant");            // "Élégant"
-upperCaseFirst("naïve");              // "Naïve"
-upperCaseFirst("résumé");             // "Résumé"
+upperCaseFirst("élégant"); // "Élégant"
+upperCaseFirst("naïve"); // "Naïve"
+upperCaseFirst("résumé"); // "Résumé"
 ```
 
 ## API

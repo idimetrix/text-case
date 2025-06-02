@@ -59,20 +59,20 @@ console.log(result); // "Hello World"
 import { capitalCase } from "text-capital-case";
 
 // Simple transformations
-capitalCase("hello world");           // "Hello World"
-capitalCase("Hello World");           // "Hello World"
-capitalCase("HELLO WORLD");           // "Hello World"
+capitalCase("hello world"); // "Hello World"
+capitalCase("Hello World"); // "Hello World"
+capitalCase("HELLO WORLD"); // "Hello World"
 
 // From other cases
-capitalCase("camelCase");             // "Camel Case"
-capitalCase("PascalCase");            // "Pascal Case"
-capitalCase("snake_case");            // "Snake Case"
-capitalCase("kebab-case");            // "Kebab Case"
+capitalCase("camelCase"); // "Camel Case"
+capitalCase("PascalCase"); // "Pascal Case"
+capitalCase("snake_case"); // "Snake Case"
+capitalCase("kebab-case"); // "Kebab Case"
 
 // Complex examples
-capitalCase("XMLHttpRequest");        // "Xml Http Request"
-capitalCase("iPhone");                // "I Phone"
-capitalCase("version 1.2.3");        // "Version 1 2 3"
+capitalCase("XMLHttpRequest"); // "Xml Http Request"
+capitalCase("iPhone"); // "I Phone"
+capitalCase("version 1.2.3"); // "Version 1 2 3"
 ```
 
 ### Advanced Usage
@@ -81,19 +81,19 @@ capitalCase("version 1.2.3");        // "Version 1 2 3"
 import { capitalCase } from "text-capital-case";
 
 // Proper nouns and names
-capitalCase("john doe");              // "John Doe"
-capitalCase("new york city");         // "New York City"
-capitalCase("united states");         // "United States"
+capitalCase("john doe"); // "John Doe"
+capitalCase("new york city"); // "New York City"
+capitalCase("united states"); // "United States"
 
 // Technical terms
 capitalCase("artificial intelligence"); // "Artificial Intelligence"
-capitalCase("machine learning");      // "Machine Learning"
-capitalCase("web development");       // "Web Development"
+capitalCase("machine learning"); // "Machine Learning"
+capitalCase("web development"); // "Web Development"
 
 // Business terms
 capitalCase("customer relationship management"); // "Customer Relationship Management"
-capitalCase("enterprise resource planning");     // "Enterprise Resource Planning"
-capitalCase("return on investment");             // "Return On Investment"
+capitalCase("enterprise resource planning"); // "Enterprise Resource Planning"
+capitalCase("return on investment"); // "Return On Investment"
 ```
 
 ### Real-world Examples
@@ -102,24 +102,24 @@ capitalCase("return on investment");             // "Return On Investment"
 import { capitalCase } from "text-capital-case";
 
 // Page titles and headers
-capitalCase("about our company");     // "About Our Company"
-capitalCase("privacy policy");        // "Privacy Policy"
-capitalCase("terms of service");      // "Terms Of Service"
+capitalCase("about our company"); // "About Our Company"
+capitalCase("privacy policy"); // "Privacy Policy"
+capitalCase("terms of service"); // "Terms Of Service"
 
 // Navigation menus
-capitalCase("user dashboard");        // "User Dashboard"
-capitalCase("account settings");      // "Account Settings"
-capitalCase("billing information");   // "Billing Information"
+capitalCase("user dashboard"); // "User Dashboard"
+capitalCase("account settings"); // "Account Settings"
+capitalCase("billing information"); // "Billing Information"
 
 // Form sections
-capitalCase("personal information");  // "Personal Information"
-capitalCase("contact details");       // "Contact Details"
-capitalCase("payment method");        // "Payment Method"
+capitalCase("personal information"); // "Personal Information"
+capitalCase("contact details"); // "Contact Details"
+capitalCase("payment method"); // "Payment Method"
 
 // Product categories
-capitalCase("consumer electronics");  // "Consumer Electronics"
-capitalCase("home and garden");       // "Home And Garden"
-capitalCase("sports and outdoors");   // "Sports And Outdoors"
+capitalCase("consumer electronics"); // "Consumer Electronics"
+capitalCase("home and garden"); // "Home And Garden"
+capitalCase("sports and outdoors"); // "Sports And Outdoors"
 ```
 
 ### With Custom Options
@@ -134,12 +134,12 @@ const customCapital = capitalCase("hello_world", {
     if (word === "api") return "API";
     if (word === "ui") return "UI";
     return word;
-  }
+  },
 });
 
 // Using custom split function
 const customSplit = capitalCase("my-custom-string", {
-  split: (value) => value.split(/[-_]/g)
+  split: (value) => value.split(/[-_]/g),
 });
 ```
 

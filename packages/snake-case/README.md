@@ -59,20 +59,20 @@ console.log(result); // "hello_world"
 import { snakeCase } from "text-snake-case";
 
 // Simple transformations
-snakeCase("hello world");          // "hello_world"
-snakeCase("Hello World");          // "hello_world"
-snakeCase("HELLO WORLD");          // "hello_world"
+snakeCase("hello world"); // "hello_world"
+snakeCase("Hello World"); // "hello_world"
+snakeCase("HELLO WORLD"); // "hello_world"
 
 // From other cases
-snakeCase("camelCase");            // "camel_case"
-snakeCase("PascalCase");           // "pascal_case"
-snakeCase("kebab-case");           // "kebab_case"
-snakeCase("dot.case");             // "dot_case"
+snakeCase("camelCase"); // "camel_case"
+snakeCase("PascalCase"); // "pascal_case"
+snakeCase("kebab-case"); // "kebab_case"
+snakeCase("dot.case"); // "dot_case"
 
 // Complex examples
-snakeCase("XMLHttpRequest");       // "xml_http_request"
-snakeCase("iPhone");               // "i_phone"
-snakeCase("version 1.2.3");       // "version_1_2_3"
+snakeCase("XMLHttpRequest"); // "xml_http_request"
+snakeCase("iPhone"); // "i_phone"
+snakeCase("version 1.2.3"); // "version_1_2_3"
 ```
 
 ### Advanced Options
@@ -82,12 +82,12 @@ import { snakeCase, snakeCaseTransformMerge } from "text-snake-case";
 
 // Custom transform to merge numbers without separator
 snakeCase("version 1.2.3", {
-  transform: snakeCaseTransformMerge
+  transform: snakeCaseTransformMerge,
 }); // "version_123"
 
 // With custom separator handling
 snakeCase("hello-world.test", {
-  stripRegexp: /[-.]/g
+  stripRegexp: /[-.]/g,
 }); // "hello_world_test"
 ```
 
@@ -97,24 +97,24 @@ snakeCase("hello-world.test", {
 import { snakeCase } from "text-snake-case";
 
 // Database column names
-snakeCase("firstName");             // "first_name"
-snakeCase("emailAddress");          // "email_address"
-snakeCase("createdAt");             // "created_at"
+snakeCase("firstName"); // "first_name"
+snakeCase("emailAddress"); // "email_address"
+snakeCase("createdAt"); // "created_at"
 
 // API field names
-snakeCase("userId");                // "user_id"
-snakeCase("accessToken");           // "access_token"
-snakeCase("refreshToken");          // "refresh_token"
+snakeCase("userId"); // "user_id"
+snakeCase("accessToken"); // "access_token"
+snakeCase("refreshToken"); // "refresh_token"
 
 // Configuration variables
-snakeCase("apiBaseUrl");            // "api_base_url"
-snakeCase("databaseUrl");           // "database_url"
-snakeCase("maxConnections");        // "max_connections"
+snakeCase("apiBaseUrl"); // "api_base_url"
+snakeCase("databaseUrl"); // "database_url"
+snakeCase("maxConnections"); // "max_connections"
 
 // Python variables and functions
-snakeCase("getUserInfo");           // "get_user_info"
-snakeCase("validateEmailAddress");  // "validate_email_address"
-snakeCase("calculateTotalAmount");  // "calculate_total_amount"
+snakeCase("getUserInfo"); // "get_user_info"
+snakeCase("validateEmailAddress"); // "validate_email_address"
+snakeCase("calculateTotalAmount"); // "calculate_total_amount"
 ```
 
 ## API

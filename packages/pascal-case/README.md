@@ -45,7 +45,11 @@ console.log(pascalCase("hello world")); // "HelloWorld"
 ### TypeScript
 
 ```typescript
-import { pascalCase, pascalCaseTransformMerge, Options } from "text-pascal-case";
+import {
+  pascalCase,
+  pascalCaseTransformMerge,
+  Options,
+} from "text-pascal-case";
 
 const result: string = pascalCase("hello world");
 console.log(result); // "HelloWorld"
@@ -59,20 +63,20 @@ console.log(result); // "HelloWorld"
 import { pascalCase } from "text-pascal-case";
 
 // Simple transformations
-pascalCase("hello world");          // "HelloWorld"
-pascalCase("Hello World");          // "HelloWorld"
-pascalCase("HELLO WORLD");          // "HelloWorld"
+pascalCase("hello world"); // "HelloWorld"
+pascalCase("Hello World"); // "HelloWorld"
+pascalCase("HELLO WORLD"); // "HelloWorld"
 
 // From other cases
-pascalCase("snake_case");           // "SnakeCase"
-pascalCase("kebab-case");           // "KebabCase"
-pascalCase("dot.case");             // "DotCase"
-pascalCase("camelCase");            // "CamelCase"
+pascalCase("snake_case"); // "SnakeCase"
+pascalCase("kebab-case"); // "KebabCase"
+pascalCase("dot.case"); // "DotCase"
+pascalCase("camelCase"); // "CamelCase"
 
 // Complex examples
-pascalCase("XMLHttpRequest");       // "XmlHttpRequest"
-pascalCase("iPhone");               // "IPhone"
-pascalCase("version 1.2.3");       // "Version123"
+pascalCase("XMLHttpRequest"); // "XmlHttpRequest"
+pascalCase("iPhone"); // "IPhone"
+pascalCase("version 1.2.3"); // "Version123"
 ```
 
 ### Advanced Options
@@ -82,12 +86,12 @@ import { pascalCase, pascalCaseTransformMerge } from "text-pascal-case";
 
 // Custom transform to merge numbers without separator
 pascalCase("version 1.2.3", {
-  transform: pascalCaseTransformMerge
+  transform: pascalCaseTransformMerge,
 }); // "Version123"
 
 // With custom separator handling
 pascalCase("hello_world-test", {
-  stripRegexp: /[_-]/g
+  stripRegexp: /[_-]/g,
 }); // "HelloWorldTest"
 ```
 
@@ -97,19 +101,19 @@ pascalCase("hello_world-test", {
 import { pascalCase } from "text-pascal-case";
 
 // Class names
-pascalCase("user_service");         // "UserService"
-pascalCase("email_validator");      // "EmailValidator"
-pascalCase("api_client");           // "ApiClient"
+pascalCase("user_service"); // "UserService"
+pascalCase("email_validator"); // "EmailValidator"
+pascalCase("api_client"); // "ApiClient"
 
 // Component names
-pascalCase("button-component");     // "ButtonComponent"
-pascalCase("navigation_bar");       // "NavigationBar"
-pascalCase("form-input");           // "FormInput"
+pascalCase("button-component"); // "ButtonComponent"
+pascalCase("navigation_bar"); // "NavigationBar"
+pascalCase("form-input"); // "FormInput"
 
 // Type definitions
-pascalCase("user_profile");         // "UserProfile"
-pascalCase("api_response");         // "ApiResponse"
-pascalCase("config_options");       // "ConfigOptions"
+pascalCase("user_profile"); // "UserProfile"
+pascalCase("api_response"); // "ApiResponse"
+pascalCase("config_options"); // "ConfigOptions"
 ```
 
 ## API

@@ -59,20 +59,20 @@ console.log(result); // "Hello world"
 import { sentenceCase } from "text-sentence-case";
 
 // Simple transformations
-sentenceCase("hello world");           // "Hello world"
-sentenceCase("Hello World");           // "Hello world"
-sentenceCase("HELLO WORLD");           // "Hello world"
+sentenceCase("hello world"); // "Hello world"
+sentenceCase("Hello World"); // "Hello world"
+sentenceCase("HELLO WORLD"); // "Hello world"
 
 // From other cases
-sentenceCase("camelCase");             // "Camel case"
-sentenceCase("PascalCase");            // "Pascal case"
-sentenceCase("snake_case");            // "Snake case"
-sentenceCase("kebab-case");            // "Kebab case"
+sentenceCase("camelCase"); // "Camel case"
+sentenceCase("PascalCase"); // "Pascal case"
+sentenceCase("snake_case"); // "Snake case"
+sentenceCase("kebab-case"); // "Kebab case"
 
 // Complex examples
-sentenceCase("XMLHttpRequest");        // "Xml http request"
-sentenceCase("iPhone");                // "I phone"
-sentenceCase("version 1.2.3");        // "Version 1 2 3"
+sentenceCase("XMLHttpRequest"); // "Xml http request"
+sentenceCase("iPhone"); // "I phone"
+sentenceCase("version 1.2.3"); // "Version 1 2 3"
 ```
 
 ### Advanced Usage
@@ -81,19 +81,19 @@ sentenceCase("version 1.2.3");        // "Version 1 2 3"
 import { sentenceCase } from "text-sentence-case";
 
 // Proper nouns and names
-sentenceCase("john doe");              // "John doe"
-sentenceCase("new york city");         // "New york city"
-sentenceCase("united states");         // "United states"
+sentenceCase("john doe"); // "John doe"
+sentenceCase("new york city"); // "New york city"
+sentenceCase("united states"); // "United states"
 
 // Descriptive text
 sentenceCase("getting started guide"); // "Getting started guide"
-sentenceCase("api reference");         // "Api reference"
+sentenceCase("api reference"); // "Api reference"
 sentenceCase("installation instructions"); // "Installation instructions"
 
 // Error messages
-sentenceCase("invalid input data");    // "Invalid input data"
-sentenceCase("connection timeout");    // "Connection timeout"
-sentenceCase("access denied");         // "Access denied"
+sentenceCase("invalid input data"); // "Invalid input data"
+sentenceCase("connection timeout"); // "Connection timeout"
+sentenceCase("access denied"); // "Access denied"
 ```
 
 ### Real-world Examples
@@ -102,24 +102,24 @@ sentenceCase("access denied");         // "Access denied"
 import { sentenceCase } from "text-sentence-case";
 
 // Error messages and notifications
-sentenceCase("user not found");        // "User not found"
-sentenceCase("operation successful");  // "Operation successful"
-sentenceCase("invalid credentials");   // "Invalid credentials"
+sentenceCase("user not found"); // "User not found"
+sentenceCase("operation successful"); // "Operation successful"
+sentenceCase("invalid credentials"); // "Invalid credentials"
 
 // Form validation messages
-sentenceCase("email is required");     // "Email is required"
-sentenceCase("password too short");    // "Password too short"
-sentenceCase("invalid phone number");  // "Invalid phone number"
+sentenceCase("email is required"); // "Email is required"
+sentenceCase("password too short"); // "Password too short"
+sentenceCase("invalid phone number"); // "Invalid phone number"
 
 // Status messages
-sentenceCase("processing request");    // "Processing request"
-sentenceCase("upload complete");       // "Upload complete"
+sentenceCase("processing request"); // "Processing request"
+sentenceCase("upload complete"); // "Upload complete"
 sentenceCase("connection established"); // "Connection established"
 
 // User interface text
-sentenceCase("please wait");           // "Please wait"
-sentenceCase("loading content");       // "Loading content"
-sentenceCase("no results found");      // "No results found"
+sentenceCase("please wait"); // "Please wait"
+sentenceCase("loading content"); // "Loading content"
+sentenceCase("no results found"); // "No results found"
 ```
 
 ### With Custom Options
@@ -133,7 +133,7 @@ const customSentence = sentenceCase("hello_world", {
     // Custom logic for specific words
     if (word === "api") return "API";
     return word;
-  }
+  },
 });
 ```
 
