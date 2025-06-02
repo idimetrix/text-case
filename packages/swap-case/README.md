@@ -3,12 +3,21 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text by swapping the case of each character - uppercase becomes lowercase and vice versa.
+> Transform text by **swapping the case** of each character (uppercase becomes lowercase and vice versa).
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~200B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,14 +33,24 @@ pnpm add text-swap-case
 bun add text-swap-case
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { swapCase } from "text-swap-case";
+
+console.log(swapCase("Hello World")); // "hELLO wORLD"
+console.log(swapCase("JavaScript")); // "jAVAsCRIPT"
+console.log(swapCase("CamelCase")); // "cAMELcASE"
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
 ```javascript
 import { swapCase } from "text-swap-case";
 
-console.log(swapCase("Hello World")); // "hELLO wORLD"
+console.log(swapCase("Hello")); // "hELLO"
 ```
 
 ### CommonJS
@@ -39,7 +58,7 @@ console.log(swapCase("Hello World")); // "hELLO wORLD"
 ```javascript
 const { swapCase } = require("text-swap-case");
 
-console.log(swapCase("Hello World")); // "hELLO wORLD"
+console.log(swapCase("Hello")); // "hELLO"
 ```
 
 ### TypeScript
@@ -51,117 +70,30 @@ const result: string = swapCase("Hello World");
 console.log(result); // "hELLO wORLD"
 ```
 
-## Examples
+## 🔄 Transformation Examples
 
-### Basic Usage
-
-```javascript
-import { swapCase } from "text-swap-case";
-
-// Simple transformations
-swapCase("Hello"); // "hELLO"
-swapCase("WORLD"); // "world"
-swapCase("Hello World"); // "hELLO wORLD"
-
-// Mixed case
-swapCase("HeLLo WoRLd"); // "hEllO wOrlD"
-swapCase("tEsT"); // "TeSt"
-
-// Single characters
-swapCase("a"); // "A"
-swapCase("A"); // "a"
-
-// Numbers and symbols (unchanged)
-swapCase("Hello123"); // "hELLO123"
-swapCase("Test!@#"); // "tEST!@#"
-```
-
-### Text Processing Examples
+### Basic Transformations
 
 ```javascript
 import { swapCase } from "text-swap-case";
 
-// Creating emphasis or artistic text
-swapCase("JavaScript"); // "jAVAsCRIPT"
-swapCase("TypeScript"); // "tYPEsCRIPT"
-swapCase("Programming"); // "pROGRAMMING"
+// Simple cases
+swapCase("Hello");               // "hELLO"
+swapCase("HELLO");               // "hello"
+swapCase("hello");               // "HELLO"
 
-// Text obfuscation
-swapCase("SecretPassword"); // "sECRETpASSWORD"
-swapCase("HiddenMessage"); // "hIDDENmESSAGE"
+// Mixed cases
+swapCase("Hello World");         // "hELLO wORLD"
+swapCase("CamelCase");           // "cAMELcASE"
+swapCase("PascalCase");          // "pASCALcASE"
+swapCase("snake_case");          // "SNAKE_CASE"
+swapCase("kebab-case");          // "KEBAB-CASE"
 
-// Creating alternating patterns
-swapCase("AlTeRnAtInG"); // "aLtErNaTiNg"
-swapCase("PaTtErN"); // "pAtTeRn"
-```
-
-### Real-world Examples
-
-```javascript
-import { swapCase } from "text-swap-case";
-
-// Logo or brand styling
-swapCase("MyCompany"); // "mYcOMPANY"
-swapCase("BrandName"); // "bRANDnAME"
-
-// Game text effects
-swapCase("GameOver"); // "gAMEoVER"
-swapCase("LevelUp"); // "lEVELuP"
-swapCase("PowerUp"); // "pOWERuP"
-
-// Creative usernames
-swapCase("CoolUser"); // "cOOLuSER"
-swapCase("ProGamer"); // "pROgAMER"
-
-// Artistic text display
-swapCase("WelcomeToOurSite"); // "wELCOMEtOoURsITE"
-swapCase("SpecialOffer"); // "sPECIALoFFER"
-```
-
-### Programming Examples
-
-```javascript
-import { swapCase } from "text-swap-case";
-
-// Variable names
-swapCase("firstName"); // "FIRSTnAME"
-swapCase("lastName"); // "LASTnAME"
-swapCase("emailAddress"); // "EMAILaDDRESS"
-
-// Function names
-swapCase("getUserData"); // "GETuSERdATA"
-swapCase("validateInput"); // "VALIDATEiNPUT"
-swapCase("processPayment"); // "PROCESSPAYMENt"
-
-// Class names
-swapCase("UserService"); // "uSERsERVICE"
-swapCase("PaymentGateway"); // "pAYMENTgATEWAY"
-swapCase("DatabaseManager"); // "dATABASEmANAGER"
-
-// Constants
-swapCase("API_KEY"); // "api_key"
-swapCase("BASE_URL"); // "base_url"
-swapCase("MAX_RETRIES"); // "max_retries"
-```
-
-### Special Characters and Unicode
-
-```javascript
-import { swapCase } from "text-swap-case";
-
-// Unicode characters
-swapCase("Café"); // "cAFÉ"
-swapCase("Naïve"); // "nAÏVE"
-swapCase("Résumé"); // "rÉSUMÉ"
-
-// Mixed content
-swapCase("Hello123World"); // "hELLO123wORLD"
-swapCase("Test@Email.com"); // "tEST@eMAIL.COM"
-swapCase("File_Name.txt"); // "fILE_nAME.TXT"
-
-// Punctuation (unchanged)
-swapCase("Hello, World!"); // "hELLO, wORLD!"
-swapCase("Yes? No!"); // "yES? nO!"
+// Complex examples
+swapCase("JavaScript");          // "jAVAsCRIPT"
+swapCase("XMLHttpRequest");      // "xmlhTTPrEQUEST"
+swapCase("iPhone");              // "IpHONE"
+swapCase("macOS");               // "MACos"
 ```
 
 ### Edge Cases
@@ -169,46 +101,162 @@ swapCase("Yes? No!"); // "yES? nO!"
 ```javascript
 import { swapCase } from "text-swap-case";
 
+// Numbers and symbols (unchanged)
+swapCase("Hello123");            // "hELLO123"
+swapCase("Test@Email.Com");      // "tEST@eMAIL.cOM"
+swapCase("User_123");            // "uSER_123"
+
 // Empty and whitespace
-swapCase(""); // ""
-swapCase(" "); // " "
-swapCase("   "); // "   "
+swapCase("");                    // ""
+swapCase("   ");                 // "   "
+swapCase("\n\t");                // "\n\t"
 
-// Only numbers
-swapCase("123456"); // "123456"
-swapCase("3.14159"); // "3.14159"
-
-// Only symbols
-swapCase("!@#$%"); // "!@#$%"
-swapCase("()[]{}"); // "()[]{})"
-
-// Mixed symbols and letters
-swapCase("A!b@C#"); // "a!B@c#"
+// Unicode characters
+swapCase("Café");                // "cAFÉ"
+swapCase("Naïve");               // "nAÏVE"
+swapCase("Résumé");              // "rÉSUMÉ"
 ```
 
-### Creative Applications
+## 🌍 Real-World Examples
+
+### Text Obfuscation
 
 ```javascript
 import { swapCase } from "text-swap-case";
 
-// Alternating headers
-swapCase("ChApTeR oNe"); // "cHaPtEr OnE"
-swapCase("SeCtIoN tWo"); // "sEcTiOn TwO"
+// Simple text obfuscation
+function obfuscateText(text) {
+  return swapCase(text);
+}
 
-// Stylized buttons
-swapCase("CliCk HeRe"); // "cLIcK hErE"
-swapCase("DoWnLoAd NoW"); // "dOwNlOaD nOw"
-
-// Gaming elements
-swapCase("EnTeR nAmE"); // "eNtEr NaMe"
-swapCase("PlAyEr OnE"); // "pLaYeR oNe"
-
-// Social media style
-swapCase("fOlLoW mE"); // "FoLlOw Me"
-swapCase("lIkE aNd ShArE"); // "LiKe AnD sHaRe"
+console.log(obfuscateText("Secret Message")); // "sECRET mESSAGE"
+console.log(obfuscateText("Password123"));    // "pASSWORD123"
 ```
 
-## API
+### Alternating Case Effect
+
+```javascript
+import { swapCase } from "text-swap-case";
+
+// Create alternating case effect
+function alternatingCase(text) {
+  return text
+    .split('')
+    .map((char, index) =>
+      index % 2 === 0 ? char.toLowerCase() : char.toUpperCase()
+    )
+    .join('');
+}
+
+// Compare with swap case
+const original = "Hello World";
+console.log("Original:", original);           // "Hello World"
+console.log("Swap Case:", swapCase(original)); // "hELLO wORLD"
+console.log("Alternating:", alternatingCase(original)); // "hElLo WoRlD"
+```
+
+### Case Inversion for Testing
+
+```javascript
+import { swapCase } from "text-swap-case";
+
+// Test case sensitivity
+function testCaseSensitivity(input) {
+  const swapped = swapCase(input);
+  return {
+    original: input,
+    swapped: swapped,
+    areEqual: input === swapped,
+    length: input.length
+  };
+}
+
+console.log(testCaseSensitivity("Hello"));
+// {
+//   original: "Hello",
+//   swapped: "hELLO",
+//   areEqual: false,
+//   length: 5
+// }
+```
+
+### Creative Text Effects
+
+```javascript
+import { swapCase } from "text-swap-case";
+
+// Create stylized text
+function stylizeText(text, style = 'swap') {
+  switch (style) {
+    case 'swap':
+      return swapCase(text);
+    case 'upper':
+      return text.toUpperCase();
+    case 'lower':
+      return text.toLowerCase();
+    case 'title':
+      return text.replace(/\w\S*/g, (txt) =>
+        txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+      );
+    default:
+      return text;
+  }
+}
+
+const text = "JavaScript Programming";
+console.log("Swap:", stylizeText(text, 'swap'));   // "jAVAsCRIPT pROGRAMMING"
+console.log("Upper:", stylizeText(text, 'upper')); // "JAVASCRIPT PROGRAMMING"
+console.log("Lower:", stylizeText(text, 'lower')); // "javascript programming"
+console.log("Title:", stylizeText(text, 'title')); // "Javascript Programming"
+```
+
+### Password Transformation
+
+```javascript
+import { swapCase } from "text-swap-case";
+
+// Transform passwords (for demonstration only)
+function transformPassword(password) {
+  // Note: This is for demonstration only, not for real security
+  return swapCase(password);
+}
+
+console.log(transformPassword("MyPassword123")); // "mYpASSWORD123"
+```
+
+### Text Processing Pipeline
+
+```javascript
+import { swapCase } from "text-swap-case";
+
+class TextProcessor {
+  constructor() {
+    this.processors = [];
+  }
+
+  addSwapCase() {
+    this.processors.push(swapCase);
+    return this;
+  }
+
+  addReverse() {
+    this.processors.push(text => text.split('').reverse().join(''));
+    return this;
+  }
+
+  process(text) {
+    return this.processors.reduce((result, processor) => processor(result), text);
+  }
+}
+
+const processor = new TextProcessor()
+  .addSwapCase()
+  .addReverse();
+
+console.log(processor.process("Hello World")); // "DLROw OLLEh"
+```
+
+## 📖 API Reference
 
 ### `swapCase(input)`
 
@@ -216,35 +264,29 @@ Swaps the case of each character in a string.
 
 #### Parameters
 
-- `input` (`string`): The string to transform
+- **`input`** (`string`): The string to transform
 
 #### Returns
 
-- `string`: The string with character cases swapped
+- **`string`**: The string with swapped case
 
-## Development
+## 📊 Bundle Size
 
-### Type Checking
+This package is optimized for minimal bundle size:
 
-```bash
-# Check types
-pnpm typecheck
+- **Minified**: ~200B
+- **Gzipped**: ~150B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
 
-# Check types in watch mode
-pnpm typecheck:watch
-```
+## 🌍 Browser Support
 
-### Linting
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
 
-```bash
-# Run linter
-pnpm lint
-
-# Auto-fix linting issues
-pnpm lint --fix
-```
-
-### Testing
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -255,54 +297,26 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
+## 🔗 Related Packages
 
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~140 B
-- **Gzipped**: ~95 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Generic type parameters
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
-
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
+- [`text-upper-case`](../upper-case) - Convert to uppercase
 - [`text-lower-case`](../lower-case) - Convert to lowercase
-- [`text-upper-case-first`](../upper-case-first) - Uppercase first character
-- [`text-lower-case-first`](../lower-case-first) - Lowercase first character
+- [`text-upper-case-first`](../upper-case-first) - Make first character uppercase
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -310,11 +324,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-swap-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-swap-case

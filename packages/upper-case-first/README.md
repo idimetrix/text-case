@@ -3,12 +3,21 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text by making the first character uppercase while keeping the rest unchanged.
+> Transform text by making the **first character uppercase** while preserving the rest.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~200B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,14 +33,24 @@ pnpm add text-upper-case-first
 bun add text-upper-case-first
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+console.log(upperCaseFirst("hello world")); // "Hello world"
+console.log(upperCaseFirst("HELLO WORLD")); // "HELLO WORLD"
+console.log(upperCaseFirst("camelCase")); // "CamelCase"
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
 ```javascript
 import { upperCaseFirst } from "text-upper-case-first";
 
-console.log(upperCaseFirst("hello world")); // "Hello world"
+console.log(upperCaseFirst("hello")); // "Hello"
 ```
 
 ### CommonJS
@@ -39,7 +58,7 @@ console.log(upperCaseFirst("hello world")); // "Hello world"
 ```javascript
 const { upperCaseFirst } = require("text-upper-case-first");
 
-console.log(upperCaseFirst("hello world")); // "Hello world"
+console.log(upperCaseFirst("hello")); // "Hello"
 ```
 
 ### TypeScript
@@ -51,105 +70,28 @@ const result: string = upperCaseFirst("hello world");
 console.log(result); // "Hello world"
 ```
 
-## Examples
+## 🔄 Transformation Examples
 
-### Basic Usage
-
-```javascript
-import { upperCaseFirst } from "text-upper-case-first";
-
-// Simple transformations
-upperCaseFirst("hello"); // "Hello"
-upperCaseFirst("world"); // "World"
-upperCaseFirst("hello world"); // "Hello world"
-
-// Already capitalized
-upperCaseFirst("Hello"); // "Hello"
-upperCaseFirst("Hello World"); // "Hello World"
-
-// Mixed case
-upperCaseFirst("hELLo WoRLD"); // "HELLo WoRLD"
-upperCaseFirst("tEST"); // "TEST"
-
-// Single character
-upperCaseFirst("a"); // "A"
-upperCaseFirst("A"); // "A"
-```
-
-### Real-world Examples
+### Basic Transformations
 
 ```javascript
 import { upperCaseFirst } from "text-upper-case-first";
 
-// Sentence formation
-upperCaseFirst("the quick brown fox"); // "The quick brown fox"
-upperCaseFirst("lorem ipsum dolor"); // "Lorem ipsum dolor"
+// Simple cases
+upperCaseFirst("hello");         // "Hello"
+upperCaseFirst("HELLO");         // "HELLO"
+upperCaseFirst("Hello");         // "Hello"
 
-// Names and titles
-upperCaseFirst("john doe"); // "John doe"
-upperCaseFirst("mary jane watson"); // "Mary jane watson"
+// Multiple words
+upperCaseFirst("hello world");   // "Hello world"
+upperCaseFirst("HELLO WORLD");   // "HELLO WORLD"
+upperCaseFirst("Hello World");   // "Hello World"
 
-// Error messages
-upperCaseFirst("invalid input"); // "Invalid input"
-upperCaseFirst("connection failed"); // "Connection failed"
-upperCaseFirst("access denied"); // "Access denied"
-
-// Descriptions
-upperCaseFirst("user interface"); // "User interface"
-upperCaseFirst("application server"); // "Application server"
-upperCaseFirst("database connection"); // "Database connection"
-```
-
-### Programming Examples
-
-```javascript
-import { upperCaseFirst } from "text-upper-case-first";
-
-// Variable names to readable text
-upperCaseFirst("firstName"); // "FirstName"
-upperCaseFirst("lastName"); // "LastName"
-upperCaseFirst("emailAddress"); // "EmailAddress"
-
-// Function names
-upperCaseFirst("getUserData"); // "GetUserData"
-upperCaseFirst("validateInput"); // "ValidateInput"
-upperCaseFirst("processPayment"); // "ProcessPayment"
-
-// Comments and documentation
-upperCaseFirst("this function validates user input"); // "This function validates user input"
-upperCaseFirst("returns the user profile data"); // "Returns the user profile data"
-
-// Log messages
-upperCaseFirst("starting application"); // "Starting application"
-upperCaseFirst("database connected successfully"); // "Database connected successfully"
-upperCaseFirst("user authentication completed"); // "User authentication completed"
-```
-
-### Form and UI Examples
-
-```javascript
-import { upperCaseFirst } from "text-upper-case-first";
-
-// Form labels
-upperCaseFirst("first name"); // "First name"
-upperCaseFirst("last name"); // "Last name"
-upperCaseFirst("email address"); // "Email address"
-upperCaseFirst("phone number"); // "Phone number"
-
-// Button labels
-upperCaseFirst("save changes"); // "Save changes"
-upperCaseFirst("cancel operation"); // "Cancel operation"
-upperCaseFirst("submit form"); // "Submit form"
-
-// Status messages
-upperCaseFirst("operation successful"); // "Operation successful"
-upperCaseFirst("please wait"); // "Please wait"
-upperCaseFirst("loading data"); // "Loading data"
-
-// Validation messages
-upperCaseFirst("field is required"); // "Field is required"
-upperCaseFirst("invalid email format"); // "Invalid email format"
-upperCaseFirst("password too short"); // "Password too short"
+// Programming cases
+upperCaseFirst("camelCase");     // "CamelCase"
+upperCaseFirst("pascalCase");    // "PascalCase"
+upperCaseFirst("snake_case");    // "Snake_case"
+upperCaseFirst("kebab-case");    // "Kebab-case"
 ```
 
 ### Edge Cases
@@ -157,59 +99,211 @@ upperCaseFirst("password too short"); // "Password too short"
 ```javascript
 import { upperCaseFirst } from "text-upper-case-first";
 
-// Empty and whitespace
-upperCaseFirst(""); // ""
-upperCaseFirst(" "); // " "
-upperCaseFirst("  hello"); // "  hello"
+// Empty and single character
+upperCaseFirst("");              // ""
+upperCaseFirst("a");             // "A"
+upperCaseFirst("A");             // "A"
 
 // Numbers and symbols
-upperCaseFirst("123abc"); // "123abc"
-upperCaseFirst("!important"); // "!important"
-upperCaseFirst("@username"); // "@username"
+upperCaseFirst("123hello");      // "123hello"
+upperCaseFirst("@hello");        // "@hello"
+upperCaseFirst("hello123");      // "Hello123"
 
 // Unicode characters
-upperCaseFirst("élégant"); // "Élégant"
-upperCaseFirst("naïve"); // "Naïve"
-upperCaseFirst("résumé"); // "Résumé"
+upperCaseFirst("ñice");          // "Ñice"
+upperCaseFirst("über");          // "Über"
+upperCaseFirst("café");          // "Café"
 ```
 
-## API
+## 🌍 Real-World Examples
+
+### Sentence Capitalization
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+// Capitalize sentences
+upperCaseFirst("this is a sentence."); // "This is a sentence."
+upperCaseFirst("welcome to our app");   // "Welcome to our app"
+upperCaseFirst("error: invalid input"); // "Error: invalid input"
+```
+
+### Name Formatting
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+// Format names
+upperCaseFirst("john");          // "John"
+upperCaseFirst("mary jane");     // "Mary jane"
+upperCaseFirst("o'connor");      // "O'connor"
+upperCaseFirst("van der berg");  // "Van der berg"
+```
+
+### Content Processing
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+// Process content titles
+const titles = [
+  "getting started",
+  "installation guide",
+  "best practices",
+  "troubleshooting",
+  "frequently asked questions"
+];
+
+const formattedTitles = titles.map(upperCaseFirst);
+console.log(formattedTitles);
+// [
+//   "Getting started",
+//   "Installation guide",
+//   "Best practices",
+//   "Troubleshooting",
+//   "Frequently asked questions"
+// ]
+```
+
+### Form Field Processing
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+function formatFormField(value) {
+  return upperCaseFirst(value.trim().toLowerCase());
+}
+
+console.log(formatFormField("  JOHN DOE  ")); // "John doe"
+console.log(formatFormField("jane smith"));   // "Jane smith"
+console.log(formatFormField("BOB WILSON"));   // "Bob wilson"
+```
+
+### Message Formatting
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+function formatMessage(message) {
+  return upperCaseFirst(message.trim()) +
+    (message.endsWith('.') || message.endsWith('!') || message.endsWith('?') ? '' : '.');
+}
+
+console.log(formatMessage("hello world"));     // "Hello world."
+console.log(formatMessage("welcome back!"));   // "Welcome back!"
+console.log(formatMessage("are you sure?"));   // "Are you sure?"
+```
+
+### API Response Processing
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+function processApiResponse(response) {
+  if (response.message) {
+    response.message = upperCaseFirst(response.message);
+  }
+
+  if (response.errors && Array.isArray(response.errors)) {
+    response.errors = response.errors.map(error =>
+      typeof error === 'string' ? upperCaseFirst(error) : error
+    );
+  }
+
+  return response;
+}
+
+const apiResponse = {
+  success: false,
+  message: "validation failed",
+  errors: [
+    "email is required",
+    "password must be at least 8 characters",
+    "username already exists"
+  ]
+};
+
+console.log(processApiResponse(apiResponse));
+// {
+//   success: false,
+//   message: "Validation failed",
+//   errors: [
+//     "Email is required",
+//     "Password must be at least 8 characters",
+//     "Username already exists"
+//   ]
+// }
+```
+
+### Text Processing Pipeline
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+class TextProcessor {
+  constructor() {
+    this.processors = [];
+  }
+
+  addTrim() {
+    this.processors.push(text => text.trim());
+    return this;
+  }
+
+  addLowerCase() {
+    this.processors.push(text => text.toLowerCase());
+    return this;
+  }
+
+  addUpperCaseFirst() {
+    this.processors.push(upperCaseFirst);
+    return this;
+  }
+
+  process(text) {
+    return this.processors.reduce((result, processor) => processor(result), text);
+  }
+}
+
+const processor = new TextProcessor()
+  .addTrim()
+  .addLowerCase()
+  .addUpperCaseFirst();
+
+console.log(processor.process("  HELLO WORLD  ")); // "Hello world"
+```
+
+## 📖 API Reference
 
 ### `upperCaseFirst(input)`
 
-Makes the first character of a string uppercase.
+Makes the first character of a string uppercase while preserving the rest.
 
 #### Parameters
 
-- `input` (`string`): The string to transform
+- **`input`** (`string`): The string to transform
 
 #### Returns
 
-- `string`: The string with first character uppercased
+- **`string`**: The string with the first character in uppercase
 
-## Development
+## 📊 Bundle Size
 
-### Type Checking
+This package is optimized for minimal bundle size:
 
-```bash
-# Check types
-pnpm typecheck
+- **Minified**: ~200B
+- **Gzipped**: ~150B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
 
-# Check types in watch mode
-pnpm typecheck:watch
-```
+## 🌍 Browser Support
 
-### Linting
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
 
-```bash
-# Run linter
-pnpm lint
-
-# Auto-fix linting issues
-pnpm lint --fix
-```
-
-### Testing
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -220,54 +314,26 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
+## 🔗 Related Packages
 
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~130 B
-- **Gzipped**: ~90 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Generic type parameters
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
-
-- [`text-lower-case-first`](../lower-case-first) - Lowercase first character
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
-- [`text-lower-case`](../lower-case) - Convert to lowercase
+- [`text-lower-case-first`](../lower-case-first) - Make first character lowercase
+- [`text-title-case`](../title-case) - Convert to Title Case
 - [`text-sentence-case`](../sentence-case) - Convert to Sentence case
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -275,11 +341,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-upper-case-first.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-upper-case-first

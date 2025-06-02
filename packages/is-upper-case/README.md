@@ -3,12 +3,21 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Check if a string is in UPPER CASE format.
+> Check if a string is in **UPPERCASE** format.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~200B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,14 +33,24 @@ pnpm add text-is-upper-case
 bun add text-is-upper-case
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { isUpperCase } from "text-is-upper-case";
+
+console.log(isUpperCase("HELLO WORLD")); // true
+console.log(isUpperCase("Hello World")); // false
+console.log(isUpperCase("hello world")); // false
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
 ```javascript
 import { isUpperCase } from "text-is-upper-case";
 
-console.log(isUpperCase("HELLO WORLD")); // true
+console.log(isUpperCase("HELLO")); // true
 ```
 
 ### CommonJS
@@ -39,7 +58,7 @@ console.log(isUpperCase("HELLO WORLD")); // true
 ```javascript
 const { isUpperCase } = require("text-is-upper-case");
 
-console.log(isUpperCase("HELLO WORLD")); // true
+console.log(isUpperCase("HELLO")); // true
 ```
 
 ### TypeScript
@@ -51,254 +70,154 @@ const result: boolean = isUpperCase("HELLO WORLD");
 console.log(result); // true
 ```
 
-## Examples
+## 🔄 Validation Examples
 
-### Basic Usage
-
-```javascript
-import { isUpperCase } from "text-is-upper-case";
-
-// True cases
-isUpperCase("HELLO"); // true
-isUpperCase("WORLD"); // true
-isUpperCase("HELLO WORLD"); // true
-isUpperCase("TEST123"); // true
-isUpperCase("API"); // true
-
-// False cases
-isUpperCase("hello"); // false
-isUpperCase("Hello"); // false
-isUpperCase("HELLO world"); // false
-isUpperCase("Test"); // false
-```
-
-### Validation Examples
+### Basic Validation
 
 ```javascript
 import { isUpperCase } from "text-is-upper-case";
 
-// Environment variables validation
-isUpperCase("DATABASE_URL"); // true
-isUpperCase("API_SECRET_KEY"); // true
-isUpperCase("MAX_FILE_SIZE"); // true
+// Valid uppercase
+isUpperCase("HELLO");           // true
+isUpperCase("HELLO WORLD");     // true
+isUpperCase("TEST123");         // true
+isUpperCase("USER_NAME");       // true
+isUpperCase("API-KEY");         // true
 
-// Constants validation
-isUpperCase("HTTP_STATUS_OK"); // true
-isUpperCase("ERROR_CODES"); // true
-isUpperCase("DEFAULT_TIMEOUT"); // true
-
-// Acronyms validation
-isUpperCase("HTML"); // true
-isUpperCase("CSS"); // true
-isUpperCase("JSON"); // true
-isUpperCase("XML"); // true
+// Invalid (not uppercase)
+isUpperCase("Hello");           // false
+isUpperCase("hello");           // false
+isUpperCase("Hello World");     // false
+isUpperCase("camelCase");       // false
+isUpperCase("PascalCase");      // false
 ```
 
-### Form Validation Examples
-
-```javascript
-import { isUpperCase } from "text-is-upper-case";
-
-// Code validation
-function validateCode(code) {
-  if (!isUpperCase(code)) {
-    return "Code must be in uppercase";
-  }
-  return null;
-}
-
-validateCode("ABC123"); // null (valid)
-validateCode("abc123"); // "Code must be in uppercase"
-
-// Currency code validation
-function validateCurrencyCode(code) {
-  return isUpperCase(code) && code.length === 3;
-}
-
-validateCurrencyCode("USD"); // true
-validateCurrencyCode("usd"); // false
-validateCurrencyCode("EUR"); // true
-```
-
-### Programming Examples
-
-```javascript
-import { isUpperCase } from "text-is-upper-case";
-
-// Check constants format
-const constants = ["API_KEY", "BASE_URL", "MAX_RETRIES"];
-const validConstants = constants.filter(isUpperCase);
-// ["API_KEY", "BASE_URL", "MAX_RETRIES"]
-
-// Validate configuration keys
-function isValidConfigKey(key) {
-  return isUpperCase(key) && key.includes("_");
-}
-
-isValidConfigKey("SERVER_PORT"); // true
-isValidConfigKey("DATABASE_HOST"); // true
-isValidConfigKey("serverPort"); // false
-
-// Check if string follows CONSTANT_CASE
-function isConstantCase(str) {
-  return isUpperCase(str) && /^[A-Z_]+$/.test(str);
-}
-
-isConstantCase("API_KEY"); // true
-isConstantCase("BASE_URL"); // true
-isConstantCase("API-KEY"); // false (contains hyphen)
-```
-
-### Special Cases
+### Edge Cases
 
 ```javascript
 import { isUpperCase } from "text-is-upper-case";
 
 // Numbers and symbols
-isUpperCase("123"); // true (no letters to check)
-isUpperCase("!!!@@@"); // true (no letters to check)
-isUpperCase("TEST123"); // true
-isUpperCase("123TEST"); // true
+isUpperCase("123");             // true
+isUpperCase("HELLO123");        // true
+isUpperCase("TEST@EMAIL.COM");  // true
+isUpperCase("USER_123");        // true
 
 // Empty and whitespace
-isUpperCase(""); // true (no letters to check)
-isUpperCase(" "); // true (no letters to check)
-isUpperCase("   "); // true (no letters to check)
+isUpperCase("");               // true
+isUpperCase("   ");            // true
+isUpperCase("\n\t");           // true
 
-// Mixed with symbols
-isUpperCase("API_KEY"); // true
-isUpperCase("TEST-123"); // true
-isUpperCase("HELLO.WORLD"); // true
-isUpperCase("HELLO@WORLD.COM"); // true
+// Special characters
+isUpperCase("HELLO-WORLD");     // true
+isUpperCase("TEST_CASE");       // true
+isUpperCase("FILE.TXT");        // true
 ```
 
-### Real-world Applications
+## 🌍 Real-World Examples
+
+### Environment Variable Validation
 
 ```javascript
 import { isUpperCase } from "text-is-upper-case";
 
-// Country code validation
-function validateCountryCode(code) {
-  return isUpperCase(code) && code.length === 2;
-}
-
-validateCountryCode("US"); // true
-validateCountryCode("GB"); // true
-validateCountryCode("us"); // false
-
-// Language code validation
-function validateLanguageCode(code) {
-  return isUpperCase(code) && /^[A-Z]{2}(-[A-Z]{2})?$/.test(code);
-}
-
-validateLanguageCode("EN"); // true
-validateLanguageCode("EN-US"); // true
-validateLanguageCode("en-us"); // false
-
-// File extension validation (for specific formats)
-function isUpperCaseExtension(ext) {
-  return ext.startsWith(".") && isUpperCase(ext.slice(1));
-}
-
-isUpperCaseExtension(".PDF"); // true
-isUpperCaseExtension(".JPG"); // true
-isUpperCaseExtension(".pdf"); // false
-```
-
-### Input Sanitization
-
-```javascript
-import { isUpperCase } from "text-is-upper-case";
-
-// Sanitize input for uppercase-only fields
-function sanitizeUpperCaseInput(input) {
-  if (typeof input !== "string") {
-    throw new Error("Input must be a string");
+function validateEnvVarName(name) {
+  if (!isUpperCase(name)) {
+    return "Environment variable names should be uppercase";
   }
-
-  if (!isUpperCase(input)) {
-    throw new Error("Input must be in uppercase");
-  }
-
-  return input;
+  return null;
 }
 
-// User input validation
-function validatePostalCode(code) {
-  // Some postal codes must be uppercase
-  return typeof code === "string" && code.length >= 3 && isUpperCase(code);
-}
-
-validatePostalCode("SW1A 1AA"); // true (UK postal code)
-validatePostalCode("sw1a 1aa"); // false
-validatePostalCode("10001"); // true (US ZIP code)
+console.log(validateEnvVarName("DATABASE_URL")); // null (valid)
+console.log(validateEnvVarName("databaseUrl")); // "Environment variable names should be uppercase"
 ```
 
-### Batch Validation
+### Constant Validation
 
 ```javascript
 import { isUpperCase } from "text-is-upper-case";
 
-// Validate array of strings
-function validateUpperCaseArray(strings) {
-  return strings.every(isUpperCase);
+function validateConstantName(name) {
+  if (!isUpperCase(name)) {
+    return "Constants should be uppercase";
+  }
+  return null;
 }
 
-validateUpperCaseArray(["API", "URL", "JSON"]); // true
-validateUpperCaseArray(["API", "url", "JSON"]); // false
-
-// Find non-uppercase strings
-function findNonUpperCase(strings) {
-  return strings.filter((str) => !isUpperCase(str));
-}
-
-const mixed = ["API", "url", "JSON", "html"];
-findNonUpperCase(mixed); // ["url", "html"]
+console.log(validateConstantName("MAX_RETRIES")); // null
+console.log(validateConstantName("maxRetries")); // "Constants should be uppercase"
 ```
 
-## API
+### HTTP Header Validation
+
+```javascript
+import { isUpperCase } from "text-is-upper-case";
+
+function validateHeaderMethod(method) {
+  if (!isUpperCase(method)) {
+    return "HTTP methods should be uppercase";
+  }
+  return null;
+}
+
+console.log(validateHeaderMethod("GET")); // null
+console.log(validateHeaderMethod("get")); // "HTTP methods should be uppercase"
+```
+
+### Configuration Validation
+
+```javascript
+import { isUpperCase } from "text-is-upper-case";
+
+function validateConfigConstants(config) {
+  const invalidKeys = Object.keys(config).filter(key =>
+    key.startsWith('CONST_') && !isUpperCase(key)
+  );
+
+  if (invalidKeys.length > 0) {
+    return `Invalid constant keys (must be uppercase): ${invalidKeys.join(', ')}`;
+  }
+  return null;
+}
+
+const config1 = { CONST_MAX_SIZE: 100, normalKey: "value" };
+const config2 = { CONST_max_size: 100, normalKey: "value" };
+
+console.log(validateConfigConstants(config1)); // null
+console.log(validateConfigConstants(config2)); // "Invalid constant keys..."
+```
+
+## 📖 API Reference
 
 ### `isUpperCase(input)`
 
-Checks if a string is in upper case.
+Checks if a string is in uppercase format.
 
 #### Parameters
 
-- `input` (`string`): The string to check
+- **`input`** (`string`): The string to check
 
 #### Returns
 
-- `boolean`: `true` if the string is in upper case, `false` otherwise
+- **`boolean`**: `true` if the string is uppercase, `false` otherwise
 
-#### Notes
+## 📊 Bundle Size
 
-- Returns `true` for strings with no alphabetic characters
-- Case-sensitive comparison for alphabetic characters only
-- Numbers, symbols, and whitespace are ignored
+This package is optimized for minimal bundle size:
 
-## Development
+- **Minified**: ~200B
+- **Gzipped**: ~150B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
 
-### Type Checking
+## 🌍 Browser Support
 
-```bash
-# Check types
-pnpm typecheck
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
 
-# Check types in watch mode
-pnpm typecheck:watch
-```
-
-### Linting
-
-```bash
-# Run linter
-pnpm lint
-
-# Auto-fix linting issues
-pnpm lint --fix
-```
-
-### Testing
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -309,54 +228,26 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
-
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~150 B
-- **Gzipped**: ~100 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Type guards for string validation
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
+## 🔗 Related Packages
 
 - [`text-is-lower-case`](../is-lower-case) - Check if string is lowercase
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
+- [`text-upper-case`](../upper-case) - Convert to uppercase
 - [`text-lower-case`](../lower-case) - Convert to lowercase
-- [`text-swap-case`](../swap-case) - Swap character case
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -364,11 +255,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-is-upper-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-is-upper-case

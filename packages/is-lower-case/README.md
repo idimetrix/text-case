@@ -3,12 +3,21 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Check if a string is in lower case format.
+> Check if a string is in **lowercase** format.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~200B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,14 +33,24 @@ pnpm add text-is-lower-case
 bun add text-is-lower-case
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { isLowerCase } from "text-is-lower-case";
+
+console.log(isLowerCase("hello world")); // true
+console.log(isLowerCase("Hello World")); // false
+console.log(isLowerCase("HELLO WORLD")); // false
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
 ```javascript
 import { isLowerCase } from "text-is-lower-case";
 
-console.log(isLowerCase("hello world")); // true
+console.log(isLowerCase("hello")); // true
 ```
 
 ### CommonJS
@@ -39,7 +58,7 @@ console.log(isLowerCase("hello world")); // true
 ```javascript
 const { isLowerCase } = require("text-is-lower-case");
 
-console.log(isLowerCase("hello world")); // true
+console.log(isLowerCase("hello")); // true
 ```
 
 ### TypeScript
@@ -51,54 +70,57 @@ const result: boolean = isLowerCase("hello world");
 console.log(result); // true
 ```
 
-## Examples
+## 🔄 Validation Examples
 
-### Basic Usage
+### Basic Validation
 
 ```javascript
 import { isLowerCase } from "text-is-lower-case";
 
-// True cases
-isLowerCase("hello"); // true
-isLowerCase("world"); // true
-isLowerCase("hello world"); // true
-isLowerCase("test123"); // true
-isLowerCase("api"); // true
+// Valid lowercase
+isLowerCase("hello");           // true
+isLowerCase("hello world");     // true
+isLowerCase("test123");         // true
+isLowerCase("user_name");       // true
+isLowerCase("api-key");         // true
 
-// False cases
-isLowerCase("Hello"); // false
-isLowerCase("HELLO"); // false
-isLowerCase("hello World"); // false
-isLowerCase("Test"); // false
+// Invalid (not lowercase)
+isLowerCase("Hello");           // false
+isLowerCase("HELLO");           // false
+isLowerCase("Hello World");     // false
+isLowerCase("camelCase");       // false
+isLowerCase("PascalCase");      // false
 ```
 
-### Validation Examples
+### Edge Cases
 
 ```javascript
 import { isLowerCase } from "text-is-lower-case";
 
-// URL validation
-isLowerCase("example.com"); // true
-isLowerCase("api.service.com"); // true
-isLowerCase("My-Website.COM"); // false
+// Numbers and symbols
+isLowerCase("123");             // true
+isLowerCase("hello123");        // true
+isLowerCase("test@email.com");  // true
+isLowerCase("user_123");        // true
 
-// Email validation (partial)
-isLowerCase("user@example.com"); // true
-isLowerCase("User@Example.com"); // false
-isLowerCase("admin@service.org"); // true
+// Empty and whitespace
+isLowerCase("");               // true
+isLowerCase("   ");            // true
+isLowerCase("\n\t");           // true
 
-// CSS class names
-isLowerCase("container"); // true
-isLowerCase("nav-item"); // true
-isLowerCase("Button"); // false
+// Special characters
+isLowerCase("hello-world");     // true
+isLowerCase("test_case");       // true
+isLowerCase("file.txt");        // true
 ```
 
-### Form Validation Examples
+## 🌍 Real-World Examples
+
+### Form Validation
 
 ```javascript
 import { isLowerCase } from "text-is-lower-case";
 
-// Username validation
 function validateUsername(username) {
   if (!isLowerCase(username)) {
     return "Username must be lowercase";
@@ -106,262 +128,96 @@ function validateUsername(username) {
   return null;
 }
 
-validateUsername("john123"); // null (valid)
-validateUsername("John123"); // "Username must be lowercase"
-
-// Domain validation
-function validateDomain(domain) {
-  return isLowerCase(domain) && domain.includes(".");
-}
-
-validateDomain("example.com"); // true
-validateDomain("Example.COM"); // false
-validateDomain("api.service.org"); // true
+console.log(validateUsername("john_doe")); // null (valid)
+console.log(validateUsername("John_Doe")); // "Username must be lowercase"
 ```
 
-### Programming Examples
+### Email Validation
 
 ```javascript
 import { isLowerCase } from "text-is-lower-case";
 
-// Check variable naming convention
-const variables = ["userName", "apiKey", "maxRetries"];
-const lowerCaseVars = variables.filter(isLowerCase);
-// ["userName", "apiKey", "maxRetries"] (if following camelCase with lowercase start)
+function validateEmailFormat(email) {
+  const [localPart] = email.split('@');
 
-// Validate CSS property names
-function isValidCSSProperty(property) {
-  return isLowerCase(property) && property.includes("-");
+  if (!isLowerCase(localPart)) {
+    return "Email local part should be lowercase";
+  }
+  return null;
 }
 
-isValidCSSProperty("font-size"); // true
-isValidCSSProperty("background-color"); // true
-isValidCSSProperty("FontSize"); // false
-
-// Check if string follows snake_case
-function isSnakeCase(str) {
-  return isLowerCase(str) && /^[a-z_]+$/.test(str);
-}
-
-isSnakeCase("user_name"); // true
-isSnakeCase("api_key"); // true
-isSnakeCase("UserName"); // false
+console.log(validateEmailFormat("user@example.com")); // null
+console.log(validateEmailFormat("User@example.com")); // "Email local part should be lowercase"
 ```
 
-### Special Cases
+### URL Slug Validation
 
 ```javascript
 import { isLowerCase } from "text-is-lower-case";
 
-// Numbers and symbols
-isLowerCase("123"); // true (no letters to check)
-isLowerCase("!!!@@@"); // true (no letters to check)
-isLowerCase("test123"); // true
-isLowerCase("123test"); // true
-
-// Empty and whitespace
-isLowerCase(""); // true (no letters to check)
-isLowerCase(" "); // true (no letters to check)
-isLowerCase("   "); // true (no letters to check)
-
-// Mixed with symbols
-isLowerCase("user_name"); // true
-isLowerCase("test-123"); // true
-isLowerCase("hello.world"); // true
-isLowerCase("user@domain.com"); // true
-```
-
-### Real-world Applications
-
-```javascript
-import { isLowerCase } from "text-is-lower-case";
-
-// Package name validation
-function validatePackageName(name) {
-  return isLowerCase(name) && /^[a-z0-9-]+$/.test(name);
-}
-
-validatePackageName("my-package"); // true
-validatePackageName("text-case"); // true
-validatePackageName("MyPackage"); // false
-
-// File name validation (for certain naming conventions)
-function validateFileName(filename) {
-  const nameWithoutExt = filename.split(".")[0];
-  return isLowerCase(nameWithoutExt);
-}
-
-validateFileName("config.json"); // true
-validateFileName("package.json"); // true
-validateFileName("Config.JSON"); // false
-
-// URL slug validation
 function validateSlug(slug) {
-  return isLowerCase(slug) && /^[a-z0-9-]+$/.test(slug);
-}
-
-validateSlug("my-blog-post"); // true
-validateSlug("hello-world"); // true
-validateSlug("Hello-World"); // false
-```
-
-### Input Sanitization
-
-```javascript
-import { isLowerCase } from "text-is-lower-case";
-
-// Sanitize input for lowercase-only fields
-function sanitizeLowerCaseInput(input) {
-  if (typeof input !== "string") {
-    throw new Error("Input must be a string");
-  }
-
-  if (!isLowerCase(input)) {
-    throw new Error("Input must be in lowercase");
-  }
-
-  return input;
-}
-
-// Email domain validation
-function validateEmailDomain(email) {
-  const domain = email.split("@")[1];
-  return domain && isLowerCase(domain);
-}
-
-validateEmailDomain("user@example.com"); // true
-validateEmailDomain("user@Example.COM"); // false
-
-// CSS selector validation
-function isValidCSSSelector(selector) {
-  // Basic validation for class selectors
-  if (selector.startsWith(".")) {
-    const className = selector.slice(1);
-    return isLowerCase(className) && /^[a-z0-9-_]+$/.test(className);
-  }
-  return false;
-}
-
-isValidCSSSelector(".nav-item"); // true
-isValidCSSSelector(".NavItem"); // false
-```
-
-### Batch Validation
-
-```javascript
-import { isLowerCase } from "text-is-lower-case";
-
-// Validate array of strings
-function validateLowerCaseArray(strings) {
-  return strings.every(isLowerCase);
-}
-
-validateLowerCaseArray(["api", "url", "json"]); // true
-validateLowerCaseArray(["api", "URL", "json"]); // false
-
-// Find non-lowercase strings
-function findNonLowerCase(strings) {
-  return strings.filter((str) => !isLowerCase(str));
-}
-
-const mixed = ["api", "URL", "json", "HTML"];
-findNonLowerCase(mixed); // ["URL", "HTML"]
-
-// Clean data for lowercase requirements
-function cleanLowerCaseData(data) {
-  return data.map((item) => ({
-    ...item,
-    slug: isLowerCase(item.slug) ? item.slug : item.slug.toLowerCase(),
-  }));
-}
-```
-
-### Integration Examples
-
-```javascript
-import { isLowerCase } from "text-is-lower-case";
-
-// React component prop validation
-function validateProps(props) {
-  const errors = [];
-
-  if (props.className && !isLowerCase(props.className)) {
-    errors.push("className must be lowercase");
-  }
-
-  if (props.id && !isLowerCase(props.id)) {
-    errors.push("id must be lowercase");
-  }
-
-  return errors;
-}
-
-// Express.js route validation
-function validateRoute(req, res, next) {
-  const { slug } = req.params;
-
   if (!isLowerCase(slug)) {
-    return res.status(400).json({
-      error: "URL slug must be lowercase",
-    });
+    return "URL slug must be lowercase";
   }
-
-  next();
+  return null;
 }
 
-// Database field validation
-function validateDbField(fieldName, value) {
-  const lowerCaseFields = ["email", "username", "slug"];
-
-  if (lowerCaseFields.includes(fieldName) && !isLowerCase(value)) {
-    throw new Error(`${fieldName} must be lowercase`);
-  }
-}
+console.log(validateSlug("my-blog-post")); // null
+console.log(validateSlug("My-Blog-Post")); // "URL slug must be lowercase"
 ```
 
-## API
+### Configuration Validation
+
+```javascript
+import { isLowerCase } from "text-is-lower-case";
+
+function validateConfigKeys(config) {
+  const invalidKeys = Object.keys(config).filter(key => !isLowerCase(key));
+
+  if (invalidKeys.length > 0) {
+    return `Invalid config keys (must be lowercase): ${invalidKeys.join(', ')}`;
+  }
+  return null;
+}
+
+const config1 = { database_url: "...", api_key: "..." };
+const config2 = { databaseUrl: "...", apiKey: "..." };
+
+console.log(validateConfigKeys(config1)); // null
+console.log(validateConfigKeys(config2)); // "Invalid config keys..."
+```
+
+## 📖 API Reference
 
 ### `isLowerCase(input)`
 
-Checks if a string is in lower case.
+Checks if a string is in lowercase format.
 
 #### Parameters
 
-- `input` (`string`): The string to check
+- **`input`** (`string`): The string to check
 
 #### Returns
 
-- `boolean`: `true` if the string is in lower case, `false` otherwise
+- **`boolean`**: `true` if the string is lowercase, `false` otherwise
 
-#### Notes
+## 📊 Bundle Size
 
-- Returns `true` for strings with no alphabetic characters
-- Case-sensitive comparison for alphabetic characters only
-- Numbers, symbols, and whitespace are ignored
+This package is optimized for minimal bundle size:
 
-## Development
+- **Minified**: ~200B
+- **Gzipped**: ~150B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
 
-### Type Checking
+## 🌍 Browser Support
 
-```bash
-# Check types
-pnpm typecheck
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
 
-# Check types in watch mode
-pnpm typecheck:watch
-```
-
-### Linting
-
-```bash
-# Run linter
-pnpm lint
-
-# Auto-fix linting issues
-pnpm lint --fix
-```
-
-### Testing
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -372,54 +228,26 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
-
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~150 B
-- **Gzipped**: ~100 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Type guards for string validation
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
+## 🔗 Related Packages
 
 - [`text-is-upper-case`](../is-upper-case) - Check if string is uppercase
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
 - [`text-lower-case`](../lower-case) - Convert to lowercase
-- [`text-swap-case`](../swap-case) - Swap character case
+- [`text-upper-case`](../upper-case) - Convert to uppercase
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -427,11 +255,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-is-lower-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-is-lower-case

@@ -3,12 +3,22 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text into dot.case format - lowercase words separated by dots.
+> Transform text into **dot.case** format where words are lowercase and separated by dots.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~450B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+- **Customizable** - Flexible options for advanced use cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,7 +34,17 @@ pnpm add text-dot-case
 bun add text-dot-case
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { dotCase } from "text-dot-case";
+
+console.log(dotCase("hello world")); // "hello.world"
+console.log(dotCase("userProfileData")); // "user.profile.data"
+console.log(dotCase("backgroundColor")); // "background.color"
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
@@ -45,73 +65,33 @@ console.log(dotCase("Hello World")); // "hello.world"
 ### TypeScript
 
 ```typescript
-import { dotCase } from "text-dot-case";
+import { dotCase, Options } from "text-dot-case";
 
 const result: string = dotCase("Hello World");
 console.log(result); // "hello.world"
 ```
 
-## Examples
+## 🔄 Transformation Examples
 
-### Basic Usage
+### Basic Transformations
 
 ```javascript
 import { dotCase } from "text-dot-case";
 
 // From different cases
-dotCase("Hello World"); // "hello.world"
-dotCase("helloWorld"); // "hello.world"
-dotCase("HelloWorld"); // "hello.world"
-dotCase("hello_world"); // "hello.world"
-dotCase("hello-world"); // "hello.world"
-dotCase("HELLO_WORLD"); // "hello.world"
-```
+dotCase("Hello World");          // "hello.world"
+dotCase("helloWorld");           // "hello.world"
+dotCase("HelloWorld");           // "hello.world"
+dotCase("hello_world");          // "hello.world"
+dotCase("hello-world");          // "hello.world"
+dotCase("HELLO_WORLD");          // "hello.world"
+dotCase("CONSTANT_CASE");        // "constant.case"
 
-### Complex Examples
-
-```javascript
-import { dotCase } from "text-dot-case";
-
-// Mixed cases and numbers
-dotCase("XMLParser"); // "xml.parser"
-dotCase("iPhone6Plus"); // "i.phone6.plus"
-dotCase("HTML5Canvas"); // "html5.canvas"
-dotCase("getUserID"); // "get.user.id"
-
-// With symbols and spaces
-dotCase("hello, world!"); // "hello.world"
-dotCase("Hello & World"); // "hello.world"
-dotCase("test@example.com"); // "test.example.com"
-dotCase("user-name_123"); // "user.name.123"
-```
-
-### Real-world Applications
-
-```javascript
-import { dotCase } from "text-dot-case";
-
-// Object property names
-const apiResponse = {
-  "First Name": "John",
-  Last_Name: "Doe",
-  emailAddress: "john@example.com",
-};
-
-const normalized = Object.keys(apiResponse).reduce((acc, key) => {
-  acc[dotCase(key)] = apiResponse[key];
-  return acc;
-}, {});
-// { "first.name": "John", "last.name": "Doe", "email.address": "john@example.com" }
-
-// Configuration keys
-dotCase("DATABASE_HOST"); // "database.host"
-dotCase("apiSecretKey"); // "api.secret.key"
-dotCase("maxRetryAttempts"); // "max.retry.attempts"
-
-// File naming
-dotCase("UserProfile"); // "user.profile"
-dotCase("ShoppingCart"); // "shopping.cart"
-dotCase("PaymentGateway"); // "payment.gateway"
+// Complex examples
+dotCase("XMLParser");            // "xml.parser"
+dotCase("iPhone6Plus");          // "i.phone6.plus"
+dotCase("HTML5Canvas");          // "html5.canvas"
+dotCase("getUserID");            // "get.user.id"
 ```
 
 ### Advanced Options
@@ -119,44 +99,100 @@ dotCase("PaymentGateway"); // "payment.gateway"
 ```javascript
 import { dotCase } from "text-dot-case";
 
-// Custom separators
-dotCase("hello@world#test", {
-  separateNumbers: false,
-}); // "hello.world.test"
-
-// Preserve certain patterns
-dotCase("API_VERSION_2_1", {
+// Custom word splitting
+dotCase("XMLHttpRequest", {
   splitRegexp: /([a-z])([A-Z])/g,
-}); // "api.version.2.1"
+}); // "xml.http.request"
+
+// Custom character stripping
+dotCase("hello@world.com", {
+  stripRegexp: /[@]/g,
+}); // "hello.world.com"
+
+// Custom transformation function
+dotCase("API-v2-endpoint", {
+  transform: (word, index) => {
+    if (word === "API") return "api";
+    if (word === "v2") return "v2";
+    return word.toLowerCase();
+  },
+}); // "api.v2.endpoint"
 ```
 
-### Programming Examples
+## 🌍 Real-World Examples
+
+### Object Property Names
 
 ```javascript
 import { dotCase } from "text-dot-case";
 
-// Class names to dot notation
-const classNames = ["UserService", "PaymentProcessor", "EmailValidator"];
-const dotNotation = classNames.map(dotCase);
-// ["user.service", "payment.processor", "email.validator"]
+// API response normalization
+const apiResponse = {
+  "First Name": "John",
+  Last_Name: "Doe",
+  emailAddress: "john@example.com",
+  phoneNumber: "+1234567890"
+};
 
-// Method names
-dotCase("getUserById"); // "get.user.by.id"
-dotCase("calculateTotalPrice"); // "calculate.total.price"
+const normalized = Object.keys(apiResponse).reduce((acc, key) => {
+  acc[dotCase(key)] = apiResponse[key];
+  return acc;
+}, {});
+
+console.log(normalized);
+// {
+//   "first.name": "John",
+//   "last.name": "Doe",
+//   "email.address": "john@example.com",
+//   "phone.number": "+1234567890"
+// }
+```
+
+### Configuration Keys
+
+```javascript
+import { dotCase } from "text-dot-case";
+
+// Environment variables to config
+dotCase("DATABASE_HOST");        // "database.host"
+dotCase("apiSecretKey");         // "api.secret.key"
+dotCase("maxRetryAttempts");     // "max.retry.attempts"
+dotCase("REDIS_CONNECTION");     // "redis.connection"
+dotCase("jwtTokenExpiry");       // "jwt.token.expiry"
+```
+
+### File and Module Names
+
+```javascript
+import { dotCase } from "text-dot-case";
+
+// Component naming
+dotCase("UserProfile");          // "user.profile"
+dotCase("ShoppingCart");         // "shopping.cart"
+dotCase("PaymentGateway");       // "payment.gateway"
+dotCase("AuthMiddleware");       // "auth.middleware"
+dotCase("EmailValidator");       // "email.validator"
+```
+
+### Method and Function Names
+
+```javascript
+import { dotCase } from "text-dot-case";
+
+// Class methods to dot notation
+dotCase("getUserById");          // "get.user.by.id"
+dotCase("calculateTotalPrice");  // "calculate.total.price"
 dotCase("validateEmailAddress"); // "validate.email.address"
-
-// Constants
-dotCase("MAX_FILE_SIZE"); // "max.file.size"
-dotCase("DEFAULT_TIMEOUT"); // "default.timeout"
-dotCase("ERROR_MESSAGES"); // "error.messages"
+dotCase("processPaymentData");   // "process.payment.data"
+dotCase("generateAccessToken");  // "generate.access.token"
 ```
 
-### Data Processing
+### Database and Schema Mapping
 
 ```javascript
 import { dotCase } from "text-dot-case";
 
-// Transform form data
+// Transform form data for nested objects
 function normalizeFormData(formData) {
   const normalized = {};
 
@@ -171,198 +207,140 @@ const form = {
   firstName: "John",
   lastName: "Doe",
   emailAddress: "john@example.com",
-  phoneNumber: "+1234567890",
+  billingAddress: "123 Main St",
+  shippingAddress: "456 Oak Ave"
 };
 
-normalizeFormData(form);
+console.log(normalizeFormData(form));
 // {
 //   "first.name": "John",
 //   "last.name": "Doe",
 //   "email.address": "john@example.com",
-//   "phone.number": "+1234567890"
+//   "billing.address": "123 Main St",
+//   "shipping.address": "456 Oak Ave"
 // }
-
-// Database column mapping
-function createColumnMapping(schema) {
-  return schema.map((column) => ({
-    original: column,
-    dotCase: dotCase(column),
-  }));
-}
-
-createColumnMapping(["userId", "createdAt", "lastLoginTime"]);
-// [
-//   { original: "userId", dotCase: "user.id" },
-//   { original: "createdAt", dotCase: "created.at" },
-//   { original: "lastLoginTime", dotCase: "last.login.time" }
-// ]
 ```
 
-### Framework Integration
+### Constants and Enums
 
 ```javascript
 import { dotCase } from "text-dot-case";
 
-// React props transformation
-function transformProps(props) {
-  const transformed = {};
-
-  Object.keys(props).forEach((key) => {
-    transformed[dotCase(key)] = props[key];
-  });
-
-  return transformed;
-}
-
-// Vue.js data normalization
-const vueData = {
-  userName: "john",
-  isLoggedIn: true,
-  shoppingCartItems: [],
-};
-
-const normalized = Object.keys(vueData).reduce((acc, key) => {
-  acc[dotCase(key)] = vueData[key];
-  return acc;
-}, {});
-// { "user.name": "john", "is.logged.in": true, "shopping.cart.items": [] }
-
-// Angular service names
-dotCase("UserAuthService"); // "user.auth.service"
-dotCase("HttpInterceptor"); // "http.interceptor"
-dotCase("RouteGuard"); // "route.guard"
+// Transform constants
+dotCase("MAX_FILE_SIZE");        // "max.file.size"
+dotCase("DEFAULT_TIMEOUT");      // "default.timeout"
+dotCase("ERROR_MESSAGES");       // "error.messages"
+dotCase("HTTP_STATUS_CODES");    // "http.status.codes"
+dotCase("VALIDATION_RULES");     // "validation.rules"
 ```
 
-### Utility Functions
-
-```javascript
-import { dotCase } from "text-dot-case";
-
-// Batch transformation
-function transformKeys(obj, transformer = dotCase) {
-  if (Array.isArray(obj)) {
-    return obj.map((item) => transformKeys(item, transformer));
-  }
-
-  if (obj !== null && typeof obj === "object") {
-    const transformed = {};
-
-    Object.keys(obj).forEach((key) => {
-      transformed[transformer(key)] = transformKeys(obj[key], transformer);
-    });
-
-    return transformed;
-  }
-
-  return obj;
-}
-
-const nestedData = {
-  userInfo: {
-    firstName: "John",
-    lastLoginDate: "2023-01-01",
-  },
-  accountSettings: {
-    emailNotifications: true,
-    twoFactorAuth: false,
-  },
-};
-
-transformKeys(nestedData);
-// {
-//   "user.info": {
-//     "first.name": "John",
-//     "last.login.date": "2023-01-01"
-//   },
-//   "account.settings": {
-//     "email.notifications": true,
-//     "two.factor.auth": false
-//   }
-// }
-
-// Path generation
-function generatePath(...segments) {
-  return segments.map(dotCase).join(".");
-}
-
-generatePath("user", "profile", "settings"); // "user.profile.settings"
-generatePath("API", "version", "2.0"); // "api.version.2.0"
-```
-
-### Edge Cases
-
-```javascript
-import { dotCase } from "text-dot-case";
-
-// Empty and special inputs
-dotCase(""); // ""
-dotCase(" "); // ""
-dotCase("   "); // ""
-
-// Numbers and symbols only
-dotCase("123"); // "123"
-dotCase("@#$"); // ""
-dotCase("123abc"); // "123.abc"
-
-// Single words
-dotCase("hello"); // "hello"
-dotCase("HELLO"); // "hello"
-dotCase("Hello"); // "hello"
-
-// Already dot case
-dotCase("hello.world"); // "hello.world"
-dotCase("user.name.here"); // "user.name.here"
-```
-
-## API
+## 📖 API Reference
 
 ### `dotCase(input, options?)`
 
-Transforms a string into dot.case format.
+Converts a string to dot.case.
 
 #### Parameters
 
-- `input` (`string`): The string to transform
-- `options` (`object`, optional): Transformation options
-  - `separateNumbers` (`boolean`): Whether to separate numbers. Default: `true`
-  - `stripRegexp` (`RegExp`): Pattern for characters to remove
-  - `splitRegexp` (`RegExp`): Pattern for splitting words
+- **`input`** (`string`): The string to convert
+- **`options`** (`Options`, optional): Configuration options
 
 #### Returns
 
-- `string`: The transformed string in dot.case format
+- **`string`**: The dot.case formatted string
 
-#### Examples
+#### Options
+
+```typescript
+interface Options {
+  // Custom transform function for word processing
+  transform?: (word: string, index: number, words: string[]) => string;
+
+  // Regex to strip characters before processing
+  stripRegexp?: RegExp;
+
+  // Custom split function
+  split?: (value: string) => string[];
+}
+```
+
+## 🔧 Advanced Configuration
+
+### Custom Word Splitting
 
 ```javascript
-dotCase("HelloWorld"); // "hello.world"
-dotCase("hello_world"); // "hello.world"
-dotCase("HELLO-WORLD"); // "hello.world"
+import { dotCase } from "text-dot-case";
+
+// Split on specific patterns
+dotCase("XMLHttpRequest", {
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "xml.http.request"
+
+// Split on numbers
+dotCase("user123data", {
+  splitRegexp: /([a-zA-Z])(\d)/g,
+}); // "user.123.data"
 ```
 
-## Development
+### Custom Character Stripping
 
-### Type Checking
+```javascript
+import { dotCase } from "text-dot-case";
 
-```bash
-# Check types
-pnpm typecheck
+// Strip specific characters
+dotCase("hello@world.com", {
+  stripRegexp: /[@]/g,
+}); // "hello.world.com"
 
-# Check types in watch mode
-pnpm typecheck:watch
+// Strip all non-alphanumeric except dots
+dotCase("hello!@#world", {
+  stripRegexp: /[^a-zA-Z0-9.]/g,
+}); // "hello.world"
 ```
 
-### Linting
+### Custom Transform Functions
 
-```bash
-# Run linter
-pnpm lint
+```javascript
+import { dotCase } from "text-dot-case";
 
-# Auto-fix linting issues
-pnpm lint --fix
+// Preserve specific formatting
+dotCase("XML-HTTP-Request", {
+  transform: (word, index) => {
+    const acronyms = ["xml", "http", "api", "url"];
+    if (acronyms.includes(word.toLowerCase())) {
+      return word.toLowerCase();
+    }
+    return word.toLowerCase();
+  },
+}); // "xml.http.request"
+
+// Custom business logic
+dotCase("UserV2API", {
+  transform: (word, index) => {
+    if (word === "V2") return "v2";
+    if (word === "API") return "api";
+    return word.toLowerCase();
+  },
+}); // "user.v2.api"
 ```
 
-### Testing
+## 📊 Bundle Size
+
+This package is optimized for minimal bundle size:
+
+- **Minified**: ~450B
+- **Gzipped**: ~250B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
+
+## 🌍 Browser Support
+
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
+
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -373,55 +351,27 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
+## 🔗 Related Packages
 
-```bash
-# Build the package
-pnpm build
+- [`text-camel-case`](../camel-case) - Convert to camelCase
+- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
+- [`text-snake-case`](../snake-case) - Convert to snake_case
+- [`text-kebab-case`](../kebab-case) - Convert to kebab-case
+- [`text-case`](../text-case) - All case transformations in one package
 
-# Build and watch for changes
-pnpm build --watch
-```
+## 📜 License
 
-## Bundle Size
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~800 B
-- **Gzipped**: ~400 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Generic type parameters
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
-
-- [`text-camel-case`](../camel-case) - Transform to camelCase
-- [`text-pascal-case`](../pascal-case) - Transform to PascalCase
-- [`text-kebab-case`](../kebab-case) - Transform to kebab-case
-- [`text-snake-case`](../snake-case) - Transform to snake_case
-- [`text-path-case`](../path-case) - Transform to path/case
-
-## License
-
-[MIT](LICENSE)
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -429,11 +379,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-dot-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-dot-case

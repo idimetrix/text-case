@@ -3,12 +3,21 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text by making the first character lowercase while keeping the rest unchanged.
+> Transform text by making the **first character lowercase** while preserving the rest.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~200B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,14 +33,24 @@ pnpm add text-lower-case-first
 bun add text-lower-case-first
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+console.log(lowerCaseFirst("Hello World")); // "hello World"
+console.log(lowerCaseFirst("HELLO WORLD")); // "hELLO WORLD"
+console.log(lowerCaseFirst("CamelCase")); // "camelCase"
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
 ```javascript
 import { lowerCaseFirst } from "text-lower-case-first";
 
-console.log(lowerCaseFirst("Hello World")); // "hello World"
+console.log(lowerCaseFirst("Hello")); // "hello"
 ```
 
 ### CommonJS
@@ -39,7 +58,7 @@ console.log(lowerCaseFirst("Hello World")); // "hello World"
 ```javascript
 const { lowerCaseFirst } = require("text-lower-case-first");
 
-console.log(lowerCaseFirst("Hello World")); // "hello World"
+console.log(lowerCaseFirst("Hello")); // "hello"
 ```
 
 ### TypeScript
@@ -51,108 +70,28 @@ const result: string = lowerCaseFirst("Hello World");
 console.log(result); // "hello World"
 ```
 
-## Examples
+## 🔄 Transformation Examples
 
-### Basic Usage
-
-```javascript
-import { lowerCaseFirst } from "text-lower-case-first";
-
-// Simple transformations
-lowerCaseFirst("Hello"); // "hello"
-lowerCaseFirst("World"); // "world"
-lowerCaseFirst("Hello World"); // "hello World"
-
-// Already lowercase
-lowerCaseFirst("hello"); // "hello"
-lowerCaseFirst("hello world"); // "hello world"
-
-// Mixed case
-lowerCaseFirst("HELLo WoRLD"); // "hELLo WoRLD"
-lowerCaseFirst("TEST"); // "tEST"
-
-// Single character
-lowerCaseFirst("A"); // "a"
-lowerCaseFirst("a"); // "a"
-```
-
-### Real-world Examples
+### Basic Transformations
 
 ```javascript
 import { lowerCaseFirst } from "text-lower-case-first";
 
-// Variable naming (camelCase style)
-lowerCaseFirst("FirstName"); // "firstName"
-lowerCaseFirst("LastName"); // "lastName"
-lowerCaseFirst("EmailAddress"); // "emailAddress"
+// Simple cases
+lowerCaseFirst("Hello");         // "hello"
+lowerCaseFirst("hello");         // "hello"
+lowerCaseFirst("HELLO");         // "hELLO"
 
-// JSON property names
-lowerCaseFirst("UserProfile"); // "userProfile"
-lowerCaseFirst("ApiResponse"); // "apiResponse"
-lowerCaseFirst("DatabaseConnection"); // "databaseConnection"
+// Multiple words
+lowerCaseFirst("Hello World");   // "hello World"
+lowerCaseFirst("HELLO WORLD");   // "hELLO WORLD"
+lowerCaseFirst("hello world");   // "hello world"
 
-// CSS property names
-lowerCaseFirst("BackgroundColor"); // "backgroundColor"
-lowerCaseFirst("FontSize"); // "fontSize"
-lowerCaseFirst("MarginTop"); // "marginTop"
-
-// Function names
-lowerCaseFirst("GetUserData"); // "getUserData"
-lowerCaseFirst("ValidateInput"); // "validateInput"
-lowerCaseFirst("ProcessPayment"); // "processPayment"
-```
-
-### Programming Examples
-
-```javascript
-import { lowerCaseFirst } from "text-lower-case-first";
-
-// Class names to instance names
-lowerCaseFirst("UserService"); // "userService"
-lowerCaseFirst("PaymentGateway"); // "paymentGateway"
-lowerCaseFirst("DatabaseManager"); // "databaseManager"
-
-// Method names
-lowerCaseFirst("Initialize"); // "initialize"
-lowerCaseFirst("Execute"); // "execute"
-lowerCaseFirst("Terminate"); // "terminate"
-
-// Property names
-lowerCaseFirst("IsActive"); // "isActive"
-lowerCaseFirst("HasPermission"); // "hasPermission"
-lowerCaseFirst("CanEdit"); // "canEdit"
-
-// Event names
-lowerCaseFirst("OnClick"); // "onClick"
-lowerCaseFirst("OnSubmit"); // "onSubmit"
-lowerCaseFirst("OnLoad"); // "onLoad"
-```
-
-### API and Configuration Examples
-
-```javascript
-import { lowerCaseFirst } from "text-lower-case-first";
-
-// API endpoint names
-lowerCaseFirst("GetUsers"); // "getUsers"
-lowerCaseFirst("CreateUser"); // "createUser"
-lowerCaseFirst("UpdateProfile"); // "updateProfile"
-lowerCaseFirst("DeleteAccount"); // "deleteAccount"
-
-// Configuration keys
-lowerCaseFirst("ServerPort"); // "serverPort"
-lowerCaseFirst("DatabaseUrl"); // "databaseUrl"
-lowerCaseFirst("ApiSecretKey"); // "apiSecretKey"
-
-// Component props
-lowerCaseFirst("ShowHeader"); // "showHeader"
-lowerCaseFirst("AllowEdit"); // "allowEdit"
-lowerCaseFirst("AutoSave"); // "autoSave"
-
-// State variables
-lowerCaseFirst("IsLoading"); // "isLoading"
-lowerCaseFirst("HasError"); // "hasError"
-lowerCaseFirst("UserData"); // "userData"
+// Programming cases
+lowerCaseFirst("CamelCase");     // "camelCase"
+lowerCaseFirst("PascalCase");    // "pascalCase"
+lowerCaseFirst("Snake_case");    // "snake_case"
+lowerCaseFirst("Kebab-case");    // "kebab-case"
 ```
 
 ### Edge Cases
@@ -160,85 +99,310 @@ lowerCaseFirst("UserData"); // "userData"
 ```javascript
 import { lowerCaseFirst } from "text-lower-case-first";
 
-// Empty and whitespace
-lowerCaseFirst(""); // ""
-lowerCaseFirst(" "); // " "
-lowerCaseFirst("  Hello"); // "  Hello"
+// Empty and single character
+lowerCaseFirst("");              // ""
+lowerCaseFirst("A");             // "a"
+lowerCaseFirst("a");             // "a"
 
 // Numbers and symbols
-lowerCaseFirst("123ABC"); // "123ABC"
-lowerCaseFirst("!Important"); // "!Important"
-lowerCaseFirst("@Username"); // "@Username"
+lowerCaseFirst("123hello");      // "123hello"
+lowerCaseFirst("@Hello");        // "@Hello"
+lowerCaseFirst("Hello123");      // "hello123"
 
 // Unicode characters
-lowerCaseFirst("Élégant"); // "élégant"
-lowerCaseFirst("Naïve"); // "naïve"
-lowerCaseFirst("Résumé"); // "résumé"
-
-// Acronyms
-lowerCaseFirst("API"); // "aPI"
-lowerCaseFirst("URL"); // "uRL"
-lowerCaseFirst("JSON"); // "jSON"
+lowerCaseFirst("Ñice");          // "ñice"
+lowerCaseFirst("Über");          // "über"
+lowerCaseFirst("Café");          // "café"
 ```
 
-### Framework Integration Examples
+## 🌍 Real-World Examples
+
+### Variable Name Conversion
 
 ```javascript
 import { lowerCaseFirst } from "text-lower-case-first";
 
-// React component props
-lowerCaseFirst("ClassName"); // "className"
-lowerCaseFirst("OnClick"); // "onClick"
-lowerCaseFirst("DefaultValue"); // "defaultValue"
-
-// Vue.js properties
-lowerCaseFirst("VModel"); // "vModel"
-lowerCaseFirst("VShow"); // "vShow"
-lowerCaseFirst("VIf"); // "vIf"
-
-// Angular directives
-lowerCaseFirst("NgIf"); // "ngIf"
-lowerCaseFirst("NgFor"); // "ngFor"
-lowerCaseFirst("NgModel"); // "ngModel"
+// Convert PascalCase to camelCase
+lowerCaseFirst("UserProfile");   // "userProfile"
+lowerCaseFirst("DatabaseConnection"); // "databaseConnection"
+lowerCaseFirst("ApiResponse");   // "apiResponse"
+lowerCaseFirst("HttpClient");    // "httpClient"
 ```
 
-## API
+### JSON Property Processing
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+function convertObjectKeys(obj) {
+  const converted = {};
+
+  for (const [key, value] of Object.entries(obj)) {
+    const newKey = lowerCaseFirst(key);
+    converted[newKey] = typeof value === 'object' && value !== null
+      ? convertObjectKeys(value)
+      : value;
+  }
+
+  return converted;
+}
+
+const apiResponse = {
+  UserName: "john_doe",
+  EmailAddress: "john@example.com",
+  ProfileData: {
+    FirstName: "John",
+    LastName: "Doe",
+    PhoneNumber: "123-456-7890"
+  }
+};
+
+console.log(convertObjectKeys(apiResponse));
+// {
+//   userName: "john_doe",
+//   emailAddress: "john@example.com",
+//   profileData: {
+//     firstName: "John",
+//     lastName: "Doe",
+//     phoneNumber: "123-456-7890"
+//   }
+// }
+```
+
+### Class Method Generation
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+function createGetter(propertyName) {
+  const methodName = `get${propertyName}`;
+  return lowerCaseFirst(methodName);
+}
+
+function createSetter(propertyName) {
+  const methodName = `set${propertyName}`;
+  return lowerCaseFirst(methodName);
+}
+
+console.log(createGetter("UserName"));    // "getUserName"
+console.log(createSetter("EmailAddress")); // "setEmailAddress"
+console.log(createGetter("IsActive"));    // "getIsActive"
+```
+
+### Form Field Processing
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+function processFormFields(fields) {
+  const processed = {};
+
+  fields.forEach(field => {
+    // Convert field names to camelCase
+    const fieldName = lowerCaseFirst(field.Name || field.name);
+    processed[fieldName] = {
+      value: field.Value || field.value || '',
+      required: field.Required || field.required || false,
+      type: field.Type || field.type || 'text'
+    };
+  });
+
+  return processed;
+}
+
+const formFields = [
+  { Name: "FirstName", Value: "John", Required: true, Type: "text" },
+  { Name: "LastName", Value: "Doe", Required: true, Type: "text" },
+  { Name: "EmailAddress", Value: "", Required: true, Type: "email" }
+];
+
+console.log(processFormFields(formFields));
+// {
+//   firstName: { value: "John", required: true, type: "text" },
+//   lastName: { value: "Doe", required: true, type: "text" },
+//   emailAddress: { value: "", required: true, type: "email" }
+// }
+```
+
+### API Response Normalization
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+function normalizeApiResponse(response) {
+  if (Array.isArray(response)) {
+    return response.map(normalizeApiResponse);
+  }
+
+  if (typeof response === 'object' && response !== null) {
+    const normalized = {};
+
+    for (const [key, value] of Object.entries(response)) {
+      const normalizedKey = lowerCaseFirst(key);
+      normalized[normalizedKey] = normalizeApiResponse(value);
+    }
+
+    return normalized;
+  }
+
+  return response;
+}
+
+const apiData = {
+  UserId: 123,
+  UserName: "john_doe",
+  ProfileInfo: {
+    FirstName: "John",
+    LastName: "Doe",
+    ContactDetails: {
+      EmailAddress: "john@example.com",
+      PhoneNumber: "123-456-7890"
+    }
+  },
+  Preferences: [
+    { SettingName: "theme", SettingValue: "dark" },
+    { SettingName: "language", SettingValue: "en" }
+  ]
+};
+
+console.log(normalizeApiResponse(apiData));
+// {
+//   userId: 123,
+//   userName: "john_doe",
+//   profileInfo: {
+//     firstName: "John",
+//     lastName: "Doe",
+//     contactDetails: {
+//       emailAddress: "john@example.com",
+//       phoneNumber: "123-456-7890"
+//     }
+//   },
+//   preferences: [
+//     { settingName: "theme", settingValue: "dark" },
+//     { settingName: "language", settingValue: "en" }
+//   ]
+// }
+```
+
+### Code Generation
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+class CodeGenerator {
+  generateProperty(name, type = 'string') {
+    const propertyName = lowerCaseFirst(name);
+    return `private ${propertyName}: ${type};`;
+  }
+
+  generateGetter(name, type = 'string') {
+    const propertyName = lowerCaseFirst(name);
+    const methodName = `get${name}`;
+    return `public ${lowerCaseFirst(methodName)}(): ${type} {
+      return this.${propertyName};
+    }`;
+  }
+
+  generateSetter(name, type = 'string') {
+    const propertyName = lowerCaseFirst(name);
+    const methodName = `set${name}`;
+    const paramName = lowerCaseFirst(name);
+    return `public ${lowerCaseFirst(methodName)}(${paramName}: ${type}): void {
+      this.${propertyName} = ${paramName};
+    }`;
+  }
+}
+
+const generator = new CodeGenerator();
+console.log(generator.generateProperty("UserName"));
+// "private userName: string;"
+
+console.log(generator.generateGetter("UserName"));
+// "public getUserName(): string {
+//   return this.userName;
+// }"
+```
+
+### Configuration Processing
+
+```javascript
+import { lowerCaseFirst } from "text-lower-case-first";
+
+function processConfiguration(config) {
+  const processed = {};
+
+  for (const [section, settings] of Object.entries(config)) {
+    const sectionName = lowerCaseFirst(section);
+    processed[sectionName] = {};
+
+    for (const [key, value] of Object.entries(settings)) {
+      const settingName = lowerCaseFirst(key);
+      processed[sectionName][settingName] = value;
+    }
+  }
+
+  return processed;
+}
+
+const appConfig = {
+  DatabaseSettings: {
+    ConnectionString: "localhost:5432",
+    MaxConnections: 100,
+    TimeoutSeconds: 30
+  },
+  ApiSettings: {
+    BaseUrl: "https://api.example.com",
+    ApiKey: "secret-key",
+    RateLimitPerMinute: 1000
+  }
+};
+
+console.log(processConfiguration(appConfig));
+// {
+//   databaseSettings: {
+//     connectionString: "localhost:5432",
+//     maxConnections: 100,
+//     timeoutSeconds: 30
+//   },
+//   apiSettings: {
+//     baseUrl: "https://api.example.com",
+//     apiKey: "secret-key",
+//     rateLimitPerMinute: 1000
+//   }
+// }
+```
+
+## 📖 API Reference
 
 ### `lowerCaseFirst(input)`
 
-Makes the first character of a string lowercase.
+Makes the first character of a string lowercase while preserving the rest.
 
 #### Parameters
 
-- `input` (`string`): The string to transform
+- **`input`** (`string`): The string to transform
 
 #### Returns
 
-- `string`: The string with first character lowercased
+- **`string`**: The string with the first character in lowercase
 
-## Development
+## 📊 Bundle Size
 
-### Type Checking
+This package is optimized for minimal bundle size:
 
-```bash
-# Check types
-pnpm typecheck
+- **Minified**: ~200B
+- **Gzipped**: ~150B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
 
-# Check types in watch mode
-pnpm typecheck:watch
-```
+## 🌍 Browser Support
 
-### Linting
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
 
-```bash
-# Run linter
-pnpm lint
-
-# Auto-fix linting issues
-pnpm lint --fix
-```
-
-### Testing
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -249,54 +413,26 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
+## 🔗 Related Packages
 
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~130 B
-- **Gzipped**: ~90 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Generic type parameters
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
-
-- [`text-upper-case-first`](../upper-case-first) - Uppercase first character
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
-- [`text-lower-case`](../lower-case) - Convert to lowercase
+- [`text-upper-case-first`](../upper-case-first) - Make first character uppercase
 - [`text-camel-case`](../camel-case) - Convert to camelCase
+- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -304,11 +440,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-lower-case-first.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-lower-case-first

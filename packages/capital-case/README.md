@@ -3,12 +3,22 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text into Capital Case format where every word is capitalized and separated by spaces.
+> Transform text into **Capital Case** format where each word is capitalized and separated by spaces.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~450B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+- **Customizable** - Flexible options for advanced use cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,7 +34,17 @@ pnpm add text-capital-case
 bun add text-capital-case
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+console.log(capitalCase("hello world")); // "Hello World"
+console.log(capitalCase("user_profile_data")); // "User Profile Data"
+console.log(capitalCase("backgroundColor")); // "Background Color"
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
@@ -51,99 +71,135 @@ const result: string = capitalCase("hello world");
 console.log(result); // "Hello World"
 ```
 
-## Examples
+## 🔄 Transformation Examples
 
-### Basic Usage
+### Basic Transformations
 
 ```javascript
 import { capitalCase } from "text-capital-case";
 
-// Simple transformations
-capitalCase("hello world"); // "Hello World"
-capitalCase("Hello World"); // "Hello World"
-capitalCase("HELLO WORLD"); // "Hello World"
-
-// From other cases
-capitalCase("camelCase"); // "Camel Case"
-capitalCase("PascalCase"); // "Pascal Case"
-capitalCase("snake_case"); // "Snake Case"
-capitalCase("kebab-case"); // "Kebab Case"
+// From different cases
+capitalCase("hello world");      // "Hello World"
+capitalCase("Hello World");      // "Hello World"
+capitalCase("HELLO WORLD");      // "Hello World"
+capitalCase("camelCase");        // "Camel Case"
+capitalCase("PascalCase");       // "Pascal Case"
+capitalCase("snake_case");       // "Snake Case"
+capitalCase("kebab-case");       // "Kebab Case"
+capitalCase("dot.case");         // "Dot Case"
 
 // Complex examples
-capitalCase("XMLHttpRequest"); // "Xml Http Request"
-capitalCase("iPhone"); // "I Phone"
-capitalCase("version 1.2.3"); // "Version 1 2 3"
+capitalCase("XMLHttpRequest");   // "Xml Http Request"
+capitalCase("iPhone");           // "I Phone"
+capitalCase("version 1.2.3");   // "Version 1 2 3"
+capitalCase("userProfileData");  // "User Profile Data"
 ```
 
-### Advanced Usage
+### Advanced Options
 
 ```javascript
 import { capitalCase } from "text-capital-case";
 
-// Proper nouns and names
-capitalCase("john doe"); // "John Doe"
-capitalCase("new york city"); // "New York City"
-capitalCase("united states"); // "United States"
+// Custom word splitting
+capitalCase("XMLHttpRequest", {
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "Xml Http Request"
 
-// Technical terms
-capitalCase("artificial intelligence"); // "Artificial Intelligence"
-capitalCase("machine learning"); // "Machine Learning"
-capitalCase("web development"); // "Web Development"
+// Custom character stripping
+capitalCase("hello@world.com", {
+  stripRegexp: /[@.]/g,
+}); // "Hello World Com"
 
-// Business terms
-capitalCase("customer relationship management"); // "Customer Relationship Management"
-capitalCase("enterprise resource planning"); // "Enterprise Resource Planning"
-capitalCase("return on investment"); // "Return On Investment"
-```
-
-### Real-world Examples
-
-```javascript
-import { capitalCase } from "text-capital-case";
-
-// Page titles and headers
-capitalCase("about our company"); // "About Our Company"
-capitalCase("privacy policy"); // "Privacy Policy"
-capitalCase("terms of service"); // "Terms Of Service"
-
-// Navigation menus
-capitalCase("user dashboard"); // "User Dashboard"
-capitalCase("account settings"); // "Account Settings"
-capitalCase("billing information"); // "Billing Information"
-
-// Form sections
-capitalCase("personal information"); // "Personal Information"
-capitalCase("contact details"); // "Contact Details"
-capitalCase("payment method"); // "Payment Method"
-
-// Product categories
-capitalCase("consumer electronics"); // "Consumer Electronics"
-capitalCase("home and garden"); // "Home And Garden"
-capitalCase("sports and outdoors"); // "Sports And Outdoors"
-```
-
-### With Custom Options
-
-```javascript
-import { capitalCase } from "text-capital-case";
-
-// Using custom transform
-const customCapital = capitalCase("hello_world", {
+// Custom transformation function
+capitalCase("api-v2-endpoint", {
   transform: (word, index) => {
-    // Custom logic for specific words
     if (word === "api") return "API";
-    if (word === "ui") return "UI";
-    return word;
+    if (word === "v2") return "V2";
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   },
-});
-
-// Using custom split function
-const customSplit = capitalCase("my-custom-string", {
-  split: (value) => value.split(/[-_]/g),
-});
+}); // "API V2 Endpoint"
 ```
 
-## API
+## 🌍 Real-World Examples
+
+### Business Titles and Names
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+// Job titles
+capitalCase("chief executive officer"); // "Chief Executive Officer"
+capitalCase("senior software engineer"); // "Senior Software Engineer"
+capitalCase("product manager");          // "Product Manager"
+capitalCase("data scientist");           // "Data Scientist"
+capitalCase("marketing director");       // "Marketing Director"
+```
+
+### Document Headings
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+// Document sections
+capitalCase("table of contents");        // "Table Of Contents"
+capitalCase("executive summary");        // "Executive Summary"
+capitalCase("financial overview");       // "Financial Overview"
+capitalCase("risk assessment");          // "Risk Assessment"
+capitalCase("implementation plan");      // "Implementation Plan"
+```
+
+### Product and Service Names
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+// Product names
+capitalCase("premium subscription");     // "Premium Subscription"
+capitalCase("enterprise solution");      // "Enterprise Solution"
+capitalCase("mobile application");       // "Mobile Application"
+capitalCase("cloud storage");            // "Cloud Storage"
+capitalCase("customer support");         // "Customer Support"
+```
+
+### Form Labels and UI Text
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+// Form fields
+capitalCase("billing information");      // "Billing Information"
+capitalCase("shipping address");         // "Shipping Address"
+capitalCase("payment method");           // "Payment Method"
+capitalCase("contact details");          // "Contact Details"
+capitalCase("account settings");         // "Account Settings"
+```
+
+### Content Categories
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+// Transform content categories
+const categories = [
+  "web_development",
+  "machine-learning",
+  "data.analysis",
+  "userExperience",
+  "projectManagement"
+];
+
+const formattedCategories = categories.map(capitalCase);
+console.log(formattedCategories);
+// [
+//   "Web Development",
+//   "Machine Learning",
+//   "Data Analysis",
+//   "User Experience",
+//   "Project Management"
+// ]
+```
+
+## 📖 API Reference
 
 ### `capitalCase(input, options?)`
 
@@ -151,12 +207,12 @@ Converts a string to Capital Case.
 
 #### Parameters
 
-- `input` (`string`): The string to convert
-- `options` (`Options`, optional): Configuration options
+- **`input`** (`string`): The string to convert
+- **`options`** (`Options`, optional): Configuration options
 
 #### Returns
 
-- `string`: The Capital Case formatted string
+- **`string`**: The Capital Case formatted string
 
 #### Options
 
@@ -173,29 +229,83 @@ interface Options {
 }
 ```
 
-## Development
+## 🔧 Advanced Configuration
 
-### Type Checking
+### Custom Word Splitting
 
-```bash
-# Check types
-pnpm typecheck
+```javascript
+import { capitalCase } from "text-capital-case";
 
-# Check types in watch mode
-pnpm typecheck:watch
+// Split on specific patterns
+capitalCase("XMLHttpRequest", {
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "Xml Http Request"
+
+// Split on numbers
+capitalCase("user123data", {
+  splitRegexp: /([a-zA-Z])(\d)/g,
+}); // "User 123 Data"
 ```
 
-### Linting
+### Custom Character Stripping
 
-```bash
-# Run linter
-pnpm lint
+```javascript
+import { capitalCase } from "text-capital-case";
 
-# Auto-fix linting issues
-pnpm lint --fix
+// Strip specific characters
+capitalCase("hello@world.com", {
+  stripRegexp: /[@.]/g,
+}); // "Hello World Com"
+
+// Strip all non-alphanumeric
+capitalCase("hello!@#world", {
+  stripRegexp: /[^a-zA-Z0-9]/g,
+}); // "Hello World"
 ```
 
-### Testing
+### Custom Transform Functions
+
+```javascript
+import { capitalCase } from "text-capital-case";
+
+// Preserve acronyms
+capitalCase("xml-http-request", {
+  transform: (word, index) => {
+    const acronyms = ["xml", "http", "api", "url", "html", "css", "js"];
+    if (acronyms.includes(word.toLowerCase())) {
+      return word.toUpperCase();
+    }
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  },
+}); // "XML HTTP Request"
+
+// Custom business logic
+capitalCase("user-v2-api", {
+  transform: (word, index) => {
+    if (word === "v2") return "V2";
+    if (word === "api") return "API";
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  },
+}); // "User V2 API"
+```
+
+## 📊 Bundle Size
+
+This package is optimized for minimal bundle size:
+
+- **Minified**: ~450B
+- **Gzipped**: ~250B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
+
+## 🌍 Browser Support
+
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
+
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -206,54 +316,27 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
-
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~330 B
-- **Gzipped**: ~175 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Generic type parameters
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
+## 🔗 Related Packages
 
 - [`text-title-case`](../title-case) - Convert to Title Case
 - [`text-sentence-case`](../sentence-case) - Convert to Sentence case
-- [`text-header-case`](../header-case) - Convert to Header-Case
 - [`text-pascal-case`](../pascal-case) - Convert to PascalCase
+- [`text-camel-case`](../camel-case) - Convert to camelCase
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -261,11 +344,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-capital-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-capital-case

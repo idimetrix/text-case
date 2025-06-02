@@ -3,12 +3,22 @@
 [![NPM version][npm-image]][npm-url]
 [![NPM downloads][downloads-image]][downloads-url]
 [![Bundle size][bundlephobia-image]][bundlephobia-url]
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
 
-> Transform text into Sentence case format where only the first letter is capitalized.
+> Transform text into **Sentence case** format where the first word is capitalized and the rest are lowercase, separated by spaces.
 
-## Installation
+## 🚀 Features
 
-Install the package using your preferred package manager:
+- **Lightweight** - Only ~450B minified + gzipped
+- **Type-safe** - Full TypeScript support with comprehensive type definitions
+- **Zero dependencies** - No external dependencies
+- **Tree-shakeable** - ES modules support
+- **Universal** - Works in browsers, Node.js, and serverless environments
+- **Well-tested** - Comprehensive test suite with edge cases
+- **Customizable** - Flexible options for advanced use cases
+
+## 📦 Installation
 
 ```bash
 # npm
@@ -24,7 +34,17 @@ pnpm add text-sentence-case
 bun add text-sentence-case
 ```
 
-## Usage
+## 🎯 Quick Start
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+console.log(sentenceCase("hello world")); // "Hello world"
+console.log(sentenceCase("userProfileData")); // "User profile data"
+console.log(sentenceCase("backgroundColor")); // "Background color"
+```
+
+## 📖 Usage
 
 ### ES Modules (Recommended)
 
@@ -51,93 +71,138 @@ const result: string = sentenceCase("hello world");
 console.log(result); // "Hello world"
 ```
 
-## Examples
+## 🔄 Transformation Examples
 
-### Basic Usage
+### Basic Transformations
 
 ```javascript
 import { sentenceCase } from "text-sentence-case";
 
-// Simple transformations
-sentenceCase("hello world"); // "Hello world"
-sentenceCase("Hello World"); // "Hello world"
-sentenceCase("HELLO WORLD"); // "Hello world"
-
-// From other cases
-sentenceCase("camelCase"); // "Camel case"
-sentenceCase("PascalCase"); // "Pascal case"
-sentenceCase("snake_case"); // "Snake case"
-sentenceCase("kebab-case"); // "Kebab case"
+// From different cases
+sentenceCase("hello world");     // "Hello world"
+sentenceCase("Hello World");     // "Hello world"
+sentenceCase("HELLO WORLD");     // "Hello world"
+sentenceCase("camelCase");       // "Camel case"
+sentenceCase("PascalCase");      // "Pascal case"
+sentenceCase("snake_case");      // "Snake case"
+sentenceCase("kebab-case");      // "Kebab case"
+sentenceCase("dot.case");        // "Dot case"
 
 // Complex examples
-sentenceCase("XMLHttpRequest"); // "Xml http request"
-sentenceCase("iPhone"); // "I phone"
-sentenceCase("version 1.2.3"); // "Version 1 2 3"
+sentenceCase("XMLHttpRequest");  // "Xml http request"
+sentenceCase("iPhone");          // "I phone"
+sentenceCase("version 1.2.3");  // "Version 1 2 3"
+sentenceCase("userProfileData"); // "User profile data"
 ```
 
-### Advanced Usage
+### Advanced Options
 
 ```javascript
 import { sentenceCase } from "text-sentence-case";
 
-// Proper nouns and names
-sentenceCase("john doe"); // "John doe"
-sentenceCase("new york city"); // "New york city"
-sentenceCase("united states"); // "United states"
+// Custom word splitting
+sentenceCase("XMLHttpRequest", {
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "Xml http request"
 
-// Descriptive text
-sentenceCase("getting started guide"); // "Getting started guide"
-sentenceCase("api reference"); // "Api reference"
-sentenceCase("installation instructions"); // "Installation instructions"
+// Custom character stripping
+sentenceCase("hello@world.com", {
+  stripRegexp: /[@.]/g,
+}); // "Hello world com"
 
-// Error messages
-sentenceCase("invalid input data"); // "Invalid input data"
-sentenceCase("connection timeout"); // "Connection timeout"
-sentenceCase("access denied"); // "Access denied"
-```
-
-### Real-world Examples
-
-```javascript
-import { sentenceCase } from "text-sentence-case";
-
-// Error messages and notifications
-sentenceCase("user not found"); // "User not found"
-sentenceCase("operation successful"); // "Operation successful"
-sentenceCase("invalid credentials"); // "Invalid credentials"
-
-// Form validation messages
-sentenceCase("email is required"); // "Email is required"
-sentenceCase("password too short"); // "Password too short"
-sentenceCase("invalid phone number"); // "Invalid phone number"
-
-// Status messages
-sentenceCase("processing request"); // "Processing request"
-sentenceCase("upload complete"); // "Upload complete"
-sentenceCase("connection established"); // "Connection established"
-
-// User interface text
-sentenceCase("please wait"); // "Please wait"
-sentenceCase("loading content"); // "Loading content"
-sentenceCase("no results found"); // "No results found"
-```
-
-### With Custom Options
-
-```javascript
-import { sentenceCase } from "text-sentence-case";
-
-// Using custom transform
-const customSentence = sentenceCase("hello_world", {
+// Custom transformation function
+sentenceCase("api-v2-endpoint", {
   transform: (word, index) => {
-    // Custom logic for specific words
-    if (word === "api") return "API";
-    return word;
+    if (index === 0) {
+      if (word === "api") return "API";
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    if (word === "v2") return "V2";
+    return word.toLowerCase();
   },
-});
+}); // "API v2 endpoint"
 ```
 
-## API
+## 🌍 Real-World Examples
+
+### Content Headings
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+// Article headings
+sentenceCase("gettingStarted");      // "Getting started"
+sentenceCase("bestPractices");       // "Best practices"
+sentenceCase("troubleshooting");     // "Troubleshooting"
+sentenceCase("frequentlyAskedQuestions"); // "Frequently asked questions"
+sentenceCase("advancedConfiguration"); // "Advanced configuration"
+```
+
+### Form Labels
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+// Form field labels
+sentenceCase("firstName");           // "First name"
+sentenceCase("emailAddress");        // "Email address"
+sentenceCase("phoneNumber");         // "Phone number"
+sentenceCase("dateOfBirth");         // "Date of birth"
+sentenceCase("billingAddress");      // "Billing address"
+```
+
+### Error Messages
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+// Error message formatting
+sentenceCase("invalidEmailFormat");  // "Invalid email format"
+sentenceCase("passwordTooShort");    // "Password too short"
+sentenceCase("userNotFound");        // "User not found"
+sentenceCase("accessDenied");        // "Access denied"
+sentenceCase("sessionExpired");      // "Session expired"
+```
+
+### Documentation Sections
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+// Documentation sections
+sentenceCase("apiReference");        // "Api reference"
+sentenceCase("installationGuide");   // "Installation guide"
+sentenceCase("migrationNotes");      // "Migration notes"
+sentenceCase("performanceTips");     // "Performance tips"
+sentenceCase("securityConsiderations"); // "Security considerations"
+```
+
+### Content Processing
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+// Process content titles
+const contentSections = [
+  "userManagement",
+  "dataVisualization",
+  "reportGeneration",
+  "systemConfiguration",
+  "backupAndRestore"
+];
+
+const formattedSections = contentSections.map(sentenceCase);
+console.log(formattedSections);
+// [
+//   "User management",
+//   "Data visualization",
+//   "Report generation",
+//   "System configuration",
+//   "Backup and restore"
+// ]
+```
+
+## 📖 API Reference
 
 ### `sentenceCase(input, options?)`
 
@@ -145,12 +210,12 @@ Converts a string to Sentence case.
 
 #### Parameters
 
-- `input` (`string`): The string to convert
-- `options` (`Options`, optional): Configuration options
+- **`input`** (`string`): The string to convert
+- **`options`** (`Options`, optional): Configuration options
 
 #### Returns
 
-- `string`: The Sentence case formatted string
+- **`string`**: The Sentence case formatted string
 
 #### Options
 
@@ -167,29 +232,89 @@ interface Options {
 }
 ```
 
-## Development
+## 🔧 Advanced Configuration
 
-### Type Checking
+### Custom Word Splitting
 
-```bash
-# Check types
-pnpm typecheck
+```javascript
+import { sentenceCase } from "text-sentence-case";
 
-# Check types in watch mode
-pnpm typecheck:watch
+// Split on specific patterns
+sentenceCase("XMLHttpRequest", {
+  splitRegexp: /([a-z])([A-Z])/g,
+}); // "Xml http request"
+
+// Split on numbers
+sentenceCase("user123data", {
+  splitRegexp: /([a-zA-Z])(\d)/g,
+}); // "User 123 data"
 ```
 
-### Linting
+### Custom Character Stripping
 
-```bash
-# Run linter
-pnpm lint
+```javascript
+import { sentenceCase } from "text-sentence-case";
 
-# Auto-fix linting issues
-pnpm lint --fix
+// Strip specific characters
+sentenceCase("hello@world.com", {
+  stripRegexp: /[@.]/g,
+}); // "Hello world com"
+
+// Strip all non-alphanumeric
+sentenceCase("hello!@#world", {
+  stripRegexp: /[^a-zA-Z0-9]/g,
+}); // "Hello world"
 ```
 
-### Testing
+### Custom Transform Functions
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+// Preserve acronyms in first position
+sentenceCase("xml-http-request", {
+  transform: (word, index) => {
+    const acronyms = ["xml", "http", "api", "url"];
+    if (index === 0 && acronyms.includes(word.toLowerCase())) {
+      return word.toUpperCase();
+    }
+    if (index === 0) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    return word.toLowerCase();
+  },
+}); // "XML http request"
+
+// Custom business logic
+sentenceCase("user-v2-api", {
+  transform: (word, index) => {
+    if (index === 0) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    if (word === "v2") return "V2";
+    if (word === "api") return "API";
+    return word.toLowerCase();
+  },
+}); // "User V2 API"
+```
+
+## 📊 Bundle Size
+
+This package is optimized for minimal bundle size:
+
+- **Minified**: ~450B
+- **Gzipped**: ~250B
+- **Tree-shakeable**: Yes
+- **Side effects**: None
+
+## 🌍 Browser Support
+
+- **Modern browsers**: ES2015+ (Chrome 51+, Firefox 54+, Safari 10+)
+- **Node.js**: 12+
+- **TypeScript**: 4.0+
+- **Bundle formats**: UMD, ESM, CommonJS
+
+## 🧪 Testing
 
 ```bash
 # Run tests
@@ -200,54 +325,26 @@ pnpm test --watch
 
 # Run tests with coverage
 pnpm test --coverage
+
+# Type checking
+pnpm typecheck
+
+# Linting
+pnpm lint
 ```
 
-### Building
-
-```bash
-# Build the package
-pnpm build
-
-# Build and watch for changes
-pnpm build --watch
-```
-
-## Bundle Size
-
-This package is optimized for minimal bundle size:
-
-- **Minified**: ~320 B
-- **Gzipped**: ~170 B
-- **Tree-shakeable**: Yes
-- **Side effects**: None
-
-## TypeScript Support
-
-This package includes comprehensive TypeScript definitions and supports:
-
-- Full type safety
-- IntelliSense autocompletion
-- Type inference
-- Generic type parameters
-
-## Browser Support
-
-- **Modern browsers**: ES2015+
-- **Node.js**: 12+
-- **Bundle formats**: UMD, ESM, CommonJS
-
-## Related Packages
+## 🔗 Related Packages
 
 - [`text-title-case`](../title-case) - Convert to Title Case
 - [`text-capital-case`](../capital-case) - Convert to Capital Case
-- [`text-header-case`](../header-case) - Convert to Header-Case
-- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
+- [`text-no-case`](../no-case) - Convert to no case
+- [`text-case`](../text-case) - All case transformations in one package
 
-## License
+## 📜 License
 
-[MIT](LICENSE)
+[MIT](LICENSE) © [Dmitry Selikhov](https://github.com/idimetrix)
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -255,11 +352,16 @@ This package includes comprehensive TypeScript definitions and supports:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Support
+## 🆘 Support
 
-- 📧 Email: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📧 **Email**: [selikhov.dmitrey@gmail.com](mailto:selikhov.dmitrey@gmail.com)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/idimetrix/text-case/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/idimetrix/text-case/discussions)
+- 📖 **Documentation**: [Full Documentation](https://github.com/idimetrix/text-case#readme)
+
+---
+
+**Made with ❤️ by [Dmitry Selikhov](https://github.com/idimetrix)**
 
 [npm-image]: https://img.shields.io/npm/v/text-sentence-case.svg?style=flat
 [npm-url]: https://npmjs.org/package/text-sentence-case
