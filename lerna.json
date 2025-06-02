@@ -6,8 +6,7 @@
   "command": {
     "publish": {
       "concurrency": 1,
-      "registry": "https://registry.npmjs.org/",
-      "npmClientArgs": ["--access=public"]
+      "registry": "https://registry.npmjs.org/"
     }
   }
 }
