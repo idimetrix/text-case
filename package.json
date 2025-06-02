@@ -59,7 +59,8 @@
     "typecheck:watch": "pnpm -r --parallel run typecheck:watch",
     "version": "lerna version",
     "publish": "lerna publish",
-    "postinstall": "echo 'Packages installed and linked via pnpm workspaces'"
+    "postinstall": "echo 'Packages installed and linked via pnpm workspaces'",
+    "bootstrap": "pnpm install && pnpm run format && pnpm run typecheck"
   },
   "husky": {
     "hooks": {

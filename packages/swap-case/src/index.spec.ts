@@ -16,7 +16,7 @@ const TEST_CASES: [string, string][] = [
 
   // Mixed case scenarios
   ["hELLo", "HellO"],
-  ["HeLLo", "hElLO"],
+  ["HeLLo", "hEllO"],
   ["heLLo", "HEllO"],
   ["aBc", "AbC"],
   ["AbC", "aBc"],
@@ -110,7 +110,7 @@ const TEST_CASES: [string, string][] = [
   // Acronyms and abbreviations
   ["API", "api"],
   ["api", "API"],
-  ["Api", "aPi"],
+  ["Api", "aPI"],
   ["URL", "url"],
   ["url", "URL"],
   ["Url", "uRL"],
@@ -259,13 +259,13 @@ const TEST_CASES: [string, string][] = [
   ["express", "EXPRESS"],
 
   // Database names
-  ["MySQL", "mySQL"],
+  ["MySQL", "mYsql"],
   ["MYSQL", "mysql"],
   ["mysql", "MYSQL"],
-  ["PostgreSQL", "postgreSQL"],
+  ["PostgreSQL", "pOSTGREsql"],
   ["POSTGRESQL", "postgresql"],
   ["postgresql", "POSTGRESQL"],
-  ["MongoDB", "mongoDb"],
+  ["MongoDB", "mONGOdb"],
   ["MONGODB", "mongodb"],
   ["mongodb", "MONGODB"],
   ["Redis", "rEDIS"],
