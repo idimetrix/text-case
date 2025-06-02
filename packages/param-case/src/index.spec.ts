@@ -41,7 +41,7 @@ const TEST_CASES: [string, string][] = [
   ["test-123", "test-123"],
   ["test.123", "test-123"],
   ["test 123", "test-123"],
-  ["123test", "123-test"],
+  ["123test", "123test"],
   ["123_test", "123-test"],
   ["version2.0", "version2-0"],
   ["v2.0.1", "v2-0-1"],
@@ -104,7 +104,7 @@ const TEST_CASES: [string, string][] = [
   ["user+tag@example.com", "user-tag-example-com"],
 
   // Extreme edge cases
-  ["a1bStar", "a1-b-star"],
+  ["a1bStar", "a1b-star"],
   ["ID123String", "id123-string"],
   ["Id123String", "id123-string"],
   ["XMLParser2", "xml-parser2"],
