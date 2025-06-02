@@ -5,7 +5,7 @@ export { Options };
 
 export function constantCase(input: string, options: Options = {}) {
   // Handle null/undefined inputs gracefully
-  if (input == null) return "";
+  if (!input) return "";
 
   return noCase(input, {
     delimiter: "_",

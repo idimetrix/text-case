@@ -9,7 +9,7 @@ function capitalCaseTransform(input: string, index: number) {
 
 export function capitalCase(input: string, options: Options = {}) {
   // Handle null/undefined inputs gracefully
-  if (input == null) return "";
+  if (!input) return "";
 
   return noCase(input, {
     delimiter: " ",

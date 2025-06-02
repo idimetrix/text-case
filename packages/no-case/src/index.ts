@@ -18,7 +18,7 @@ const DEFAULT_STRIP_REGEXP = /[^A-Z0-9]+/gi;
  */
 export function noCase(input: string, options: Options = {}) {
   // Handle null/undefined inputs gracefully
-  if (input == null) return "";
+  if (!input) return "";
 
   const {
     splitRegexp = DEFAULT_SPLIT_REGEXP,
