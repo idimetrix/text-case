@@ -39,6 +39,9 @@ const SUPPORTED_LOCALE: Record<string, Locale> = {
  * Localized upper case.
  */
 export function localeUpperCase(str: string, locale: string) {
+  // Handle null/undefined inputs gracefully
+  if (!str) return "";
+
   const lang = SUPPORTED_LOCALE[locale.toLowerCase()];
   if (lang) return upperCase(str.replace(lang.regexp, (m) => lang.map[m]));
   return upperCase(str);
@@ -48,5 +51,8 @@ export function localeUpperCase(str: string, locale: string) {
  * Upper case as a function.
  */
 export function upperCase(str: string) {
+  // Handle null/undefined inputs gracefully
+  if (!str) return "";
+
   return str.toUpperCase();
 }

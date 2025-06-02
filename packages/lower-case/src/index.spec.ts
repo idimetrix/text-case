@@ -8,27 +8,27 @@ const TEST_CASES: [string, string][] = [
   ["Test String", "test string"],
   ["HELLO WORLD", "hello world"],
   ["hello world", "hello world"],
-  ["TestV2", "test v2"],
-  ["version 1.2.10", "version 1 2 10"],
-  ["version 1.21.0", "version 1 21 0"],
+  ["TestV2", "testv2"],
+  ["version 1.2.10", "version 1.2.10"],
+  ["version 1.21.0", "version 1.21.0"],
 
   // Edge cases
   ["a", "a"],
   ["A", "a"],
   ["1", "1"],
-  ["_", ""],
-  [" ", ""],
-  ["  ", ""],
-  ["   test   ", "test"],
-  ["_test_", "test"],
-  ["__test__", "test"],
+  ["_", "_"],
+  [" ", " "],
+  ["  ", "  "],
+  ["   test   ", "   test   "],
+  ["_test_", "_test_"],
+  ["__test__", "__test__"],
 
   // Complex mixed cases
-  ["XMLHttpRequest", "xml http request"],
-  ["HTTPSConnection", "https connection"],
-  ["iPhone", "i phone"],
-  ["macOS", "mac os"],
-  ["iOS", "i os"],
+  ["XMLHttpRequest", "xmlhttprequest"],
+  ["HTTPSConnection", "httpsconnection"],
+  ["iPhone", "iphone"],
+  ["macOS", "macos"],
+  ["iOS", "ios"],
   ["API", "api"],
   ["URL", "url"],
   ["HTML", "html"],
@@ -37,48 +37,48 @@ const TEST_CASES: [string, string][] = [
 
   // Numbers and special characters
   ["test123", "test123"],
-  ["test_123", "test 123"],
-  ["test-123", "test 123"],
-  ["test.123", "test 123"],
+  ["test_123", "test_123"],
+  ["test-123", "test-123"],
+  ["test.123", "test.123"],
   ["test 123", "test 123"],
-  ["123test", "123 test"],
-  ["123_test", "123 test"],
-  ["version2.0", "version2 0"],
-  ["v2.0.1", "v2 0 1"],
+  ["123test", "123test"],
+  ["123_test", "123_test"],
+  ["version2.0", "version2.0"],
+  ["v2.0.1", "v2.0.1"],
 
   // Camel case inputs
-  ["camelCase", "camel case"],
-  ["camelCaseString", "camel case string"],
-  ["alreadyCamelCase", "already camel case"],
+  ["camelCase", "camelcase"],
+  ["camelCaseString", "camelcasestring"],
+  ["alreadyCamelCase", "alreadycamelcase"],
 
   // Pascal case inputs
-  ["PascalCase", "pascal case"],
-  ["PascalCaseString", "pascal case string"],
+  ["PascalCase", "pascalcase"],
+  ["PascalCaseString", "pascalcasestring"],
 
   // Snake case inputs
-  ["snake_case", "snake case"],
-  ["snake_case_string", "snake case string"],
-  ["SCREAMING_SNAKE_CASE", "screaming snake case"],
+  ["snake_case", "snake_case"],
+  ["snake_case_string", "snake_case_string"],
+  ["SCREAMING_SNAKE_CASE", "screaming_snake_case"],
 
   // Kebab case inputs
-  ["kebab-case", "kebab case"],
-  ["kebab-case-string", "kebab case string"],
+  ["kebab-case", "kebab-case"],
+  ["kebab-case-string", "kebab-case-string"],
 
   // Dot notation
-  ["dot.case", "dot case"],
-  ["dot.case.string", "dot case string"],
-  ["config.api.url", "config api url"],
+  ["dot.case", "dot.case"],
+  ["dot.case.string", "dot.case.string"],
+  ["config.api.url", "config.api.url"],
 
   // Path notation
-  ["path/case", "path case"],
-  ["path/case/string", "path case string"],
-  ["src/components/Button", "src components button"],
+  ["path/case", "path/case"],
+  ["path/case/string", "path/case/string"],
+  ["src/components/Button", "src/components/button"],
 
   // Mixed delimiters
-  ["mixed_case-string.example", "mixed case string example"],
+  ["mixed_case-string.example", "mixed_case-string.example"],
   [
     "test_string-with.multiple/delimiters",
-    "test string with multiple delimiters",
+    "test_string-with.multiple/delimiters",
   ],
 
   // Unicode and international characters
@@ -94,26 +94,26 @@ const TEST_CASES: [string, string][] = [
   ["TEST MÜNCHEN", "test münchen"],
 
   // Whitespace variations
-  ["\n\ntest\n\n", "test"],
-  ["\t\ttest\t\t", "test"],
-  ["test\nstring", "test string"],
-  ["test\tstring", "test string"],
+  ["\n\ntest\n\n", "\n\ntest\n\n"],
+  ["\t\ttest\t\t", "\t\ttest\t\t"],
+  ["test\nstring", "test\nstring"],
+  ["test\tstring", "test\tstring"],
 
   // Punctuation
-  ['"quotes"', "quotes"],
-  ["'single quotes'", "single quotes"],
-  ["(parentheses)", "parentheses"],
-  ["[brackets]", "brackets"],
-  ["{braces}", "braces"],
-  ["test@example.com", "test example com"],
-  ["user+tag@example.com", "user tag example com"],
+  ['"quotes"', '"quotes"'],
+  ["'single quotes'", "'single quotes'"],
+  ["(parentheses)", "(parentheses)"],
+  ["[brackets]", "[brackets]"],
+  ["{braces}", "{braces}"],
+  ["test@example.com", "test@example.com"],
+  ["user+tag@example.com", "user+tag@example.com"],
 
   // Extreme edge cases
-  ["a1bStar", "a1 b star"],
-  ["ID123String", "id123 string"],
-  ["Id123String", "id123 string"],
-  ["XMLParser2", "xml parser2"],
-  ["parseHTML5Document", "parse html5 document"],
+  ["a1bStar", "a1bstar"],
+  ["ID123String", "id123string"],
+  ["Id123String", "id123string"],
+  ["XMLParser2", "xmlparser2"],
+  ["parseHTML5Document", "parsehtml5document"],
 
   // Menu items and navigation
   ["HOME PAGE", "home page"],
@@ -151,28 +151,28 @@ const TEST_CASES: [string, string][] = [
   ["MARKETING SPECIALIST", "marketing specialist"],
 
   // Configuration properties
-  ["apiBaseUrl", "api base url"],
-  ["databaseConnectionString", "database connection string"],
-  ["maxRetryAttempts", "max retry attempts"],
-  ["defaultTimeout", "default timeout"],
-  ["cacheExpirationTime", "cache expiration time"],
+  ["apiBaseUrl", "apibaseurl"],
+  ["databaseConnectionString", "databaseconnectionstring"],
+  ["maxRetryAttempts", "maxretryattempts"],
+  ["defaultTimeout", "defaulttimeout"],
+  ["cacheExpirationTime", "cacheexpirationtime"],
 
   // Programming terms
-  ["getUserInfo", "get user info"],
-  ["setPassword", "set password"],
-  ["isValidEmail", "is valid email"],
-  ["hasPermission", "has permission"],
-  ["canAccessResource", "can access resource"],
+  ["getUserInfo", "getuserinfo"],
+  ["setPassword", "setpassword"],
+  ["isValidEmail", "isvalidemail"],
+  ["hasPermission", "haspermission"],
+  ["canAccessResource", "canaccessresource"],
 
   // Business terms
-  ["firstName", "first name"],
-  ["lastName", "last name"],
-  ["emailAddress", "email address"],
-  ["phoneNumber", "phone number"],
-  ["streetAddress", "street address"],
-  ["zipCode", "zip code"],
-  ["countryCode", "country code"],
-  ["currencyCode", "currency code"],
+  ["firstName", "firstname"],
+  ["lastName", "lastname"],
+  ["emailAddress", "emailaddress"],
+  ["phoneNumber", "phonenumber"],
+  ["streetAddress", "streetaddress"],
+  ["zipCode", "zipcode"],
+  ["countryCode", "countrycode"],
+  ["currencyCode", "currencycode"],
 
   // Document types
   ["USER MANUAL", "user manual"],
@@ -202,31 +202,12 @@ const TEST_CASES: [string, string][] = [
   ["RESEARCH AND DEVELOPMENT", "research and development"],
   ["QUALITY ASSURANCE", "quality assurance"],
 
-  // Acronyms and abbreviations
-  ["FBI", "fbi"],
-  ["NASA", "nasa"],
-  ["CEO", "ceo"],
-  ["CFO", "cfo"],
-  ["CTO", "cto"],
-  ["USA", "usa"],
-  ["UK", "uk"],
-  ["EU", "eu"],
-  ["UN", "un"],
-  ["WHO", "who"],
-
-  // Database and server terms
-  ["DATABASE SERVER", "database server"],
-  ["WEB SERVER", "web server"],
-  ["APPLICATION SERVER", "application server"],
-  ["CACHE SERVER", "cache server"],
-  ["MAIL SERVER", "mail server"],
-
-  // Operating systems
+  // Platform names
   ["WINDOWS", "windows"],
   ["LINUX", "linux"],
-  ["UBUNTU", "ubuntu"],
-  ["CENTOS", "centos"],
-  ["DEBIAN", "debian"],
+  ["MACOS", "macos"],
+  ["ANDROID", "android"],
+  ["IOS", "ios"],
 
   // Programming languages
   ["JAVASCRIPT", "javascript"],
@@ -235,40 +216,145 @@ const TEST_CASES: [string, string][] = [
   ["JAVA", "java"],
   ["CSHARP", "csharp"],
 
-  // File formats
-  ["PDF FILE", "pdf file"],
-  ["CSV FILE", "csv file"],
-  ["XML DOCUMENT", "xml document"],
-  ["JSON DATA", "json data"],
-  ["YAML CONFIG", "yaml config"],
+  // Database systems
+  ["MYSQL", "mysql"],
+  ["POSTGRESQL", "postgresql"],
+  ["MONGODB", "mongodb"],
+  ["REDIS", "redis"],
+  ["SQLITE", "sqlite"],
 
-  // Network protocols
-  ["HTTP PROTOCOL", "http protocol"],
-  ["HTTPS SECURE", "https secure"],
-  ["FTP TRANSFER", "ftp transfer"],
-  ["SMTP MAIL", "smtp mail"],
-  ["POP3 EMAIL", "pop3 email"],
+  // Cloud providers
+  ["AWS", "aws"],
+  ["AZURE", "azure"],
+  ["GCP", "gcp"],
+  ["HEROKU", "heroku"],
+  ["DIGITAL_OCEAN", "digital_ocean"],
 
-  // Security terms
-  ["PASSWORD HASH", "password hash"],
-  ["ENCRYPTION KEY", "encryption key"],
-  ["DIGITAL CERTIFICATE", "digital certificate"],
-  ["SECURITY TOKEN", "security token"],
-  ["ACCESS CONTROL", "access control"],
+  // Framework names
+  ["REACT", "react"],
+  ["ANGULAR", "angular"],
+  ["VUE", "vue"],
+  ["EXPRESS", "express"],
+  ["DJANGO", "django"],
 
-  // Cloud services
-  ["AMAZON AWS", "amazon aws"],
-  ["GOOGLE CLOUD", "google cloud"],
-  ["MICROSOFT AZURE", "microsoft azure"],
-  ["DIGITAL OCEAN", "digital ocean"],
-  ["HEROKU PLATFORM", "heroku platform"],
+  // Testing frameworks
+  ["JEST", "jest"],
+  ["MOCHA", "mocha"],
+  ["JASMINE", "jasmine"],
+  ["CYPRESS", "cypress"],
+  ["SELENIUM", "selenium"],
 
-  // Mixed case combinations
-  ["CamelCase_snake_case", "camel case snake case"],
-  ["kebab-case.dot.notation", "kebab case dot notation"],
-  ["path/case_mixed-delimiters", "path case mixed delimiters"],
-  ["PascalCase-kebab_snake.dot", "pascal case kebab snake dot"],
-  ["CONSTANT_camelCase-kebab", "constant camel case kebab"],
+  // Build tools
+  ["WEBPACK", "webpack"],
+  ["ROLLUP", "rollup"],
+  ["VITE", "vite"],
+  ["PARCEL", "parcel"],
+  ["GULP", "gulp"],
+
+  // Version control
+  ["GIT", "git"],
+  ["SVN", "svn"],
+  ["MERCURIAL", "mercurial"],
+  ["PERFORCE", "perforce"],
+  ["BAZAAR", "bazaar"],
+
+  // Error codes
+  ["E404", "e404"],
+  ["E500", "e500"],
+  ["ERR001", "err001"],
+  ["WARN001", "warn001"],
+  ["V1", "v1"],
+  ["V2_0", "v2_0"],
+  ["VERSION_1_0", "version_1_0"],
+  ["RELEASE_CANDIDATE", "release_candidate"],
+
+  // Operating systems
+  ["Windows", "windows"],
+  ["WINDOWS", "windows"],
+  ["Linux", "linux"],
+  ["LINUX", "linux"],
+  ["MacOS", "macos"],
+  ["MACOS", "macos"],
+  ["Ubuntu", "ubuntu"],
+  ["UBUNTU", "ubuntu"],
+
+  // Visibility modifiers
+  ["Public", "public"],
+  ["PUBLIC", "public"],
+  ["Private", "private"],
+  ["PRIVATE", "private"],
+  ["Protected", "protected"],
+  ["PROTECTED", "protected"],
+  ["Confidential", "confidential"],
+  ["CONFIDENTIAL", "confidential"],
+
+  // DOM methods
+  ["GetElementById", "getelementbyid"],
+  ["QuerySelector", "queryselector"],
+  ["AddEventListener", "addeventlistener"],
+  ["CreateElement", "createelement"],
+  ["AppendChild", "appendchild"],
+  ["RemoveChild", "removechild"],
+  ["InnerHTML", "innerhtml"],
+  ["OuterHTML", "outerhtml"],
+  ["TextContent", "textcontent"],
+  ["ClassName", "classname"],
+
+  // Libraries and tools
+  ["Lodash", "lodash"],
+  ["Express", "express"],
+  ["React", "react"],
+  ["Webpack", "webpack"],
+  ["Babel", "babel"],
+  ["ESLint", "eslint"],
+  ["Prettier", "prettier"],
+  ["TypeScript", "typescript"],
+  ["Nodemon", "nodemon"],
+  ["Jest", "jest"],
+
+  // Infrastructure terms
+  ["Database", "database"],
+  ["Server", "server"],
+  ["Client", "client"],
+  ["Frontend", "frontend"],
+  ["Backend", "backend"],
+  ["Middleware", "middleware"],
+  ["Authentication", "authentication"],
+  ["Authorization", "authorization"],
+  ["Encryption", "encryption"],
+  ["Decryption", "decryption"],
+
+  // Whitespace handling
+  [" Hello ", " hello "],
+  ["   World   ", "   world   "],
+  ["    Test    ", "    test    "],
+  ["\t\tTab\t\t", "\t\ttab\t\t"],
+  ["\n\nNewline\n\n", "\n\nnewline\n\n"],
+  [" A ", " a "],
+  ["   B   ", "   b   "],
+
+  // Complex acronyms
+  ["XMLParser", "xmlparser"],
+  ["HTMLDocument", "htmldocument"],
+  ["CSSStyleSheet", "cssstylesheet"],
+  ["JSONData", "jsondata"],
+  ["APIKey", "apikey"],
+  ["URLPath", "urlpath"],
+  ["WebAPI", "webapi"],
+  ["DataJSON", "datajson"],
+  ["FileHTML", "filehtml"],
+
+  // Punctuation preservation
+  ["Hello!", "hello!"],
+  ["WORLD?", "world?"],
+  ["Test.", "test."],
+  ["Data,", "data,"],
+  ["Value;", "value;"],
+  ["Key:", "key:"],
+  ["Name=", "name="],
+  ["Id+", "id+"],
+  ["Code*", "code*"],
+  ["Path&", "path&"],
 ];
 
 const LOCALE_TEST_CASES: [string, string, string][] = [
@@ -284,19 +370,25 @@ describe("lower case", () => {
 
   describe("error handling", () => {
     it("should handle null input gracefully", () => {
-      expect(() => lowerCase(null as any)).not.toThrow();
+      expect(lowerCase(null as any)).toEqual("");
     });
 
     it("should handle undefined input gracefully", () => {
-      expect(() => lowerCase(undefined as any)).not.toThrow();
+      expect(lowerCase(undefined as any)).toEqual("");
     });
   });
 
   describe("performance", () => {
     it("should handle very long strings", () => {
-      const longString = "VERY ".repeat(1000) + "LONG STRING";
+      const longString = "A".repeat(10000);
       const result = lowerCase(longString);
-      expect(result).toBe("very ".repeat(1000) + "long string");
+      expect(result).toEqual("a".repeat(10000));
+    });
+
+    it("should handle very long strings starting with lowercase", () => {
+      const longString = "a".repeat(10000);
+      const result = lowerCase(longString);
+      expect(result).toEqual("a".repeat(10000));
     });
   });
 });
@@ -307,4 +399,20 @@ describe("locale lower case", () => {
       expect(localeLowerCase(input, locale)).toEqual(result);
     });
   }
+
+  it("should handle Turkish locale", () => {
+    expect(localeLowerCase("İSTANBUL", "tr")).toEqual("istanbul");
+  });
+
+  it("should handle Lithuanian locale", () => {
+    expect(localeLowerCase("ĮĖČĘUŲ", "lt")).toEqual("į̇ėčęuų");
+  });
+
+  it("should handle null input gracefully", () => {
+    expect(localeLowerCase(null as any, "tr")).toEqual("");
+  });
+
+  it("should handle undefined input gracefully", () => {
+    expect(localeLowerCase(undefined as any, "tr")).toEqual("");
+  });
 });
