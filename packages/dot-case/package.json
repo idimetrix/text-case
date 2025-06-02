@@ -1,6 +1,6 @@
 {
   "name": "text-dot-case",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Convert into a lower case text with a period between words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
