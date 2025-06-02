@@ -10,10 +10,15 @@ const TEST_CASES: [string, string, Options?][] = [
   ["version 1.2.10", "Version1210"],
   ["version 1.21.0", "Version1210"],
 
-  // Edge cases
+  // Single characters
   ["a", "A"],
   ["A", "A"],
+  ["z", "Z"],
+  ["Z", "Z"],
   ["1", "1"],
+  ["9", "9"],
+
+  // Edge cases
   ["_", ""],
   [" ", ""],
   ["  ", ""],
@@ -49,7 +54,7 @@ const TEST_CASES: [string, string, Options?][] = [
   ["camelCaseString", "CamelCaseString"],
   ["alreadyCamelCase", "AlreadyCamelCase"],
 
-  // Pascal case inputs
+  // Pascal case inputs (should remain unchanged)
   ["PascalCase", "PascalCase"],
   ["PascalCaseString", "PascalCaseString"],
 
@@ -82,6 +87,194 @@ const TEST_CASES: [string, string, Options?][] = [
   ["test café", "TestCafé"],
   ["münchen", "München"],
   ["test münchen", "TestMünchen"],
+  ["áéíóú", "Áéíóú"],
+  ["ÁÉÍÓÚ", "Áéíóú"],
+  ["niño", "Niño"],
+  ["NIÑO", "Niño"],
+  ["josé maría", "JoséMaría"],
+
+  // Programming terms
+  ["class", "Class"],
+  ["CLASS", "Class"],
+  ["function", "Function"],
+  ["FUNCTION", "Function"],
+  ["variable", "Variable"],
+  ["VARIABLE", "Variable"],
+  ["constant", "Constant"],
+  ["CONSTANT", "Constant"],
+  ["method", "Method"],
+  ["METHOD", "Method"],
+
+  // Framework names
+  ["react", "React"],
+  ["REACT", "React"],
+  ["angular", "Angular"],
+  ["ANGULAR", "Angular"],
+  ["vue", "Vue"],
+  ["VUE", "Vue"],
+  ["express", "Express"],
+  ["EXPRESS", "Express"],
+  ["next", "Next"],
+  ["NEXT", "Next"],
+
+  // Database names
+  ["mysql", "Mysql"],
+  ["MYSQL", "Mysql"],
+  ["postgresql", "Postgresql"],
+  ["POSTGRESQL", "Postgresql"],
+  ["mongodb", "Mongodb"],
+  ["MONGODB", "Mongodb"],
+  ["redis", "Redis"],
+  ["REDIS", "Redis"],
+
+  // Cloud providers
+  ["aws", "Aws"],
+  ["AWS", "Aws"],
+  ["azure", "Azure"],
+  ["AZURE", "Azure"],
+  ["gcp", "Gcp"],
+  ["GCP", "Gcp"],
+  ["heroku", "Heroku"],
+  ["HEROKU", "Heroku"],
+
+  // Error codes and status
+  ["e404", "E404"],
+  ["E404", "E404"],
+  ["e500", "E500"],
+  ["E500", "E500"],
+  ["ok", "Ok"],
+  ["OK", "Ok"],
+  ["error", "Error"],
+  ["ERROR", "Error"],
+
+  // Version identifiers
+  ["v1", "V1"],
+  ["V1", "V1"],
+  ["v2_0", "V20"],
+  ["V2_0", "V20"],
+  ["version_1_0", "Version10"],
+  ["VERSION_1_0", "Version10"],
+
+  // Operating systems
+  ["windows", "Windows"],
+  ["WINDOWS", "Windows"],
+  ["linux", "Linux"],
+  ["LINUX", "Linux"],
+  ["macos", "Macos"],
+  ["MACOS", "Macos"],
+  ["ubuntu", "Ubuntu"],
+  ["UBUNTU", "Ubuntu"],
+
+  // HTTP methods
+  ["get", "Get"],
+  ["GET", "Get"],
+  ["post", "Post"],
+  ["POST", "Post"],
+  ["put", "Put"],
+  ["PUT", "Put"],
+  ["delete", "Delete"],
+  ["DELETE", "Delete"],
+  ["patch", "Patch"],
+  ["PATCH", "Patch"],
+
+  // Data formats
+  ["json", "Json"],
+  ["JSON", "Json"],
+  ["xml", "Xml"],
+  ["XML", "Xml"],
+  ["yaml", "Yaml"],
+  ["YAML", "Yaml"],
+  ["csv", "Csv"],
+  ["CSV", "Csv"],
+
+  // Package managers
+  ["npm", "Npm"],
+  ["NPM", "Npm"],
+  ["yarn", "Yarn"],
+  ["YARN", "Yarn"],
+  ["pnpm", "Pnpm"],
+  ["PNPM", "Pnpm"],
+
+  // Development tools
+  ["webpack", "Webpack"],
+  ["WEBPACK", "Webpack"],
+  ["babel", "Babel"],
+  ["BABEL", "Babel"],
+  ["eslint", "Eslint"],
+  ["ESLINT", "Eslint"],
+  ["prettier", "Prettier"],
+  ["PRETTIER", "Prettier"],
+
+  // Component names
+  ["button", "Button"],
+  ["BUTTON", "Button"],
+  ["nav_bar", "NavBar"],
+  ["NAV_BAR", "NavBar"],
+  ["side_bar", "SideBar"],
+  ["SIDE_BAR", "SideBar"],
+  ["header", "Header"],
+  ["HEADER", "Header"],
+  ["footer", "Footer"],
+  ["FOOTER", "Footer"],
+
+  // Multiple consecutive delimiters
+  ["test__case", "TestCase"],
+  ["test--case", "TestCase"],
+  ["test..case", "TestCase"],
+  ["test  case", "TestCase"],
+  ["test___case", "TestCase"],
+  ["test---case", "TestCase"],
+  ["test...case", "TestCase"],
+  ["test   case", "TestCase"],
+
+  // Leading and trailing delimiters
+  ["_test", "Test"],
+  ["-test", "Test"],
+  [".test", "Test"],
+  [" test", "Test"],
+  ["test_", "Test"],
+  ["test-", "Test"],
+  ["test.", "Test"],
+  ["test ", "Test"],
+
+  // Real world method names
+  ["getElementById", "GetElementById"],
+  ["querySelector", "QuerySelector"],
+  ["addEventListener", "AddEventListener"],
+  ["createElement", "CreateElement"],
+  ["appendChild", "AppendChild"],
+  ["removeChild", "RemoveChild"],
+  ["innerHTML", "InnerHtml"],
+  ["outerHTML", "OuterHtml"],
+  ["textContent", "TextContent"],
+  ["className", "ClassName"],
+
+  // Configuration properties
+  ["apiBaseUrl", "ApiBaseUrl"],
+  ["databaseConnectionString", "DatabaseConnectionString"],
+  ["maxRetryAttempts", "MaxRetryAttempts"],
+  ["defaultTimeout", "DefaultTimeout"],
+  ["cacheExpirationTime", "CacheExpirationTime"],
+
+  // Security levels
+  ["public", "Public"],
+  ["PUBLIC", "Public"],
+  ["private", "Private"],
+  ["PRIVATE", "Private"],
+  ["protected", "Protected"],
+  ["PROTECTED", "Protected"],
+  ["confidential", "Confidential"],
+  ["CONFIDENTIAL", "Confidential"],
+
+  // File extensions
+  ["txt", "Txt"],
+  ["TXT", "Txt"],
+  ["pdf", "Pdf"],
+  ["PDF", "Pdf"],
+  ["doc", "Doc"],
+  ["DOC", "Doc"],
+  ["xls", "Xls"],
+  ["XLS", "Xls"],
 
   // Options testing with transform
   ["version 1.21.0", "Version1210", { transform: pascalCaseTransformMerge }],
@@ -125,6 +318,31 @@ const TEST_CASES: [string, string, Options?][] = [
   ["zipCode", "ZipCode"],
   ["countryCode", "CountryCode"],
   ["currencyCode", "CurrencyCode"],
+
+  // Numbers with mixed cases
+  ["test123Test", "Test123Test"],
+  ["Test123Test", "Test123Test"],
+  ["TEST123TEST", "Test123Test"],
+  ["123Test123", "123Test123"],
+  ["test123test", "Test123Test"],
+
+  // Special character combinations
+  ["test@123", "Test123"],
+  ["test#123", "Test123"],
+  ["test$123", "Test123"],
+  ["test%123", "Test123"],
+  ["test&123", "Test123"],
+  ["test*123", "Test123"],
+
+  // Technical acronyms
+  ["http", "Http"],
+  ["HTTP", "Http"],
+  ["https", "Https"],
+  ["HTTPS", "Https"],
+  ["ftp", "Ftp"],
+  ["FTP", "Ftp"],
+  ["ssh", "Ssh"],
+  ["SSH", "Ssh"],
 ];
 
 describe("pascal case", () => {
@@ -149,6 +367,12 @@ describe("pascal case", () => {
       const longString = "very ".repeat(1000) + "long string";
       const result = pascalCase(longString);
       expect(result).toBe("Very" + "Very".repeat(999) + "LongString");
+    });
+
+    it("should handle very long camelCase strings", () => {
+      const longCamelString = "a" + "B".repeat(5000) + "c" + "D".repeat(4999);
+      const result = pascalCase(longCamelString);
+      expect(result.length).toBeGreaterThan(0);
     });
   });
 });
