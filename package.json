@@ -61,6 +61,8 @@
     "publish": "lerna publish --concurrency 1",
     "publish:safe": "node scripts/publish-with-retry.js",
     "publish:from-git": "lerna publish from-git --concurrency 1",
+    "publish:pnpm": "pnpm -r publish --access public",
+    "publish:pnpm-safe": "pnpm -r publish --access public --no-git-checks",
     "postinstall": "echo 'Packages installed and linked via pnpm workspaces'",
     "bootstrap": "pnpm install && pnpm run format && pnpm run typecheck"
   },

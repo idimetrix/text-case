@@ -3,10 +3,19 @@
   "version": "independent",
   "ignoreChanges": ["*.spec.*", "*.md"],
   "npmClient": "pnpm",
+  "useWorkspaces": true,
   "command": {
     "publish": {
       "concurrency": 1,
-      "registry": "https://registry.npmjs.org/"
+      "registry": "https://registry.npmjs.org/",
+      "ignoreChanges": ["*.spec.*", "*.md"],
+      "message": "chore(release): publish",
+      "npmClientArgs": ["--access=public"]
+    },
+    "version": {
+      "allowBranch": ["master", "main"],
+      "conventionalCommits": false,
+      "message": "chore(release): %s"
     }
   }
 }
