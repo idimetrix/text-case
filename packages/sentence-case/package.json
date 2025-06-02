@@ -77,8 +77,8 @@
     "access": "public"
   },
   "dependencies": {
-    "text-no-case": "^1.0.2",
-    "text-upper-case-first": "^1.0.2"
+    "text-no-case": "workspace:*",
+    "text-upper-case-first": "workspace:*"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.2.0",

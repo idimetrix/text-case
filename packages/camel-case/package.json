@@ -72,7 +72,7 @@
     "access": "public"
   },
   "dependencies": {
-    "text-pascal-case": "^1.0.3"
+    "text-pascal-case": "workspace:*"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.2.0",

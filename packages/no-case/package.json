@@ -72,7 +72,7 @@
     "access": "public"
   },
   "dependencies": {
-    "text-lower-case": "^1.0.4"
+    "text-lower-case": "workspace:*"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^11.2.0",
