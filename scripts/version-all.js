@@ -22,23 +22,31 @@ try {
 
   console.log('✅ All packages versioned successfully!');
 
-  // Commit the changes
-  console.log('📝 Committing version changes...');
-  execSync('git add .', { stdio: 'inherit' });
-  execSync(`git commit -m "chore: bump all packages (${versionType})"`, { stdio: 'inherit' });
+  // Check if there are changes to commit
+  const gitStatus = execSync('git status --porcelain', { encoding: 'utf8' });
 
-  console.log('🏷️  Creating git tag...');
-  const now = new Date();
-  const date = now.toISOString().split('T')[0];
-  const time = now.toTimeString().split(' ')[0].replace(/:/g, '-');
-  const tagName = `release-${date}-${time}`;
+  if (gitStatus.trim()) {
+    // Commit the changes
+    console.log('📝 Committing version changes...');
+    execSync('git add .', { stdio: 'inherit' });
+    execSync(`git commit -m "chore: bump all packages (${versionType})"`, { stdio: 'inherit' });
 
-  execSync(`git tag -a "${tagName}" -m "Release ${date} ${time.replace(/-/g, ':')} (${versionType} bump)"`, { stdio: 'inherit' });
+    console.log('🏷️  Creating git tag...');
+    const now = new Date();
+    const date = now.toISOString().split('T')[0];
+    const time = now.toTimeString().split(' ')[0].replace(/:/g, '-');
+    const tagName = `release-${date}-${time}`;
 
-  console.log('🚀 Pushing changes and tags...');
-  execSync('git push && git push --tags', { stdio: 'inherit' });
+    execSync(`git tag -a "${tagName}" -m "Release ${date} ${time.replace(/-/g, ':')} (${versionType} bump)"`, { stdio: 'inherit' });
 
-  console.log('✅ Version bump complete!');
+    console.log('🚀 Pushing changes and tags...');
+    execSync('git push && git push --tags', { stdio: 'inherit' });
+
+    console.log('✅ Version bump complete!');
+  } else {
+    console.log('ℹ️  No changes to commit - versions may have already been bumped');
+    console.log('✅ Version bump complete!');
+  }
 
 } catch (error) {
   console.error('❌ Version bump failed:', error.message);
