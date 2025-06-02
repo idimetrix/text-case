@@ -16,6 +16,9 @@ export function pascalCaseTransformMerge(input: string) {
 }
 
 export function pascalCase(input: string, options: Options = {}) {
+  // Handle null/undefined inputs gracefully
+  if (input == null) return "";
+
   return noCase(input, {
     delimiter: "",
     transform: pascalCaseTransform,

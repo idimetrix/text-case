@@ -18,6 +18,9 @@ export function camelCaseTransformMerge(input: string, index: number) {
 }
 
 export function camelCase(input: string, options: Options = {}) {
+  // Handle null/undefined inputs gracefully
+  if (input == null) return "";
+
   return pascalCase(input, {
     transform: camelCaseTransform,
     ...options,

@@ -17,6 +17,9 @@ const DEFAULT_STRIP_REGEXP = /[^A-Z0-9]+/gi;
  * Normalize text into something other libraries can manipulate easier.
  */
 export function noCase(input: string, options: Options = {}) {
+  // Handle null/undefined inputs gracefully
+  if (input == null) return "";
+
   const {
     splitRegexp = DEFAULT_SPLIT_REGEXP,
     stripRegexp = DEFAULT_STRIP_REGEXP,

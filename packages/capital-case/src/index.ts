@@ -3,11 +3,14 @@ import { upperCaseFirst } from "text-upper-case-first";
 
 export { Options };
 
-export function capitalCaseTransform(input: string) {
-  return upperCaseFirst(input.toLowerCase());
+function capitalCaseTransform(input: string, index: number) {
+  return upperCaseFirst(input);
 }
 
 export function capitalCase(input: string, options: Options = {}) {
+  // Handle null/undefined inputs gracefully
+  if (input == null) return "";
+
   return noCase(input, {
     delimiter: " ",
     transform: capitalCaseTransform,

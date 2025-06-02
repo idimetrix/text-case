@@ -43,6 +43,9 @@ const SUPPORTED_LOCALE: Record<string, Locale> = {
  * Localized lower case.
  */
 export function localeLowerCase(str: string, locale: string) {
+  // Handle null/undefined inputs gracefully
+  if (str == null) return "";
+
   const lang = SUPPORTED_LOCALE[locale.toLowerCase()];
   if (lang) return lowerCase(str.replace(lang.regexp, (m) => lang.map[m]));
   return lowerCase(str);
@@ -52,5 +55,8 @@ export function localeLowerCase(str: string, locale: string) {
  * Lower case as a function.
  */
 export function lowerCase(str: string) {
+  // Handle null/undefined inputs gracefully
+  if (str == null) return "";
+
   return str.toLowerCase();
 }
