@@ -1,6 +1,6 @@
 {
   "name": "text-camel-case",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Convert into a text with the separator denoted by the next word capitalized",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

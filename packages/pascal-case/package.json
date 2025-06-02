@@ -1,6 +1,6 @@
 {
   "name": "text-pascal-case",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Convert into a text of capitalized words without separators",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
