@@ -57,12 +57,8 @@
     "typecheck": "pnpm -r run typecheck",
     "typecheck:references": "tsc --build --force",
     "typecheck:watch": "pnpm -r --parallel run typecheck:watch",
-    "version": "lerna version",
-    "publish": "lerna publish --concurrency 1",
-    "publish:safe": "node scripts/publish-with-retry.js",
-    "publish:from-git": "lerna publish from-git --concurrency 1",
-    "publish:pnpm": "pnpm -r publish --access public",
-    "publish:pnpm-safe": "pnpm -r publish --access public --no-git-checks",
+    "version": "pnpm -r version",
+    "publish": "pnpm -r publish --access public --no-git-checks",
     "postinstall": "echo 'Packages installed and linked via pnpm workspaces'",
     "bootstrap": "pnpm install && pnpm run format && pnpm run typecheck"
   },
@@ -80,7 +76,6 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "lerna": "^8.2.2",
     "lint-staged": "^16.1.0",
     "prettier": "^3.5.3"
   }
