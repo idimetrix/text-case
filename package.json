@@ -76,8 +76,10 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
+    "lerna": "^8.2.2",
     "lint-staged": "^16.1.0",
     "prettier": "^3.5.3"
   },
-  "version": "0.6.6"
+  "version": "0.6.6",
+  "dependencies": {}
 }
