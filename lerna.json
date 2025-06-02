@@ -2,6 +2,5 @@
   "packages": ["packages/*"],
   "version": "independent",
   "ignoreChanges": ["*.spec.*", "*.md"],
-  "npmClient": "pnpm",
-  "useWorkspaces": true
+  "npmClient": "pnpm"
 }
