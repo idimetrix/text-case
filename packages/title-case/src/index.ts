@@ -5,7 +5,27 @@ export { Options };
 
 // Small words that should not be capitalized unless they are at the beginning or end
 const SMALL_WORDS = new Set([
-  "a", "an", "and", "at", "but", "by", "en", "for", "if", "in", "nor", "of", "on", "or", "per", "so", "the", "to", "up", "via", "yet"
+  "a",
+  "an",
+  "and",
+  "at",
+  "but",
+  "by",
+  "en",
+  "for",
+  "if",
+  "in",
+  "nor",
+  "of",
+  "on",
+  "or",
+  "per",
+  "so",
+  "the",
+  "to",
+  "up",
+  "via",
+  "yet",
 ]);
 
 function titleCaseTransform(input: string, index: number, parts: string[]) {
