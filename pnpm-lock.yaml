@@ -316,10 +316,6 @@ importers:
         version: 5.8.3
 
   packages/lower-case:
-    dependencies:
-      text-no-case:
-        specifier: workspace:*
-        version: link:../no-case
     devDependencies:
       '@size-limit/preset-small-lib':
         specifier: ^11.2.0
