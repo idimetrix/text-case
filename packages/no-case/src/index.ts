@@ -9,7 +9,10 @@ export interface Options {
 
 // Support camel case ("camelCase" -> "camel Case" and "CAMELCase" -> "CAMEL Case").
 // Updated to support Unicode letters
-const DEFAULT_SPLIT_REGEXP = [/(\p{Ll}|\p{N})(\p{Lu})/gu, /(\p{Lu})(\p{Lu}\p{Ll})/gu];
+const DEFAULT_SPLIT_REGEXP = [
+  /(\p{Ll}|\p{N})(\p{Lu})/gu,
+  /(\p{Lu})(\p{Lu}\p{Ll})/gu,
+];
 
 // Remove all non-word characters, but preserve Unicode letters and numbers.
 // Updated to use Unicode-aware character classes

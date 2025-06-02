@@ -1,6 +1,9 @@
 /**
  * Lower case the first character of an input string.
  */
-export function lowerCaseFirst(input: string) {
-  return input.charAt(0).toLowerCase() + input.substr(1);
+export function lowerCaseFirst(str: string) {
+  // Handle null/undefined inputs gracefully
+  if (!str) return "";
+
+  return str.charAt(0).toLowerCase() + str.substr(1);
 }

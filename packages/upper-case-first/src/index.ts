@@ -1,6 +1,9 @@
 /**
  * Upper case the first character of an input string.
  */
-export function upperCaseFirst(input: string) {
-  return input.charAt(0).toUpperCase() + input.substr(1);
+export function upperCaseFirst(str: string) {
+  // Handle null/undefined inputs gracefully
+  if (!str) return "";
+
+  return str.charAt(0).toUpperCase() + str.substr(1);
 }
