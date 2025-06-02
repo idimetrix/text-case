@@ -2,5 +2,12 @@
   "packages": ["packages/*"],
   "version": "independent",
   "ignoreChanges": ["*.spec.*", "*.md"],
-  "npmClient": "pnpm"
+  "npmClient": "pnpm",
+  "command": {
+    "publish": {
+      "concurrency": 1,
+      "registry": "https://registry.npmjs.org/",
+      "npmClientArgs": ["--access=public"]
+    }
+  }
 }
