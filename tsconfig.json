@@ -1,0 +1,25 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/camel-case" },
+    { "path": "./packages/capital-case" },
+    { "path": "./packages/constant-case" },
+    { "path": "./packages/dot-case" },
+    { "path": "./packages/header-case" },
+    { "path": "./packages/is-lower-case" },
+    { "path": "./packages/is-upper-case" },
+    { "path": "./packages/lower-case" },
+    { "path": "./packages/lower-case-first" },
+    { "path": "./packages/no-case" },
+    { "path": "./packages/param-case" },
+    { "path": "./packages/pascal-case" },
+    { "path": "./packages/path-case" },
+    { "path": "./packages/sentence-case" },
+    { "path": "./packages/snake-case" },
+    { "path": "./packages/swap-case" },
+    { "path": "./packages/text-case" },
+    { "path": "./packages/title-case" },
+    { "path": "./packages/upper-case" },
+    { "path": "./packages/upper-case-first" }
+  ]
+}

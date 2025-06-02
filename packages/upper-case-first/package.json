@@ -16,6 +16,8 @@
     "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
     "specs": "jest --coverage",
     "test": "pnpm run build && pnpm run lint && pnpm run specs",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "tsc --noEmit --watch",
     "size": "size-limit",
     "prepare": "pnpm run build"
   },

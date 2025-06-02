@@ -52,8 +52,11 @@
   "scripts": {
     "prettier": "prettier --write",
     "build": "pnpm -r run build",
-    "format": "pnpm run prettier -- \"{./,packages/**/}*.{js,jsx,ts,tsx,json,md,yml,yaml}\" --ignore-path .gitignore",
+    "format": "pnpm run prettier -- \"{./,packages/**/}*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
     "test": "pnpm -r run test",
+    "typecheck": "pnpm -r run typecheck",
+    "typecheck:references": "tsc --build --force",
+    "typecheck:watch": "pnpm -r --parallel run typecheck:watch",
     "version": "lerna version",
     "publish": "lerna publish",
     "postinstall": "echo 'Packages installed and linked via pnpm workspaces'"

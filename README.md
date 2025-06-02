@@ -96,7 +96,7 @@ pnpm install
 
 ```bash
 # Build all packages
-ppnpm run build
+pnpm run build
 
 # Build a specific package
 pnpm --filter text-camel-case run build
@@ -106,10 +106,26 @@ pnpm --filter text-camel-case run build
 
 ```bash
 # Test all packages
-ppnpm run test
+pnpm run test
 
 # Test a specific package
 pnpm --filter text-camel-case run test
+```
+
+### Type Checking
+
+```bash
+# Type check all packages
+pnpm run typecheck
+
+# Type check a specific package
+pnpm --filter text-camel-case run typecheck
+
+# Type check all packages in watch mode
+pnpm run typecheck:watch
+
+# Type check a specific package in watch mode
+pnpm --filter text-camel-case run typecheck:watch
 ```
 
 ### Adding Dependencies
@@ -129,10 +145,10 @@ pnpm add -w prettier
 
 ```bash
 # Version packages (interactive)
-ppnpm run version
+pnpm run version
 
 # Publish packages
-ppnpm run publish
+pnpm run publish
 ```
 
 [npm-image]: https://img.shields.io/npm/v/text-case.svg?style=flat
