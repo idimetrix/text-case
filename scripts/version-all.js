@@ -28,8 +28,12 @@ try {
   execSync(`git commit -m "chore: bump all packages (${versionType})"`, { stdio: 'inherit' });
 
   console.log('🏷️  Creating git tag...');
-  const timestamp = new Date().toISOString().split('T')[0];
-  execSync(`git tag -a "release-${timestamp}" -m "Release ${timestamp} (${versionType} bump)"`, { stdio: 'inherit' });
+  const now = new Date();
+  const date = now.toISOString().split('T')[0];
+  const time = now.toTimeString().split(' ')[0].replace(/:/g, '-');
+  const tagName = `release-${date}-${time}`;
+
+  execSync(`git tag -a "${tagName}" -m "Release ${date} ${time.replace(/-/g, ':')} (${versionType} bump)"`, { stdio: 'inherit' });
 
   console.log('🚀 Pushing changes and tags...');
   execSync('git push && git push --tags', { stdio: 'inherit' });
