@@ -1,5 +1,11 @@
 {
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "1.2.2",
-  "npmClient": "pnpm"
+  "npmClient": "pnpm",
+  "packages": ["packages/*", "."],
+  "command": {
+    "publish": {
+      "allowBranch": "main"
+    }
+  }
 }
