@@ -198,20 +198,81 @@ import { noCase } from "text-no-case";
 function prepareSlug(title) {
   return noCase(title)
     .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '')
-    .replace(/-+/g, '-')
-    .replace(/^-|-$/g, '');
+    .replace(/[^a-z0-9-]/g, '');
 }
 
-console.log(prepareSlug("How to Learn JavaScript")); // "how-to-learn-java-script"
-console.log(prepareSlug("React vs Vue.js")); // "react-vs-vue-js"
+console.log(prepareSlug("Hello World!")); // "hello-world"
+console.log(prepareSlug("JavaScript Tips & Tricks")); // "java-script-tips-tricks"
+```
+
+### Text Analysis
+
+```javascript
+import { noCase } from "text-no-case";
+
+function analyzeText(text) {
+  const normalized = noCase(text);
+  const words = normalized.split(' ').filter(word => word.length > 0);
+
+  return {
+    wordCount: words.length,
+    uniqueWords: [...new Set(words)].length,
+    averageWordLength: words.reduce((sum, word) => sum + word.length, 0) / words.length
+  };
+}
+
+console.log(analyzeText("userProfileData"));
+// { wordCount: 3, uniqueWords: 3, averageWordLength: 4.67 }
+```
+
+### Content Normalization
+
+```javascript
+import { noCase } from "text-no-case";
+
+function normalizeContent(content) {
+  return content
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .map(line => noCase(line))
+    .join(' ');
+}
+
+const content = `
+  userManagement
+  dataVisualization
+  apiIntegration
+`;
+
+console.log(normalizeContent(content));
+// "user management data visualization api integration"
+```
+
+### Keyword Extraction
+
+```javascript
+import { noCase } from "text-no-case";
+
+function extractKeywords(text, minLength = 3) {
+  const normalized = noCase(text);
+  const words = normalized.split(' ');
+
+  return words
+    .filter(word => word.length >= minLength)
+    .filter((word, index, arr) => arr.indexOf(word) === index)
+    .sort();
+}
+
+console.log(extractKeywords("userProfileDataManagement"));
+// ["data", "management", "profile", "user"]
 ```
 
 ## 📖 API Reference
 
 ### `noCase(input, options?)`
 
-Converts a string to no case (lowercase words separated by spaces).
+Converts a string to no case format.
 
 #### Parameters
 
@@ -276,24 +337,22 @@ noCase("hello!@#world", {
 ```javascript
 import { noCase } from "text-no-case";
 
-// Expand abbreviations
-noCase("js-framework", {
+// Preserve certain words
+noCase("xml-http-request", {
   transform: (word, index) => {
-    const expansions = {
-      "js": "javascript",
-      "api": "application programming interface",
-      "ui": "user interface",
-      "db": "database"
-    };
-    return expansions[word.toLowerCase()] || word.toLowerCase();
+    const preserveWords = ["xml", "http", "api", "url"];
+    if (preserveWords.includes(word.toLowerCase())) {
+      return word.toLowerCase();
+    }
+    return word.toLowerCase();
   },
-}); // "javascript framework"
+}); // "xml http request"
 
-// Custom processing
-noCase("userV2API", {
+// Custom business logic
+noCase("user-v2-api", {
   transform: (word, index) => {
-    if (word === "V2") return "version 2";
-    if (word === "API") return "api";
+    if (word === "v2") return "version 2";
+    if (word === "api") return "api";
     return word.toLowerCase();
   },
 }); // "user version 2 api"
@@ -336,9 +395,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
 - [`text-lower-case`](../lower-case) - Convert to lowercase
+- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
 - [`text-title-case`](../title-case) - Convert to Title Case
+- [`text-camel-case`](../camel-case) - Convert to camelCase
 - [`text-case`](../text-case) - All case transformations in one package
 
 ## 📜 License

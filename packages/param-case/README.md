@@ -197,11 +197,128 @@ console.log(urlParams.toString());
 // "sort-order=desc&page-size=20&filter-type=active&search-query=javascript"
 ```
 
+### Component Props Processing
+
+```javascript
+import { paramCase } from "text-param-case";
+
+function generateDataAttributes(props) {
+  const dataAttrs = {};
+
+  Object.entries(props).forEach(([key, value]) => {
+    if (key.startsWith('data')) {
+      const attrName = paramCase(key);
+      dataAttrs[attrName] = value;
+    }
+  });
+
+  return dataAttrs;
+}
+
+const props = {
+  dataTestId: "submit-button",
+  dataTrackingId: "btn-submit",
+  dataAnalytics: "form-submission"
+};
+
+console.log(generateDataAttributes(props));
+// {
+//   "data-test-id": "submit-button",
+//   "data-tracking-id": "btn-submit",
+//   "data-analytics": "form-submission"
+// }
+```
+
+### Form Field Processing
+
+```javascript
+import { paramCase } from "text-param-case";
+
+function createFormField(name, type = 'text', options = {}) {
+  const fieldName = paramCase(name);
+  const fieldId = `field-${fieldName}`;
+
+  return {
+    name: fieldName,
+    id: fieldId,
+    type,
+    className: `form-${fieldName}`,
+    ...options
+  };
+}
+
+console.log(createFormField("firstName"));
+// {
+//   name: "first-name",
+//   id: "field-first-name",
+//   type: "text",
+//   className: "form-first-name"
+// }
+```
+
+### CSS-in-JS Processing
+
+```javascript
+import { paramCase } from "text-param-case";
+
+function convertCSSProperties(styles) {
+  const converted = {};
+
+  Object.entries(styles).forEach(([property, value]) => {
+    const cssProperty = paramCase(property);
+    converted[cssProperty] = value;
+  });
+
+  return converted;
+}
+
+const jsStyles = {
+  backgroundColor: "#fff",
+  fontSize: "16px",
+  marginTop: "10px",
+  borderRadius: "4px"
+};
+
+console.log(convertCSSProperties(jsStyles));
+// {
+//   "background-color": "#fff",
+//   "font-size": "16px",
+//   "margin-top": "10px",
+//   "border-radius": "4px"
+// }
+```
+
+### Route Generation
+
+```javascript
+import { paramCase } from "text-param-case";
+
+class RouteGenerator {
+  static generateRoute(controller, action) {
+    const controllerPath = paramCase(controller);
+    const actionPath = paramCase(action);
+    return `/${controllerPath}/${actionPath}`;
+  }
+
+  static generateApiRoute(resource, action) {
+    const resourcePath = paramCase(resource);
+    const actionPath = paramCase(action);
+    return `/api/${resourcePath}/${actionPath}`;
+  }
+}
+
+console.log(RouteGenerator.generateRoute("UserProfile", "EditSettings"));
+// "/user-profile/edit-settings"
+
+console.log(RouteGenerator.generateApiRoute("BlogPost", "GetComments"));
+// "/api/blog-post/get-comments"
+```
+
 ## 📖 API Reference
 
 ### `paramCase(input, options?)`
 
-Converts a string to param-case (kebab-case).
+Converts a string to param-case format.
 
 #### Parameters
 
@@ -266,10 +383,10 @@ paramCase("hello!@#world", {
 ```javascript
 import { paramCase } from "text-param-case";
 
-// Preserve specific formatting
+// Preserve acronyms
 paramCase("xml-http-request", {
   transform: (word, index) => {
-    const acronyms = ["xml", "http", "api", "url"];
+    const acronyms = ["xml", "http", "api", "url", "html", "css", "js"];
     if (acronyms.includes(word.toLowerCase())) {
       return word.toLowerCase();
     }
@@ -278,10 +395,10 @@ paramCase("xml-http-request", {
 }); // "xml-http-request"
 
 // Custom business logic
-paramCase("userV2API", {
+paramCase("user-v2-api", {
   transform: (word, index) => {
-    if (word === "V2") return "v2";
-    if (word === "API") return "api";
+    if (word === "v2") return "v2";
+    if (word === "api") return "api";
     return word.toLowerCase();
   },
 }); // "user-v2-api"
@@ -327,6 +444,7 @@ pnpm lint
 - [`text-kebab-case`](../kebab-case) - Convert to kebab-case (alias)
 - [`text-snake-case`](../snake-case) - Convert to snake_case
 - [`text-camel-case`](../camel-case) - Convert to camelCase
+- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
 - [`text-case`](../text-case) - All case transformations in one package
 
 ## 📜 License

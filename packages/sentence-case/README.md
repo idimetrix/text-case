@@ -202,11 +202,97 @@ console.log(formattedSections);
 // ]
 ```
 
+### Notification Messages
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+function formatNotification(type, message) {
+  return `${sentenceCase(type)}: ${sentenceCase(message)}`;
+}
+
+console.log(formatNotification("successMessage", "dataUpdatedSuccessfully"));
+// "Success message: Data updated successfully"
+
+console.log(formatNotification("warningAlert", "sessionWillExpireSoon"));
+// "Warning alert: Session will expire soon"
+```
+
+### Menu Item Processing
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+const menuItems = [
+  { key: "userProfile", icon: "user" },
+  { key: "accountSettings", icon: "settings" },
+  { key: "billingInformation", icon: "credit-card" },
+  { key: "securityOptions", icon: "shield" },
+  { key: "privacySettings", icon: "lock" }
+];
+
+const formattedMenu = menuItems.map(item => ({
+  ...item,
+  label: sentenceCase(item.key)
+}));
+
+console.log(formattedMenu);
+// [
+//   { key: "userProfile", icon: "user", label: "User profile" },
+//   { key: "accountSettings", icon: "settings", label: "Account settings" },
+//   { key: "billingInformation", icon: "credit-card", label: "Billing information" },
+//   { key: "securityOptions", icon: "shield", label: "Security options" },
+//   { key: "privacySettings", icon: "lock", label: "Privacy settings" }
+// ]
+```
+
+### Help Text Generation
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+function generateHelpText(fieldName, validationRule) {
+  const field = sentenceCase(fieldName);
+  const rule = sentenceCase(validationRule);
+  return `${field} ${rule}`;
+}
+
+console.log(generateHelpText("emailAddress", "mustBeValidFormat"));
+// "Email address must be valid format"
+
+console.log(generateHelpText("password", "mustContainSpecialCharacters"));
+// "Password must contain special characters"
+```
+
+### Status Message Processing
+
+```javascript
+import { sentenceCase } from "text-sentence-case";
+
+class StatusProcessor {
+  static formatStatus(status) {
+    return sentenceCase(status);
+  }
+
+  static createStatusMessage(action, status) {
+    const formattedAction = sentenceCase(action);
+    const formattedStatus = sentenceCase(status);
+    return `${formattedAction} ${formattedStatus}`;
+  }
+}
+
+console.log(StatusProcessor.formatStatus("dataProcessingComplete"));
+// "Data processing complete"
+
+console.log(StatusProcessor.createStatusMessage("fileUpload", "inProgress"));
+// "File upload in progress"
+```
+
 ## 📖 API Reference
 
 ### `sentenceCase(input, options?)`
 
-Converts a string to Sentence case.
+Converts a string to Sentence case format.
 
 #### Parameters
 
@@ -274,7 +360,7 @@ import { sentenceCase } from "text-sentence-case";
 // Preserve acronyms in first position
 sentenceCase("xml-http-request", {
   transform: (word, index) => {
-    const acronyms = ["xml", "http", "api", "url"];
+    const acronyms = ["xml", "http", "api", "url", "html", "css", "js"];
     if (index === 0 && acronyms.includes(word.toLowerCase())) {
       return word.toUpperCase();
     }
@@ -337,6 +423,7 @@ pnpm lint
 
 - [`text-title-case`](../title-case) - Convert to Title Case
 - [`text-capital-case`](../capital-case) - Convert to Capital Case
+- [`text-upper-case-first`](../upper-case-first) - Make first character uppercase
 - [`text-no-case`](../no-case) - Convert to no case
 - [`text-case`](../text-case) - All case transformations in one package
 

@@ -194,83 +194,167 @@ console.log(formatMessage("welcome back!"));   // "Welcome back!"
 console.log(formatMessage("are you sure?"));   // "Are you sure?"
 ```
 
-### API Response Processing
+### Comment Processing
 
 ```javascript
 import { upperCaseFirst } from "text-upper-case-first";
 
-function processApiResponse(response) {
-  if (response.message) {
-    response.message = upperCaseFirst(response.message);
+function formatComment(comment) {
+  // Capitalize first letter and ensure proper punctuation
+  const formatted = upperCaseFirst(comment.trim());
+
+  if (!formatted.match(/[.!?]$/)) {
+    return formatted + '.';
   }
 
-  if (response.errors && Array.isArray(response.errors)) {
-    response.errors = response.errors.map(error =>
-      typeof error === 'string' ? upperCaseFirst(error) : error
-    );
-  }
-
-  return response;
+  return formatted;
 }
 
-const apiResponse = {
-  success: false,
-  message: "validation failed",
-  errors: [
-    "email is required",
-    "password must be at least 8 characters",
-    "username already exists"
-  ]
-};
+console.log(formatComment("great article"));
+// "Great article."
 
-console.log(processApiResponse(apiResponse));
+console.log(formatComment("thanks for sharing!"));
+// "Thanks for sharing!"
+```
+
+### Notification Processing
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+class NotificationFormatter {
+  static format(message, type = 'info') {
+    const formattedMessage = upperCaseFirst(message.trim());
+
+    return {
+      type,
+      message: formattedMessage,
+      timestamp: new Date().toISOString()
+    };
+  }
+
+  static formatBatch(messages) {
+    return messages.map(msg => this.format(msg));
+  }
+}
+
+console.log(NotificationFormatter.format("user logged in successfully"));
 // {
-//   success: false,
-//   message: "Validation failed",
-//   errors: [
-//     "Email is required",
-//     "Password must be at least 8 characters",
-//     "Username already exists"
-//   ]
+//   type: "info",
+//   message: "User logged in successfully",
+//   timestamp: "2023-..."
 // }
 ```
 
-### Text Processing Pipeline
+### Text Input Processing
 
 ```javascript
 import { upperCaseFirst } from "text-upper-case-first";
 
-class TextProcessor {
-  constructor() {
-    this.processors = [];
+function processTextInput(input, options = {}) {
+  const {
+    autoCapitalize = true,
+    trimWhitespace = true,
+    addPunctuation = false
+  } = options;
+
+  let processed = input;
+
+  if (trimWhitespace) {
+    processed = processed.trim();
   }
 
-  addTrim() {
-    this.processors.push(text => text.trim());
-    return this;
+  if (autoCapitalize) {
+    processed = upperCaseFirst(processed);
   }
 
-  addLowerCase() {
-    this.processors.push(text => text.toLowerCase());
-    return this;
+  if (addPunctuation && !processed.match(/[.!?]$/)) {
+    processed += '.';
   }
 
-  addUpperCaseFirst() {
-    this.processors.push(upperCaseFirst);
-    return this;
+  return processed;
+}
+
+console.log(processTextInput("  hello world  ", {
+  autoCapitalize: true,
+  addPunctuation: true
+}));
+// "Hello world."
+```
+
+### Blog Post Processing
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+function processBlogPost(post) {
+  return {
+    ...post,
+    title: upperCaseFirst(post.title),
+    excerpt: upperCaseFirst(post.excerpt),
+    tags: post.tags.map(tag => upperCaseFirst(tag))
+  };
+}
+
+const blogPost = {
+  title: "getting started with react",
+  excerpt: "learn the basics of react development",
+  tags: ["react", "javascript", "frontend"],
+  content: "..."
+};
+
+console.log(processBlogPost(blogPost));
+// {
+//   title: "Getting started with react",
+//   excerpt: "Learn the basics of react development",
+//   tags: ["React", "Javascript", "Frontend"],
+//   content: "..."
+// }
+```
+
+### Error Message Processing
+
+```javascript
+import { upperCaseFirst } from "text-upper-case-first";
+
+class ErrorFormatter {
+  static format(error) {
+    if (typeof error === 'string') {
+      return upperCaseFirst(error);
+    }
+
+    if (error.message) {
+      return {
+        ...error,
+        message: upperCaseFirst(error.message)
+      };
+    }
+
+    return error;
   }
 
-  process(text) {
-    return this.processors.reduce((result, processor) => processor(result), text);
+  static formatValidationErrors(errors) {
+    const formatted = {};
+
+    Object.entries(errors).forEach(([field, message]) => {
+      formatted[field] = upperCaseFirst(message);
+    });
+
+    return formatted;
   }
 }
 
-const processor = new TextProcessor()
-  .addTrim()
-  .addLowerCase()
-  .addUpperCaseFirst();
+console.log(ErrorFormatter.format("invalid email address"));
+// "Invalid email address"
 
-console.log(processor.process("  HELLO WORLD  ")); // "Hello world"
+console.log(ErrorFormatter.formatValidationErrors({
+  email: "email is required",
+  password: "password must be at least 8 characters"
+}));
+// {
+//   email: "Email is required",
+//   password: "Password must be at least 8 characters"
+// }
 ```
 
 ## 📖 API Reference
@@ -325,8 +409,9 @@ pnpm lint
 ## 🔗 Related Packages
 
 - [`text-lower-case-first`](../lower-case-first) - Make first character lowercase
-- [`text-title-case`](../title-case) - Convert to Title Case
 - [`text-sentence-case`](../sentence-case) - Convert to Sentence case
+- [`text-title-case`](../title-case) - Convert to Title Case
+- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
 - [`text-case`](../text-case) - All case transformations in one package
 
 ## 📜 License
