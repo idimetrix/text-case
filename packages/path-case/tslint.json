@@ -1,6 +1,7 @@
 {
   "extends": ["tslint-config-standard", "tslint-config-prettier"],
   "rules": {
-    "no-empty-character-class": false
+    "no-empty-character-class": false,
+    "deprecation": false
   }
 }
