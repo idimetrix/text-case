@@ -1,36 +1,37 @@
-const SMALL_WORDS =
-  /\b(?:an?d?|a[st]|because|but|by|en|for|i[fn]|neither|nor|o[fnr]|only|over|per|so|some|tha[tn]|the|to|up|upon|vs?\.?|versus|via|when|with|without|yet)\b/i;
-const TOKENS = /[^\s:–—-]+|./g;
-const WHITESPACE = /\s/;
-const IS_MANUAL_CASE = /.(?=[A-Z]|\..)/;
-const ALPHANUMERIC_PATTERN = /[A-Za-z0-9\u00C0-\u00FF]/;
+import { noCase, Options } from "text-no-case";
+import { upperCaseFirst } from "text-upper-case-first";
 
-export function titleCase(input: string) {
-  let result = "";
-  let m: RegExpExecArray | null;
+export { Options };
 
-  // tslint:disable-next-line
-  while ((m = TOKENS.exec(input)) !== null) {
-    const { 0: token, index } = m;
+// Small words that should not be capitalized unless they are at the beginning or end
+const SMALL_WORDS = new Set([
+  "a", "an", "and", "at", "but", "by", "en", "for", "if", "in", "nor", "of", "on", "or", "per", "so", "the", "to", "up", "via", "yet"
+]);
 
-    if (
-      // Ignore already capitalized words.
-      !IS_MANUAL_CASE.test(token) &&
-      // Ignore small words except at beginning or end.
-      (!SMALL_WORDS.test(token) ||
-        index === 0 ||
-        index + token.length === input.length) &&
-      // Ignore URLs.
-      (input.charAt(index + token.length) !== ":" ||
-        WHITESPACE.test(input.charAt(index + token.length + 1)))
-    ) {
-      // Find and uppercase first word character, skips over *modifiers*.
-      result += token.replace(ALPHANUMERIC_PATTERN, (m) => m.toUpperCase());
-      continue;
-    }
+function titleCaseTransform(input: string, index: number, parts: string[]) {
+  const word = input.toLowerCase();
 
-    result += token;
+  // Always capitalize first and last words
+  if (index === 0 || index === parts.length - 1) {
+    return upperCaseFirst(word);
   }
 
-  return result;
+  // Don't capitalize small words in the middle
+  if (SMALL_WORDS.has(word)) {
+    return word;
+  }
+
+  // Capitalize all other words
+  return upperCaseFirst(word);
+}
+
+export function titleCase(input: string, options: Options = {}) {
+  // Handle null/undefined inputs gracefully
+  if (!input) return "";
+
+  return noCase(input, {
+    delimiter: " ",
+    transform: titleCaseTransform,
+    ...options,
+  });
 }

@@ -47,6 +47,10 @@
     "email": "selikhov.dmitrey@gmail.com"
   },
   "homepage": "https://github.com/idimetrix/text-case/tree/master/packages/title-case#readme",
+  "dependencies": {
+    "text-no-case": "workspace:*",
+    "text-upper-case-first": "workspace:*"
+  },
   "size-limit": [
     {
       "path": "dist/index.js",
