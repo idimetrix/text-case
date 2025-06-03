@@ -78,18 +78,18 @@ console.log(result); // true
 import { isUpperCase } from "text-is-upper-case";
 
 // Valid uppercase
-isUpperCase("HELLO");           // true
-isUpperCase("HELLO WORLD");     // true
-isUpperCase("TEST123");         // true
-isUpperCase("USER_NAME");       // true
-isUpperCase("API-KEY");         // true
+isUpperCase("HELLO"); // true
+isUpperCase("HELLO WORLD"); // true
+isUpperCase("TEST123"); // true
+isUpperCase("USER_NAME"); // true
+isUpperCase("API-KEY"); // true
 
 // Invalid (not uppercase)
-isUpperCase("Hello");           // false
-isUpperCase("hello");           // false
-isUpperCase("Hello World");     // false
-isUpperCase("camelCase");       // false
-isUpperCase("PascalCase");      // false
+isUpperCase("Hello"); // false
+isUpperCase("hello"); // false
+isUpperCase("Hello World"); // false
+isUpperCase("camelCase"); // false
+isUpperCase("PascalCase"); // false
 ```
 
 ### Edge Cases
@@ -98,20 +98,20 @@ isUpperCase("PascalCase");      // false
 import { isUpperCase } from "text-is-upper-case";
 
 // Numbers and symbols
-isUpperCase("123");             // true
-isUpperCase("HELLO123");        // true
-isUpperCase("TEST@EMAIL.COM");  // true
-isUpperCase("USER_123");        // true
+isUpperCase("123"); // true
+isUpperCase("HELLO123"); // true
+isUpperCase("TEST@EMAIL.COM"); // true
+isUpperCase("USER_123"); // true
 
 // Empty and whitespace
-isUpperCase("");               // true
-isUpperCase("   ");            // true
-isUpperCase("\n\t");           // true
+isUpperCase(""); // true
+isUpperCase("   "); // true
+isUpperCase("\n\t"); // true
 
 // Special characters
-isUpperCase("HELLO-WORLD");     // true
-isUpperCase("TEST_CASE");       // true
-isUpperCase("FILE.TXT");        // true
+isUpperCase("HELLO-WORLD"); // true
+isUpperCase("TEST_CASE"); // true
+isUpperCase("FILE.TXT"); // true
 ```
 
 ## 🌍 Real-World Examples
@@ -170,12 +170,12 @@ console.log(validateHeaderMethod("get")); // "HTTP methods should be uppercase"
 import { isUpperCase } from "text-is-upper-case";
 
 function validateConfigConstants(config) {
-  const invalidKeys = Object.keys(config).filter(key =>
-    key.startsWith('CONST_') && !isUpperCase(key)
+  const invalidKeys = Object.keys(config).filter(
+    (key) => key.startsWith("CONST_") && !isUpperCase(key),
   );
 
   if (invalidKeys.length > 0) {
-    return `Invalid constant keys (must be uppercase): ${invalidKeys.join(', ')}`;
+    return `Invalid constant keys (must be uppercase): ${invalidKeys.join(", ")}`;
   }
   return null;
 }

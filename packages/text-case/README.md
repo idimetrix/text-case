@@ -74,43 +74,43 @@ console.log(titleCase(input)); // "User Profile Data"
 
 ### Core Transformations
 
-| Function | Output Example | Description |
-|----------|----------------|-------------|
-| `camelCase()` | `userProfileData` | First word lowercase, subsequent words capitalized |
-| `pascalCase()` | `UserProfileData` | All words capitalized, no separators |
-| `snakeCase()` | `user_profile_data` | Lowercase words separated by underscores |
-| `kebabCase()` | `user-profile-data` | Lowercase words separated by hyphens |
-| `titleCase()` | `User Profile Data` | All words capitalized, separated by spaces |
-| `sentenceCase()` | `User profile data` | First word capitalized, rest lowercase |
+| Function         | Output Example      | Description                                        |
+| ---------------- | ------------------- | -------------------------------------------------- |
+| `camelCase()`    | `userProfileData`   | First word lowercase, subsequent words capitalized |
+| `pascalCase()`   | `UserProfileData`   | All words capitalized, no separators               |
+| `snakeCase()`    | `user_profile_data` | Lowercase words separated by underscores           |
+| `kebabCase()`    | `user-profile-data` | Lowercase words separated by hyphens               |
+| `titleCase()`    | `User Profile Data` | All words capitalized, separated by spaces         |
+| `sentenceCase()` | `User profile data` | First word capitalized, rest lowercase             |
 
 ### Specialized Formats
 
-| Function | Output Example | Description |
-|----------|----------------|-------------|
-| `constantCase()` | `USER_PROFILE_DATA` | Uppercase words separated by underscores |
-| `dotCase()` | `user.profile.data` | Lowercase words separated by dots |
-| `pathCase()` | `user/profile/data` | Lowercase words separated by forward slashes |
-| `headerCase()` | `User-Profile-Data` | Capitalized words separated by hyphens |
-| `capitalCase()` | `User Profile Data` | All words capitalized, separated by spaces |
-| `noCase()` | `user profile data` | Lowercase words separated by spaces |
-| `paramCase()` | `user-profile-data` | Alias for kebab-case |
+| Function         | Output Example      | Description                                  |
+| ---------------- | ------------------- | -------------------------------------------- |
+| `constantCase()` | `USER_PROFILE_DATA` | Uppercase words separated by underscores     |
+| `dotCase()`      | `user.profile.data` | Lowercase words separated by dots            |
+| `pathCase()`     | `user/profile/data` | Lowercase words separated by forward slashes |
+| `headerCase()`   | `User-Profile-Data` | Capitalized words separated by hyphens       |
+| `capitalCase()`  | `User Profile Data` | All words capitalized, separated by spaces   |
+| `noCase()`       | `user profile data` | Lowercase words separated by spaces          |
+| `paramCase()`    | `user-profile-data` | Alias for kebab-case                         |
 
 ### Character Transformations
 
-| Function | Output Example | Description |
-|----------|----------------|-------------|
-| `upperCase()` | `USER PROFILE DATA` | All characters uppercase |
-| `lowerCase()` | `user profile data` | All characters lowercase |
-| `upperCaseFirst()` | `User profile data` | First character uppercase |
-| `lowerCaseFirst()` | `user Profile Data` | First character lowercase |
-| `swapCase()` | `uSER pROFILE dATA` | Swap case of all characters |
+| Function           | Output Example      | Description                 |
+| ------------------ | ------------------- | --------------------------- |
+| `upperCase()`      | `USER PROFILE DATA` | All characters uppercase    |
+| `lowerCase()`      | `user profile data` | All characters lowercase    |
+| `upperCaseFirst()` | `User profile data` | First character uppercase   |
+| `lowerCaseFirst()` | `user Profile Data` | First character lowercase   |
+| `swapCase()`       | `uSER pROFILE dATA` | Swap case of all characters |
 
 ### Validation Utilities
 
-| Function | Output Example | Description |
-|----------|----------------|-------------|
-| `isUpperCase()` | `true/false` | Check if string is uppercase |
-| `isLowerCase()` | `true/false` | Check if string is lowercase |
+| Function        | Output Example | Description                  |
+| --------------- | -------------- | ---------------------------- |
+| `isUpperCase()` | `true/false`   | Check if string is uppercase |
+| `isLowerCase()` | `true/false`   | Check if string is lowercase |
 
 ## 🛠️ Advanced Usage
 

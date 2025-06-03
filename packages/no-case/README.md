@@ -79,20 +79,20 @@ console.log(result); // "hello world"
 import { noCase } from "text-no-case";
 
 // From different cases
-noCase("hello world");       // "hello world"
-noCase("Hello World");       // "hello world"
-noCase("HELLO WORLD");       // "hello world"
-noCase("camelCase");         // "camel case"
-noCase("PascalCase");        // "pascal case"
-noCase("snake_case");        // "snake case"
-noCase("kebab-case");        // "kebab case"
-noCase("dot.case");          // "dot case"
+noCase("hello world"); // "hello world"
+noCase("Hello World"); // "hello world"
+noCase("HELLO WORLD"); // "hello world"
+noCase("camelCase"); // "camel case"
+noCase("PascalCase"); // "pascal case"
+noCase("snake_case"); // "snake case"
+noCase("kebab-case"); // "kebab case"
+noCase("dot.case"); // "dot case"
 
 // Complex examples
-noCase("XMLHttpRequest");    // "xml http request"
-noCase("iPhone");            // "i phone"
-noCase("version 1.2.3");    // "version 1 2 3"
-noCase("userProfileData");   // "user profile data"
+noCase("XMLHttpRequest"); // "xml http request"
+noCase("iPhone"); // "i phone"
+noCase("version 1.2.3"); // "version 1 2 3"
+noCase("userProfileData"); // "user profile data"
 ```
 
 ### Advanced Options
@@ -128,11 +128,11 @@ noCase("api-v2-endpoint", {
 import { noCase } from "text-no-case";
 
 // Normalize search queries
-noCase("JavaScript");        // "java script"
-noCase("ReactJS");           // "react js"
-noCase("Node.js");           // "node js"
-noCase("TypeScript");        // "type script"
-noCase("MongoDB");           // "mongo db"
+noCase("JavaScript"); // "java script"
+noCase("ReactJS"); // "react js"
+noCase("Node.js"); // "node js"
+noCase("TypeScript"); // "type script"
+noCase("MongoDB"); // "mongo db"
 ```
 
 ### Content Processing
@@ -141,10 +141,10 @@ noCase("MongoDB");           // "mongo db"
 import { noCase } from "text-no-case";
 
 // Process content for readability
-noCase("userManagement");    // "user management"
+noCase("userManagement"); // "user management"
 noCase("dataVisualization"); // "data visualization"
-noCase("apiIntegration");    // "api integration"
-noCase("errorHandling");     // "error handling"
+noCase("apiIntegration"); // "api integration"
+noCase("errorHandling"); // "error handling"
 noCase("performanceOptimization"); // "performance optimization"
 ```
 
@@ -159,7 +159,7 @@ const tags = [
   "machineLearning",
   "dataScience",
   "userExperience",
-  "projectManagement"
+  "projectManagement",
 ];
 
 const readableTags = tags.map(noCase);
@@ -180,9 +180,9 @@ import { noCase } from "text-no-case";
 
 function generateFormLabel(fieldName) {
   return noCase(fieldName)
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 console.log(generateFormLabel("firstName")); // "First Name"
@@ -197,8 +197,8 @@ import { noCase } from "text-no-case";
 
 function prepareSlug(title) {
   return noCase(title)
-    .replace(/\s+/g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
 }
 
 console.log(prepareSlug("Hello World!")); // "hello-world"
@@ -212,12 +212,13 @@ import { noCase } from "text-no-case";
 
 function analyzeText(text) {
   const normalized = noCase(text);
-  const words = normalized.split(' ').filter(word => word.length > 0);
+  const words = normalized.split(" ").filter((word) => word.length > 0);
 
   return {
     wordCount: words.length,
     uniqueWords: [...new Set(words)].length,
-    averageWordLength: words.reduce((sum, word) => sum + word.length, 0) / words.length
+    averageWordLength:
+      words.reduce((sum, word) => sum + word.length, 0) / words.length,
   };
 }
 
@@ -232,11 +233,11 @@ import { noCase } from "text-no-case";
 
 function normalizeContent(content) {
   return content
-    .split('\n')
-    .map(line => line.trim())
-    .filter(line => line.length > 0)
-    .map(line => noCase(line))
-    .join(' ');
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0)
+    .map((line) => noCase(line))
+    .join(" ");
 }
 
 const content = `
@@ -256,10 +257,10 @@ import { noCase } from "text-no-case";
 
 function extractKeywords(text, minLength = 3) {
   const normalized = noCase(text);
-  const words = normalized.split(' ');
+  const words = normalized.split(" ");
 
   return words
-    .filter(word => word.length >= minLength)
+    .filter((word) => word.length >= minLength)
     .filter((word, index, arr) => arr.indexOf(word) === index)
     .sort();
 }

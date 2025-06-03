@@ -79,20 +79,20 @@ console.log(result); // "hello-world"
 import { paramCase } from "text-param-case";
 
 // From different cases
-paramCase("hello world");        // "hello-world"
-paramCase("Hello World");        // "hello-world"
-paramCase("HELLO WORLD");        // "hello-world"
-paramCase("camelCase");          // "camel-case"
-paramCase("PascalCase");         // "pascal-case"
-paramCase("snake_case");         // "snake-case"
-paramCase("kebab-case");         // "kebab-case"
-paramCase("dot.case");           // "dot-case"
+paramCase("hello world"); // "hello-world"
+paramCase("Hello World"); // "hello-world"
+paramCase("HELLO WORLD"); // "hello-world"
+paramCase("camelCase"); // "camel-case"
+paramCase("PascalCase"); // "pascal-case"
+paramCase("snake_case"); // "snake-case"
+paramCase("kebab-case"); // "kebab-case"
+paramCase("dot.case"); // "dot-case"
 
 // Complex examples
-paramCase("XMLHttpRequest");     // "xml-http-request"
-paramCase("iPhone");             // "i-phone"
-paramCase("version 1.2.3");     // "version-1-2-3"
-paramCase("userProfileData");    // "user-profile-data"
+paramCase("XMLHttpRequest"); // "xml-http-request"
+paramCase("iPhone"); // "i-phone"
+paramCase("version 1.2.3"); // "version-1-2-3"
+paramCase("userProfileData"); // "user-profile-data"
 ```
 
 ### Advanced Options
@@ -128,11 +128,11 @@ paramCase("api-v2-endpoint", {
 import { paramCase } from "text-param-case";
 
 // URL parameter names
-paramCase("userId");             // "user-id"
-paramCase("sortOrder");          // "sort-order"
-paramCase("pageSize");           // "page-size"
-paramCase("filterType");         // "filter-type"
-paramCase("searchQuery");        // "search-query"
+paramCase("userId"); // "user-id"
+paramCase("sortOrder"); // "sort-order"
+paramCase("pageSize"); // "page-size"
+paramCase("filterType"); // "filter-type"
+paramCase("searchQuery"); // "search-query"
 ```
 
 ### CSS Class Names
@@ -141,11 +141,11 @@ paramCase("searchQuery");        // "search-query"
 import { paramCase } from "text-param-case";
 
 // CSS class generation
-paramCase("primaryButton");      // "primary-button"
-paramCase("navigationMenu");     // "navigation-menu"
-paramCase("contentWrapper");     // "content-wrapper"
-paramCase("errorMessage");       // "error-message"
-paramCase("loadingSpinner");     // "loading-spinner"
+paramCase("primaryButton"); // "primary-button"
+paramCase("navigationMenu"); // "navigation-menu"
+paramCase("contentWrapper"); // "content-wrapper"
+paramCase("errorMessage"); // "error-message"
+paramCase("loadingSpinner"); // "loading-spinner"
 ```
 
 ### HTML Attributes
@@ -154,11 +154,11 @@ paramCase("loadingSpinner");     // "loading-spinner"
 import { paramCase } from "text-param-case";
 
 // HTML attribute names
-paramCase("dataTestId");         // "data-test-id"
-paramCase("ariaLabel");          // "aria-label"
-paramCase("tabIndex");           // "tab-index"
-paramCase("contentEditable");    // "content-editable"
-paramCase("spellCheck");         // "spell-check"
+paramCase("dataTestId"); // "data-test-id"
+paramCase("ariaLabel"); // "aria-label"
+paramCase("tabIndex"); // "tab-index"
+paramCase("contentEditable"); // "content-editable"
+paramCase("spellCheck"); // "spell-check"
 ```
 
 ### API Endpoint Names
@@ -167,11 +167,11 @@ paramCase("spellCheck");         // "spell-check"
 import { paramCase } from "text-param-case";
 
 // REST API endpoints
-paramCase("getUserProfile");     // "get-user-profile"
-paramCase("createNewOrder");     // "create-new-order"
-paramCase("updateUserData");     // "update-user-data"
-paramCase("deleteAccount");      // "delete-account"
-paramCase("resetPassword");      // "reset-password"
+paramCase("getUserProfile"); // "get-user-profile"
+paramCase("createNewOrder"); // "create-new-order"
+paramCase("updateUserData"); // "update-user-data"
+paramCase("deleteAccount"); // "delete-account"
+paramCase("resetPassword"); // "reset-password"
 ```
 
 ### Configuration Processing
@@ -184,13 +184,13 @@ const filters = {
   sortOrder: "desc",
   pageSize: 20,
   filterType: "active",
-  searchQuery: "javascript"
+  searchQuery: "javascript",
 };
 
 const urlParams = new URLSearchParams(
   Object.fromEntries(
-    Object.entries(filters).map(([key, value]) => [paramCase(key), value])
-  )
+    Object.entries(filters).map(([key, value]) => [paramCase(key), value]),
+  ),
 );
 
 console.log(urlParams.toString());
@@ -206,7 +206,7 @@ function generateDataAttributes(props) {
   const dataAttrs = {};
 
   Object.entries(props).forEach(([key, value]) => {
-    if (key.startsWith('data')) {
+    if (key.startsWith("data")) {
       const attrName = paramCase(key);
       dataAttrs[attrName] = value;
     }
@@ -218,7 +218,7 @@ function generateDataAttributes(props) {
 const props = {
   dataTestId: "submit-button",
   dataTrackingId: "btn-submit",
-  dataAnalytics: "form-submission"
+  dataAnalytics: "form-submission",
 };
 
 console.log(generateDataAttributes(props));
@@ -234,7 +234,7 @@ console.log(generateDataAttributes(props));
 ```javascript
 import { paramCase } from "text-param-case";
 
-function createFormField(name, type = 'text', options = {}) {
+function createFormField(name, type = "text", options = {}) {
   const fieldName = paramCase(name);
   const fieldId = `field-${fieldName}`;
 
@@ -243,7 +243,7 @@ function createFormField(name, type = 'text', options = {}) {
     id: fieldId,
     type,
     className: `form-${fieldName}`,
-    ...options
+    ...options,
   };
 }
 
@@ -276,7 +276,7 @@ const jsStyles = {
   backgroundColor: "#fff",
   fontSize: "16px",
   marginTop: "10px",
-  borderRadius: "4px"
+  borderRadius: "4px",
 };
 
 console.log(convertCSSProperties(jsStyles));

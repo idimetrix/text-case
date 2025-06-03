@@ -78,22 +78,22 @@ console.log(result); // "hELLO wORLD"
 import { swapCase } from "text-swap-case";
 
 // Simple cases
-swapCase("Hello");               // "hELLO"
-swapCase("HELLO");               // "hello"
-swapCase("hello");               // "HELLO"
+swapCase("Hello"); // "hELLO"
+swapCase("HELLO"); // "hello"
+swapCase("hello"); // "HELLO"
 
 // Mixed cases
-swapCase("Hello World");         // "hELLO wORLD"
-swapCase("CamelCase");           // "cAMELcASE"
-swapCase("PascalCase");          // "pASCALcASE"
-swapCase("snake_case");          // "SNAKE_CASE"
-swapCase("kebab-case");          // "KEBAB-CASE"
+swapCase("Hello World"); // "hELLO wORLD"
+swapCase("CamelCase"); // "cAMELcASE"
+swapCase("PascalCase"); // "pASCALcASE"
+swapCase("snake_case"); // "SNAKE_CASE"
+swapCase("kebab-case"); // "KEBAB-CASE"
 
 // Complex examples
-swapCase("JavaScript");          // "jAVAsCRIPT"
-swapCase("XMLHttpRequest");      // "xmlhTTPrEQUEST"
-swapCase("iPhone");              // "IpHONE"
-swapCase("macOS");               // "MACos"
+swapCase("JavaScript"); // "jAVAsCRIPT"
+swapCase("XMLHttpRequest"); // "xmlhTTPrEQUEST"
+swapCase("iPhone"); // "IpHONE"
+swapCase("macOS"); // "MACos"
 ```
 
 ### Edge Cases
@@ -102,19 +102,19 @@ swapCase("macOS");               // "MACos"
 import { swapCase } from "text-swap-case";
 
 // Numbers and symbols (unchanged)
-swapCase("Hello123");            // "hELLO123"
-swapCase("Test@Email.Com");      // "tEST@eMAIL.cOM"
-swapCase("User_123");            // "uSER_123"
+swapCase("Hello123"); // "hELLO123"
+swapCase("Test@Email.Com"); // "tEST@eMAIL.cOM"
+swapCase("User_123"); // "uSER_123"
 
 // Empty and whitespace
-swapCase("");                    // ""
-swapCase("   ");                 // "   "
-swapCase("\n\t");                // "\n\t"
+swapCase(""); // ""
+swapCase("   "); // "   "
+swapCase("\n\t"); // "\n\t"
 
 // Unicode characters
-swapCase("Café");                // "cAFÉ"
-swapCase("Naïve");               // "nAÏVE"
-swapCase("Résumé");              // "rÉSUMÉ"
+swapCase("Café"); // "cAFÉ"
+swapCase("Naïve"); // "nAÏVE"
+swapCase("Résumé"); // "rÉSUMÉ"
 ```
 
 ## 🌍 Real-World Examples
@@ -130,7 +130,7 @@ function obfuscateText(text) {
 }
 
 console.log(obfuscateText("Secret Message")); // "sECRET mESSAGE"
-console.log(obfuscateText("Password123"));    // "pASSWORD123"
+console.log(obfuscateText("Password123")); // "pASSWORD123"
 ```
 
 ### Alternating Case Effect
@@ -141,16 +141,16 @@ import { swapCase } from "text-swap-case";
 // Create alternating case effect
 function alternatingCase(text) {
   return text
-    .split('')
+    .split("")
     .map((char, index) =>
-      index % 2 === 0 ? char.toLowerCase() : char.toUpperCase()
+      index % 2 === 0 ? char.toLowerCase() : char.toUpperCase(),
     )
-    .join('');
+    .join("");
 }
 
 // Compare with swap case
 const original = "Hello World";
-console.log("Original:", original);           // "Hello World"
+console.log("Original:", original); // "Hello World"
 console.log("Swap Case:", swapCase(original)); // "hELLO wORLD"
 console.log("Alternating:", alternatingCase(original)); // "hElLo WoRlD"
 ```
@@ -167,7 +167,7 @@ function testCaseSensitivity(input) {
     original: input,
     swapped: swapped,
     areEqual: input === swapped,
-    length: input.length
+    length: input.length,
   };
 }
 
@@ -186,17 +186,18 @@ console.log(testCaseSensitivity("Hello"));
 import { swapCase } from "text-swap-case";
 
 // Create stylized text
-function stylizeText(text, style = 'swap') {
+function stylizeText(text, style = "swap") {
   switch (style) {
-    case 'swap':
+    case "swap":
       return swapCase(text);
-    case 'upper':
+    case "upper":
       return text.toUpperCase();
-    case 'lower':
+    case "lower":
       return text.toLowerCase();
-    case 'title':
-      return text.replace(/\w\S*/g, (txt) =>
-        txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+    case "title":
+      return text.replace(
+        /\w\S*/g,
+        (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(),
       );
     default:
       return text;
@@ -204,10 +205,10 @@ function stylizeText(text, style = 'swap') {
 }
 
 const text = "JavaScript Programming";
-console.log("Swap:", stylizeText(text, 'swap'));   // "jAVAsCRIPT pROGRAMMING"
-console.log("Upper:", stylizeText(text, 'upper')); // "JAVASCRIPT PROGRAMMING"
-console.log("Lower:", stylizeText(text, 'lower')); // "javascript programming"
-console.log("Title:", stylizeText(text, 'title')); // "Javascript Programming"
+console.log("Swap:", stylizeText(text, "swap")); // "jAVAsCRIPT pROGRAMMING"
+console.log("Upper:", stylizeText(text, "upper")); // "JAVASCRIPT PROGRAMMING"
+console.log("Lower:", stylizeText(text, "lower")); // "javascript programming"
+console.log("Title:", stylizeText(text, "title")); // "Javascript Programming"
 ```
 
 ### Password Transformation
@@ -240,18 +241,19 @@ class TextProcessor {
   }
 
   addReverse() {
-    this.processors.push(text => text.split('').reverse().join(''));
+    this.processors.push((text) => text.split("").reverse().join(""));
     return this;
   }
 
   process(text) {
-    return this.processors.reduce((result, processor) => processor(result), text);
+    return this.processors.reduce(
+      (result, processor) => processor(result),
+      text,
+    );
   }
 }
 
-const processor = new TextProcessor()
-  .addSwapCase()
-  .addReverse();
+const processor = new TextProcessor().addSwapCase().addReverse();
 
 console.log(processor.process("Hello World")); // "DLROw OLLEh"
 ```

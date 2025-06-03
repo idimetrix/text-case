@@ -79,21 +79,21 @@ console.log(result); // "hello/world"
 import { pathCase } from "text-path-case";
 
 // Simple cases
-pathCase("hello world");         // "hello/world"
-pathCase("Hello World");         // "hello/world"
-pathCase("HELLO WORLD");         // "hello/world"
+pathCase("hello world"); // "hello/world"
+pathCase("Hello World"); // "hello/world"
+pathCase("HELLO WORLD"); // "hello/world"
 
 // From other cases
-pathCase("camelCase");           // "camel/case"
-pathCase("PascalCase");          // "pascal/case"
-pathCase("snake_case");          // "snake/case"
-pathCase("kebab-case");          // "kebab/case"
-pathCase("dot.case");            // "dot/case"
+pathCase("camelCase"); // "camel/case"
+pathCase("PascalCase"); // "pascal/case"
+pathCase("snake_case"); // "snake/case"
+pathCase("kebab-case"); // "kebab/case"
+pathCase("dot.case"); // "dot/case"
 
 // Complex examples
-pathCase("XMLHttpRequest");      // "xml/http/request"
-pathCase("iPhone");              // "i/phone"
-pathCase("version 1.2.3");      // "version/1/2/3"
+pathCase("XMLHttpRequest"); // "xml/http/request"
+pathCase("iPhone"); // "i/phone"
+pathCase("version 1.2.3"); // "version/1/2/3"
 ```
 
 ### Advanced Usage with Options
@@ -106,17 +106,17 @@ pathCase("hello world", {
   transform: (word, index, words) => {
     // Custom transformation logic
     return word.toLowerCase();
-  }
+  },
 }); // "hello/world"
 
 // Custom split regex
 pathCase("hello-world_test", {
-  splitRegexp: /[-_\s]+/
+  splitRegexp: /[-_\s]+/,
 }); // "hello/world/test"
 
 // Strip specific characters
 pathCase("hello@world#test", {
-  stripRegexp: /[@#]/g
+  stripRegexp: /[@#]/g,
 }); // "hello/world/test"
 ```
 
@@ -129,9 +129,9 @@ import { pathCase } from "text-path-case";
 
 // Generate URL paths from titles
 pathCase("User Profile Settings"); // "user/profile/settings"
-pathCase("API Documentation");     // "api/documentation"
+pathCase("API Documentation"); // "api/documentation"
 pathCase("Getting Started Guide"); // "getting/started/guide"
-pathCase("FAQ Section");           // "faq/section"
+pathCase("FAQ Section"); // "faq/section"
 ```
 
 ### File Path Construction
@@ -160,10 +160,10 @@ console.log(createFilePath("API Docs", "Authentication", "OAuth Setup"));
 import { pathCase } from "text-path-case";
 
 function createMenuStructure(menuItems) {
-  return menuItems.map(item => ({
+  return menuItems.map((item) => ({
     ...item,
     path: pathCase(item.title),
-    children: item.children ? createMenuStructure(item.children) : undefined
+    children: item.children ? createMenuStructure(item.children) : undefined,
   }));
 }
 
@@ -173,17 +173,17 @@ const menuItems = [
     children: [
       { title: "User Profiles" },
       { title: "Account Settings" },
-      { title: "Security Options" }
-    ]
+      { title: "Security Options" },
+    ],
   },
   {
     title: "Content Management",
     children: [
       { title: "Blog Posts" },
       { title: "Media Library" },
-      { title: "SEO Settings" }
-    ]
-  }
+      { title: "SEO Settings" },
+    ],
+  },
 ];
 
 console.log(createMenuStructure(menuItems));
@@ -215,7 +215,7 @@ console.log(createMenuStructure(menuItems));
 import { pathCase } from "text-path-case";
 
 class ApiEndpointBuilder {
-  constructor(baseUrl = '/api') {
+  constructor(baseUrl = "/api") {
     this.baseUrl = baseUrl;
   }
 
@@ -268,23 +268,28 @@ import { pathCase } from "text-path-case";
 
 function generateBreadcrumbs(pathSegments) {
   const breadcrumbs = [];
-  let currentPath = '';
+  let currentPath = "";
 
   pathSegments.forEach((segment, index) => {
     const pathSegment = pathCase(segment);
-    currentPath += (index === 0 ? '' : '/') + pathSegment;
+    currentPath += (index === 0 ? "" : "/") + pathSegment;
 
     breadcrumbs.push({
       label: segment,
       path: currentPath,
-      isLast: index === pathSegments.length - 1
+      isLast: index === pathSegments.length - 1,
     });
   });
 
   return breadcrumbs;
 }
 
-const pathSegments = ["Home", "User Management", "Profile Settings", "Security Options"];
+const pathSegments = [
+  "Home",
+  "User Management",
+  "Profile Settings",
+  "Security Options",
+];
 console.log(generateBreadcrumbs(pathSegments));
 // [
 //   { label: "Home", path: "home", isLast: false },
@@ -316,15 +321,15 @@ class StaticSiteGenerator {
       categoryPath,
       fullPath,
       content,
-      url: `/${fullPath}`
+      url: `/${fullPath}`,
     });
   }
 
   generateSitemap() {
-    return this.pages.map(page => ({
+    return this.pages.map((page) => ({
       url: page.url,
       title: page.title,
-      category: page.category
+      category: page.category,
     }));
   }
 }
@@ -366,7 +371,7 @@ class ContentManager {
       type,
       path: fullPath,
       createdAt: new Date(),
-      children: []
+      children: [],
     };
 
     this.content.set(fullPath, content);
@@ -376,7 +381,7 @@ class ContentManager {
   createHierarchy(structure, parentPath = null) {
     const result = [];
 
-    structure.forEach(item => {
+    structure.forEach((item) => {
       const content = this.createContent(item.title, item.type, parentPath);
 
       if (item.children) {
@@ -399,8 +404,8 @@ const siteStructure = [
     children: [
       { title: "Technology Posts", type: "category" },
       { title: "Design Articles", type: "category" },
-      { title: "Tutorial Content", type: "category" }
-    ]
+      { title: "Tutorial Content", type: "category" },
+    ],
   },
   {
     title: "Documentation",
@@ -408,9 +413,9 @@ const siteStructure = [
     children: [
       { title: "Getting Started", type: "page" },
       { title: "API Reference", type: "page" },
-      { title: "Best Practices", type: "page" }
-    ]
-  }
+      { title: "Best Practices", type: "page" },
+    ],
+  },
 ];
 
 console.log(cms.createHierarchy(siteStructure));

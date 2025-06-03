@@ -65,7 +65,11 @@ console.log(pascalCase("hello world")); // "HelloWorld"
 ### TypeScript
 
 ```typescript
-import { pascalCase, pascalCaseTransformMerge, Options } from "text-pascal-case";
+import {
+  pascalCase,
+  pascalCaseTransformMerge,
+  Options,
+} from "text-pascal-case";
 
 const result: string = pascalCase("hello world");
 console.log(result); // "HelloWorld"
@@ -79,20 +83,20 @@ console.log(result); // "HelloWorld"
 import { pascalCase } from "text-pascal-case";
 
 // From different cases
-pascalCase("hello world");        // "HelloWorld"
-pascalCase("Hello World");        // "HelloWorld"
-pascalCase("HELLO WORLD");        // "HelloWorld"
-pascalCase("snake_case");         // "SnakeCase"
-pascalCase("kebab-case");         // "KebabCase"
-pascalCase("dot.case");           // "DotCase"
-pascalCase("camelCase");          // "CamelCase"
-pascalCase("CONSTANT_CASE");      // "ConstantCase"
+pascalCase("hello world"); // "HelloWorld"
+pascalCase("Hello World"); // "HelloWorld"
+pascalCase("HELLO WORLD"); // "HelloWorld"
+pascalCase("snake_case"); // "SnakeCase"
+pascalCase("kebab-case"); // "KebabCase"
+pascalCase("dot.case"); // "DotCase"
+pascalCase("camelCase"); // "CamelCase"
+pascalCase("CONSTANT_CASE"); // "ConstantCase"
 
 // Complex examples
-pascalCase("XMLHttpRequest");     // "XmlHttpRequest"
-pascalCase("iPhone");             // "IPhone"
-pascalCase("version 1.2.3");     // "Version123"
-pascalCase("user-profile-data");  // "UserProfileData"
+pascalCase("XMLHttpRequest"); // "XmlHttpRequest"
+pascalCase("iPhone"); // "IPhone"
+pascalCase("version 1.2.3"); // "Version123"
+pascalCase("user-profile-data"); // "UserProfileData"
 ```
 
 ### Advanced Options
@@ -133,11 +137,11 @@ pascalCase("api-v2-endpoint", {
 import { pascalCase } from "text-pascal-case";
 
 // Component names
-pascalCase("user_profile");       // "UserProfile"
-pascalCase("email_validator");    // "EmailValidator"
-pascalCase("data_service");       // "DataService"
-pascalCase("auth_middleware");    // "AuthMiddleware"
-pascalCase("payment_gateway");    // "PaymentGateway"
+pascalCase("user_profile"); // "UserProfile"
+pascalCase("email_validator"); // "EmailValidator"
+pascalCase("data_service"); // "DataService"
+pascalCase("auth_middleware"); // "AuthMiddleware"
+pascalCase("payment_gateway"); // "PaymentGateway"
 ```
 
 ### React Components
@@ -146,11 +150,11 @@ pascalCase("payment_gateway");    // "PaymentGateway"
 import { pascalCase } from "text-pascal-case";
 
 // Component file names
-pascalCase("user-profile");       // "UserProfile"
-pascalCase("navigation-bar");     // "NavigationBar"
-pascalCase("modal-dialog");       // "ModalDialog"
-pascalCase("search-input");       // "SearchInput"
-pascalCase("loading-spinner");    // "LoadingSpinner"
+pascalCase("user-profile"); // "UserProfile"
+pascalCase("navigation-bar"); // "NavigationBar"
+pascalCase("modal-dialog"); // "ModalDialog"
+pascalCase("search-input"); // "SearchInput"
+pascalCase("loading-spinner"); // "LoadingSpinner"
 ```
 
 ### Database Models
@@ -159,10 +163,10 @@ pascalCase("loading-spinner");    // "LoadingSpinner"
 import { pascalCase } from "text-pascal-case";
 
 // Model class names
-pascalCase("user_account");       // "UserAccount"
-pascalCase("order_item");         // "OrderItem"
-pascalCase("product_category");   // "ProductCategory"
-pascalCase("shipping_address");   // "ShippingAddress"
+pascalCase("user_account"); // "UserAccount"
+pascalCase("order_item"); // "OrderItem"
+pascalCase("product_category"); // "ProductCategory"
+pascalCase("shipping_address"); // "ShippingAddress"
 ```
 
 ### API Endpoints to Types
@@ -175,10 +179,12 @@ const endpoints = [
   "user_profile",
   "order_history",
   "payment_method",
-  "shipping_address"
+  "shipping_address",
 ];
 
-const typeNames = endpoints.map(endpoint => `${pascalCase(endpoint)}Response`);
+const typeNames = endpoints.map(
+  (endpoint) => `${pascalCase(endpoint)}Response`,
+);
 console.log(typeNames);
 // ["UserProfileResponse", "OrderHistoryResponse", "PaymentMethodResponse", "ShippingAddressResponse"]
 ```

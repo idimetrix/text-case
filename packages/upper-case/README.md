@@ -78,19 +78,19 @@ console.log(result); // "HELLO WORLD"
 import { upperCase } from "text-upper-case";
 
 // Simple cases
-upperCase("hello");              // "HELLO"
-upperCase("world");              // "WORLD"
-upperCase("Hello World");        // "HELLO WORLD"
+upperCase("hello"); // "HELLO"
+upperCase("world"); // "WORLD"
+upperCase("Hello World"); // "HELLO WORLD"
 
 // Mixed case
-upperCase("hELLo WoRLD");        // "HELLO WORLD"
-upperCase("CamelCase");          // "CAMELCASE"
-upperCase("PascalCase");         // "PASCALCASE"
+upperCase("hELLo WoRLD"); // "HELLO WORLD"
+upperCase("CamelCase"); // "CAMELCASE"
+upperCase("PascalCase"); // "PASCALCASE"
 
 // Programming cases
-upperCase("snake_case");         // "SNAKE_CASE"
-upperCase("kebab-case");         // "KEBAB-CASE"
-upperCase("dot.case");           // "DOT.CASE"
+upperCase("snake_case"); // "SNAKE_CASE"
+upperCase("kebab-case"); // "KEBAB-CASE"
+upperCase("dot.case"); // "DOT.CASE"
 ```
 
 ### Edge Cases
@@ -99,19 +99,19 @@ upperCase("dot.case");           // "DOT.CASE"
 import { upperCase } from "text-upper-case";
 
 // Empty and single character
-upperCase("");                   // ""
-upperCase("a");                  // "A"
-upperCase("A");                  // "A"
+upperCase(""); // ""
+upperCase("a"); // "A"
+upperCase("A"); // "A"
 
 // Numbers and symbols
-upperCase("hello123");           // "HELLO123"
-upperCase("test@email.com");     // "TEST@EMAIL.COM"
-upperCase("user-123");           // "USER-123"
+upperCase("hello123"); // "HELLO123"
+upperCase("test@email.com"); // "TEST@EMAIL.COM"
+upperCase("user-123"); // "USER-123"
 
 // Unicode characters
-upperCase("café");               // "CAFÉ"
-upperCase("naïve");              // "NAÏVE"
-upperCase("résumé");             // "RÉSUMÉ"
+upperCase("café"); // "CAFÉ"
+upperCase("naïve"); // "NAÏVE"
+upperCase("résumé"); // "RÉSUMÉ"
 ```
 
 ## 🌍 Real-World Examples
@@ -122,15 +122,15 @@ upperCase("résumé");             // "RÉSUMÉ"
 import { upperCase } from "text-upper-case";
 
 // Environment variables
-upperCase("api_base_url");       // "API_BASE_URL"
-upperCase("database-host");      // "DATABASE-HOST"
-upperCase("redis.port");         // "REDIS.PORT"
+upperCase("api_base_url"); // "API_BASE_URL"
+upperCase("database-host"); // "DATABASE-HOST"
+upperCase("redis.port"); // "REDIS.PORT"
 
 // Configuration constants
 const config = {
   [upperCase("app_name")]: "MyApp",
   [upperCase("version")]: "1.0.0",
-  [upperCase("debug_mode")]: true
+  [upperCase("debug_mode")]: true,
 };
 ```
 
@@ -140,15 +140,15 @@ const config = {
 import { upperCase } from "text-upper-case";
 
 // SQL keywords
-upperCase("select");             // "SELECT"
-upperCase("from");               // "FROM"
-upperCase("where");              // "WHERE"
-upperCase("order by");           // "ORDER BY"
+upperCase("select"); // "SELECT"
+upperCase("from"); // "FROM"
+upperCase("where"); // "WHERE"
+upperCase("order by"); // "ORDER BY"
 
 // Table and column names
-upperCase("user_profile");       // "USER_PROFILE"
-upperCase("created_at");         // "CREATED_AT"
-upperCase("last_login");         // "LAST_LOGIN"
+upperCase("user_profile"); // "USER_PROFILE"
+upperCase("created_at"); // "CREATED_AT"
+upperCase("last_login"); // "LAST_LOGIN"
 ```
 
 ### API Headers and HTTP Methods
@@ -157,15 +157,15 @@ upperCase("last_login");         // "LAST_LOGIN"
 import { upperCase } from "text-upper-case";
 
 // HTTP methods
-upperCase("get");                // "GET"
-upperCase("post");               // "POST"
-upperCase("put");                // "PUT"
-upperCase("delete");             // "DELETE"
+upperCase("get"); // "GET"
+upperCase("post"); // "POST"
+upperCase("put"); // "PUT"
+upperCase("delete"); // "DELETE"
 
 // HTTP headers
-upperCase("content-type");       // "CONTENT-TYPE"
-upperCase("authorization");      // "AUTHORIZATION"
-upperCase("x-api-key");          // "X-API-KEY"
+upperCase("content-type"); // "CONTENT-TYPE"
+upperCase("authorization"); // "AUTHORIZATION"
+upperCase("x-api-key"); // "X-API-KEY"
 ```
 
 ### Log Levels and Status Messages
@@ -174,16 +174,16 @@ upperCase("x-api-key");          // "X-API-KEY"
 import { upperCase } from "text-upper-case";
 
 // Log levels
-upperCase("info");               // "INFO"
-upperCase("warning");            // "WARNING"
-upperCase("error");              // "ERROR"
-upperCase("debug");              // "DEBUG"
+upperCase("info"); // "INFO"
+upperCase("warning"); // "WARNING"
+upperCase("error"); // "ERROR"
+upperCase("debug"); // "DEBUG"
 
 // Status messages
-upperCase("success");            // "SUCCESS"
-upperCase("failed");             // "FAILED"
-upperCase("pending");            // "PENDING"
-upperCase("in progress");        // "IN PROGRESS"
+upperCase("success"); // "SUCCESS"
+upperCase("failed"); // "FAILED"
+upperCase("pending"); // "PENDING"
+upperCase("in progress"); // "IN PROGRESS"
 ```
 
 ### Form Validation and Error Messages
@@ -192,12 +192,12 @@ upperCase("in progress");        // "IN PROGRESS"
 import { upperCase } from "text-upper-case";
 
 function createErrorCode(message) {
-  return upperCase(message.replace(/\s+/g, '_'));
+  return upperCase(message.replace(/\s+/g, "_"));
 }
 
-console.log(createErrorCode("invalid email"));     // "INVALID_EMAIL"
+console.log(createErrorCode("invalid email")); // "INVALID_EMAIL"
 console.log(createErrorCode("password too short")); // "PASSWORD_TOO_SHORT"
-console.log(createErrorCode("user not found"));    // "USER_NOT_FOUND"
+console.log(createErrorCode("user not found")); // "USER_NOT_FOUND"
 ```
 
 ### Configuration Management
@@ -211,13 +211,13 @@ class ConfigManager {
   }
 
   set(key, value) {
-    const upperKey = upperCase(key.replace(/[.-]/g, '_'));
+    const upperKey = upperCase(key.replace(/[.-]/g, "_"));
     this.config[upperKey] = value;
     return this;
   }
 
   get(key) {
-    const upperKey = upperCase(key.replace(/[.-]/g, '_'));
+    const upperKey = upperCase(key.replace(/[.-]/g, "_"));
     return this.config[upperKey];
   }
 
@@ -261,9 +261,9 @@ function processCommand(command) {
   }
 }
 
-console.log(processCommand("help"));    // "Display help information"
-console.log(processCommand("Build"));   // "Build the project"
-console.log(processCommand("TEST"));    // "Run tests"
+console.log(processCommand("help")); // "Display help information"
+console.log(processCommand("Build")); // "Build the project"
+console.log(processCommand("TEST")); // "Run tests"
 ```
 
 ### File Processing and Naming
@@ -273,11 +273,11 @@ import { upperCase } from "text-upper-case";
 
 function generateConstantName(filename) {
   const baseName = filename.replace(/\.[^/.]+$/, ""); // Remove extension
-  return upperCase(baseName.replace(/[^a-zA-Z0-9]/g, '_'));
+  return upperCase(baseName.replace(/[^a-zA-Z0-9]/g, "_"));
 }
 
-console.log(generateConstantName("config.json"));      // "CONFIG_JSON"
-console.log(generateConstantName("user-data.xml"));    // "USER_DATA_XML"
+console.log(generateConstantName("config.json")); // "CONFIG_JSON"
+console.log(generateConstantName("user-data.xml")); // "USER_DATA_XML"
 console.log(generateConstantName("app.settings.yml")); // "APP_SETTINGS_YML"
 ```
 
@@ -289,8 +289,8 @@ import { upperCase } from "text-upper-case";
 function createEnum(values) {
   const enumObj = {};
 
-  values.forEach(value => {
-    const key = upperCase(value.replace(/\s+/g, '_'));
+  values.forEach((value) => {
+    const key = upperCase(value.replace(/\s+/g, "_"));
     enumObj[key] = value;
   });
 
@@ -302,7 +302,7 @@ const UserStatus = createEnum([
   "inactive",
   "pending approval",
   "suspended",
-  "deleted"
+  "deleted",
 ]);
 
 console.log(UserStatus);

@@ -79,20 +79,20 @@ console.log(result); // "Hello World"
 import { capitalCase } from "text-capital-case";
 
 // From different cases
-capitalCase("hello world");      // "Hello World"
-capitalCase("Hello World");      // "Hello World"
-capitalCase("HELLO WORLD");      // "Hello World"
-capitalCase("camelCase");        // "Camel Case"
-capitalCase("PascalCase");       // "Pascal Case"
-capitalCase("snake_case");       // "Snake Case"
-capitalCase("kebab-case");       // "Kebab Case"
-capitalCase("dot.case");         // "Dot Case"
+capitalCase("hello world"); // "Hello World"
+capitalCase("Hello World"); // "Hello World"
+capitalCase("HELLO WORLD"); // "Hello World"
+capitalCase("camelCase"); // "Camel Case"
+capitalCase("PascalCase"); // "Pascal Case"
+capitalCase("snake_case"); // "Snake Case"
+capitalCase("kebab-case"); // "Kebab Case"
+capitalCase("dot.case"); // "Dot Case"
 
 // Complex examples
-capitalCase("XMLHttpRequest");   // "Xml Http Request"
-capitalCase("iPhone");           // "I Phone"
-capitalCase("version 1.2.3");   // "Version 1 2 3"
-capitalCase("userProfileData");  // "User Profile Data"
+capitalCase("XMLHttpRequest"); // "Xml Http Request"
+capitalCase("iPhone"); // "I Phone"
+capitalCase("version 1.2.3"); // "Version 1 2 3"
+capitalCase("userProfileData"); // "User Profile Data"
 ```
 
 ### Advanced Options
@@ -130,9 +130,9 @@ import { capitalCase } from "text-capital-case";
 // Job titles
 capitalCase("chief executive officer"); // "Chief Executive Officer"
 capitalCase("senior software engineer"); // "Senior Software Engineer"
-capitalCase("product manager");          // "Product Manager"
-capitalCase("data scientist");           // "Data Scientist"
-capitalCase("marketing director");       // "Marketing Director"
+capitalCase("product manager"); // "Product Manager"
+capitalCase("data scientist"); // "Data Scientist"
+capitalCase("marketing director"); // "Marketing Director"
 ```
 
 ### Document Headings
@@ -141,11 +141,11 @@ capitalCase("marketing director");       // "Marketing Director"
 import { capitalCase } from "text-capital-case";
 
 // Document sections
-capitalCase("table of contents");        // "Table Of Contents"
-capitalCase("executive summary");        // "Executive Summary"
-capitalCase("financial overview");       // "Financial Overview"
-capitalCase("risk assessment");          // "Risk Assessment"
-capitalCase("implementation plan");      // "Implementation Plan"
+capitalCase("table of contents"); // "Table Of Contents"
+capitalCase("executive summary"); // "Executive Summary"
+capitalCase("financial overview"); // "Financial Overview"
+capitalCase("risk assessment"); // "Risk Assessment"
+capitalCase("implementation plan"); // "Implementation Plan"
 ```
 
 ### Product and Service Names
@@ -154,11 +154,11 @@ capitalCase("implementation plan");      // "Implementation Plan"
 import { capitalCase } from "text-capital-case";
 
 // Product names
-capitalCase("premium subscription");     // "Premium Subscription"
-capitalCase("enterprise solution");      // "Enterprise Solution"
-capitalCase("mobile application");       // "Mobile Application"
-capitalCase("cloud storage");            // "Cloud Storage"
-capitalCase("customer support");         // "Customer Support"
+capitalCase("premium subscription"); // "Premium Subscription"
+capitalCase("enterprise solution"); // "Enterprise Solution"
+capitalCase("mobile application"); // "Mobile Application"
+capitalCase("cloud storage"); // "Cloud Storage"
+capitalCase("customer support"); // "Customer Support"
 ```
 
 ### Form Labels and UI Text
@@ -167,11 +167,11 @@ capitalCase("customer support");         // "Customer Support"
 import { capitalCase } from "text-capital-case";
 
 // Form fields
-capitalCase("billing information");      // "Billing Information"
-capitalCase("shipping address");         // "Shipping Address"
-capitalCase("payment method");           // "Payment Method"
-capitalCase("contact details");          // "Contact Details"
-capitalCase("account settings");         // "Account Settings"
+capitalCase("billing information"); // "Billing Information"
+capitalCase("shipping address"); // "Shipping Address"
+capitalCase("payment method"); // "Payment Method"
+capitalCase("contact details"); // "Contact Details"
+capitalCase("account settings"); // "Account Settings"
 ```
 
 ### Content Categories
@@ -185,7 +185,7 @@ const categories = [
   "machine-learning",
   "data.analysis",
   "userExperience",
-  "projectManagement"
+  "projectManagement",
 ];
 
 const formattedCategories = categories.map(capitalCase);

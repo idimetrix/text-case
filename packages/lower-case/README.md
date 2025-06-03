@@ -78,19 +78,19 @@ console.log(result); // "hello world"
 import { lowerCase } from "text-lower-case";
 
 // Simple cases
-lowerCase("HELLO");              // "hello"
-lowerCase("WORLD");              // "world"
-lowerCase("Hello World");        // "hello world"
+lowerCase("HELLO"); // "hello"
+lowerCase("WORLD"); // "world"
+lowerCase("Hello World"); // "hello world"
 
 // Mixed case
-lowerCase("hELLo WoRLD");        // "hello world"
-lowerCase("CamelCase");          // "camelcase"
-lowerCase("PascalCase");         // "pascalcase"
+lowerCase("hELLo WoRLD"); // "hello world"
+lowerCase("CamelCase"); // "camelcase"
+lowerCase("PascalCase"); // "pascalcase"
 
 // Programming cases
-lowerCase("SNAKE_CASE");         // "snake_case"
-lowerCase("KEBAB-CASE");         // "kebab-case"
-lowerCase("DOT.CASE");           // "dot.case"
+lowerCase("SNAKE_CASE"); // "snake_case"
+lowerCase("KEBAB-CASE"); // "kebab-case"
+lowerCase("DOT.CASE"); // "dot.case"
 ```
 
 ### Edge Cases
@@ -99,19 +99,19 @@ lowerCase("DOT.CASE");           // "dot.case"
 import { lowerCase } from "text-lower-case";
 
 // Empty and single character
-lowerCase("");                   // ""
-lowerCase("A");                  // "a"
-lowerCase("a");                  // "a"
+lowerCase(""); // ""
+lowerCase("A"); // "a"
+lowerCase("a"); // "a"
 
 // Numbers and symbols
-lowerCase("HELLO123");           // "hello123"
-lowerCase("TEST@EMAIL.COM");     // "test@email.com"
-lowerCase("USER-123");           // "user-123"
+lowerCase("HELLO123"); // "hello123"
+lowerCase("TEST@EMAIL.COM"); // "test@email.com"
+lowerCase("USER-123"); // "user-123"
 
 // Unicode characters
-lowerCase("CAFÉ");               // "café"
-lowerCase("NAÏVE");              // "naïve"
-lowerCase("RÉSUMÉ");             // "résumé"
+lowerCase("CAFÉ"); // "café"
+lowerCase("NAÏVE"); // "naïve"
+lowerCase("RÉSUMÉ"); // "résumé"
 ```
 
 ## 🌍 Real-World Examples
@@ -122,14 +122,14 @@ lowerCase("RÉSUMÉ");             // "résumé"
 import { lowerCase } from "text-lower-case";
 
 // Email normalization
-lowerCase("USER@EXAMPLE.COM");   // "user@example.com"
+lowerCase("USER@EXAMPLE.COM"); // "user@example.com"
 lowerCase("John.Doe@Gmail.Com"); // "john.doe@gmail.com"
-lowerCase("ADMIN@COMPANY.ORG");  // "admin@company.org"
+lowerCase("ADMIN@COMPANY.ORG"); // "admin@company.org"
 
 // Username normalization
-lowerCase("JohnDoe123");         // "johndoe123"
-lowerCase("ADMIN_USER");         // "admin_user"
-lowerCase("Guest-User");         // "guest-user"
+lowerCase("JohnDoe123"); // "johndoe123"
+lowerCase("ADMIN_USER"); // "admin_user"
+lowerCase("Guest-User"); // "guest-user"
 ```
 
 ### URL and Domain Processing
@@ -138,14 +138,14 @@ lowerCase("Guest-User");         // "guest-user"
 import { lowerCase } from "text-lower-case";
 
 // Domain normalization
-lowerCase("EXAMPLE.COM");        // "example.com"
-lowerCase("API.GitHub.Com");     // "api.github.com"
-lowerCase("SUB.DOMAIN.ORG");     // "sub.domain.org"
+lowerCase("EXAMPLE.COM"); // "example.com"
+lowerCase("API.GitHub.Com"); // "api.github.com"
+lowerCase("SUB.DOMAIN.ORG"); // "sub.domain.org"
 
 // Protocol normalization
-lowerCase("HTTPS");              // "https"
-lowerCase("HTTP");               // "http"
-lowerCase("FTP");                // "ftp"
+lowerCase("HTTPS"); // "https"
+lowerCase("HTTP"); // "http"
+lowerCase("FTP"); // "ftp"
 ```
 
 ### Search and Filtering
@@ -156,16 +156,17 @@ import { lowerCase } from "text-lower-case";
 function searchItems(items, query) {
   const normalizedQuery = lowerCase(query);
 
-  return items.filter(item =>
-    lowerCase(item.name).includes(normalizedQuery) ||
-    lowerCase(item.description).includes(normalizedQuery)
+  return items.filter(
+    (item) =>
+      lowerCase(item.name).includes(normalizedQuery) ||
+      lowerCase(item.description).includes(normalizedQuery),
   );
 }
 
 const products = [
   { name: "iPhone 15", description: "Latest Apple smartphone" },
   { name: "Samsung Galaxy", description: "Android flagship device" },
-  { name: "Google Pixel", description: "Pure Android experience" }
+  { name: "Google Pixel", description: "Pure Android experience" },
 ];
 
 console.log(searchItems(products, "APPLE"));
@@ -181,16 +182,15 @@ function normalizeFormData(formData) {
   const normalized = {};
 
   for (const [key, value] of Object.entries(formData)) {
-    if (typeof value === 'string') {
+    if (typeof value === "string") {
       // Normalize email fields
-      if (key.toLowerCase().includes('email')) {
+      if (key.toLowerCase().includes("email")) {
         normalized[key] = lowerCase(value.trim());
       }
       // Normalize username fields
-      else if (key.toLowerCase().includes('username')) {
+      else if (key.toLowerCase().includes("username")) {
         normalized[key] = lowerCase(value.trim());
-      }
-      else {
+      } else {
         normalized[key] = value;
       }
     } else {
@@ -205,7 +205,7 @@ const formData = {
   email: "  USER@EXAMPLE.COM  ",
   username: "JOHNDOE123",
   firstName: "John",
-  lastName: "Doe"
+  lastName: "Doe",
 };
 
 console.log(normalizeFormData(formData));
@@ -226,14 +226,14 @@ class UserRepository {
   async findByEmail(email) {
     const normalizedEmail = lowerCase(email.trim());
     return await this.db.users.findOne({
-      email: normalizedEmail
+      email: normalizedEmail,
     });
   }
 
   async findByUsername(username) {
     const normalizedUsername = lowerCase(username.trim());
     return await this.db.users.findOne({
-      username: normalizedUsername
+      username: normalizedUsername,
     });
   }
 
@@ -241,9 +241,9 @@ class UserRepository {
     const normalizedQuery = lowerCase(query);
     return await this.db.users.find({
       $or: [
-        { email: { $regex: normalizedQuery, $options: 'i' } },
-        { username: { $regex: normalizedQuery, $options: 'i' } }
-      ]
+        { email: { $regex: normalizedQuery, $options: "i" } },
+        { username: { $regex: normalizedQuery, $options: "i" } },
+      ],
     });
   }
 }
@@ -259,21 +259,20 @@ function parseEnvironmentVariables(env) {
 
   for (const [key, value] of Object.entries(env)) {
     // Normalize boolean values
-    if (typeof value === 'string') {
+    if (typeof value === "string") {
       const lowerValue = lowerCase(value);
 
-      if (lowerValue === 'true' || lowerValue === 'false') {
-        config[key] = lowerValue === 'true';
+      if (lowerValue === "true" || lowerValue === "false") {
+        config[key] = lowerValue === "true";
       }
       // Normalize protocol values
-      else if (key.toLowerCase().includes('protocol')) {
+      else if (key.toLowerCase().includes("protocol")) {
         config[key] = lowerValue;
       }
       // Normalize host values
-      else if (key.toLowerCase().includes('host')) {
+      else if (key.toLowerCase().includes("host")) {
         config[key] = lowerValue;
-      }
-      else {
+      } else {
         config[key] = value;
       }
     } else {
@@ -288,7 +287,7 @@ const env = {
   NODE_ENV: "PRODUCTION",
   DATABASE_HOST: "LOCALHOST",
   USE_SSL: "TRUE",
-  PROTOCOL: "HTTPS"
+  PROTOCOL: "HTTPS",
 };
 
 console.log(parseEnvironmentVariables(env));
@@ -311,7 +310,7 @@ class TextNormalizer {
   }
 
   addTrim() {
-    this.processors.push(text => text.trim());
+    this.processors.push((text) => text.trim());
     return this;
   }
 
@@ -321,12 +320,15 @@ class TextNormalizer {
   }
 
   addRemoveExtraSpaces() {
-    this.processors.push(text => text.replace(/\s+/g, ' '));
+    this.processors.push((text) => text.replace(/\s+/g, " "));
     return this;
   }
 
   process(text) {
-    return this.processors.reduce((result, processor) => processor(result), text);
+    return this.processors.reduce(
+      (result, processor) => processor(result),
+      text,
+    );
   }
 }
 
@@ -345,7 +347,7 @@ import { lowerCase } from "text-lower-case";
 
 function normalizeApiResponse(response) {
   if (response.data && Array.isArray(response.data)) {
-    response.data = response.data.map(item => {
+    response.data = response.data.map((item) => {
       if (item.email) {
         item.email = lowerCase(item.email);
       }
@@ -366,8 +368,13 @@ const apiResponse = {
   success: true,
   data: [
     { id: 1, email: "USER@EXAMPLE.COM", username: "JOHNDOE", status: "ACTIVE" },
-    { id: 2, email: "ADMIN@COMPANY.ORG", username: "ADMIN", status: "INACTIVE" }
-  ]
+    {
+      id: 2,
+      email: "ADMIN@COMPANY.ORG",
+      username: "ADMIN",
+      status: "INACTIVE",
+    },
+  ],
 };
 
 console.log(normalizeApiResponse(apiResponse));

@@ -79,19 +79,19 @@ console.log(result); // "Hello world"
 import { sentenceCase } from "text-sentence-case";
 
 // From different cases
-sentenceCase("hello world");     // "Hello world"
-sentenceCase("Hello World");     // "Hello world"
-sentenceCase("HELLO WORLD");     // "Hello world"
-sentenceCase("camelCase");       // "Camel case"
-sentenceCase("PascalCase");      // "Pascal case"
-sentenceCase("snake_case");      // "Snake case"
-sentenceCase("kebab-case");      // "Kebab case"
-sentenceCase("dot.case");        // "Dot case"
+sentenceCase("hello world"); // "Hello world"
+sentenceCase("Hello World"); // "Hello world"
+sentenceCase("HELLO WORLD"); // "Hello world"
+sentenceCase("camelCase"); // "Camel case"
+sentenceCase("PascalCase"); // "Pascal case"
+sentenceCase("snake_case"); // "Snake case"
+sentenceCase("kebab-case"); // "Kebab case"
+sentenceCase("dot.case"); // "Dot case"
 
 // Complex examples
-sentenceCase("XMLHttpRequest");  // "Xml http request"
-sentenceCase("iPhone");          // "I phone"
-sentenceCase("version 1.2.3");  // "Version 1 2 3"
+sentenceCase("XMLHttpRequest"); // "Xml http request"
+sentenceCase("iPhone"); // "I phone"
+sentenceCase("version 1.2.3"); // "Version 1 2 3"
 sentenceCase("userProfileData"); // "User profile data"
 ```
 
@@ -131,9 +131,9 @@ sentenceCase("api-v2-endpoint", {
 import { sentenceCase } from "text-sentence-case";
 
 // Article headings
-sentenceCase("gettingStarted");      // "Getting started"
-sentenceCase("bestPractices");       // "Best practices"
-sentenceCase("troubleshooting");     // "Troubleshooting"
+sentenceCase("gettingStarted"); // "Getting started"
+sentenceCase("bestPractices"); // "Best practices"
+sentenceCase("troubleshooting"); // "Troubleshooting"
 sentenceCase("frequentlyAskedQuestions"); // "Frequently asked questions"
 sentenceCase("advancedConfiguration"); // "Advanced configuration"
 ```
@@ -144,11 +144,11 @@ sentenceCase("advancedConfiguration"); // "Advanced configuration"
 import { sentenceCase } from "text-sentence-case";
 
 // Form field labels
-sentenceCase("firstName");           // "First name"
-sentenceCase("emailAddress");        // "Email address"
-sentenceCase("phoneNumber");         // "Phone number"
-sentenceCase("dateOfBirth");         // "Date of birth"
-sentenceCase("billingAddress");      // "Billing address"
+sentenceCase("firstName"); // "First name"
+sentenceCase("emailAddress"); // "Email address"
+sentenceCase("phoneNumber"); // "Phone number"
+sentenceCase("dateOfBirth"); // "Date of birth"
+sentenceCase("billingAddress"); // "Billing address"
 ```
 
 ### Error Messages
@@ -157,11 +157,11 @@ sentenceCase("billingAddress");      // "Billing address"
 import { sentenceCase } from "text-sentence-case";
 
 // Error message formatting
-sentenceCase("invalidEmailFormat");  // "Invalid email format"
-sentenceCase("passwordTooShort");    // "Password too short"
-sentenceCase("userNotFound");        // "User not found"
-sentenceCase("accessDenied");        // "Access denied"
-sentenceCase("sessionExpired");      // "Session expired"
+sentenceCase("invalidEmailFormat"); // "Invalid email format"
+sentenceCase("passwordTooShort"); // "Password too short"
+sentenceCase("userNotFound"); // "User not found"
+sentenceCase("accessDenied"); // "Access denied"
+sentenceCase("sessionExpired"); // "Session expired"
 ```
 
 ### Documentation Sections
@@ -170,10 +170,10 @@ sentenceCase("sessionExpired");      // "Session expired"
 import { sentenceCase } from "text-sentence-case";
 
 // Documentation sections
-sentenceCase("apiReference");        // "Api reference"
-sentenceCase("installationGuide");   // "Installation guide"
-sentenceCase("migrationNotes");      // "Migration notes"
-sentenceCase("performanceTips");     // "Performance tips"
+sentenceCase("apiReference"); // "Api reference"
+sentenceCase("installationGuide"); // "Installation guide"
+sentenceCase("migrationNotes"); // "Migration notes"
+sentenceCase("performanceTips"); // "Performance tips"
 sentenceCase("securityConsiderations"); // "Security considerations"
 ```
 
@@ -188,7 +188,7 @@ const contentSections = [
   "dataVisualization",
   "reportGeneration",
   "systemConfiguration",
-  "backupAndRestore"
+  "backupAndRestore",
 ];
 
 const formattedSections = contentSections.map(sentenceCase);
@@ -228,12 +228,12 @@ const menuItems = [
   { key: "accountSettings", icon: "settings" },
   { key: "billingInformation", icon: "credit-card" },
   { key: "securityOptions", icon: "shield" },
-  { key: "privacySettings", icon: "lock" }
+  { key: "privacySettings", icon: "lock" },
 ];
 
-const formattedMenu = menuItems.map(item => ({
+const formattedMenu = menuItems.map((item) => ({
   ...item,
-  label: sentenceCase(item.key)
+  label: sentenceCase(item.key),
 }));
 
 console.log(formattedMenu);

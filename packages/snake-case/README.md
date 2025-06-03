@@ -79,20 +79,20 @@ console.log(result); // "hello_world"
 import { snakeCase } from "text-snake-case";
 
 // From different cases
-snakeCase("hello world");        // "hello_world"
-snakeCase("Hello World");        // "hello_world"
-snakeCase("HELLO WORLD");        // "hello_world"
-snakeCase("camelCase");          // "camel_case"
-snakeCase("PascalCase");         // "pascal_case"
-snakeCase("kebab-case");         // "kebab_case"
-snakeCase("dot.case");           // "dot_case"
-snakeCase("CONSTANT_CASE");      // "constant_case"
+snakeCase("hello world"); // "hello_world"
+snakeCase("Hello World"); // "hello_world"
+snakeCase("HELLO WORLD"); // "hello_world"
+snakeCase("camelCase"); // "camel_case"
+snakeCase("PascalCase"); // "pascal_case"
+snakeCase("kebab-case"); // "kebab_case"
+snakeCase("dot.case"); // "dot_case"
+snakeCase("CONSTANT_CASE"); // "constant_case"
 
 // Complex examples
-snakeCase("XMLHttpRequest");     // "xml_http_request"
-snakeCase("iPhone");             // "i_phone"
-snakeCase("version 1.2.3");     // "version_1_2_3"
-snakeCase("userProfileData");    // "user_profile_data"
+snakeCase("XMLHttpRequest"); // "xml_http_request"
+snakeCase("iPhone"); // "i_phone"
+snakeCase("version 1.2.3"); // "version_1_2_3"
+snakeCase("userProfileData"); // "user_profile_data"
 ```
 
 ### Advanced Options
@@ -133,11 +133,11 @@ snakeCase("API-v2-endpoint", {
 import { snakeCase } from "text-snake-case";
 
 // Table columns
-snakeCase("firstName");          // "first_name"
-snakeCase("emailAddress");       // "email_address"
-snakeCase("createdAt");          // "created_at"
-snakeCase("userId");             // "user_id"
-snakeCase("accessToken");        // "access_token"
+snakeCase("firstName"); // "first_name"
+snakeCase("emailAddress"); // "email_address"
+snakeCase("createdAt"); // "created_at"
+snakeCase("userId"); // "user_id"
+snakeCase("accessToken"); // "access_token"
 ```
 
 ### API Field Names
@@ -146,11 +146,11 @@ snakeCase("accessToken");        // "access_token"
 import { snakeCase } from "text-snake-case";
 
 // REST API fields
-snakeCase("userProfile");        // "user_profile"
-snakeCase("lastLoginDate");      // "last_login_date"
-snakeCase("isActive");           // "is_active"
-snakeCase("paymentMethod");      // "payment_method"
-snakeCase("shippingAddress");    // "shipping_address"
+snakeCase("userProfile"); // "user_profile"
+snakeCase("lastLoginDate"); // "last_login_date"
+snakeCase("isActive"); // "is_active"
+snakeCase("paymentMethod"); // "payment_method"
+snakeCase("shippingAddress"); // "shipping_address"
 ```
 
 ### Environment Variables
@@ -159,11 +159,11 @@ snakeCase("shippingAddress");    // "shipping_address"
 import { snakeCase } from "text-snake-case";
 
 // Environment variable names
-snakeCase("databaseUrl");        // "database_url"
-snakeCase("apiKey");             // "api_key"
-snakeCase("maxRetries");         // "max_retries"
-snakeCase("timeoutMs");          // "timeout_ms"
-snakeCase("debugMode");          // "debug_mode"
+snakeCase("databaseUrl"); // "database_url"
+snakeCase("apiKey"); // "api_key"
+snakeCase("maxRetries"); // "max_retries"
+snakeCase("timeoutMs"); // "timeout_ms"
+snakeCase("debugMode"); // "debug_mode"
 ```
 
 ### Object Key Transformation
@@ -176,11 +176,11 @@ const jsUser = {
   firstName: "John",
   lastName: "Doe",
   emailAddress: "john@example.com",
-  createdAt: "2023-01-01"
+  createdAt: "2023-01-01",
 };
 
 const dbUser = Object.fromEntries(
-  Object.entries(jsUser).map(([key, value]) => [snakeCase(key), value])
+  Object.entries(jsUser).map(([key, value]) => [snakeCase(key), value]),
 );
 
 console.log(dbUser);

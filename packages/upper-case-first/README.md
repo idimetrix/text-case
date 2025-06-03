@@ -78,20 +78,20 @@ console.log(result); // "Hello world"
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Simple cases
-upperCaseFirst("hello");         // "Hello"
-upperCaseFirst("HELLO");         // "HELLO"
-upperCaseFirst("Hello");         // "Hello"
+upperCaseFirst("hello"); // "Hello"
+upperCaseFirst("HELLO"); // "HELLO"
+upperCaseFirst("Hello"); // "Hello"
 
 // Multiple words
-upperCaseFirst("hello world");   // "Hello world"
-upperCaseFirst("HELLO WORLD");   // "HELLO WORLD"
-upperCaseFirst("Hello World");   // "Hello World"
+upperCaseFirst("hello world"); // "Hello world"
+upperCaseFirst("HELLO WORLD"); // "HELLO WORLD"
+upperCaseFirst("Hello World"); // "Hello World"
 
 // Programming cases
-upperCaseFirst("camelCase");     // "CamelCase"
-upperCaseFirst("pascalCase");    // "PascalCase"
-upperCaseFirst("snake_case");    // "Snake_case"
-upperCaseFirst("kebab-case");    // "Kebab-case"
+upperCaseFirst("camelCase"); // "CamelCase"
+upperCaseFirst("pascalCase"); // "PascalCase"
+upperCaseFirst("snake_case"); // "Snake_case"
+upperCaseFirst("kebab-case"); // "Kebab-case"
 ```
 
 ### Edge Cases
@@ -100,19 +100,19 @@ upperCaseFirst("kebab-case");    // "Kebab-case"
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Empty and single character
-upperCaseFirst("");              // ""
-upperCaseFirst("a");             // "A"
-upperCaseFirst("A");             // "A"
+upperCaseFirst(""); // ""
+upperCaseFirst("a"); // "A"
+upperCaseFirst("A"); // "A"
 
 // Numbers and symbols
-upperCaseFirst("123hello");      // "123hello"
-upperCaseFirst("@hello");        // "@hello"
-upperCaseFirst("hello123");      // "Hello123"
+upperCaseFirst("123hello"); // "123hello"
+upperCaseFirst("@hello"); // "@hello"
+upperCaseFirst("hello123"); // "Hello123"
 
 // Unicode characters
-upperCaseFirst("ñice");          // "Ñice"
-upperCaseFirst("über");          // "Über"
-upperCaseFirst("café");          // "Café"
+upperCaseFirst("ñice"); // "Ñice"
+upperCaseFirst("über"); // "Über"
+upperCaseFirst("café"); // "Café"
 ```
 
 ## 🌍 Real-World Examples
@@ -124,7 +124,7 @@ import { upperCaseFirst } from "text-upper-case-first";
 
 // Capitalize sentences
 upperCaseFirst("this is a sentence."); // "This is a sentence."
-upperCaseFirst("welcome to our app");   // "Welcome to our app"
+upperCaseFirst("welcome to our app"); // "Welcome to our app"
 upperCaseFirst("error: invalid input"); // "Error: invalid input"
 ```
 
@@ -134,10 +134,10 @@ upperCaseFirst("error: invalid input"); // "Error: invalid input"
 import { upperCaseFirst } from "text-upper-case-first";
 
 // Format names
-upperCaseFirst("john");          // "John"
-upperCaseFirst("mary jane");     // "Mary jane"
-upperCaseFirst("o'connor");      // "O'connor"
-upperCaseFirst("van der berg");  // "Van der berg"
+upperCaseFirst("john"); // "John"
+upperCaseFirst("mary jane"); // "Mary jane"
+upperCaseFirst("o'connor"); // "O'connor"
+upperCaseFirst("van der berg"); // "Van der berg"
 ```
 
 ### Content Processing
@@ -151,7 +151,7 @@ const titles = [
   "installation guide",
   "best practices",
   "troubleshooting",
-  "frequently asked questions"
+  "frequently asked questions",
 ];
 
 const formattedTitles = titles.map(upperCaseFirst);
@@ -175,8 +175,8 @@ function formatFormField(value) {
 }
 
 console.log(formatFormField("  JOHN DOE  ")); // "John doe"
-console.log(formatFormField("jane smith"));   // "Jane smith"
-console.log(formatFormField("BOB WILSON"));   // "Bob wilson"
+console.log(formatFormField("jane smith")); // "Jane smith"
+console.log(formatFormField("BOB WILSON")); // "Bob wilson"
 ```
 
 ### Message Formatting
@@ -185,13 +185,17 @@ console.log(formatFormField("BOB WILSON"));   // "Bob wilson"
 import { upperCaseFirst } from "text-upper-case-first";
 
 function formatMessage(message) {
-  return upperCaseFirst(message.trim()) +
-    (message.endsWith('.') || message.endsWith('!') || message.endsWith('?') ? '' : '.');
+  return (
+    upperCaseFirst(message.trim()) +
+    (message.endsWith(".") || message.endsWith("!") || message.endsWith("?")
+      ? ""
+      : ".")
+  );
 }
 
-console.log(formatMessage("hello world"));     // "Hello world."
-console.log(formatMessage("welcome back!"));   // "Welcome back!"
-console.log(formatMessage("are you sure?"));   // "Are you sure?"
+console.log(formatMessage("hello world")); // "Hello world."
+console.log(formatMessage("welcome back!")); // "Welcome back!"
+console.log(formatMessage("are you sure?")); // "Are you sure?"
 ```
 
 ### Comment Processing
@@ -204,7 +208,7 @@ function formatComment(comment) {
   const formatted = upperCaseFirst(comment.trim());
 
   if (!formatted.match(/[.!?]$/)) {
-    return formatted + '.';
+    return formatted + ".";
   }
 
   return formatted;
@@ -223,18 +227,18 @@ console.log(formatComment("thanks for sharing!"));
 import { upperCaseFirst } from "text-upper-case-first";
 
 class NotificationFormatter {
-  static format(message, type = 'info') {
+  static format(message, type = "info") {
     const formattedMessage = upperCaseFirst(message.trim());
 
     return {
       type,
       message: formattedMessage,
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
   }
 
   static formatBatch(messages) {
-    return messages.map(msg => this.format(msg));
+    return messages.map((msg) => this.format(msg));
   }
 }
 
@@ -255,7 +259,7 @@ function processTextInput(input, options = {}) {
   const {
     autoCapitalize = true,
     trimWhitespace = true,
-    addPunctuation = false
+    addPunctuation = false,
   } = options;
 
   let processed = input;
@@ -269,16 +273,18 @@ function processTextInput(input, options = {}) {
   }
 
   if (addPunctuation && !processed.match(/[.!?]$/)) {
-    processed += '.';
+    processed += ".";
   }
 
   return processed;
 }
 
-console.log(processTextInput("  hello world  ", {
-  autoCapitalize: true,
-  addPunctuation: true
-}));
+console.log(
+  processTextInput("  hello world  ", {
+    autoCapitalize: true,
+    addPunctuation: true,
+  }),
+);
 // "Hello world."
 ```
 
@@ -292,7 +298,7 @@ function processBlogPost(post) {
     ...post,
     title: upperCaseFirst(post.title),
     excerpt: upperCaseFirst(post.excerpt),
-    tags: post.tags.map(tag => upperCaseFirst(tag))
+    tags: post.tags.map((tag) => upperCaseFirst(tag)),
   };
 }
 
@@ -300,7 +306,7 @@ const blogPost = {
   title: "getting started with react",
   excerpt: "learn the basics of react development",
   tags: ["react", "javascript", "frontend"],
-  content: "..."
+  content: "...",
 };
 
 console.log(processBlogPost(blogPost));
@@ -319,14 +325,14 @@ import { upperCaseFirst } from "text-upper-case-first";
 
 class ErrorFormatter {
   static format(error) {
-    if (typeof error === 'string') {
+    if (typeof error === "string") {
       return upperCaseFirst(error);
     }
 
     if (error.message) {
       return {
         ...error,
-        message: upperCaseFirst(error.message)
+        message: upperCaseFirst(error.message),
       };
     }
 
@@ -347,10 +353,12 @@ class ErrorFormatter {
 console.log(ErrorFormatter.format("invalid email address"));
 // "Invalid email address"
 
-console.log(ErrorFormatter.formatValidationErrors({
-  email: "email is required",
-  password: "password must be at least 8 characters"
-}));
+console.log(
+  ErrorFormatter.formatValidationErrors({
+    email: "email is required",
+    password: "password must be at least 8 characters",
+  }),
+);
 // {
 //   email: "Email is required",
 //   password: "Password must be at least 8 characters"

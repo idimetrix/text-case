@@ -78,18 +78,18 @@ console.log(result); // true
 import { isLowerCase } from "text-is-lower-case";
 
 // Valid lowercase
-isLowerCase("hello");           // true
-isLowerCase("hello world");     // true
-isLowerCase("test123");         // true
-isLowerCase("user_name");       // true
-isLowerCase("api-key");         // true
+isLowerCase("hello"); // true
+isLowerCase("hello world"); // true
+isLowerCase("test123"); // true
+isLowerCase("user_name"); // true
+isLowerCase("api-key"); // true
 
 // Invalid (not lowercase)
-isLowerCase("Hello");           // false
-isLowerCase("HELLO");           // false
-isLowerCase("Hello World");     // false
-isLowerCase("camelCase");       // false
-isLowerCase("PascalCase");      // false
+isLowerCase("Hello"); // false
+isLowerCase("HELLO"); // false
+isLowerCase("Hello World"); // false
+isLowerCase("camelCase"); // false
+isLowerCase("PascalCase"); // false
 ```
 
 ### Edge Cases
@@ -98,20 +98,20 @@ isLowerCase("PascalCase");      // false
 import { isLowerCase } from "text-is-lower-case";
 
 // Numbers and symbols
-isLowerCase("123");             // true
-isLowerCase("hello123");        // true
-isLowerCase("test@email.com");  // true
-isLowerCase("user_123");        // true
+isLowerCase("123"); // true
+isLowerCase("hello123"); // true
+isLowerCase("test@email.com"); // true
+isLowerCase("user_123"); // true
 
 // Empty and whitespace
-isLowerCase("");               // true
-isLowerCase("   ");            // true
-isLowerCase("\n\t");           // true
+isLowerCase(""); // true
+isLowerCase("   "); // true
+isLowerCase("\n\t"); // true
 
 // Special characters
-isLowerCase("hello-world");     // true
-isLowerCase("test_case");       // true
-isLowerCase("file.txt");        // true
+isLowerCase("hello-world"); // true
+isLowerCase("test_case"); // true
+isLowerCase("file.txt"); // true
 ```
 
 ## 🌍 Real-World Examples
@@ -138,7 +138,7 @@ console.log(validateUsername("John_Doe")); // "Username must be lowercase"
 import { isLowerCase } from "text-is-lower-case";
 
 function validateEmailFormat(email) {
-  const [localPart] = email.split('@');
+  const [localPart] = email.split("@");
 
   if (!isLowerCase(localPart)) {
     return "Email local part should be lowercase";
@@ -172,10 +172,10 @@ console.log(validateSlug("My-Blog-Post")); // "URL slug must be lowercase"
 import { isLowerCase } from "text-is-lower-case";
 
 function validateConfigKeys(config) {
-  const invalidKeys = Object.keys(config).filter(key => !isLowerCase(key));
+  const invalidKeys = Object.keys(config).filter((key) => !isLowerCase(key));
 
   if (invalidKeys.length > 0) {
-    return `Invalid config keys (must be lowercase): ${invalidKeys.join(', ')}`;
+    return `Invalid config keys (must be lowercase): ${invalidKeys.join(", ")}`;
   }
   return null;
 }

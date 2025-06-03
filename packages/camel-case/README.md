@@ -79,20 +79,20 @@ console.log(result); // "helloWorld"
 import { camelCase } from "text-camel-case";
 
 // From different cases
-camelCase("hello world");        // "helloWorld"
-camelCase("Hello World");        // "helloWorld"
-camelCase("HELLO WORLD");        // "helloWorld"
-camelCase("snake_case");         // "snakeCase"
-camelCase("kebab-case");         // "kebabCase"
-camelCase("dot.case");           // "dotCase"
-camelCase("PascalCase");         // "pascalCase"
-camelCase("CONSTANT_CASE");      // "constantCase"
+camelCase("hello world"); // "helloWorld"
+camelCase("Hello World"); // "helloWorld"
+camelCase("HELLO WORLD"); // "helloWorld"
+camelCase("snake_case"); // "snakeCase"
+camelCase("kebab-case"); // "kebabCase"
+camelCase("dot.case"); // "dotCase"
+camelCase("PascalCase"); // "pascalCase"
+camelCase("CONSTANT_CASE"); // "constantCase"
 
 // Complex examples
-camelCase("XMLHttpRequest");     // "xmlHttpRequest"
-camelCase("iPhone");             // "iPhone"
-camelCase("version 1.2.3");     // "version123"
-camelCase("user-profile-data");  // "userProfileData"
+camelCase("XMLHttpRequest"); // "xmlHttpRequest"
+camelCase("iPhone"); // "iPhone"
+camelCase("version 1.2.3"); // "version123"
+camelCase("user-profile-data"); // "userProfileData"
 ```
 
 ### Advanced Options
@@ -133,11 +133,11 @@ camelCase("api-v2-endpoint", {
 import { camelCase } from "text-camel-case";
 
 // API field names
-camelCase("first_name");         // "firstName"
-camelCase("email_address");      // "emailAddress"
-camelCase("created_at");         // "createdAt"
-camelCase("user_id");            // "userId"
-camelCase("access_token");       // "accessToken"
+camelCase("first_name"); // "firstName"
+camelCase("email_address"); // "emailAddress"
+camelCase("created_at"); // "createdAt"
+camelCase("user_id"); // "userId"
+camelCase("access_token"); // "accessToken"
 ```
 
 ### CSS Properties to JavaScript
@@ -146,11 +146,11 @@ camelCase("access_token");       // "accessToken"
 import { camelCase } from "text-camel-case";
 
 // CSS properties
-camelCase("background-color");   // "backgroundColor"
-camelCase("font-family");        // "fontFamily"
-camelCase("border-radius");      // "borderRadius"
-camelCase("margin-top");         // "marginTop"
-camelCase("z-index");            // "zIndex"
+camelCase("background-color"); // "backgroundColor"
+camelCase("font-family"); // "fontFamily"
+camelCase("border-radius"); // "borderRadius"
+camelCase("margin-top"); // "marginTop"
+camelCase("z-index"); // "zIndex"
 ```
 
 ### Database Columns to Object Properties
@@ -159,9 +159,9 @@ camelCase("z-index");            // "zIndex"
 import { camelCase } from "text-camel-case";
 
 // Database columns
-camelCase("user_profile");       // "userProfile"
-camelCase("last_login_date");    // "lastLoginDate"
-camelCase("is_active");          // "isActive"
+camelCase("user_profile"); // "userProfile"
+camelCase("last_login_date"); // "lastLoginDate"
+camelCase("is_active"); // "isActive"
 camelCase("created_by_user_id"); // "createdByUserId"
 ```
 
@@ -179,7 +179,7 @@ const dbUser = {
 };
 
 const jsUser = Object.fromEntries(
-  Object.entries(dbUser).map(([key, value]) => [camelCase(key), value])
+  Object.entries(dbUser).map(([key, value]) => [camelCase(key), value]),
 );
 
 console.log(jsUser);

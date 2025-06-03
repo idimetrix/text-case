@@ -79,20 +79,20 @@ console.log(result); // "Hello World"
 import { titleCase } from "text-title-case";
 
 // From different cases
-titleCase("hello world");        // "Hello World"
-titleCase("Hello World");        // "Hello World"
-titleCase("HELLO WORLD");        // "Hello World"
-titleCase("camelCase");          // "Camel Case"
-titleCase("PascalCase");         // "Pascal Case"
-titleCase("snake_case");         // "Snake Case"
-titleCase("kebab-case");         // "Kebab Case"
-titleCase("dot.case");           // "Dot Case"
+titleCase("hello world"); // "Hello World"
+titleCase("Hello World"); // "Hello World"
+titleCase("HELLO WORLD"); // "Hello World"
+titleCase("camelCase"); // "Camel Case"
+titleCase("PascalCase"); // "Pascal Case"
+titleCase("snake_case"); // "Snake Case"
+titleCase("kebab-case"); // "Kebab Case"
+titleCase("dot.case"); // "Dot Case"
 
 // Complex examples
-titleCase("XMLHttpRequest");     // "Xml Http Request"
-titleCase("iPhone");             // "I Phone"
-titleCase("version 1.2.3");     // "Version 1 2 3"
-titleCase("userProfileData");    // "User Profile Data"
+titleCase("XMLHttpRequest"); // "Xml Http Request"
+titleCase("iPhone"); // "I Phone"
+titleCase("version 1.2.3"); // "Version 1 2 3"
+titleCase("userProfileData"); // "User Profile Data"
 ```
 
 ### Advanced Options
@@ -129,9 +129,9 @@ import { titleCase } from "text-title-case";
 
 // Page titles
 titleCase("user profile settings"); // "User Profile Settings"
-titleCase("account management");     // "Account Management"
-titleCase("privacy policy");         // "Privacy Policy"
-titleCase("terms of service");       // "Terms Of Service"
+titleCase("account management"); // "Account Management"
+titleCase("privacy policy"); // "Privacy Policy"
+titleCase("terms of service"); // "Terms Of Service"
 titleCase("getting started guide"); // "Getting Started Guide"
 ```
 
@@ -141,11 +141,11 @@ titleCase("getting started guide"); // "Getting Started Guide"
 import { titleCase } from "text-title-case";
 
 // Menu items
-titleCase("home page");              // "Home Page"
-titleCase("about us");               // "About Us"
-titleCase("contact information");    // "Contact Information"
-titleCase("product catalog");        // "Product Catalog"
-titleCase("customer support");       // "Customer Support"
+titleCase("home page"); // "Home Page"
+titleCase("about us"); // "About Us"
+titleCase("contact information"); // "Contact Information"
+titleCase("product catalog"); // "Product Catalog"
+titleCase("customer support"); // "Customer Support"
 ```
 
 ### Form Labels
@@ -154,11 +154,11 @@ titleCase("customer support");       // "Customer Support"
 import { titleCase } from "text-title-case";
 
 // Form fields
-titleCase("first name");             // "First Name"
-titleCase("email address");          // "Email Address"
-titleCase("phone number");           // "Phone Number"
-titleCase("date of birth");          // "Date Of Birth"
-titleCase("billing address");        // "Billing Address"
+titleCase("first name"); // "First Name"
+titleCase("email address"); // "Email Address"
+titleCase("phone number"); // "Phone Number"
+titleCase("date of birth"); // "Date Of Birth"
+titleCase("billing address"); // "Billing Address"
 ```
 
 ### Business and Technical Terms
@@ -167,15 +167,15 @@ titleCase("billing address");        // "Billing Address"
 import { titleCase } from "text-title-case";
 
 // Business terms
-titleCase("project management");     // "Project Management"
-titleCase("quality assurance");      // "Quality Assurance"
-titleCase("human resources");        // "Human Resources"
-titleCase("customer relationship");  // "Customer Relationship"
+titleCase("project management"); // "Project Management"
+titleCase("quality assurance"); // "Quality Assurance"
+titleCase("human resources"); // "Human Resources"
+titleCase("customer relationship"); // "Customer Relationship"
 
 // Technical documentation
-titleCase("api reference");          // "Api Reference"
-titleCase("installation guide");     // "Installation Guide"
-titleCase("troubleshooting tips");   // "Troubleshooting Tips"
+titleCase("api reference"); // "Api Reference"
+titleCase("installation guide"); // "Installation Guide"
+titleCase("troubleshooting tips"); // "Troubleshooting Tips"
 ```
 
 ### Content Management
@@ -187,7 +187,7 @@ import { titleCase } from "text-title-case";
 const blogPosts = [
   "getting_started_with_react",
   "advanced-javascript-patterns",
-  "building_scalable_apis"
+  "building_scalable_apis",
 ];
 
 const formattedTitles = blogPosts.map(titleCase);
@@ -199,9 +199,9 @@ console.log(formattedTitles);
 // ]
 
 // Article categories
-titleCase("web development");        // "Web Development"
-titleCase("machine learning");       // "Machine Learning"
-titleCase("data science");           // "Data Science"
+titleCase("web development"); // "Web Development"
+titleCase("machine learning"); // "Machine Learning"
+titleCase("data science"); // "Data Science"
 ```
 
 ## 📖 API Reference

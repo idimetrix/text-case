@@ -79,20 +79,20 @@ console.log(result); // "Hello-World"
 import { headerCase } from "text-header-case";
 
 // From different cases
-headerCase("hello world");       // "Hello-World"
-headerCase("Hello World");       // "Hello-World"
-headerCase("HELLO WORLD");       // "Hello-World"
-headerCase("camelCase");         // "Camel-Case"
-headerCase("PascalCase");        // "Pascal-Case"
-headerCase("snake_case");        // "Snake-Case"
-headerCase("kebab-case");        // "Kebab-Case"
-headerCase("dot.case");          // "Dot-Case"
+headerCase("hello world"); // "Hello-World"
+headerCase("Hello World"); // "Hello-World"
+headerCase("HELLO WORLD"); // "Hello-World"
+headerCase("camelCase"); // "Camel-Case"
+headerCase("PascalCase"); // "Pascal-Case"
+headerCase("snake_case"); // "Snake-Case"
+headerCase("kebab-case"); // "Kebab-Case"
+headerCase("dot.case"); // "Dot-Case"
 
 // Complex examples
-headerCase("XMLHttpRequest");    // "Xml-Http-Request"
-headerCase("iPhone");            // "I-Phone"
-headerCase("version 1.2.3");    // "Version-1-2-3"
-headerCase("userProfileData");   // "User-Profile-Data"
+headerCase("XMLHttpRequest"); // "Xml-Http-Request"
+headerCase("iPhone"); // "I-Phone"
+headerCase("version 1.2.3"); // "Version-1-2-3"
+headerCase("userProfileData"); // "User-Profile-Data"
 ```
 
 ### Advanced Options
@@ -128,11 +128,11 @@ headerCase("api-v2-endpoint", {
 import { headerCase } from "text-header-case";
 
 // HTTP header names
-headerCase("contentType");       // "Content-Type"
-headerCase("userAgent");         // "User-Agent"
-headerCase("acceptLanguage");    // "Accept-Language"
-headerCase("cacheControl");      // "Cache-Control"
-headerCase("lastModified");      // "Last-Modified"
+headerCase("contentType"); // "Content-Type"
+headerCase("userAgent"); // "User-Agent"
+headerCase("acceptLanguage"); // "Accept-Language"
+headerCase("cacheControl"); // "Cache-Control"
+headerCase("lastModified"); // "Last-Modified"
 ```
 
 ### Train Case Naming
@@ -141,10 +141,10 @@ headerCase("lastModified");      // "Last-Modified"
 import { headerCase } from "text-header-case";
 
 // Train case (alternative name for header case)
-headerCase("trainCaseExample");  // "Train-Case-Example"
-headerCase("thisIsTrainCase");   // "This-Is-Train-Case"
-headerCase("anotherExample");    // "Another-Example"
-headerCase("finalExample");      // "Final-Example"
+headerCase("trainCaseExample"); // "Train-Case-Example"
+headerCase("thisIsTrainCase"); // "This-Is-Train-Case"
+headerCase("anotherExample"); // "Another-Example"
+headerCase("finalExample"); // "Final-Example"
 ```
 
 ### API Endpoint Names
@@ -153,11 +153,11 @@ headerCase("finalExample");      // "Final-Example"
 import { headerCase } from "text-header-case";
 
 // RESTful endpoints
-headerCase("getUserProfile");    // "Get-User-Profile"
-headerCase("createNewOrder");    // "Create-New-Order"
-headerCase("updateUserData");    // "Update-User-Data"
-headerCase("deleteAccount");     // "Delete-Account"
-headerCase("resetPassword");     // "Reset-Password"
+headerCase("getUserProfile"); // "Get-User-Profile"
+headerCase("createNewOrder"); // "Create-New-Order"
+headerCase("updateUserData"); // "Update-User-Data"
+headerCase("deleteAccount"); // "Delete-Account"
+headerCase("resetPassword"); // "Reset-Password"
 ```
 
 ### File and Directory Names
@@ -166,11 +166,11 @@ headerCase("resetPassword");     // "Reset-Password"
 import { headerCase } from "text-header-case";
 
 // File naming
-headerCase("userManual");        // "User-Manual"
+headerCase("userManual"); // "User-Manual"
 headerCase("installationGuide"); // "Installation-Guide"
-headerCase("apiDocumentation");  // "Api-Documentation"
-headerCase("troubleshooting");   // "Troubleshooting"
-headerCase("releaseNotes");      // "Release-Notes"
+headerCase("apiDocumentation"); // "Api-Documentation"
+headerCase("troubleshooting"); // "Troubleshooting"
+headerCase("releaseNotes"); // "Release-Notes"
 ```
 
 ### Configuration Keys
@@ -184,11 +184,11 @@ const config = {
   userAgent: "MyApp/1.0",
   acceptLanguage: "en-US,en;q=0.9",
   cacheControl: "no-cache",
-  authorization: "Bearer token123"
+  authorization: "Bearer token123",
 };
 
 const headerConfig = Object.fromEntries(
-  Object.entries(config).map(([key, value]) => [headerCase(key), value])
+  Object.entries(config).map(([key, value]) => [headerCase(key), value]),
 );
 
 console.log(headerConfig);

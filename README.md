@@ -85,43 +85,43 @@ console.log(titleCase(input)); // "User Profile Data"
 
 ### Core Transformations
 
-| Package | Output Example | Use Cases | Size | NPM |
-|---------|----------------|-----------|------|-----|
-| [`text-camel-case`](./packages/camel-case) | `userProfileData` | JavaScript variables, object properties | ~450B | [![npm](https://img.shields.io/npm/v/text-camel-case.svg)](https://www.npmjs.com/package/text-camel-case) |
-| [`text-pascal-case`](./packages/pascal-case) | `UserProfileData` | Class names, components, types | ~400B | [![npm](https://img.shields.io/npm/v/text-pascal-case.svg)](https://www.npmjs.com/package/text-pascal-case) |
-| [`text-snake-case`](./packages/snake-case) | `user_profile_data` | Database columns, Python variables | ~300B | [![npm](https://img.shields.io/npm/v/text-snake-case.svg)](https://www.npmjs.com/package/text-snake-case) |
-| [`text-kebab-case`](./packages/kebab-case) | `user-profile-data` | CSS classes, URLs, HTML attributes | ~350B | [![npm](https://img.shields.io/npm/v/text-kebab-case.svg)](https://www.npmjs.com/package/text-kebab-case) |
-| [`text-title-case`](./packages/title-case) | `User Profile Data` | Headers, titles, proper nouns | ~350B | [![npm](https://img.shields.io/npm/v/text-title-case.svg)](https://www.npmjs.com/package/text-title-case) |
-| [`text-sentence-case`](./packages/sentence-case) | `User profile data` | Sentences, descriptions | ~320B | [![npm](https://img.shields.io/npm/v/text-sentence-case.svg)](https://www.npmjs.com/package/text-sentence-case) |
+| Package                                          | Output Example      | Use Cases                               | Size  | NPM                                                                                                             |
+| ------------------------------------------------ | ------------------- | --------------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------- |
+| [`text-camel-case`](./packages/camel-case)       | `userProfileData`   | JavaScript variables, object properties | ~450B | [![npm](https://img.shields.io/npm/v/text-camel-case.svg)](https://www.npmjs.com/package/text-camel-case)       |
+| [`text-pascal-case`](./packages/pascal-case)     | `UserProfileData`   | Class names, components, types          | ~400B | [![npm](https://img.shields.io/npm/v/text-pascal-case.svg)](https://www.npmjs.com/package/text-pascal-case)     |
+| [`text-snake-case`](./packages/snake-case)       | `user_profile_data` | Database columns, Python variables      | ~300B | [![npm](https://img.shields.io/npm/v/text-snake-case.svg)](https://www.npmjs.com/package/text-snake-case)       |
+| [`text-kebab-case`](./packages/kebab-case)       | `user-profile-data` | CSS classes, URLs, HTML attributes      | ~350B | [![npm](https://img.shields.io/npm/v/text-kebab-case.svg)](https://www.npmjs.com/package/text-kebab-case)       |
+| [`text-title-case`](./packages/title-case)       | `User Profile Data` | Headers, titles, proper nouns           | ~350B | [![npm](https://img.shields.io/npm/v/text-title-case.svg)](https://www.npmjs.com/package/text-title-case)       |
+| [`text-sentence-case`](./packages/sentence-case) | `User profile data` | Sentences, descriptions                 | ~320B | [![npm](https://img.shields.io/npm/v/text-sentence-case.svg)](https://www.npmjs.com/package/text-sentence-case) |
 
 ### Specialized Formats
 
-| Package | Output Example | Use Cases | Size | NPM |
-|---------|----------------|-----------|------|-----|
+| Package                                          | Output Example      | Use Cases                        | Size  | NPM                                                                                                             |
+| ------------------------------------------------ | ------------------- | -------------------------------- | ----- | --------------------------------------------------------------------------------------------------------------- |
 | [`text-constant-case`](./packages/constant-case) | `USER_PROFILE_DATA` | Environment variables, constants | ~380B | [![npm](https://img.shields.io/npm/v/text-constant-case.svg)](https://www.npmjs.com/package/text-constant-case) |
-| [`text-dot-case`](./packages/dot-case) | `user.profile.data` | Object paths, file names | ~280B | [![npm](https://img.shields.io/npm/v/text-dot-case.svg)](https://www.npmjs.com/package/text-dot-case) |
-| [`text-path-case`](./packages/path-case) | `user/profile/data` | File paths, URLs | ~300B | [![npm](https://img.shields.io/npm/v/text-path-case.svg)](https://www.npmjs.com/package/text-path-case) |
-| [`text-header-case`](./packages/header-case) | `User-Profile-Data` | HTTP headers, train-case | ~340B | [![npm](https://img.shields.io/npm/v/text-header-case.svg)](https://www.npmjs.com/package/text-header-case) |
-| [`text-capital-case`](./packages/capital-case) | `User Profile Data` | Business titles, formal text | ~330B | [![npm](https://img.shields.io/npm/v/text-capital-case.svg)](https://www.npmjs.com/package/text-capital-case) |
-| [`text-no-case`](./packages/no-case) | `user profile data` | Search queries, plain text | ~280B | [![npm](https://img.shields.io/npm/v/text-no-case.svg)](https://www.npmjs.com/package/text-no-case) |
-| [`text-param-case`](./packages/param-case) | `user-profile-data` | URL parameters, kebab-case alias | ~350B | [![npm](https://img.shields.io/npm/v/text-param-case.svg)](https://www.npmjs.com/package/text-param-case) |
+| [`text-dot-case`](./packages/dot-case)           | `user.profile.data` | Object paths, file names         | ~280B | [![npm](https://img.shields.io/npm/v/text-dot-case.svg)](https://www.npmjs.com/package/text-dot-case)           |
+| [`text-path-case`](./packages/path-case)         | `user/profile/data` | File paths, URLs                 | ~300B | [![npm](https://img.shields.io/npm/v/text-path-case.svg)](https://www.npmjs.com/package/text-path-case)         |
+| [`text-header-case`](./packages/header-case)     | `User-Profile-Data` | HTTP headers, train-case         | ~340B | [![npm](https://img.shields.io/npm/v/text-header-case.svg)](https://www.npmjs.com/package/text-header-case)     |
+| [`text-capital-case`](./packages/capital-case)   | `User Profile Data` | Business titles, formal text     | ~330B | [![npm](https://img.shields.io/npm/v/text-capital-case.svg)](https://www.npmjs.com/package/text-capital-case)   |
+| [`text-no-case`](./packages/no-case)             | `user profile data` | Search queries, plain text       | ~280B | [![npm](https://img.shields.io/npm/v/text-no-case.svg)](https://www.npmjs.com/package/text-no-case)             |
+| [`text-param-case`](./packages/param-case)       | `user-profile-data` | URL parameters, kebab-case alias | ~350B | [![npm](https://img.shields.io/npm/v/text-param-case.svg)](https://www.npmjs.com/package/text-param-case)       |
 
 ### Character Transformations
 
-| Package | Output Example | Use Cases | Size | NPM |
-|---------|----------------|-----------|------|-----|
-| [`text-upper-case`](./packages/upper-case) | `USER PROFILE DATA` | Constants, emphasis | ~120B | [![npm](https://img.shields.io/npm/v/text-upper-case.svg)](https://www.npmjs.com/package/text-upper-case) |
-| [`text-lower-case`](./packages/lower-case) | `user profile data` | Normalization, search | ~120B | [![npm](https://img.shields.io/npm/v/text-lower-case.svg)](https://www.npmjs.com/package/text-lower-case) |
+| Package                                                | Output Example      | Use Cases                    | Size  | NPM                                                                                                                   |
+| ------------------------------------------------------ | ------------------- | ---------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------- |
+| [`text-upper-case`](./packages/upper-case)             | `USER PROFILE DATA` | Constants, emphasis          | ~120B | [![npm](https://img.shields.io/npm/v/text-upper-case.svg)](https://www.npmjs.com/package/text-upper-case)             |
+| [`text-lower-case`](./packages/lower-case)             | `user profile data` | Normalization, search        | ~120B | [![npm](https://img.shields.io/npm/v/text-lower-case.svg)](https://www.npmjs.com/package/text-lower-case)             |
 | [`text-upper-case-first`](./packages/upper-case-first) | `User profile data` | Sentences, proper formatting | ~130B | [![npm](https://img.shields.io/npm/v/text-upper-case-first.svg)](https://www.npmjs.com/package/text-upper-case-first) |
-| [`text-lower-case-first`](./packages/lower-case-first) | `user Profile Data` | camelCase conversion | ~130B | [![npm](https://img.shields.io/npm/v/text-lower-case-first.svg)](https://www.npmjs.com/package/text-lower-case-first) |
-| [`text-swap-case`](./packages/swap-case) | `uSER pROFILE dATA` | Creative text, obfuscation | ~140B | [![npm](https://img.shields.io/npm/v/text-swap-case.svg)](https://www.npmjs.com/package/text-swap-case) |
+| [`text-lower-case-first`](./packages/lower-case-first) | `user Profile Data` | camelCase conversion         | ~130B | [![npm](https://img.shields.io/npm/v/text-lower-case-first.svg)](https://www.npmjs.com/package/text-lower-case-first) |
+| [`text-swap-case`](./packages/swap-case)               | `uSER pROFILE dATA` | Creative text, obfuscation   | ~140B | [![npm](https://img.shields.io/npm/v/text-swap-case.svg)](https://www.npmjs.com/package/text-swap-case)               |
 
 ### Validation Utilities
 
-| Package | Output Example | Use Cases | Size | NPM |
-|---------|----------------|-----------|------|-----|
-| [`text-is-upper-case`](./packages/is-upper-case) | `true/false` | Input validation, conditionals | ~100B | [![npm](https://img.shields.io/npm/v/text-is-upper-case.svg)](https://www.npmjs.com/package/text-is-upper-case) |
-| [`text-is-lower-case`](./packages/is-lower-case) | `true/false` | Input validation, conditionals | ~100B | [![npm](https://img.shields.io/npm/v/text-is-lower-case.svg)](https://www.npmjs.com/package/text-is-lower-case) |
+| Package                                          | Output Example | Use Cases                      | Size  | NPM                                                                                                             |
+| ------------------------------------------------ | -------------- | ------------------------------ | ----- | --------------------------------------------------------------------------------------------------------------- |
+| [`text-is-upper-case`](./packages/is-upper-case) | `true/false`   | Input validation, conditionals | ~100B | [![npm](https://img.shields.io/npm/v/text-is-upper-case.svg)](https://www.npmjs.com/package/text-is-upper-case) |
+| [`text-is-lower-case`](./packages/is-lower-case) | `true/false`   | Input validation, conditionals | ~100B | [![npm](https://img.shields.io/npm/v/text-is-lower-case.svg)](https://www.npmjs.com/package/text-is-lower-case) |
 
 ## 🛠️ Advanced Usage
 
@@ -354,10 +354,10 @@ pnpm test --watch
 
 ## 📊 Bundle Size Comparison
 
-| Package | Minified | Gzipped | Tree-shakeable |
-|---------|----------|---------|----------------|
-| `text-case` (all) | ~8KB | ~3KB | ✅ |
-| Individual packages | 100B-450B | 50B-250B | ✅ |
+| Package             | Minified  | Gzipped  | Tree-shakeable |
+| ------------------- | --------- | -------- | -------------- |
+| `text-case` (all)   | ~8KB      | ~3KB     | ✅             |
+| Individual packages | 100B-450B | 50B-250B | ✅             |
 
 Import only what you need for optimal bundle size:
 
@@ -445,6 +445,13 @@ pnpm typecheck
 
 # Lint code
 pnpm lint
+```
+
+### Deployment Steps
+
+```
+npx lerna version patch --yes --force-publish=*
+npx lerna publish from-package --yes
 ```
 
 ### Package Structure

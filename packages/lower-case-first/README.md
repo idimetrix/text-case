@@ -78,20 +78,20 @@ console.log(result); // "hello World"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Simple cases
-lowerCaseFirst("Hello");         // "hello"
-lowerCaseFirst("hello");         // "hello"
-lowerCaseFirst("HELLO");         // "hELLO"
+lowerCaseFirst("Hello"); // "hello"
+lowerCaseFirst("hello"); // "hello"
+lowerCaseFirst("HELLO"); // "hELLO"
 
 // Multiple words
-lowerCaseFirst("Hello World");   // "hello World"
-lowerCaseFirst("HELLO WORLD");   // "hELLO WORLD"
-lowerCaseFirst("hello world");   // "hello world"
+lowerCaseFirst("Hello World"); // "hello World"
+lowerCaseFirst("HELLO WORLD"); // "hELLO WORLD"
+lowerCaseFirst("hello world"); // "hello world"
 
 // Programming cases
-lowerCaseFirst("CamelCase");     // "camelCase"
-lowerCaseFirst("PascalCase");    // "pascalCase"
-lowerCaseFirst("Snake_case");    // "snake_case"
-lowerCaseFirst("Kebab-case");    // "kebab-case"
+lowerCaseFirst("CamelCase"); // "camelCase"
+lowerCaseFirst("PascalCase"); // "pascalCase"
+lowerCaseFirst("Snake_case"); // "snake_case"
+lowerCaseFirst("Kebab-case"); // "kebab-case"
 ```
 
 ### Edge Cases
@@ -100,19 +100,19 @@ lowerCaseFirst("Kebab-case");    // "kebab-case"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Empty and single character
-lowerCaseFirst("");              // ""
-lowerCaseFirst("A");             // "a"
-lowerCaseFirst("a");             // "a"
+lowerCaseFirst(""); // ""
+lowerCaseFirst("A"); // "a"
+lowerCaseFirst("a"); // "a"
 
 // Numbers and symbols
-lowerCaseFirst("123hello");      // "123hello"
-lowerCaseFirst("@Hello");        // "@Hello"
-lowerCaseFirst("Hello123");      // "hello123"
+lowerCaseFirst("123hello"); // "123hello"
+lowerCaseFirst("@Hello"); // "@Hello"
+lowerCaseFirst("Hello123"); // "hello123"
 
 // Unicode characters
-lowerCaseFirst("Ñice");          // "ñice"
-lowerCaseFirst("Über");          // "über"
-lowerCaseFirst("Café");          // "café"
+lowerCaseFirst("Ñice"); // "ñice"
+lowerCaseFirst("Über"); // "über"
+lowerCaseFirst("Café"); // "café"
 ```
 
 ## 🌍 Real-World Examples
@@ -123,10 +123,10 @@ lowerCaseFirst("Café");          // "café"
 import { lowerCaseFirst } from "text-lower-case-first";
 
 // Convert PascalCase to camelCase
-lowerCaseFirst("UserProfile");   // "userProfile"
+lowerCaseFirst("UserProfile"); // "userProfile"
 lowerCaseFirst("DatabaseConnection"); // "databaseConnection"
-lowerCaseFirst("ApiResponse");   // "apiResponse"
-lowerCaseFirst("HttpClient");    // "httpClient"
+lowerCaseFirst("ApiResponse"); // "apiResponse"
+lowerCaseFirst("HttpClient"); // "httpClient"
 ```
 
 ### JSON Property Processing
@@ -139,9 +139,10 @@ function convertObjectKeys(obj) {
 
   for (const [key, value] of Object.entries(obj)) {
     const newKey = lowerCaseFirst(key);
-    converted[newKey] = typeof value === 'object' && value !== null
-      ? convertObjectKeys(value)
-      : value;
+    converted[newKey] =
+      typeof value === "object" && value !== null
+        ? convertObjectKeys(value)
+        : value;
   }
 
   return converted;
@@ -153,8 +154,8 @@ const apiResponse = {
   ProfileData: {
     FirstName: "John",
     LastName: "Doe",
-    PhoneNumber: "123-456-7890"
-  }
+    PhoneNumber: "123-456-7890",
+  },
 };
 
 console.log(convertObjectKeys(apiResponse));
@@ -184,9 +185,9 @@ function createSetter(propertyName) {
   return lowerCaseFirst(methodName);
 }
 
-console.log(createGetter("UserName"));    // "getUserName"
+console.log(createGetter("UserName")); // "getUserName"
 console.log(createSetter("EmailAddress")); // "setEmailAddress"
-console.log(createGetter("IsActive"));    // "getIsActive"
+console.log(createGetter("IsActive")); // "getIsActive"
 ```
 
 ### Form Field Processing
@@ -197,13 +198,13 @@ import { lowerCaseFirst } from "text-lower-case-first";
 function processFormFields(fields) {
   const processed = {};
 
-  fields.forEach(field => {
+  fields.forEach((field) => {
     // Convert field names to camelCase
     const fieldName = lowerCaseFirst(field.Name || field.name);
     processed[fieldName] = {
-      value: field.Value || field.value || '',
+      value: field.Value || field.value || "",
       required: field.Required || field.required || false,
-      type: field.Type || field.type || 'text'
+      type: field.Type || field.type || "text",
     };
   });
 
@@ -213,7 +214,7 @@ function processFormFields(fields) {
 const formFields = [
   { Name: "FirstName", Value: "John", Required: true, Type: "text" },
   { Name: "LastName", Value: "Doe", Required: true, Type: "text" },
-  { Name: "EmailAddress", Value: "", Required: true, Type: "email" }
+  { Name: "EmailAddress", Value: "", Required: true, Type: "email" },
 ];
 
 console.log(processFormFields(formFields));
@@ -234,7 +235,7 @@ function normalizeApiResponse(response) {
     return response.map(normalizeApiResponse);
   }
 
-  if (typeof response === 'object' && response !== null) {
+  if (typeof response === "object" && response !== null) {
     const normalized = {};
 
     for (const [key, value] of Object.entries(response)) {
@@ -256,13 +257,13 @@ const apiData = {
     LastName: "Doe",
     ContactDetails: {
       EmailAddress: "john@example.com",
-      PhoneNumber: "123-456-7890"
-    }
+      PhoneNumber: "123-456-7890",
+    },
   },
   Preferences: [
     { SettingName: "theme", SettingValue: "dark" },
-    { SettingName: "language", SettingValue: "en" }
-  ]
+    { SettingName: "language", SettingValue: "en" },
+  ],
 };
 
 console.log(normalizeApiResponse(apiData));
@@ -290,12 +291,12 @@ console.log(normalizeApiResponse(apiData));
 import { lowerCaseFirst } from "text-lower-case-first";
 
 class CodeGenerator {
-  generateProperty(name, type = 'string') {
+  generateProperty(name, type = "string") {
     const propertyName = lowerCaseFirst(name);
     return `private ${propertyName}: ${type};`;
   }
 
-  generateGetter(name, type = 'string') {
+  generateGetter(name, type = "string") {
     const propertyName = lowerCaseFirst(name);
     const methodName = `get${name}`;
     return `public ${lowerCaseFirst(methodName)}(): ${type} {
@@ -303,7 +304,7 @@ class CodeGenerator {
     }`;
   }
 
-  generateSetter(name, type = 'string') {
+  generateSetter(name, type = "string") {
     const propertyName = lowerCaseFirst(name);
     const methodName = `set${name}`;
     const paramName = lowerCaseFirst(name);
@@ -348,13 +349,13 @@ const appConfig = {
   DatabaseSettings: {
     ConnectionString: "localhost:5432",
     MaxConnections: 100,
-    TimeoutSeconds: 30
+    TimeoutSeconds: 30,
   },
   ApiSettings: {
     BaseUrl: "https://api.example.com",
     ApiKey: "secret-key",
-    RateLimitPerMinute: 1000
-  }
+    RateLimitPerMinute: 1000,
+  },
 };
 
 console.log(processConfiguration(appConfig));

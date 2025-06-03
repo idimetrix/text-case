@@ -79,21 +79,21 @@ console.log(result); // "HELLO_WORLD"
 import { constantCase } from "text-constant-case";
 
 // Simple cases
-constantCase("hello world");         // "HELLO_WORLD"
-constantCase("Hello World");         // "HELLO_WORLD"
-constantCase("HELLO WORLD");         // "HELLO_WORLD"
+constantCase("hello world"); // "HELLO_WORLD"
+constantCase("Hello World"); // "HELLO_WORLD"
+constantCase("HELLO WORLD"); // "HELLO_WORLD"
 
 // From other cases
-constantCase("camelCase");           // "CAMEL_CASE"
-constantCase("PascalCase");          // "PASCAL_CASE"
-constantCase("snake_case");          // "SNAKE_CASE"
-constantCase("kebab-case");          // "KEBAB_CASE"
-constantCase("dot.case");            // "DOT_CASE"
+constantCase("camelCase"); // "CAMEL_CASE"
+constantCase("PascalCase"); // "PASCAL_CASE"
+constantCase("snake_case"); // "SNAKE_CASE"
+constantCase("kebab-case"); // "KEBAB_CASE"
+constantCase("dot.case"); // "DOT_CASE"
 
 // Complex examples
-constantCase("XMLHttpRequest");      // "XML_HTTP_REQUEST"
-constantCase("iPhone");              // "I_PHONE"
-constantCase("version 1.2.3");      // "VERSION_1_2_3"
+constantCase("XMLHttpRequest"); // "XML_HTTP_REQUEST"
+constantCase("iPhone"); // "I_PHONE"
+constantCase("version 1.2.3"); // "VERSION_1_2_3"
 ```
 
 ### Advanced Usage with Options
@@ -106,17 +106,17 @@ constantCase("hello world", {
   transform: (word, index, words) => {
     // Custom transformation logic
     return word.toUpperCase();
-  }
+  },
 }); // "HELLO_WORLD"
 
 // Custom split regex
 constantCase("hello-world_test", {
-  splitRegexp: /[-_\s]+/
+  splitRegexp: /[-_\s]+/,
 }); // "HELLO_WORLD_TEST"
 
 // Strip specific characters
 constantCase("hello@world#test", {
-  stripRegexp: /[@#]/g
+  stripRegexp: /[@#]/g,
 }); // "HELLO_WORLD_TEST"
 ```
 
@@ -128,11 +128,11 @@ constantCase("hello@world#test", {
 import { constantCase } from "text-constant-case";
 
 // Convert configuration keys to environment variable format
-constantCase("database url");        // "DATABASE_URL"
-constantCase("api secret key");      // "API_SECRET_KEY"
-constantCase("max file size");       // "MAX_FILE_SIZE"
-constantCase("redis host");          // "REDIS_HOST"
-constantCase("jwt expiration");      // "JWT_EXPIRATION"
+constantCase("database url"); // "DATABASE_URL"
+constantCase("api secret key"); // "API_SECRET_KEY"
+constantCase("max file size"); // "MAX_FILE_SIZE"
+constantCase("redis host"); // "REDIS_HOST"
+constantCase("jwt expiration"); // "JWT_EXPIRATION"
 ```
 
 ### Constants and Enums
@@ -141,16 +141,16 @@ constantCase("jwt expiration");      // "JWT_EXPIRATION"
 import { constantCase } from "text-constant-case";
 
 // HTTP status codes
-constantCase("ok");                  // "OK"
-constantCase("not found");           // "NOT_FOUND"
+constantCase("ok"); // "OK"
+constantCase("not found"); // "NOT_FOUND"
 constantCase("internal server error"); // "INTERNAL_SERVER_ERROR"
-constantCase("bad request");         // "BAD_REQUEST"
+constantCase("bad request"); // "BAD_REQUEST"
 
 // User roles
-constantCase("admin user");          // "ADMIN_USER"
-constantCase("guest user");          // "GUEST_USER"
-constantCase("super admin");         // "SUPER_ADMIN"
-constantCase("read only");           // "READ_ONLY"
+constantCase("admin user"); // "ADMIN_USER"
+constantCase("guest user"); // "GUEST_USER"
+constantCase("super admin"); // "SUPER_ADMIN"
+constantCase("read only"); // "READ_ONLY"
 ```
 
 ### Configuration Management
@@ -174,7 +174,7 @@ const appConfig = {
   "database port": 5432,
   "api base url": "https://api.example.com",
   "jwt secret": "secret-key",
-  "session timeout": 3600
+  "session timeout": 3600,
 };
 
 console.log(createEnvironmentConfig(appConfig));
@@ -205,7 +205,7 @@ class ErrorCodeGenerator {
       errorMap[code] = {
         code,
         message: error,
-        id: index + 1
+        id: index + 1,
       };
     });
 
@@ -218,7 +218,7 @@ const errorMessages = [
   "password too short",
   "user not found",
   "access denied",
-  "database connection failed"
+  "database connection failed",
 ];
 
 console.log(ErrorCodeGenerator.createErrorMap(errorMessages));
@@ -239,12 +239,12 @@ import { constantCase } from "text-constant-case";
 function createApiConstants(endpoints) {
   const constants = {};
 
-  endpoints.forEach(endpoint => {
+  endpoints.forEach((endpoint) => {
     const constantName = constantCase(endpoint.name);
     constants[constantName] = {
       url: endpoint.url,
       method: endpoint.method,
-      name: constantName
+      name: constantName,
     };
   });
 
@@ -255,7 +255,7 @@ const apiEndpoints = [
   { name: "get user profile", url: "/api/user/profile", method: "GET" },
   { name: "update user settings", url: "/api/user/settings", method: "PUT" },
   { name: "delete user account", url: "/api/user/account", method: "DELETE" },
-  { name: "create new post", url: "/api/posts", method: "POST" }
+  { name: "create new post", url: "/api/posts", method: "POST" },
 ];
 
 console.log(createApiConstants(apiEndpoints));
@@ -276,13 +276,13 @@ class SchemaGenerator {
   static generateTableConstants(tables) {
     const constants = {};
 
-    tables.forEach(table => {
+    tables.forEach((table) => {
       const tableName = constantCase(table.name);
       constants[tableName] = table.name;
 
       // Generate column constants
       if (table.columns) {
-        table.columns.forEach(column => {
+        table.columns.forEach((column) => {
           const columnKey = `${tableName}_${constantCase(column)}`;
           constants[columnKey] = column;
         });
@@ -296,12 +296,18 @@ class SchemaGenerator {
 const databaseTables = [
   {
     name: "user_profiles",
-    columns: ["user id", "first name", "last name", "email address", "created at"]
+    columns: [
+      "user id",
+      "first name",
+      "last name",
+      "email address",
+      "created at",
+    ],
   },
   {
     name: "blog_posts",
-    columns: ["post id", "title", "content", "author id", "published at"]
-  }
+    columns: ["post id", "title", "content", "author id", "published at"],
+  },
 ];
 
 console.log(SchemaGenerator.generateTableConstants(databaseTables));
@@ -329,11 +335,17 @@ import { constantCase } from "text-constant-case";
 function generateBuildConstants(config) {
   const constants = {};
 
-  function processObject(obj, prefix = '') {
+  function processObject(obj, prefix = "") {
     for (const [key, value] of Object.entries(obj)) {
-      const constantKey = prefix ? `${prefix}_${constantCase(key)}` : constantCase(key);
+      const constantKey = prefix
+        ? `${prefix}_${constantCase(key)}`
+        : constantCase(key);
 
-      if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+      if (
+        typeof value === "object" &&
+        value !== null &&
+        !Array.isArray(value)
+      ) {
         processObject(value, constantKey);
       } else {
         constants[constantKey] = value;
@@ -347,17 +359,17 @@ function generateBuildConstants(config) {
 
 const buildConfig = {
   "app name": "MyApp",
-  "version": "1.0.0",
+  version: "1.0.0",
   "build settings": {
     "output directory": "dist",
     "source maps": true,
-    "minify code": true
+    "minify code": true,
   },
   "server settings": {
-    "port": 3000,
-    "host": "localhost",
-    "ssl enabled": false
-  }
+    port: 3000,
+    host: "localhost",
+    "ssl enabled": false,
+  },
 };
 
 console.log(generateBuildConstants(buildConfig));

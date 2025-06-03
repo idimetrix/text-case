@@ -79,20 +79,20 @@ console.log(result); // "hello-world"
 import { kebabCase } from "text-kebab-case";
 
 // From different cases
-kebabCase("hello world");        // "hello-world"
-kebabCase("Hello World");        // "hello-world"
-kebabCase("HELLO WORLD");        // "hello-world"
-kebabCase("camelCase");          // "camel-case"
-kebabCase("PascalCase");         // "pascal-case"
-kebabCase("snake_case");         // "snake-case"
-kebabCase("dot.case");           // "dot-case"
-kebabCase("CONSTANT_CASE");      // "constant-case"
+kebabCase("hello world"); // "hello-world"
+kebabCase("Hello World"); // "hello-world"
+kebabCase("HELLO WORLD"); // "hello-world"
+kebabCase("camelCase"); // "camel-case"
+kebabCase("PascalCase"); // "pascal-case"
+kebabCase("snake_case"); // "snake-case"
+kebabCase("dot.case"); // "dot-case"
+kebabCase("CONSTANT_CASE"); // "constant-case"
 
 // Complex examples
-kebabCase("XMLHttpRequest");     // "xml-http-request"
-kebabCase("iPhone");             // "i-phone"
-kebabCase("version 1.2.3");     // "version-1-2-3"
-kebabCase("userProfileData");    // "user-profile-data"
+kebabCase("XMLHttpRequest"); // "xml-http-request"
+kebabCase("iPhone"); // "i-phone"
+kebabCase("version 1.2.3"); // "version-1-2-3"
+kebabCase("userProfileData"); // "user-profile-data"
 ```
 
 ### Advanced Options
@@ -133,11 +133,11 @@ kebabCase("API-v2-endpoint", {
 import { kebabCase } from "text-kebab-case";
 
 // Component classes
-kebabCase("primaryButton");      // "primary-button"
-kebabCase("navigationBar");      // "navigation-bar"
-kebabCase("formInput");          // "form-input"
-kebabCase("modalDialog");        // "modal-dialog"
-kebabCase("loadingSpinner");     // "loading-spinner"
+kebabCase("primaryButton"); // "primary-button"
+kebabCase("navigationBar"); // "navigation-bar"
+kebabCase("formInput"); // "form-input"
+kebabCase("modalDialog"); // "modal-dialog"
+kebabCase("loadingSpinner"); // "loading-spinner"
 ```
 
 ### HTML Attributes
@@ -146,11 +146,11 @@ kebabCase("loadingSpinner");     // "loading-spinner"
 import { kebabCase } from "text-kebab-case";
 
 // Data attributes
-kebabCase("dataToggle");         // "data-toggle"
-kebabCase("ariaLabel");          // "aria-label"
-kebabCase("tabIndex");           // "tab-index"
-kebabCase("customAttribute");    // "custom-attribute"
-kebabCase("roleButton");         // "role-button"
+kebabCase("dataToggle"); // "data-toggle"
+kebabCase("ariaLabel"); // "aria-label"
+kebabCase("tabIndex"); // "tab-index"
+kebabCase("customAttribute"); // "custom-attribute"
+kebabCase("roleButton"); // "role-button"
 ```
 
 ### URL Slugs
@@ -160,9 +160,9 @@ import { kebabCase } from "text-kebab-case";
 
 // Blog post slugs
 kebabCase("My Blog Post Title"); // "my-blog-post-title"
-kebabCase("Product Category");   // "product-category"
+kebabCase("Product Category"); // "product-category"
 kebabCase("Special Characters!"); // "special-characters"
-kebabCase("How to Use APIs");    // "how-to-use-apis"
+kebabCase("How to Use APIs"); // "how-to-use-apis"
 ```
 
 ### File Names
@@ -172,9 +172,9 @@ import { kebabCase } from "text-kebab-case";
 
 // Component files
 kebabCase("userProfile.component"); // "user-profile-component"
-kebabCase("apiService");            // "api-service"
-kebabCase("configUtils");           // "config-utils"
-kebabCase("authMiddleware");        // "auth-middleware"
+kebabCase("apiService"); // "api-service"
+kebabCase("configUtils"); // "config-utils"
+kebabCase("authMiddleware"); // "auth-middleware"
 ```
 
 ### Object Key Transformation
@@ -187,11 +187,11 @@ const styles = {
   backgroundColor: "#fff",
   fontSize: "16px",
   marginTop: "10px",
-  borderRadius: "4px"
+  borderRadius: "4px",
 };
 
 const cssStyles = Object.fromEntries(
-  Object.entries(styles).map(([key, value]) => [kebabCase(key), value])
+  Object.entries(styles).map(([key, value]) => [kebabCase(key), value]),
 );
 
 console.log(cssStyles);

@@ -79,19 +79,19 @@ console.log(result); // "hello.world"
 import { dotCase } from "text-dot-case";
 
 // From different cases
-dotCase("Hello World");          // "hello.world"
-dotCase("helloWorld");           // "hello.world"
-dotCase("HelloWorld");           // "hello.world"
-dotCase("hello_world");          // "hello.world"
-dotCase("hello-world");          // "hello.world"
-dotCase("HELLO_WORLD");          // "hello.world"
-dotCase("CONSTANT_CASE");        // "constant.case"
+dotCase("Hello World"); // "hello.world"
+dotCase("helloWorld"); // "hello.world"
+dotCase("HelloWorld"); // "hello.world"
+dotCase("hello_world"); // "hello.world"
+dotCase("hello-world"); // "hello.world"
+dotCase("HELLO_WORLD"); // "hello.world"
+dotCase("CONSTANT_CASE"); // "constant.case"
 
 // Complex examples
-dotCase("XMLParser");            // "xml.parser"
-dotCase("iPhone6Plus");          // "i.phone6.plus"
-dotCase("HTML5Canvas");          // "html5.canvas"
-dotCase("getUserID");            // "get.user.id"
+dotCase("XMLParser"); // "xml.parser"
+dotCase("iPhone6Plus"); // "i.phone6.plus"
+dotCase("HTML5Canvas"); // "html5.canvas"
+dotCase("getUserID"); // "get.user.id"
 ```
 
 ### Advanced Options
@@ -131,7 +131,7 @@ const apiResponse = {
   "First Name": "John",
   Last_Name: "Doe",
   emailAddress: "john@example.com",
-  phoneNumber: "+1234567890"
+  phoneNumber: "+1234567890",
 };
 
 const normalized = Object.keys(apiResponse).reduce((acc, key) => {
@@ -154,11 +154,11 @@ console.log(normalized);
 import { dotCase } from "text-dot-case";
 
 // Environment variables to config
-dotCase("DATABASE_HOST");        // "database.host"
-dotCase("apiSecretKey");         // "api.secret.key"
-dotCase("maxRetryAttempts");     // "max.retry.attempts"
-dotCase("REDIS_CONNECTION");     // "redis.connection"
-dotCase("jwtTokenExpiry");       // "jwt.token.expiry"
+dotCase("DATABASE_HOST"); // "database.host"
+dotCase("apiSecretKey"); // "api.secret.key"
+dotCase("maxRetryAttempts"); // "max.retry.attempts"
+dotCase("REDIS_CONNECTION"); // "redis.connection"
+dotCase("jwtTokenExpiry"); // "jwt.token.expiry"
 ```
 
 ### File and Module Names
@@ -167,11 +167,11 @@ dotCase("jwtTokenExpiry");       // "jwt.token.expiry"
 import { dotCase } from "text-dot-case";
 
 // Component naming
-dotCase("UserProfile");          // "user.profile"
-dotCase("ShoppingCart");         // "shopping.cart"
-dotCase("PaymentGateway");       // "payment.gateway"
-dotCase("AuthMiddleware");       // "auth.middleware"
-dotCase("EmailValidator");       // "email.validator"
+dotCase("UserProfile"); // "user.profile"
+dotCase("ShoppingCart"); // "shopping.cart"
+dotCase("PaymentGateway"); // "payment.gateway"
+dotCase("AuthMiddleware"); // "auth.middleware"
+dotCase("EmailValidator"); // "email.validator"
 ```
 
 ### Method and Function Names
@@ -180,11 +180,11 @@ dotCase("EmailValidator");       // "email.validator"
 import { dotCase } from "text-dot-case";
 
 // Class methods to dot notation
-dotCase("getUserById");          // "get.user.by.id"
-dotCase("calculateTotalPrice");  // "calculate.total.price"
+dotCase("getUserById"); // "get.user.by.id"
+dotCase("calculateTotalPrice"); // "calculate.total.price"
 dotCase("validateEmailAddress"); // "validate.email.address"
-dotCase("processPaymentData");   // "process.payment.data"
-dotCase("generateAccessToken");  // "generate.access.token"
+dotCase("processPaymentData"); // "process.payment.data"
+dotCase("generateAccessToken"); // "generate.access.token"
 ```
 
 ### Database and Schema Mapping
@@ -208,7 +208,7 @@ const form = {
   lastName: "Doe",
   emailAddress: "john@example.com",
   billingAddress: "123 Main St",
-  shippingAddress: "456 Oak Ave"
+  shippingAddress: "456 Oak Ave",
 };
 
 console.log(normalizeFormData(form));
@@ -227,11 +227,11 @@ console.log(normalizeFormData(form));
 import { dotCase } from "text-dot-case";
 
 // Transform constants
-dotCase("MAX_FILE_SIZE");        // "max.file.size"
-dotCase("DEFAULT_TIMEOUT");      // "default.timeout"
-dotCase("ERROR_MESSAGES");       // "error.messages"
-dotCase("HTTP_STATUS_CODES");    // "http.status.codes"
-dotCase("VALIDATION_RULES");     // "validation.rules"
+dotCase("MAX_FILE_SIZE"); // "max.file.size"
+dotCase("DEFAULT_TIMEOUT"); // "default.timeout"
+dotCase("ERROR_MESSAGES"); // "error.messages"
+dotCase("HTTP_STATUS_CODES"); // "http.status.codes"
+dotCase("VALIDATION_RULES"); // "validation.rules"
 ```
 
 ## 📖 API Reference
