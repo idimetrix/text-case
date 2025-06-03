@@ -65,15 +65,18 @@ Current JavaScript text transformation libraries exhibit several architectural a
 The library implements a micropackage architecture, distributing functionality across 21 specialized npm packages:
 
 ### Core Text Transformations
+
 - **Identifier Conventions**: `text-camel-case`, `text-pascal-case`, `text-snake-case`, `text-kebab-case`
 - **Natural Language**: `text-title-case`, `text-sentence-case`, `text-capital-case`
 - **Technical Formats**: `text-constant-case`, `text-dot-case`, `text-path-case`, `text-header-case`, `text-param-case`, `text-no-case`
 
 ### Character-Level Operations
+
 - **Case Manipulation**: `text-upper-case`, `text-lower-case`, `text-upper-case-first`, `text-lower-case-first`, `text-swap-case`
 - **Validation Predicates**: `text-is-upper-case`, `text-is-lower-case`
 
 ### Aggregate Distribution
+
 - **Unified Interface**: `text-case` package providing consolidated access to all transformations
 
 This architecture enables precise dependency management, allowing applications to include only required functionality while maintaining consistent API design across packages.
@@ -89,17 +92,17 @@ The transformation engine implements a two-phase processing model:
 
 ```typescript
 interface TransformationOptions {
-  splitRegexp?: RegExp;           // Custom word boundary detection
-  stripRegexp?: RegExp;           // Character filtering patterns
-  transform?: TransformFunction;   // User-defined token processing
-  split?: SplitFunction;          // Alternative tokenization logic
-  delimiter?: string;             // Output token separator
+  splitRegexp?: RegExp; // Custom word boundary detection
+  stripRegexp?: RegExp; // Character filtering patterns
+  transform?: TransformFunction; // User-defined token processing
+  split?: SplitFunction; // Alternative tokenization logic
+  delimiter?: string; // Output token separator
 }
 
 type TransformFunction = (
   word: string,
   index: number,
-  words: string[]
+  words: string[],
 ) => string;
 ```
 
@@ -118,13 +121,19 @@ The library leverages TypeScript's advanced type system to provide compile-time 
 
 ```typescript
 // Type-safe transformation chains
-declare function camelCase(input: string, options?: TransformationOptions): string;
-declare function pascalCase(input: string, options?: TransformationOptions): string;
+declare function camelCase(
+  input: string,
+  options?: TransformationOptions,
+): string;
+declare function pascalCase(
+  input: string,
+  options?: TransformationOptions,
+): string;
 
 // Generic utility for object key transformation
 function transformObjectKeys<T extends Record<string, any>>(
   obj: T,
-  transformer: (key: string) => string
+  transformer: (key: string) => string,
 ): Record<string, T[keyof T]>;
 ```
 
@@ -153,9 +162,9 @@ Performance characteristics are validated through systematic benchmarking:
 
 ```typescript
 // Example performance test structure
-describe('Performance Benchmarks', () => {
-  it('should process large datasets efficiently', () => {
-    const largeInput = 'snake_case_string'.repeat(100000);
+describe("Performance Benchmarks", () => {
+  it("should process large datasets efficiently", () => {
+    const largeInput = "snake_case_string".repeat(100000);
     const startTime = performance.now();
     const result = camelCase(largeInput);
     const endTime = performance.now();
@@ -175,9 +184,9 @@ import { camelCase, snakeCase, pascalCase, titleCase } from "text-case";
 
 // Standard transformations
 const databaseField = "user_profile_data";
-const jsProperty = camelCase(databaseField);        // "userProfileData"
-const className = pascalCase(databaseField);        // "UserProfileData"
-const displayText = titleCase(databaseField);       // "User Profile Data"
+const jsProperty = camelCase(databaseField); // "userProfileData"
+const className = pascalCase(databaseField); // "UserProfileData"
+const displayText = titleCase(databaseField); // "User Profile Data"
 ```
 
 ## Advanced Configuration
@@ -190,14 +199,15 @@ const apiTransform = camelCase("api_v2_endpoint", {
     if (acronyms.has(word.toLowerCase())) {
       return index === 0 ? word.toLowerCase() : word.toUpperCase();
     }
-    return index === 0 ? word.toLowerCase() :
-           word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  }
+    return index === 0
+      ? word.toLowerCase()
+      : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  },
 }); // Result: "apiV2Endpoint"
 
 // Custom word boundary detection for domain-specific formats
 const sqlTransform = snakeCase("XMLHttpRequest2Factory", {
-  splitRegexp: /([a-z])([A-Z])|([A-Z])([A-Z][a-z])|([a-zA-Z])(\d)/g
+  splitRegexp: /([a-z])([A-Z])|([A-Z])([A-Z][a-z])|([a-zA-Z])(\d)/g,
 }); // Result: "xml_http_request_2_factory"
 ```
 
@@ -224,10 +234,10 @@ interface ClientUser {
 }
 
 function transformDatabaseToClient<T extends Record<string, any>>(
-  dbObject: T
+  dbObject: T,
 ): Record<string, T[keyof T]> {
   return Object.fromEntries(
-    Object.entries(dbObject).map(([key, value]) => [camelCase(key), value])
+    Object.entries(dbObject).map(([key, value]) => [camelCase(key), value]),
   );
 }
 ```
@@ -238,12 +248,12 @@ function transformDatabaseToClient<T extends Record<string, any>>(
 // Schema-to-TypeScript interface generation
 function generateTypeScriptInterface(
   schemaName: string,
-  fields: Array<{name: string, type: string}>
+  fields: Array<{ name: string; type: string }>,
 ): string {
   const interfaceName = pascalCase(schemaName);
-  const fieldDeclarations = fields.map(field =>
-    `  ${camelCase(field.name)}: ${field.type};`
-  ).join('\n');
+  const fieldDeclarations = fields
+    .map((field) => `  ${camelCase(field.name)}: ${field.type};`)
+    .join("\n");
 
   return `interface ${interfaceName} {\n${fieldDeclarations}\n}`;
 }
@@ -256,11 +266,8 @@ function generateTypeScriptInterface(
 function processEnvironmentConfig(env: Record<string, string>) {
   return Object.fromEntries(
     Object.entries(env)
-      .filter(([key]) => key.startsWith('APP_'))
-      .map(([key, value]) => [
-        camelCase(key.replace('APP_', '')),
-        value
-      ])
+      .filter(([key]) => key.startsWith("APP_"))
+      .map(([key, value]) => [camelCase(key.replace("APP_", "")), value]),
   );
 }
 ```
@@ -271,11 +278,11 @@ function processEnvironmentConfig(env: Record<string, string>) {
 
 The modular architecture provides significant advantages for production deployments:
 
-| Import Strategy | Bundle Size | Gzipped | Use Case |
-|----------------|-------------|---------|----------|
-| Full library (`text-case`) | ~8KB | ~3KB | Complete transformation suite |
-| Single function (`text-camel-case`) | ~450B | ~250B | Specific transformation only |
-| Multiple functions (3-4 packages) | ~1.2KB | ~600B | Typical application needs |
+| Import Strategy                     | Bundle Size | Gzipped | Use Case                      |
+| ----------------------------------- | ----------- | ------- | ----------------------------- |
+| Full library (`text-case`)          | ~8KB        | ~3KB    | Complete transformation suite |
+| Single function (`text-camel-case`) | ~450B       | ~250B   | Specific transformation only  |
+| Multiple functions (3-4 packages)   | ~1.2KB      | ~600B   | Typical application needs     |
 
 ## Performance Characteristics
 
