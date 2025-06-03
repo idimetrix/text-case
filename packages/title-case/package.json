@@ -1,6 +1,6 @@
 {
   "name": "text-title-case",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Convert a text into title case following English rules",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

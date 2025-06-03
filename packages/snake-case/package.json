@@ -1,6 +1,6 @@
 {
   "name": "text-snake-case",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Convert into a lower case text with underscores between words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

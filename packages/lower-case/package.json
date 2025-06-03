@@ -1,6 +1,6 @@
 {
   "name": "text-lower-case",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Convert text to all lowercase letters",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
