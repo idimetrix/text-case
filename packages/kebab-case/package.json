@@ -1,6 +1,6 @@
 {
   "name": "text-kebab-case",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Convert into a text with the separator denoted by kebab-case (lowercase words separated by hyphens)",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

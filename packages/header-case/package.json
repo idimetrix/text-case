@@ -1,6 +1,6 @@
 {
   "name": "text-header-case",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Convert into a dash separated text of capitalized words",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
