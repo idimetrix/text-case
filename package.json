@@ -51,16 +51,24 @@
   "homepage": "https://github.com/idimetrix/text-case#readme",
   "scripts": {
     "prettier": "prettier --write",
+    "lint": "eslint . --fix",
+    "lint:check": "eslint .",
     "build": "pnpm -r run build",
     "format": "pnpm run prettier -- \"{./,packages/**/}*.{js,jsx,ts,tsx,json,md,yml,yaml}\"",
     "test": "pnpm -r run test",
     "typecheck": "pnpm -r run typecheck",
     "typecheck:references": "tsc --build --force",
     "typecheck:watch": "pnpm -r --parallel run typecheck:watch",
-    "publish": "pnpm -r publish --access public --no-git-checks",
-    "release": "pnpm run build && pnpm run version:minor && pnpm run publish",
+    "version:patch": "lerna version patch --yes --force-publish=*",
+    "version:minor": "lerna version minor --yes --force-publish=*", 
+    "version:major": "lerna version major --yes --force-publish=*",
+    "publish": "lerna publish from-package --yes",
+    "release:patch": "pnpm run build && pnpm run test && pnpm run format && pnpm run lint && pnpm run version:patch && pnpm run publish",
+    "release:minor": "pnpm run build && pnpm run test && pnpm run format && pnpm run lint && pnpm run version:minor && pnpm run publish",
+    "release:major": "pnpm run build && pnpm run test && pnpm run format && pnpm run lint && pnpm run version:major && pnpm run publish",
+    "release": "pnpm run release:patch",
     "postinstall": "echo 'Packages installed and linked via pnpm workspaces'",
-    "bootstrap": "pnpm install && pnpm run format && pnpm run typecheck"
+    "bootstrap": "pnpm install && pnpm run format && pnpm run typecheck && pnpm run lint"
   },
   "husky": {
     "hooks": {
@@ -75,11 +83,15 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "husky": "^9.1.7",
     "lerna": "^9.0.0",
     "lint-staged": "^16.2.1",
     "prettier": "^3.6.2"
   },
-  "version": "1.2.2",
-  "dependencies": {}
+  "version": "1.2.2"
 }

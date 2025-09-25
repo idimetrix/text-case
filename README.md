@@ -449,9 +449,19 @@ pnpm lint
 
 ### Deployment Steps
 
-```
-npx lerna version patch --yes --force-publish=*
-npx lerna publish from-package --yes
+```bash
+# Build all packages
+pnpm run build
+
+# Run all tests
+pnpm test
+
+# Format and lint code
+pnpm run format
+pnpm run lint
+
+# Update version and publish
+pnpm run release
 ```
 
 ### Package Structure
