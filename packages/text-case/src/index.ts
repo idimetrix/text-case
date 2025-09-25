@@ -4,6 +4,7 @@ export * from "text-constant-case";
 export * from "text-dot-case";
 export * from "text-header-case";
 export * from "text-is-lower-case";
+export * from "text-kebab-case";
 export * from "text-is-upper-case";
 export * from "text-lower-case";
 export * from "text-lower-case-first";
