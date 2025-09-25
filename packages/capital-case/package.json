@@ -1,6 +1,6 @@
 {
   "name": "text-capital-case",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Convert into a space separated text with each word capitalized",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
