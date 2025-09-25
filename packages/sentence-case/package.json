@@ -1,6 +1,6 @@
 {
   "name": "text-sentence-case",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Convert into a lower case with spaces between words, then capitalize text",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
