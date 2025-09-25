@@ -34,6 +34,7 @@
   "typings": "dist/index.d.ts",
   "module": "dist.es2015/index.js",
   "sideEffects": false,
+  "type": "module",
   "jsnext:main": "dist.es2015/index.js",
   "files": [
     "dist/",
@@ -83,6 +84,7 @@
     ]
   },
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
     "eslint": "^9.36.0",

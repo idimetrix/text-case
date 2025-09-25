@@ -75,7 +75,7 @@ export function noCase(input: string, options: Options = {}): string {
     delimiter = " ",
   } = options;
 
-  let result = replace(
+  const result = replace(
     replace(input, splitRegexp, "$1\0$2"),
     stripRegexp,
     "\0",

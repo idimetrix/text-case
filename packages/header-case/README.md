@@ -328,10 +328,11 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-kebab-case`](https://www.npmjs.com/package/text-kebab-case) - Convert to kebab-case
-- [`text-title-case`](https://www.npmjs.com/package/text-title-case) - Convert to Title Case
-- [`text-pascal-case`](https://www.npmjs.com/package/text-pascal-case) - Convert to PascalCase
 - [`text-camel-case`](https://www.npmjs.com/package/text-camel-case) - Convert to camelCase
+- [`text-capital-case`](https://www.npmjs.com/package/text-capital-case) - Convert to Capital Case
+- [`text-constant-case`](https://www.npmjs.com/package/text-constant-case) - Convert to CONSTANT_CASE
+- [`text-dot-case`](https://www.npmjs.com/package/text-dot-case) - Convert to dot.case
+- [`text-is-lower-case`](https://www.npmjs.com/package/text-is-lower-case) - Check if text is lower case
 - [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License

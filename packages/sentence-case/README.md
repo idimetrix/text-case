@@ -421,10 +421,11 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-title-case`](https://www.npmjs.com/package/text-title-case) - Convert to Title Case
+- [`text-camel-case`](https://www.npmjs.com/package/text-camel-case) - Convert to camelCase
 - [`text-capital-case`](https://www.npmjs.com/package/text-capital-case) - Convert to Capital Case
-- [`text-upper-case-first`](https://www.npmjs.com/package/text-upper-case-first) - Make first character uppercase
-- [`text-no-case`](https://www.npmjs.com/package/text-no-case) - Convert to no case
+- [`text-constant-case`](https://www.npmjs.com/package/text-constant-case) - Convert to CONSTANT_CASE
+- [`text-dot-case`](https://www.npmjs.com/package/text-dot-case) - Convert to dot.case
+- [`text-header-case`](https://www.npmjs.com/package/text-header-case) - Convert to Header-Case
 - [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License

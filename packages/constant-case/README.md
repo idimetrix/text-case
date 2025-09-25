@@ -450,9 +450,11 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-upper-case`](https://www.npmjs.com/package/text-upper-case) - Convert to UPPERCASE
-- [`text-snake-case`](https://www.npmjs.com/package/text-snake-case) - Convert to snake_case
-- [`text-kebab-case`](https://www.npmjs.com/package/text-kebab-case) - Convert to kebab-case
+- [`text-camel-case`](https://www.npmjs.com/package/text-camel-case) - Convert to camelCase
+- [`text-capital-case`](https://www.npmjs.com/package/text-capital-case) - Convert to Capital Case
+- [`text-dot-case`](https://www.npmjs.com/package/text-dot-case) - Convert to dot.case
+- [`text-header-case`](https://www.npmjs.com/package/text-header-case) - Convert to Header-Case
+- [`text-is-lower-case`](https://www.npmjs.com/package/text-is-lower-case) - Check if text is lower case
 - [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License

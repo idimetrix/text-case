@@ -3,7 +3,7 @@ import { upperCaseFirst } from "text-upper-case-first";
 
 export { Options };
 
-function capitalCaseTransform(input: string, index: number) {
+function capitalCaseTransform(input: string, _index: number) {
   // Convert to lowercase first, then capitalize first letter
   return upperCaseFirst(input.toLowerCase());
 }

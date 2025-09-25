@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     devDependencies:
+      "@eslint/js":
+        specifier: ^9.36.0
+        version: 9.36.0
       "@typescript-eslint/eslint-plugin":
         specifier: ^8.44.1
         version: 8.44.1(@typescript-eslint/parser@8.44.1(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2))(eslint@9.36.0(jiti@2.6.0))(typescript@5.9.2)
