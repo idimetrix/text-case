@@ -416,11 +416,11 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-lower-case-first`](../lower-case-first) - Make first character lowercase
-- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
-- [`text-title-case`](../title-case) - Convert to Title Case
-- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-lower-case-first`](https://www.npmjs.com/package/text-lower-case-first) - Make first character lowercase
+- [`text-sentence-case`](https://www.npmjs.com/package/text-sentence-case) - Convert to Sentence case
+- [`text-title-case`](https://www.npmjs.com/package/text-title-case) - Convert to Title Case
+- [`text-pascal-case`](https://www.npmjs.com/package/text-pascal-case) - Convert to PascalCase
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

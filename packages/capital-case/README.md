@@ -326,11 +326,11 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-title-case`](../title-case) - Convert to Title Case
-- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
-- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
-- [`text-camel-case`](../camel-case) - Convert to camelCase
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-title-case`](https://www.npmjs.com/package/text-title-case) - Convert to Title Case
+- [`text-sentence-case`](https://www.npmjs.com/package/text-sentence-case) - Convert to Sentence case
+- [`text-pascal-case`](https://www.npmjs.com/package/text-pascal-case) - Convert to PascalCase
+- [`text-camel-case`](https://www.npmjs.com/package/text-camel-case) - Convert to camelCase
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

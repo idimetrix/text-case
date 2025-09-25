@@ -328,11 +328,12 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-pascal-case`](../pascal-case) - Convert to PascalCase
-- [`text-snake-case`](../snake-case) - Convert to snake_case
-- [`text-kebab-case`](../kebab-case) - Convert to kebab-case
-- [`text-title-case`](../title-case) - Convert to Title Case
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-pascal-case`](https://www.npmjs.com/package/text-pascal-case) - Convert to PascalCase
+- [`text-snake-case`](https://www.npmjs.com/package/text-snake-case) - Convert to snake_case
+- [`text-kebab-case`](https://www.npmjs.com/package/text-kebab-case) - Convert to kebab-case
+- [`text-title-case`](https://www.npmjs.com/package/text-title-case) - Convert to Title Case
+- [`text-constant-case`](https://www.npmjs.com/package/text-constant-case) - Convert to CONSTANT_CASE
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

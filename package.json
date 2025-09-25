@@ -60,7 +60,7 @@
     "typecheck:references": "tsc --build --force",
     "typecheck:watch": "pnpm -r --parallel run typecheck:watch",
     "version:patch": "lerna version patch --yes --force-publish=*",
-    "version:minor": "lerna version minor --yes --force-publish=*", 
+    "version:minor": "lerna version minor --yes --force-publish=*",
     "version:major": "lerna version major --yes --force-publish=*",
     "publish": "lerna publish from-package --yes",
     "release:patch": "pnpm run build && pnpm run test && pnpm run format && pnpm run lint && pnpm run version:patch && pnpm run publish",

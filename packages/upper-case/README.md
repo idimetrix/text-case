@@ -366,10 +366,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-lower-case`](../lower-case) - Convert to lowercase
-- [`text-upper-case-first`](../upper-case-first) - Make first character uppercase
-- [`text-constant-case`](../constant-case) - Convert to CONSTANT_CASE
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-lower-case`](https://www.npmjs.com/package/text-lower-case) - Convert to lowercase
+- [`text-upper-case-first`](https://www.npmjs.com/package/text-upper-case-first) - Make first character uppercase
+- [`text-constant-case`](https://www.npmjs.com/package/text-constant-case) - Convert to CONSTANT_CASE
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

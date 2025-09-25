@@ -450,10 +450,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
-- [`text-snake-case`](../snake-case) - Convert to snake_case
-- [`text-kebab-case`](../kebab-case) - Convert to kebab-case
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-upper-case`](https://www.npmjs.com/package/text-upper-case) - Convert to UPPERCASE
+- [`text-snake-case`](https://www.npmjs.com/package/text-snake-case) - Convert to snake_case
+- [`text-kebab-case`](https://www.npmjs.com/package/text-kebab-case) - Convert to kebab-case
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

@@ -438,10 +438,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-upper-case`](../upper-case) - Convert to UPPERCASE
-- [`text-lower-case-first`](../lower-case-first) - Make first character lowercase
-- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-upper-case`](https://www.npmjs.com/package/text-upper-case) - Convert to UPPERCASE
+- [`text-lower-case-first`](https://www.npmjs.com/package/text-lower-case-first) - Make first character lowercase
+- [`text-sentence-case`](https://www.npmjs.com/package/text-sentence-case) - Convert to Sentence case
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

@@ -309,10 +309,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-upper-case`](../upper-case) - Convert to uppercase
-- [`text-lower-case`](../lower-case) - Convert to lowercase
-- [`text-upper-case-first`](../upper-case-first) - Make first character uppercase
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-upper-case`](https://www.npmjs.com/package/text-upper-case) - Convert to uppercase
+- [`text-lower-case`](https://www.npmjs.com/package/text-lower-case) - Convert to lowercase
+- [`text-upper-case-first`](https://www.npmjs.com/package/text-upper-case-first) - Make first character uppercase
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

@@ -493,10 +493,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-kebab-case`](../kebab-case) - Convert to kebab-case
-- [`text-dot-case`](../dot-case) - Convert to dot.case
-- [`text-snake-case`](../snake-case) - Convert to snake_case
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-kebab-case`](https://www.npmjs.com/package/text-kebab-case) - Convert to kebab-case
+- [`text-dot-case`](https://www.npmjs.com/package/text-dot-case) - Convert to dot.case
+- [`text-snake-case`](https://www.npmjs.com/package/text-snake-case) - Convert to snake_case
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

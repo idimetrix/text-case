@@ -424,10 +424,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-upper-case-first`](../upper-case-first) - Make first character uppercase
-- [`text-camel-case`](../camel-case) - Convert to camelCase
-- [`text-sentence-case`](../sentence-case) - Convert to Sentence case
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-upper-case-first`](https://www.npmjs.com/package/text-upper-case-first) - Make first character uppercase
+- [`text-camel-case`](https://www.npmjs.com/package/text-camel-case) - Convert to camelCase
+- [`text-sentence-case`](https://www.npmjs.com/package/text-sentence-case) - Convert to Sentence case
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 

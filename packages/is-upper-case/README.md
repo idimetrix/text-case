@@ -238,10 +238,10 @@ pnpm lint
 
 ## 🔗 Related Packages
 
-- [`text-is-lower-case`](../is-lower-case) - Check if string is lowercase
-- [`text-upper-case`](../upper-case) - Convert to uppercase
-- [`text-lower-case`](../lower-case) - Convert to lowercase
-- [`text-case`](../text-case) - All case transformations in one package
+- [`text-is-lower-case`](https://www.npmjs.com/package/text-is-lower-case) - Check if string is lowercase
+- [`text-upper-case`](https://www.npmjs.com/package/text-upper-case) - Convert to uppercase
+- [`text-lower-case`](https://www.npmjs.com/package/text-lower-case) - Convert to lowercase
+- [`text-case`](https://www.npmjs.com/package/text-case) - All case transformations in one package
 
 ## 📜 License
 
