@@ -12,7 +12,7 @@
     "dist.es2015/"
   ],
   "scripts": {
-    "lint": "tslint \"src/**/*\" --project tsconfig.json",
+    "lint": "eslint src --ext .ts",
     "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
     "specs": "jest --coverage",
     "test": "pnpm run build && pnpm run lint && pnpm run specs",
@@ -70,7 +70,15 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   },
   "publishConfig": {
     "access": "public"

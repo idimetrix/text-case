@@ -413,4 +413,20 @@ describe("locale upper case", () => {
   it("should handle undefined input gracefully", () => {
     expect(localeUpperCase(undefined as any, "tr")).toEqual("");
   });
+
+  it("should handle unsupported locale by falling back to regular upperCase", () => {
+    expect(localeUpperCase("hello world", "en")).toEqual("HELLO WORLD");
+    expect(localeUpperCase("test string", "fr")).toEqual("TEST STRING");
+    expect(localeUpperCase("lowercase", "de")).toEqual("LOWERCASE");
+  });
+
+  it("should handle locale case insensitively", () => {
+    expect(localeUpperCase("istanbul", "TR")).toEqual("İSTANBUL");
+    expect(localeUpperCase("istanbul", "Tr")).toEqual("İSTANBUL");
+    expect(localeUpperCase("istanbul", "tR")).toEqual("İSTANBUL");
+  });
+
+  it("should handle az locale", () => {
+    expect(localeUpperCase("istanbul", "az")).toEqual("İSTANBUL");
+  });
 });
