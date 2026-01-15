@@ -95,26 +95,26 @@
     "access": "public"
   },
   "dependencies": {
-    "text-camel-case": "workspace:*",
-    "text-capital-case": "workspace:*",
-    "text-constant-case": "workspace:*",
-    "text-dot-case": "workspace:*",
-    "text-header-case": "workspace:*",
-    "text-is-lower-case": "workspace:*",
-    "text-is-upper-case": "workspace:*",
-    "text-kebab-case": "workspace:*",
-    "text-lower-case": "workspace:*",
-    "text-lower-case-first": "workspace:*",
-    "text-no-case": "workspace:*",
-    "text-param-case": "workspace:*",
-    "text-pascal-case": "workspace:*",
-    "text-path-case": "workspace:*",
-    "text-sentence-case": "workspace:*",
-    "text-snake-case": "workspace:*",
-    "text-swap-case": "workspace:*",
-    "text-title-case": "workspace:*",
-    "text-upper-case": "workspace:*",
-    "text-upper-case-first": "workspace:*"
+    "text-camel-case": "1.2.10",
+    "text-capital-case": "1.2.10",
+    "text-constant-case": "1.2.10",
+    "text-dot-case": "1.2.10",
+    "text-header-case": "1.2.10",
+    "text-is-lower-case": "1.2.10",
+    "text-is-upper-case": "1.2.10",
+    "text-kebab-case": "1.2.10",
+    "text-lower-case": "1.2.10",
+    "text-lower-case-first": "1.2.10",
+    "text-no-case": "1.2.10",
+    "text-param-case": "1.2.10",
+    "text-pascal-case": "1.2.10",
+    "text-path-case": "1.2.10",
+    "text-sentence-case": "1.2.10",
+    "text-snake-case": "1.2.10",
+    "text-swap-case": "1.2.10",
+    "text-title-case": "1.2.10",
+    "text-upper-case": "1.2.10",
+    "text-upper-case-first": "1.2.10"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^12.0.0",
@@ -127,5 +127,6 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "gitHead": "6002813bd6d3a5ff3087a6c2b18b23333499989a"
 }

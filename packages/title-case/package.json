@@ -48,8 +48,8 @@
   },
   "homepage": "https://github.com/idimetrix/text-case/tree/master/packages/title-case#readme",
   "dependencies": {
-    "text-no-case": "workspace:*",
-    "text-upper-case-first": "workspace:*"
+    "text-no-case": "1.2.10",
+    "text-upper-case-first": "1.2.10"
   },
   "size-limit": [
     {
@@ -96,5 +96,6 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "gitHead": "6002813bd6d3a5ff3087a6c2b18b23333499989a"
 }

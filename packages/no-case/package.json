@@ -80,7 +80,7 @@
     "access": "public"
   },
   "dependencies": {
-    "text-lower-case": "workspace:*"
+    "text-lower-case": "1.2.10"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^12.0.0",
@@ -93,5 +93,6 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "gitHead": "6002813bd6d3a5ff3087a6c2b18b23333499989a"
 }
