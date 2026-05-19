@@ -1,5 +1,7 @@
 packages:
   - "packages/*"
+linkWorkspacePackages: true
+preferWorkspacePackages: true
 allowBuilds:
   esbuild: true
   nx: true

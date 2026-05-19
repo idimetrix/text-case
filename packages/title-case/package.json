@@ -1,6 +1,6 @@
 {
   "name": "text-title-case",
-  "version": "1.2.10",
+  "version": "1.2.11",
   "description": "Convert a text into title case following English rules",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -48,8 +48,8 @@
   },
   "homepage": "https://github.com/idimetrix/text-case/tree/master/packages/title-case#readme",
   "dependencies": {
-    "text-no-case": "1.2.10",
-    "text-upper-case-first": "1.2.10"
+    "text-no-case": "^1.2.11",
+    "text-upper-case-first": "^1.2.11"
   },
   "size-limit": [
     {
