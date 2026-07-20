@@ -528,3 +528,7 @@ packages/
 [downloads-url]: https://npmjs.org/package/text-case
 [bundlephobia-image]: https://img.shields.io/bundlephobia/minzip/text-case.svg
 [bundlephobia-url]: https://bundlephobia.com/result?p=text-case
+
+---
+
+Built by the team behind [Planoda](https://planoda.com/?utm_source=npm&utm_medium=referral&utm_campaign=text-case) — an AI-native work platform, currently pre-launch and building in public.
